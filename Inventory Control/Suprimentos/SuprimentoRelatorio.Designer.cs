@@ -34,10 +34,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.btnPesquisa_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.gunaTextBox2 = new Guna.UI.WinForms.GunaTextBox();
+            this.txtDataInicioSuprimentosRelarorio = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
+            this.txtDataFinalSuprimentosRelarorio = new Guna.UI.WinForms.GunaTextBox();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -86,22 +86,23 @@
             this.btnPesquisa_CadastroCliente.Size = new System.Drawing.Size(44, 47);
             this.btnPesquisa_CadastroCliente.TabIndex = 141;
             this.btnPesquisa_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnPesquisa_CadastroCliente.Click += new System.EventHandler(this.btnPesquisa_CadastroCliente_Click);
             // 
-            // gunaTextBox2
+            // txtDataInicioSuprimentosRelarorio
             // 
-            this.gunaTextBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox2.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox2.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox2.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
-            this.gunaTextBox2.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox2.Location = new System.Drawing.Point(103, 109);
-            this.gunaTextBox2.Name = "gunaTextBox2";
-            this.gunaTextBox2.PasswordChar = '\0';
-            this.gunaTextBox2.SelectedText = "";
-            this.gunaTextBox2.Size = new System.Drawing.Size(162, 26);
-            this.gunaTextBox2.TabIndex = 144;
+            this.txtDataInicioSuprimentosRelarorio.BaseColor = System.Drawing.Color.White;
+            this.txtDataInicioSuprimentosRelarorio.BorderColor = System.Drawing.Color.Silver;
+            this.txtDataInicioSuprimentosRelarorio.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDataInicioSuprimentosRelarorio.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtDataInicioSuprimentosRelarorio.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
+            this.txtDataInicioSuprimentosRelarorio.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtDataInicioSuprimentosRelarorio.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDataInicioSuprimentosRelarorio.Location = new System.Drawing.Point(103, 109);
+            this.txtDataInicioSuprimentosRelarorio.Name = "txtDataInicioSuprimentosRelarorio";
+            this.txtDataInicioSuprimentosRelarorio.PasswordChar = '\0';
+            this.txtDataInicioSuprimentosRelarorio.SelectedText = "";
+            this.txtDataInicioSuprimentosRelarorio.Size = new System.Drawing.Size(162, 26);
+            this.txtDataInicioSuprimentosRelarorio.TabIndex = 144;
             // 
             // gunaLabel5
             // 
@@ -125,21 +126,21 @@
             this.gunaLabel1.Tag = "103; 109";
             this.gunaLabel1.Text = "Data Final:";
             // 
-            // gunaTextBox1
+            // txtDataFinalSuprimentosRelarorio
             // 
-            this.gunaTextBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
-            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox1.Location = new System.Drawing.Point(103, 146);
-            this.gunaTextBox1.Name = "gunaTextBox1";
-            this.gunaTextBox1.PasswordChar = '\0';
-            this.gunaTextBox1.SelectedText = "";
-            this.gunaTextBox1.Size = new System.Drawing.Size(162, 26);
-            this.gunaTextBox1.TabIndex = 146;
+            this.txtDataFinalSuprimentosRelarorio.BaseColor = System.Drawing.Color.White;
+            this.txtDataFinalSuprimentosRelarorio.BorderColor = System.Drawing.Color.Silver;
+            this.txtDataFinalSuprimentosRelarorio.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDataFinalSuprimentosRelarorio.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtDataFinalSuprimentosRelarorio.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
+            this.txtDataFinalSuprimentosRelarorio.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtDataFinalSuprimentosRelarorio.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDataFinalSuprimentosRelarorio.Location = new System.Drawing.Point(103, 146);
+            this.txtDataFinalSuprimentosRelarorio.Name = "txtDataFinalSuprimentosRelarorio";
+            this.txtDataFinalSuprimentosRelarorio.PasswordChar = '\0';
+            this.txtDataFinalSuprimentosRelarorio.SelectedText = "";
+            this.txtDataFinalSuprimentosRelarorio.Size = new System.Drawing.Size(162, 26);
+            this.txtDataFinalSuprimentosRelarorio.TabIndex = 146;
             // 
             // guna2DataGridView1
             // 
@@ -158,7 +159,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.guna2DataGridView1.ColumnHeadersHeight = 4;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -187,7 +188,7 @@
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
             this.guna2DataGridView1.ThemeStyle.ReadOnly = false;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
@@ -204,9 +205,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 542);
             this.Controls.Add(this.guna2DataGridView1);
-            this.Controls.Add(this.gunaTextBox1);
+            this.Controls.Add(this.txtDataFinalSuprimentosRelarorio);
             this.Controls.Add(this.gunaLabel1);
-            this.Controls.Add(this.gunaTextBox2);
+            this.Controls.Add(this.txtDataInicioSuprimentosRelarorio);
             this.Controls.Add(this.gunaLabel5);
             this.Controls.Add(this.gunaLabel4);
             this.Controls.Add(this.btnPesquisa_CadastroCliente);
@@ -223,10 +224,10 @@
 
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private Guna.UI.WinForms.GunaAdvenceButton btnPesquisa_CadastroCliente;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox2;
+        private Guna.UI.WinForms.GunaTextBox txtDataInicioSuprimentosRelarorio;
         private Guna.UI.WinForms.GunaLabel gunaLabel5;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
+        private Guna.UI.WinForms.GunaTextBox txtDataFinalSuprimentosRelarorio;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
     }
 }

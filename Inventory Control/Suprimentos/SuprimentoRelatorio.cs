@@ -16,5 +16,10 @@ namespace Inventory_Control
         {
             InitializeComponent();
         }
+
+        private void btnPesquisa_CadastroCliente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -67,6 +67,10 @@
       <DependentUpon>Cadastro Produto.cs</DependentUpon>
     </Compile>
     <Compile Include="ConectarBanco.cs" />
+    <Compile Include="Dados\AlterarDados.cs" />
+    <Compile Include="Dados\BuscarDados.cs" />
+    <Compile Include="Dados\DeletarDados.cs" />
+    <Compile Include="Dados\InserirDados.cs" />
     <Compile Include="Suprimentos\SuprimentoControleBusca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +115,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="teste.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vendas\VendasNotaFiscalSaida.cs">
       <SubType>Form</SubType>
     </Compile>

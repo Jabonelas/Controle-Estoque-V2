@@ -10,7 +10,7 @@ namespace Inventory_Control
 {
     internal class ConectarBanco
     {
-        private SqlConnection con;
+        private SqlConnection con = null;
 
         public SqlConnection AbrirConexao()
         {
@@ -19,7 +19,6 @@ namespace Inventory_Control
                 string conexaoString = "Server=DESKTOP-V79P1T3\\SQLEXPRESS;Database=Inventory_Control;Integrated Security=True;";
                 con = new SqlConnection(conexaoString);
                 con.Open();
-                MessageBox.Show("Sucesso!!!");
                 return con;
             }
             catch (Exception x)
