@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inventory_Control.Dados
 {
-    internal class DeletarDados
+    internal class DeletarDadosClientes
     {
     }
 }

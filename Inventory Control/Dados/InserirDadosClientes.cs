@@ -8,23 +8,23 @@ using System.Threading.Tasks;
 
 namespace Inventory_Control.Dados
 {
-    internal class InserirDados : ConectarBanco
+    internal class InserirDadosClientes : ConectarBanco
     {
-        public void InserirCliente(int _codProduto, string _nomeFantasia, DateTime _cadastro, int _cNPJ, string _razaoSocial,
-            int _cEP, string _uF, string _cidade, string _endereco, int _numero, string _complemento, string _bairro)
+        public void InserirClientes(int _codProduto, string _nomeFantasia, DateTime _cadastro, string _cNPJ, string _razaoSocial,
+            string _cEP, string _uF, string _cidade, string _endereco, int _numero, string _complemento, string _bairro)
         {
             using (SqlConnection conexaoSQL = AbrirConexao())
             {
-                string query = "insert into Clientes(CodDoProduto,NomeFantasia,Cadastro,CNPJ,RazaoSocial,CEP,UF,Cidade,Endereco,Numero,Complemento,Bairro) " +
+                string query = "insert into Clientes(Cod_Do_Produto,Nome_Fantasia,Data_Cadastro,CNPJ,Razao_Social,CEP,UF,Cidade,Endereco,Numero,Complemento,Bairro) " +
                "values(@codproduto,@nomefantasia,@cadastro,@cnpj,@razaosocial,@cep,@uf,@cidade,@endereco,@numero,@complemento,@bairro) ";
 
                 SqlCommand cmd = new SqlCommand(query, conexaoSQL);
                 cmd.Parameters.Add("@codproduto", SqlDbType.Int).Value = _codProduto;
                 cmd.Parameters.Add("@nomefantasia", SqlDbType.VarChar).Value = _nomeFantasia;
                 cmd.Parameters.Add("@cadastro", SqlDbType.DateTime).Value = _cadastro;
-                cmd.Parameters.Add("@cnpj", SqlDbType.Int).Value = _cNPJ;
+                cmd.Parameters.Add("@cnpj", SqlDbType.VarChar).Value = _cNPJ;
                 cmd.Parameters.Add("@razaosocial", SqlDbType.VarChar).Value = _razaoSocial;
-                cmd.Parameters.Add("@cep", SqlDbType.Int).Value = _cEP;
+                cmd.Parameters.Add("@cep", SqlDbType.VarChar).Value = _cEP;
                 cmd.Parameters.Add("@uf", SqlDbType.VarChar).Value = _uF;
                 cmd.Parameters.Add("@cidade", SqlDbType.VarChar).Value = _cidade;
                 cmd.Parameters.Add("@endereco", SqlDbType.VarChar).Value = _endereco;

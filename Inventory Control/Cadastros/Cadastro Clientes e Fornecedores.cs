@@ -1,4 +1,5 @@
-﻿using Inventory_Control.Dados;
+﻿using Guna.UI.WinForms;
+using Inventory_Control.Dados;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,115 +10,244 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace Inventory_Control
 {
     public partial class Cadastro_Clientes_e_Fornecedores : Form
     {
-        private InserirDados id = new InserirDados();
+        private InserirDadosClientes IC = new InserirDadosClientes();
 
-        private SqlConnection con = new SqlConnection(@"Server=DESKTOP-V79P1T3\SQLEXPRESS;Database=Inventory_Control;Integrated Security=True;");
-        private SqlCommand cmd;
-
-        ////public static List<teste> casa = new List<teste>();
-
-        //{ Convert.ToInt32(txtCodProdutoCadastro.Text) };
+        private InserirDadosFornecedor IF = new InserirDadosFornecedor();
 
         public Cadastro_Clientes_e_Fornecedores()
         {
             InitializeComponent();
         }
 
+        #region Botão Incluir Cadastro
+
         private void btnIncluir_CadastroCliente_Click(object sender, EventArgs e)
         {
-            //ConectarBanco Cliente = new ConectarBanco();
-            //Cliente.AbrirConexao();
+            // Teste para vertificação se todos os TextBox estão preenchidos
+            Boolean ok = true;
 
-            ////casa = new List<teste>()
-            ////  {
-            ////new teste(Convert.ToInt32(txtCodProdutoCadastro.Text))};
-
-            ////foreach (teste item in casa)
-            ////{
-            ////    if (item.ToString() != "")
-            ////    {
-            ////        MessageBox.Show("ate aqui deu certo");
-            ////    }
-            ////}
-            ///
-
-            //Boolean ok = true;
-
-            //foreach (Control ctrl in this.Controls)
-            //{
-            //    if (ctrl is TextBox)
-            //    {
-            //        if (ctrl.Text == string.Empty)
-            //        {
-            //            ok = false;
-            //        }
-
-            //    }
-            //    else if (ctrl is ComboBox)
-            //    {
-            //        if (ctrl.Text == string.Empty)
-            //            ok = false;
-            //    }
-            //}
-
-            if (txtTipoCadastro.Text == "" || txtCodProdutoCadastro.Text == "" || txtNomeFantasiaCadastro.Text == "" ||
-            txtCNPJCadastro.Text == "" || txtCEPCadastro.Text == "" || txtRazaoSocialCadastro.Text == "" ||
-            txtCEPCadastro.Text == "" || txtUFCadastro.Text == "" || txtCidadeCadastro.Text == "" ||
-            txtEnderecoCadastro.Text == "" || txtNumeroCadastro.Text == "" || txtComplementoCadastro.Text == "" ||
-            txtBairroCadastro.Text == "")
+            foreach (Control ctrl in this.Controls)
             {
-                label1.Text = "*"; label2.Text = "*"; label3.Text = "*"; label4.Text = "*"; label5.Text = "*"; label6.Text = "*";
-                label7.Text = "*"; label8.Text = "*"; label9.Text = "*"; label10.Text = "*"; label11.Text = "*";
-                label12.Text = "*"; label13.Text = "*";
-
-                MessageBox.Show("Os Campos Com * São Obrigatorios");
-                MessageBox.Show("Todos Os Campos São Obrigatorios");
+                if (ctrl is GunaTextBox)
+                {
+                    if (ctrl.Text == string.Empty)
+                    {
+                        ok = false;
+                    }
+                }
+                else if (ctrl is ComboBox)
+                {
+                    if (ctrl.Text == string.Empty)
+                        ok = false;
+                }
             }
-            else
+            if (ok)
             {
+                txtCadastroCadastro.Text = DateTime.Today.ToShortDateString();
+
+                Random randNum = new Random();
+
+                txtCodProdutoCadastro.Text = randNum.Next(100).ToString();
+
+                //Preencher caso o tipo seja Cliente
                 if (txtTipoCadastro.Text == "Cliente")
                 {
                     try
                     {
-                        id.InserirCliente(Convert.ToInt32(txtCodProdutoCadastro.Text), txtNomeFantasiaCadastro.Text, Convert.ToDateTime(txtCadastroCadastro.Text),
-                        Convert.ToInt32(txtCNPJCadastro.Text), txtRazaoSocialCadastro.Text, Convert.ToInt32(txtCEPCadastro.Text), txtUFCadastro.Text,
+                        IC.InserirClientes(Convert.ToInt32(txtCodProdutoCadastro.Text), txtNomeFantasiaCadastro.Text, Convert.ToDateTime(txtCadastroCadastro.Text),
+                        txtCNPJCadastro.Text, txtRazaoSocialCadastro.Text, txtCEPCadastro.Text, txtUFCadastro.Text,
                         txtCidadeCadastro.Text, txtEnderecoCadastro.Text, Convert.ToInt32(txtNumeroCadastro.Text), txtComplementoCadastro.Text,
                         txtBairroCadastro.Text);
 
-                        MessageBox.Show("Cliente Cadastrado Com Sucesso!");
+                        //MessageBox cadastrado com sucesso e limpeza dos TextBox
+                        DialogResult OpcaoDoUsuario = new DialogResult();
+                        OpcaoDoUsuario = MessageBox.Show("Cliente Cadastrado Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (OpcaoDoUsuario == DialogResult.OK)
+                        {
+                            txtTipoCadastro.Text = "";
+                            txtCodProdutoCadastro.Text = "";
+                            txtNomeFantasiaCadastro.Text = "";
+                            txtCadastroCadastro.Text = "";
+                            txtCNPJCadastro.Text = "";
+                            txtRazaoSocialCadastro.Text = "";
+                            txtCEPCadastro.Text = "";
+                            txtUFCadastro.Text = "";
+                            txtCidadeCadastro.Text = "";
+                            txtEnderecoCadastro.Text = "";
+                            txtNumeroCadastro.Text = "";
+                            txtComplementoCadastro.Text = "";
+                            txtBairroCadastro.Text = "";
+                        }
                     }
                     catch (Exception x)
                     {
-                        MessageBox.Show(x.ToString());
+                        MessageBox.Show(x.Message.ToString());
                     }
                 }
                 else
                 {
+                    //Preencher caso seja tipo fornecedor
                     try
                     {
-                        id.InserirCliente(Convert.ToInt32(txtCodProdutoCadastro.Text), txtNomeFantasiaCadastro.Text, Convert.ToDateTime(txtCadastroCadastro.Text),
-                        Convert.ToInt32(txtCNPJCadastro.Text), txtRazaoSocialCadastro.Text, Convert.ToInt32(txtCEPCadastro.Text), txtUFCadastro.Text,
+                        IF.InserirFornecedor(Convert.ToInt32(txtCodProdutoCadastro.Text), txtNomeFantasiaCadastro.Text, Convert.ToDateTime(txtCadastroCadastro.Text),
+                        txtCNPJCadastro.Text, txtRazaoSocialCadastro.Text, txtCEPCadastro.Text, txtUFCadastro.Text,
                         txtCidadeCadastro.Text, txtEnderecoCadastro.Text, Convert.ToInt32(txtNumeroCadastro.Text), txtComplementoCadastro.Text,
                         txtBairroCadastro.Text);
 
-                        MessageBox.Show("Fornecedor Cadastrado Com Sucesso!");
+                        //MessageBox cadastrado com sucesso e limpeza dos TextBox
+                        DialogResult OpcaoDoUsuario = new DialogResult();
+                        OpcaoDoUsuario = MessageBox.Show("Fornecedor Cadastrado Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (OpcaoDoUsuario == DialogResult.OK)
+                        {
+                            txtTipoCadastro.Text = "";
+                            txtCodProdutoCadastro.Text = "";
+                            txtNomeFantasiaCadastro.Text = "";
+                            txtCadastroCadastro.Text = "";
+                            txtCNPJCadastro.Text = "";
+                            txtRazaoSocialCadastro.Text = "";
+                            txtCEPCadastro.Text = "";
+                            txtUFCadastro.Text = "";
+                            txtCidadeCadastro.Text = "";
+                            txtEnderecoCadastro.Text = "";
+                            txtNumeroCadastro.Text = "";
+                            txtComplementoCadastro.Text = "";
+                            txtBairroCadastro.Text = "";
+                        }
                     }
                     catch (Exception x)
                     {
-                        MessageBox.Show(x.ToString());
+                        MessageBox.Show(x.Message.ToString());
                     }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Todos Os Campos São Obrigatorios!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        #endregion Botão Incluir Cadastro
+
+        private void btnPesquisa_CadastroCliente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string conexaoString = "Server=DESKTOP-V79P1T3\\SQLEXPRESS;Database=Inventory_Control;Integrated Security=True;";
+                SqlDataAdapter teste = new SqlDataAdapter("select * from Fornecedor where CNPJ ='" + txtCNPJCadastro.Text + "'", conexaoString);
+
+                DataTable tabela = new DataTable();
+                teste.Fill(tabela);
+                //tabela.Columns[0].ColumnName = "Cód. Cadastro";
+                //tabela.Columns[1].ColumnName = "Nome Fantasia";
+                //tabela.Columns[2].ColumnName = "Data Cadastro";
+                //tabela.Columns[3].ColumnName = "CNPJ";
+                //tabela.Columns[4].ColumnName = "Razao Social";
+                //tabela.Columns[5].ColumnName = "CEP";
+                //tabela.Columns[6].ColumnName = "UF";
+                //tabela.Columns[7].ColumnName = "Cidade";
+                //tabela.Columns[8].ColumnName = "Endereco";
+                //tabela.Columns[9].ColumnName = "Numero";
+                //tabela.Columns[10].ColumnName = "Complemento";
+                //tabela.Columns[11].ColumnName = "Bairro";
+
+                gunaDataGridView1.DataSource = tabela;
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message.ToString());
+            }
+        }
+
+        //TextBox
+
+        #region TextBox CNPJ
+
+        private void txtCNPJCadastro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+            if (char.IsNumber(e.KeyChar) == true)
+            {
+                switch (txtCNPJCadastro.TextLength)
+                {
+                    case 0:
+                        txtCNPJCadastro.Text = "";
+                        break;
+
+                    case 2:
+                        txtCNPJCadastro.Text = txtCNPJCadastro.Text + ".";
+                        txtCNPJCadastro.SelectionStart = 3;
+                        break;
+
+                    case 6:
+                        txtCNPJCadastro.Text = txtCNPJCadastro.Text + ".";
+                        txtCNPJCadastro.SelectionStart = 7;
+                        break;
+
+                    case 10:
+                        txtCNPJCadastro.Text = txtCNPJCadastro.Text + "/";
+                        txtCNPJCadastro.SelectionStart = 11;
+                        break;
+
+                    case 15:
+                        txtCNPJCadastro.Text = txtCNPJCadastro.Text + "-";
+                        txtCNPJCadastro.SelectionStart = 16;
+                        break;
                 }
             }
         }
 
+        #endregion TextBox CNPJ
 
-        public void txtCodProdutoCadastro_TextChanged(object sender, EventArgs e)
+        #region TextBox CEP
+
+        private void txtCEPCadastro_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+            if (char.IsNumber(e.KeyChar) == true)
+            {
+                switch (txtCEPCadastro.TextLength)
+                {
+                    case 0:
+                        txtCEPCadastro.Text = "";
+                        break;
+
+                    case 5:
+                        txtCEPCadastro.Text = txtCEPCadastro.Text + "-";
+                        txtCEPCadastro.SelectionStart = 6;
+                        break;
+                }
+            }
+        }
+
+        #endregion TextBox CEP
+
+        #region TextBox Numero
+
+        private void txtNumeroCadastro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        #endregion TextBox Numero
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
