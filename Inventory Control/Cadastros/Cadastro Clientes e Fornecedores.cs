@@ -20,6 +20,12 @@ namespace Inventory_Control
 
         private InserirDadosFornecedor IF = new InserirDadosFornecedor();
 
+        private BuscarDadosClientes BC = new BuscarDadosClientes();
+
+        private AlterarDadosClientes AC = new AlterarDadosClientes();
+
+        private DeletarDadosClientes DC = new DeletarDadosClientes();
+
         public Cadastro_Clientes_e_Fornecedores()
         {
             InitializeComponent();
@@ -83,6 +89,9 @@ namespace Inventory_Control
                             txtNumeroCadastro.Text = "";
                             txtComplementoCadastro.Text = "";
                             txtBairroCadastro.Text = "";
+
+                            AvisoDePreenchimentoCNPJ.Text = "";
+                            AvisoDePreenchimentoTipo.Text = "";
                         }
                     }
                     catch (Exception x)
@@ -134,35 +143,94 @@ namespace Inventory_Control
 
         #endregion Botão Incluir Cadastro
 
+        #region Botão Bucar Cadastro
+
         private void btnPesquisa_CadastroCliente_Click(object sender, EventArgs e)
+        {
+            if (txtTipoCadastro.Text == "" || txtCNPJCadastro.Text == "")
+            {
+                AvisoDePreenchimentoCNPJ.Text = "*";
+                AvisoDePreenchimentoTipo.Text = "*";
+                MessageBox.Show("Os Campos Com * São Obrigatorios!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (txtTipoCadastro.Text == "Cliente")
+                {
+                    BC.BuscarClientes(txtCNPJCadastro.Text, gunaDataGridView1);
+
+                    //Zerar os campos
+                    txtTipoCadastro.Text = "";
+                    txtCNPJCadastro.Text = "";
+
+                    AvisoDePreenchimentoCNPJ.Text = "";
+                    AvisoDePreenchimentoTipo.Text = "";
+                }
+
+                if (txtTipoCadastro.Text == "Fornecedor")
+                {
+                    try
+                    {
+                        string conexaoString = "Server=DESKTOP-V79P1T3\\SQLEXPRESS;Database=Inventory_Control;Integrated Security=True;";
+                        SqlDataAdapter Busca = new SqlDataAdapter("select * from Fornecedor where CNPJ ='" + txtCNPJCadastro.Text + "'", conexaoString);
+
+                        //Preencher o GridView
+
+                        DataTable tabela = new DataTable();
+                        Busca.Fill(tabela);
+                        gunaDataGridView1.DataSource = tabela;
+
+                        //Zerar os campos
+                        txtTipoCadastro.Text = "";
+                        txtCNPJCadastro.Text = "";
+
+                        AvisoDePreenchimentoCNPJ.Text = "";
+                        AvisoDePreenchimentoTipo.Text = "";
+                    }
+                    catch (Exception x)
+                    {
+                        MessageBox.Show(x.Message.ToString());
+                    }
+                }
+            }
+        }
+
+        #endregion Botão Bucar Cadastro
+
+        #region Botão Modificar Cadastro
+
+        private void btnModificar_CadastroCliente_Click(object sender, EventArgs e)
         {
             try
             {
-                string conexaoString = "Server=DESKTOP-V79P1T3\\SQLEXPRESS;Database=Inventory_Control;Integrated Security=True;";
-                SqlDataAdapter teste = new SqlDataAdapter("select * from Fornecedor where CNPJ ='" + txtCNPJCadastro.Text + "'", conexaoString);
-
-                DataTable tabela = new DataTable();
-                teste.Fill(tabela);
-                //tabela.Columns[0].ColumnName = "Cód. Cadastro";
-                //tabela.Columns[1].ColumnName = "Nome Fantasia";
-                //tabela.Columns[2].ColumnName = "Data Cadastro";
-                //tabela.Columns[3].ColumnName = "CNPJ";
-                //tabela.Columns[4].ColumnName = "Razao Social";
-                //tabela.Columns[5].ColumnName = "CEP";
-                //tabela.Columns[6].ColumnName = "UF";
-                //tabela.Columns[7].ColumnName = "Cidade";
-                //tabela.Columns[8].ColumnName = "Endereco";
-                //tabela.Columns[9].ColumnName = "Numero";
-                //tabela.Columns[10].ColumnName = "Complemento";
-                //tabela.Columns[11].ColumnName = "Bairro";
-
-                gunaDataGridView1.DataSource = tabela;
+                AC.AlterarClientes(Convert.ToInt32(txtCodProdutoCadastro.Text), txtNomeFantasiaCadastro.Text, Convert.ToDateTime(txtCadastroCadastro.Text),
+                                     txtCNPJCadastro.Text, txtRazaoSocialCadastro.Text, txtCEPCadastro.Text, txtUFCadastro.Text,
+                                     txtCidadeCadastro.Text, txtEnderecoCadastro.Text, Convert.ToInt32(txtNumeroCadastro.Text), txtComplementoCadastro.Text,
+                                     txtBairroCadastro.Text);
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.Message.ToString());
+                MessageBox.Show(x.ToString());
             }
         }
+
+        #endregion Botão Modificar Cadastro
+
+        #region Botão Excluir Cadastro
+
+        private void btnExcluir_CadastroCliente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DC.DeletarClientes(txtCNPJCadastro.Text);
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+        }
+
+        #endregion Botão Excluir Cadastro
 
         //TextBox
 
@@ -244,10 +312,5 @@ namespace Inventory_Control
         }
 
         #endregion TextBox Numero
-
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

@@ -69,12 +69,16 @@
     </Compile>
     <Compile Include="ConectarBanco.cs" />
     <Compile Include="Dados\AlterarDadosClientes.cs" />
+    <Compile Include="Dados\AlterarDadosProduto.cs" />
     <Compile Include="Dados\BuscarDadosClientes.cs" />
     <Compile Include="Dados\BuscarDadosFornecedor.cs" />
+    <Compile Include="Dados\BuscarDadosProduto.cs" />
     <Compile Include="Dados\DeletarDadosClientes.cs" />
     <Compile Include="Dados\DeletarDadosFornecedor.cs" />
+    <Compile Include="Dados\DeletarDadosProduto.cs" />
     <Compile Include="Dados\InserirDadosClientes.cs" />
     <Compile Include="Dados\InserirDadosFornecedor.cs" />
+    <Compile Include="Dados\InserirDadosProduto.cs" />
     <Compile Include="Suprimentos\SuprimentoControleBusca.cs">
       <SubType>Form</SubType>
     </Compile>

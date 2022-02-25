@@ -23,7 +23,7 @@ namespace Inventory_Control
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show(x.Message.ToString());
                 return con;
             }
         }
