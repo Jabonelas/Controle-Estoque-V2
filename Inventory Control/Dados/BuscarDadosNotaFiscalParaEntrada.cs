@@ -1,4 +1,5 @@
 ﻿using Guna.UI.WinForms;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,20 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Inventory_Control.Dados
+namespace Inventory_Control
 {
-    internal class BuscarDadosFornecedor : ConectarBanco
+    internal class BuscarDadosNotaFiscalParaEntrada : ConectarBanco
     {
-        public void BuscarFornecedor(string _cNPJ, GunaDataGridView _tabela)
+        public void BuscarNotaFiscal(int _nota_Fiscal, Guna2DataGridView _tabela)
         {
             try
             {
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
-                    //SqlDataReader reader;
-                    string query = "select * from Fornecedor where CNPJ =@cNPJ";
+                    string query = "select * from NF where NF = @nF";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
-                    adapter.SelectCommand.Parameters.AddWithValue("@cNPJ", _cNPJ);
+                    adapter.SelectCommand.Parameters.AddWithValue("@nF", _nota_Fiscal);
 
                     DataTable dataTable = new DataTable();
 
@@ -32,8 +32,13 @@ namespace Inventory_Control.Dados
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.Message);
+                MessageBox.Show(x.ToString());
             }
         }
+
+        //private SqlConnection AbrirConexao()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

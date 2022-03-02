@@ -12,9 +12,33 @@ namespace Inventory_Control
 {
     public partial class SuprimentoNotaDeEntrada : Form
     {
+        private BuscarDadosNotaFiscalParaEntrada BN = new BuscarDadosNotaFiscalParaEntrada();
+
         public SuprimentoNotaDeEntrada()
         {
             InitializeComponent();
+        }
+
+        private void btnPesquisa_CadastroCliente_Click_1(object sender, EventArgs e)
+        {
+            if (txtNotaFiscal_Suprimento.Text == "")
+            {
+                MessageBox.Show("O Campo Nota Fiscal é Obrigatorio!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
+                {
+                    BN.BuscarNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), gdvNotaFiscal_Suprimento);
+
+                    //Zerar os campos
+                    txtNotaFiscal_Suprimento.Text = "";
+                }
+                catch (Exception x)
+                {
+                    MessageBox.Show(x.ToString());
+                }
+            }
         }
     }
 }

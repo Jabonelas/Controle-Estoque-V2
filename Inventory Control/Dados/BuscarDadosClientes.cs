@@ -18,9 +18,10 @@ namespace Inventory_Control.Dados
             {
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
-                    //SqlDataReader reader;
-                    string query = "select * from Clientes where CNPJ ='_cNPJ'";
+                    string query = "select * from Clientes where CNPJ =@cNPJ";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+                    adapter.SelectCommand.Parameters.AddWithValue("@cNPJ", _cNPJ);
+
                     DataTable dataTable = new DataTable();
 
                     adapter.Fill(dataTable);
@@ -30,7 +31,7 @@ namespace Inventory_Control.Dados
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.Message);
+                MessageBox.Show(x.ToString());
             }
         }
     }

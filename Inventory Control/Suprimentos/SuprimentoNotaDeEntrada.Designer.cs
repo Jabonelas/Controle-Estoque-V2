@@ -39,9 +39,9 @@
             this.btnExcluir_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnIncluir_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaLabel16 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaTextBox2 = new Guna.UI.WinForms.GunaTextBox();
-            this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
+            this.txtNotaFiscal_Suprimento = new Guna.UI.WinForms.GunaTextBox();
+            this.gdvNotaFiscal_Suprimento = new Guna.UI2.WinForms.Guna2DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.gdvNotaFiscal_Suprimento)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaLabel4
@@ -108,6 +108,7 @@
             this.btnPesquisa_CadastroCliente.Size = new System.Drawing.Size(44, 47);
             this.btnPesquisa_CadastroCliente.TabIndex = 111;
             this.btnPesquisa_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnPesquisa_CadastroCliente.Click += new System.EventHandler(this.btnPesquisa_CadastroCliente_Click_1);
             // 
             // btnExcluir_CadastroCliente
             // 
@@ -189,40 +190,40 @@
             this.gunaLabel16.TabIndex = 135;
             this.gunaLabel16.Text = "Nota Fiscal:";
             // 
-            // gunaTextBox2
+            // txtNotaFiscal_Suprimento
             // 
-            this.gunaTextBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox2.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox2.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox2.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
-            this.gunaTextBox2.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox2.Location = new System.Drawing.Point(103, 109);
-            this.gunaTextBox2.Name = "gunaTextBox2";
-            this.gunaTextBox2.PasswordChar = '\0';
-            this.gunaTextBox2.SelectedText = "";
-            this.gunaTextBox2.Size = new System.Drawing.Size(162, 26);
-            this.gunaTextBox2.TabIndex = 136;
+            this.txtNotaFiscal_Suprimento.BaseColor = System.Drawing.Color.White;
+            this.txtNotaFiscal_Suprimento.BorderColor = System.Drawing.Color.Silver;
+            this.txtNotaFiscal_Suprimento.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNotaFiscal_Suprimento.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtNotaFiscal_Suprimento.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
+            this.txtNotaFiscal_Suprimento.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtNotaFiscal_Suprimento.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtNotaFiscal_Suprimento.Location = new System.Drawing.Point(103, 109);
+            this.txtNotaFiscal_Suprimento.Name = "txtNotaFiscal_Suprimento";
+            this.txtNotaFiscal_Suprimento.PasswordChar = '\0';
+            this.txtNotaFiscal_Suprimento.SelectedText = "";
+            this.txtNotaFiscal_Suprimento.Size = new System.Drawing.Size(162, 26);
+            this.txtNotaFiscal_Suprimento.TabIndex = 136;
             // 
-            // guna2DataGridView1
+            // gdvNotaFiscal_Suprimento
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.guna2DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.guna2DataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.guna2DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.guna2DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gdvNotaFiscal_Suprimento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gdvNotaFiscal_Suprimento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gdvNotaFiscal_Suprimento.BackgroundColor = System.Drawing.Color.White;
+            this.gdvNotaFiscal_Suprimento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gdvNotaFiscal_Suprimento.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.gdvNotaFiscal_Suprimento.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gdvNotaFiscal_Suprimento.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gdvNotaFiscal_Suprimento.ColumnHeadersHeight = 30;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -230,45 +231,46 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.guna2DataGridView1.EnableHeadersVisualStyles = false;
-            this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(13, 151);
-            this.guna2DataGridView1.Name = "guna2DataGridView1";
-            this.guna2DataGridView1.RowHeadersVisible = false;
-            this.guna2DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(1131, 379);
-            this.guna2DataGridView1.TabIndex = 137;
-            this.guna2DataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
-            this.guna2DataGridView1.ThemeStyle.ReadOnly = false;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.gdvNotaFiscal_Suprimento.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gdvNotaFiscal_Suprimento.EnableHeadersVisualStyles = false;
+            this.gdvNotaFiscal_Suprimento.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gdvNotaFiscal_Suprimento.Location = new System.Drawing.Point(13, 151);
+            this.gdvNotaFiscal_Suprimento.Name = "gdvNotaFiscal_Suprimento";
+            this.gdvNotaFiscal_Suprimento.RowHeadersVisible = false;
+            this.gdvNotaFiscal_Suprimento.RowHeadersWidth = 45;
+            this.gdvNotaFiscal_Suprimento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gdvNotaFiscal_Suprimento.Size = new System.Drawing.Size(1131, 379);
+            this.gdvNotaFiscal_Suprimento.TabIndex = 137;
+            this.gdvNotaFiscal_Suprimento.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.HeaderStyle.BackColor = System.Drawing.SystemColors.Highlight;
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.HeaderStyle.Height = 30;
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.ReadOnly = false;
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.RowsStyle.Height = 22;
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // SuprimentoNotaDeEntrada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 542);
-            this.Controls.Add(this.guna2DataGridView1);
-            this.Controls.Add(this.gunaTextBox2);
+            this.Controls.Add(this.gdvNotaFiscal_Suprimento);
+            this.Controls.Add(this.txtNotaFiscal_Suprimento);
             this.Controls.Add(this.gunaLabel16);
             this.Controls.Add(this.gunaLabel4);
             this.Controls.Add(this.gunaLabel3);
@@ -279,7 +281,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SuprimentoNotaDeEntrada";
             this.Text = "SuprimentoNotaDeEntrada";
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gdvNotaFiscal_Suprimento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,7 +296,7 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnExcluir_CadastroCliente;
         private Guna.UI.WinForms.GunaAdvenceButton btnIncluir_CadastroCliente;
         private Guna.UI.WinForms.GunaLabel gunaLabel16;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox2;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private Guna.UI.WinForms.GunaTextBox txtNotaFiscal_Suprimento;
+        private Guna.UI2.WinForms.Guna2DataGridView gdvNotaFiscal_Suprimento;
     }
 }

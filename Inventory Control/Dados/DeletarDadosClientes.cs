@@ -17,7 +17,7 @@ namespace Inventory_Control.Dados
             {
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
-                    string query = "delete from Clientes where CNPJ = '@CNPJ'";
+                    string query = "delete from Clientes where CNPJ = @CNPJ";
 
                     SqlCommand cmd = new SqlCommand(query, conexaoSQL);
                     cmd.Parameters.Add("@CNPJ", SqlDbType.VarChar).Value = _cNPJ;

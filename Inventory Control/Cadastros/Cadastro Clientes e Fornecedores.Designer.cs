@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cadastro_Clientes_e_Fornecedores));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
@@ -64,12 +64,12 @@
             this.btnIncluir_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
             this.txtRazaoSocialCadastro = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel17 = new Guna.UI.WinForms.GunaLabel();
-            this.txtCadastroCadastro = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCodProdutoCadastro = new Guna.UI2.WinForms.Guna2TextBox();
-            this.gunaDataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
+            this.gvdCadastroClienteFornecedor = new Guna.UI.WinForms.GunaDataGridView();
             this.AvisoDePreenchimentoCNPJ = new System.Windows.Forms.Label();
             this.AvisoDePreenchimentoTipo = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
+            this.txtCadastroCadastro = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.gvdCadastroClienteFornecedor)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaLabel1
@@ -591,32 +591,6 @@
             this.gunaLabel17.TabIndex = 138;
             this.gunaLabel17.Text = "Razão Social:";
             // 
-            // txtCadastroCadastro
-            // 
-            this.txtCadastroCadastro.BorderColor = System.Drawing.Color.Silver;
-            this.txtCadastroCadastro.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCadastroCadastro.DefaultText = "";
-            this.txtCadastroCadastro.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCadastroCadastro.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCadastroCadastro.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCadastroCadastro.DisabledState.Parent = this.txtCadastroCadastro;
-            this.txtCadastroCadastro.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCadastroCadastro.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCadastroCadastro.FocusedState.Parent = this.txtCadastroCadastro;
-            this.txtCadastroCadastro.ForeColor = System.Drawing.Color.Black;
-            this.txtCadastroCadastro.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCadastroCadastro.HoverState.Parent = this.txtCadastroCadastro;
-            this.txtCadastroCadastro.Location = new System.Drawing.Point(940, 146);
-            this.txtCadastroCadastro.Name = "txtCadastroCadastro";
-            this.txtCadastroCadastro.PasswordChar = '\0';
-            this.txtCadastroCadastro.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtCadastroCadastro.PlaceholderText = "";
-            this.txtCadastroCadastro.ReadOnly = true;
-            this.txtCadastroCadastro.SelectedText = "";
-            this.txtCadastroCadastro.ShadowDecoration.Parent = this.txtCadastroCadastro;
-            this.txtCadastroCadastro.Size = new System.Drawing.Size(135, 26);
-            this.txtCadastroCadastro.TabIndex = 139;
-            // 
             // txtCodProdutoCadastro
             // 
             this.txtCodProdutoCadastro.BorderColor = System.Drawing.Color.Silver;
@@ -637,69 +611,68 @@
             this.txtCodProdutoCadastro.PasswordChar = '\0';
             this.txtCodProdutoCadastro.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtCodProdutoCadastro.PlaceholderText = "";
-            this.txtCodProdutoCadastro.ReadOnly = true;
             this.txtCodProdutoCadastro.SelectedText = "";
             this.txtCodProdutoCadastro.ShadowDecoration.Parent = this.txtCodProdutoCadastro;
             this.txtCodProdutoCadastro.Size = new System.Drawing.Size(162, 26);
             this.txtCodProdutoCadastro.TabIndex = 140;
             // 
-            // gunaDataGridView1
+            // gvdCadastroClienteFornecedor
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.gunaDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.gunaDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gunaDataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.gunaDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gunaDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
-            this.gunaDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gunaDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.gunaDataGridView1.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gunaDataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.gunaDataGridView1.EnableHeadersVisualStyles = false;
-            this.gunaDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gunaDataGridView1.Location = new System.Drawing.Point(13, 412);
-            this.gunaDataGridView1.Name = "gunaDataGridView1";
-            this.gunaDataGridView1.RowHeadersVisible = false;
-            this.gunaDataGridView1.RowHeadersWidth = 45;
-            this.gunaDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gunaDataGridView1.Size = new System.Drawing.Size(1131, 118);
-            this.gunaDataGridView1.TabIndex = 141;
-            this.gunaDataGridView1.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
-            this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.gunaDataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.gunaDataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gunaDataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.SystemColors.Highlight;
-            this.gunaDataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.gunaDataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.gunaDataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.gunaDataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.gunaDataGridView1.ThemeStyle.HeaderStyle.Height = 30;
-            this.gunaDataGridView1.ThemeStyle.ReadOnly = false;
-            this.gunaDataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.gunaDataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
-            this.gunaDataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.gunaDataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Gray;
-            this.gunaDataGridView1.ThemeStyle.RowsStyle.Height = 22;
-            this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.gvdCadastroClienteFornecedor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gvdCadastroClienteFornecedor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvdCadastroClienteFornecedor.BackgroundColor = System.Drawing.Color.White;
+            this.gvdCadastroClienteFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gvdCadastroClienteFornecedor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
+            this.gvdCadastroClienteFornecedor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvdCadastroClienteFornecedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gvdCadastroClienteFornecedor.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvdCadastroClienteFornecedor.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gvdCadastroClienteFornecedor.EnableHeadersVisualStyles = false;
+            this.gvdCadastroClienteFornecedor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gvdCadastroClienteFornecedor.Location = new System.Drawing.Point(13, 412);
+            this.gvdCadastroClienteFornecedor.Name = "gvdCadastroClienteFornecedor";
+            this.gvdCadastroClienteFornecedor.RowHeadersVisible = false;
+            this.gvdCadastroClienteFornecedor.RowHeadersWidth = 45;
+            this.gvdCadastroClienteFornecedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvdCadastroClienteFornecedor.Size = new System.Drawing.Size(1131, 118);
+            this.gvdCadastroClienteFornecedor.TabIndex = 141;
+            this.gvdCadastroClienteFornecedor.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
+            this.gvdCadastroClienteFornecedor.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.gvdCadastroClienteFornecedor.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.gvdCadastroClienteFornecedor.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.gvdCadastroClienteFornecedor.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.gvdCadastroClienteFornecedor.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.gvdCadastroClienteFornecedor.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.gvdCadastroClienteFornecedor.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gvdCadastroClienteFornecedor.ThemeStyle.HeaderStyle.BackColor = System.Drawing.SystemColors.Highlight;
+            this.gvdCadastroClienteFornecedor.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gvdCadastroClienteFornecedor.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.gvdCadastroClienteFornecedor.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.gvdCadastroClienteFornecedor.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.gvdCadastroClienteFornecedor.ThemeStyle.HeaderStyle.Height = 30;
+            this.gvdCadastroClienteFornecedor.ThemeStyle.ReadOnly = false;
+            this.gvdCadastroClienteFornecedor.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.gvdCadastroClienteFornecedor.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
+            this.gvdCadastroClienteFornecedor.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.gvdCadastroClienteFornecedor.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Gray;
+            this.gvdCadastroClienteFornecedor.ThemeStyle.RowsStyle.Height = 22;
+            this.gvdCadastroClienteFornecedor.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gvdCadastroClienteFornecedor.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
             // AvisoDePreenchimentoCNPJ
             // 
@@ -721,16 +694,25 @@
             this.AvisoDePreenchimentoTipo.Size = new System.Drawing.Size(0, 18);
             this.AvisoDePreenchimentoTipo.TabIndex = 143;
             // 
+            // txtCadastroCadastro
+            // 
+            this.txtCadastroCadastro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCadastroCadastro.Location = new System.Drawing.Point(950, 147);
+            this.txtCadastroCadastro.Name = "txtCadastroCadastro";
+            this.txtCadastroCadastro.ReadOnly = true;
+            this.txtCadastroCadastro.Size = new System.Drawing.Size(135, 25);
+            this.txtCadastroCadastro.TabIndex = 156;
+            // 
             // Cadastro_Clientes_e_Fornecedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 542);
+            this.Controls.Add(this.txtCadastroCadastro);
             this.Controls.Add(this.AvisoDePreenchimentoTipo);
             this.Controls.Add(this.AvisoDePreenchimentoCNPJ);
-            this.Controls.Add(this.gunaDataGridView1);
+            this.Controls.Add(this.gvdCadastroClienteFornecedor);
             this.Controls.Add(this.txtCodProdutoCadastro);
-            this.Controls.Add(this.txtCadastroCadastro);
             this.Controls.Add(this.gunaLabel17);
             this.Controls.Add(this.txtRazaoSocialCadastro);
             this.Controls.Add(this.txtUFCadastro);
@@ -766,7 +748,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Cadastro_Clientes_e_Fornecedores";
             this.Text = "C";
-            ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvdCadastroClienteFornecedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -806,10 +788,10 @@
         private System.Windows.Forms.ComboBox txtUFCadastro;
         private Guna.UI.WinForms.GunaTextBox txtRazaoSocialCadastro;
         private Guna.UI.WinForms.GunaLabel gunaLabel17;
-        private Guna.UI2.WinForms.Guna2TextBox txtCadastroCadastro;
         private Guna.UI2.WinForms.Guna2TextBox txtCodProdutoCadastro;
-        private Guna.UI.WinForms.GunaDataGridView gunaDataGridView1;
+        private Guna.UI.WinForms.GunaDataGridView gvdCadastroClienteFornecedor;
         private System.Windows.Forms.Label AvisoDePreenchimentoCNPJ;
         private System.Windows.Forms.Label AvisoDePreenchimentoTipo;
+        private System.Windows.Forms.TextBox txtCadastroCadastro;
     }
 }

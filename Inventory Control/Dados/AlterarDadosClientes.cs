@@ -10,14 +10,15 @@ namespace Inventory_Control.Dados
 {
     internal class AlterarDadosClientes : ConectarBanco
     {
-        public void AlterarClientes(int _codProduto, string _nomeFantasia, DateTime _cadastro, string _cNPJ, string _razaoSocial,
-           string _cEP, string _uF, string _cidade, string _endereco, int _numero, string _complemento, string _bairro)
+        public void AlterarCliente(int _codProduto, string _nomeFantasia, DateTime _cadastro, string _cNPJ, string _razaoSocial,
+   string _cEP, string _uF, string _cidade, string _endereco, int _numero, string _complemento, string _bairro)
+
         {
             using (SqlConnection conexaoSQL = AbrirConexao())
             {
-                string query = "update Clientes set Nome_Fantasia = '@nomeFantasia',Data_Cadastro '@cadastro',CNPJ = '@cNPJ'," +
-                    "Razao_Social='@razaoSocial',CEP = '@cEP',UF='@uF',Cidade='@cidade',Endereco='@endereco',Numero='@numero'," +
-                    "Complemento='@complemento',Bairro='@bairro', where CNPJ = '@cNPJ'";
+                string query = "update Clientes set Cod_do_Produto=@codproduto,Nome_Fantasia = @nomeFantasia,Data_Cadastro = @cadastro,CNPJ = @cNPJ," +
+                "Razao_Social=@razaoSocial,CEP = @cEP,UF=@uF,Cidade=@cidade,Endereco=@endereco,Numero=@numero," +
+                "Complemento=@complemento,Bairro=@bairro where CNPJ = @cNPJ";
 
                 SqlCommand cmd = new SqlCommand(query, conexaoSQL);
                 cmd.Parameters.Add("@codproduto", SqlDbType.Int).Value = _codProduto;
