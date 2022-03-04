@@ -144,6 +144,7 @@
             this.btnExcluir_CadastroCliente.Size = new System.Drawing.Size(44, 47);
             this.btnExcluir_CadastroCliente.TabIndex = 110;
             this.btnExcluir_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnExcluir_CadastroCliente.Click += new System.EventHandler(this.btnExcluir_CadastroCliente_Click);
             // 
             // btnIncluir_CadastroCliente
             // 
@@ -179,6 +180,7 @@
             this.btnIncluir_CadastroCliente.Size = new System.Drawing.Size(44, 47);
             this.btnIncluir_CadastroCliente.TabIndex = 109;
             this.btnIncluir_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnIncluir_CadastroCliente.Click += new System.EventHandler(this.btnIncluir_CadastroCliente_Click);
             // 
             // gunaLabel16
             // 

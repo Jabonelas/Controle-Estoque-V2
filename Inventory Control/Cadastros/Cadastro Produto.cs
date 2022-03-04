@@ -14,12 +14,16 @@ namespace Inventory_Control
 {
     public partial class Cadastro_Produto : Form
     {
+        //Dados Produto
+
         private AlterarDadosProduto AP = new AlterarDadosProduto();
         private BuscarDadosProduto BP = new BuscarDadosProduto();
         private DeletarDadosProduto DP = new DeletarDadosProduto();
         private InserirDadosProduto IP = new InserirDadosProduto();
 
-        private VerificaçãoTextBox teste = new VerificaçãoTextBox();
+        //Verificacao TextBox
+
+        private VerificacaoTextBox VT = new VerificacaoTextBox();
 
         public Cadastro_Produto()
         {
@@ -30,33 +34,12 @@ namespace Inventory_Control
 
         private void btnIncluir_CadastroProduto_Click(object sender, EventArgs e)
         {
-            // Teste para vertificação se todos os TextBox estão preenchidos
-            Boolean ok = true;
-
-            foreach (Control ctrl in this.Controls)
+            try
             {
-                if (ctrl is GunaTextBox)
+                if (VT.VerificarTextBoxProduto(this) == true)   //Verificar se os textbox estão preenchidos
                 {
-                    if (ctrl.Text == string.Empty)
-                    {
-                        ok = false;
-                    }
-                }
-                else if (ctrl is ComboBox)
-                {
-                    if (ctrl.Text == string.Empty)
-                        ok = false;
-                }
-            }
-            if (ok)
-            {
-                txtDataCadastro_CadastroProduto.Text = DateTime.Today.ToShortDateString();
+                    txtDataCadastro_CadastroProduto.Text = DateTime.Today.ToShortDateString();
 
-                //Random randNum = new Random();
-                //txtCodProduto_CadastroProduto.Text = randNum.Next(200).ToString();
-
-                try
-                {
                     IP.InserirProduto(txtFornecedor_CadastroProduto.Text, Convert.ToDateTime(txtDataCadastro_CadastroProduto.Text),
                         txtCNPJ_CadastroProduto.Text, Convert.ToInt32(txtCodProduto_CadastroProduto.Text), txtDescricao_CadastroProduto.Text,
                         txtMedida_CadastroProduto.Text, Convert.ToDouble(txtPreco_CadastroProduto.Text));
@@ -75,14 +58,14 @@ namespace Inventory_Control
                         txtPreco_CadastroProduto.Text = "";
                     }
                 }
-                catch (Exception x)
+                else
                 {
-                    MessageBox.Show(x.Message.ToString());
+                    MessageBox.Show("Todos Os Campos São Obrigatorios!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            else
+            catch (Exception x)
             {
-                MessageBox.Show("Todos Os Campos São Obrigatorios!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(x.Message.ToString());
             }
         }
 
@@ -92,46 +75,21 @@ namespace Inventory_Control
 
         private void btnModificar_CadastroProduto_Click(object sender, EventArgs e)
         {
-            //    teste.VerificarTextbox();
-
-            //    if (teste.VerificarTextbox  == true)
-            //    {
-            //    }
-
-            // Teste para vertificação se todos os TextBox estão preenchidos
-            Boolean ok = true;
-
-            foreach (Control ctrl in this.Controls)
+            try
             {
-                if (ctrl is GunaTextBox)
+                if (VT.VerificarTextBoxProduto(this) == true)  //Verificar se os textbox estão preenchidos
                 {
-                    if (ctrl.Text == string.Empty)
+                    DialogResult OpcaoDoUsuario = new DialogResult();
+                    OpcaoDoUsuario = MessageBox.Show("Deseja Realizar a Modificação?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (OpcaoDoUsuario == DialogResult.Yes)
                     {
-                        ok = false;
-                    }
-                }
-                else if (ctrl is ComboBox)
-                {
-                    if (ctrl.Text == string.Empty)
-                        ok = false;
-                }
-            }
+                        txtDataCadastro_CadastroProduto.Text = DateTime.Today.ToShortDateString();
 
-            if (ok)
-            {
-                DialogResult OpcaoDoUsuario = new DialogResult();
-                OpcaoDoUsuario = MessageBox.Show("Deseja Realizar a Modificação?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (OpcaoDoUsuario == DialogResult.Yes)
-                {
-                    txtDataCadastro_CadastroProduto.Text = DateTime.Today.ToShortDateString();
-                    try
-                    {
                         AP.AlterarProduto(txtFornecedor_CadastroProduto.Text, Convert.ToDateTime(txtDataCadastro_CadastroProduto.Text), txtCNPJ_CadastroProduto.Text,
-                                         Convert.ToInt32(txtCodProduto_CadastroProduto.Text), txtDescricao_CadastroProduto.Text, txtMedida_CadastroProduto.Text,
-                                         Convert.ToDouble(txtPreco_CadastroProduto.Text));
+                                             Convert.ToInt32(txtCodProduto_CadastroProduto.Text), txtDescricao_CadastroProduto.Text, txtMedida_CadastroProduto.Text,
+                                             Convert.ToDouble(txtPreco_CadastroProduto.Text));
 
                         //MessageBox modificação realizada com sucesso e limpeza dos TextBox
-
                         OpcaoDoUsuario = MessageBox.Show("Modificação Realizada Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         if (OpcaoDoUsuario == DialogResult.OK)
                         {
@@ -144,19 +102,19 @@ namespace Inventory_Control
                             txtPreco_CadastroProduto.Text = "";
                         }
                     }
-                    catch (Exception x)
+                    if (OpcaoDoUsuario == DialogResult.No)
                     {
-                        MessageBox.Show(x.ToString());
+                        MessageBox.Show("Modificação Cancelada!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                if (OpcaoDoUsuario == DialogResult.No)
+                else
                 {
-                    MessageBox.Show("Modificação Cancelada!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Todos Os Campos São Obrigatorios!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            else
+            catch (Exception x)
             {
-                MessageBox.Show("Todos Os Campos São Obrigatorios!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(x.ToString());
             }
         }
 
@@ -166,17 +124,17 @@ namespace Inventory_Control
 
         private void btnExcluir_CadastroProduto_Click(object sender, EventArgs e)
         {
-            if (txtCodProduto_CadastroProduto.Text == "")
+            try
             {
-                MessageBox.Show("O Campo Cód. Produto é Obrigatorio!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                DialogResult OpcaoDoUsuario = new DialogResult();
-                OpcaoDoUsuario = MessageBox.Show("Deseja Excluir?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (OpcaoDoUsuario == DialogResult.Yes)
+                if (txtCodProduto_CadastroProduto.Text == "")
                 {
-                    try
+                    MessageBox.Show("O Campo Cód. Produto é Obrigatorio!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    DialogResult OpcaoDoUsuario = new DialogResult();
+                    OpcaoDoUsuario = MessageBox.Show("Deseja Excluir?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (OpcaoDoUsuario == DialogResult.Yes)
                     {
                         DP.DeletarProduto(Convert.ToInt32(txtCodProduto_CadastroProduto.Text));
 
@@ -195,11 +153,11 @@ namespace Inventory_Control
                             txtPreco_CadastroProduto.Text = "";
                         }
                     }
-                    catch (Exception x)
-                    {
-                        MessageBox.Show(x.ToString());
-                    }
                 }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
             }
         }
 
@@ -209,13 +167,13 @@ namespace Inventory_Control
 
         private void btnPesquisa_CadastroProduto_Click(object sender, EventArgs e)
         {
-            if (txtCodProduto_CadastroProduto.Text == "")
+            try
             {
-                MessageBox.Show("O Campo Cód. Produto é Obrigatorio!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                try
+                if (txtCodProduto_CadastroProduto.Text == "")
+                {
+                    MessageBox.Show("O Campo Cód. Produto é Obrigatorio!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
                 {
                     BP.BuscarProduto(Convert.ToInt32(txtCodProduto_CadastroProduto.Text), gdvCadastroProduto);
 
@@ -224,10 +182,10 @@ namespace Inventory_Control
 
                     AvisoPreenchimentoCodProduto.Text = "";
                 }
-                catch (Exception x)
-                {
-                    MessageBox.Show(x.Message.ToString());
-                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message.ToString());
             }
         }
 
