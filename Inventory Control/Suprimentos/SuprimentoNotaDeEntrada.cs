@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inventory_Control.Dados;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,11 +17,15 @@ namespace Inventory_Control
 
         private DeletarNotaFiscalEntrada DN = new DeletarNotaFiscalEntrada();
 
+        private InserirNotaFiscalEntrada IN = new InserirNotaFiscalEntrada();
+
         public SuprimentoNotaDeEntrada()
         {
             InitializeComponent();
         }
+
         #region Botão Buscar Nota Fiscal
+
         private void btnPesquisa_CadastroCliente_Click_1(object sender, EventArgs e)
         {
             if (txtNotaFiscal_Suprimento.Text == "")
@@ -42,9 +47,11 @@ namespace Inventory_Control
                 }
             }
         }
-        #endregion
+
+        #endregion Botão Buscar Nota Fiscal
 
         #region Botão EXcluir Nota Fiscal
+
         private void btnExcluir_CadastroCliente_Click(object sender, EventArgs e)
         {
             if (txtNotaFiscal_Suprimento.Text == "")
@@ -59,7 +66,7 @@ namespace Inventory_Control
                 {
                     try
                     {
-                        DN.DeletarNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text));
+                        DN.DeletarNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), gdvNotaFiscal_Suprimento);
 
                         //MessageBox modificação realizada com sucesso e limpeza dos TextBox
 
@@ -74,11 +81,23 @@ namespace Inventory_Control
                 }
             }
         }
-        #endregion
+
+        #endregion Botão EXcluir Nota Fiscal
+
+        #region Botão Incluir Nota Fiscal
 
         private void btnIncluir_CadastroCliente_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                IN.InserirNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), gdvNotaFiscal_Suprimento);
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
         }
+
+        #endregion Botão Incluir Nota Fiscal
     }
 }

@@ -138,7 +138,8 @@
     <Compile Include="Vendas\VendasRelatorio.Designer.cs">
       <DependentUpon>VendasRelatorio.cs</DependentUpon>
     </Compile>
-    <Compile Include="VerificacaoTextBox.cs" />
+    <Compile Include="Verificacao\VerificacaoDeExistencia.cs" />
+    <Compile Include="Verificacao\VerificacaoTextBox.cs" />
     <EmbeddedResource Include="Cadastros\Cadastro Clientes e Fornecedores.resx">
       <DependentUpon>Cadastro Clientes e Fornecedores.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,9 +220,7 @@
   <ItemGroup>
     <None Include="Resources\FundoMenu.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Preencher\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Confirmar.png" />
   </ItemGroup>

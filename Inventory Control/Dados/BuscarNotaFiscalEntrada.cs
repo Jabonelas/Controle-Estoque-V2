@@ -35,39 +35,5 @@ namespace Inventory_Control
                 MessageBox.Show(x.ToString());
             }
         }
-
-        public bool BuscarExistenciaNotaFiscal(int _nota_Fiscal)
-        {
-            try
-            {
-                using (SqlConnection conexaoSQL = AbrirConexao())
-                {
-                    bool isExist = false;
-                    string query = "select * from NF where NF = @nF";
-                    SqlCommand cmd = new SqlCommand(query, conexaoSQL);
-                    SqlDataReader reader;
-                    cmd.Parameters.AddWithValue("@nF", _nota_Fiscal);
-                    reader = cmd.ExecuteReader();
-
-                    reader.Read();
-
-                    if (reader.HasRows == true)
-                    {
-                        isExist = true;
-                    }
-                    else
-                    {
-                        isExist = false;
-                    }
-
-                    return isExist;
-                }
-            }
-            catch (Exception x)
-            {
-                MessageBox.Show(x.ToString());
-                return false;
-            }
-        }
     }
 }

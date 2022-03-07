@@ -102,10 +102,6 @@ namespace Inventory_Control
                             txtPreco_CadastroProduto.Text = "";
                         }
                     }
-                    if (OpcaoDoUsuario == DialogResult.No)
-                    {
-                        MessageBox.Show("Modificação Cancelada!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
                 }
                 else
                 {
@@ -132,27 +128,15 @@ namespace Inventory_Control
                 }
                 else
                 {
-                    DialogResult OpcaoDoUsuario = new DialogResult();
-                    OpcaoDoUsuario = MessageBox.Show("Deseja Excluir?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (OpcaoDoUsuario == DialogResult.Yes)
-                    {
-                        DP.DeletarProduto(Convert.ToInt32(txtCodProduto_CadastroProduto.Text));
+                    DP.DeletarProduto(Convert.ToInt32(txtCodProduto_CadastroProduto.Text), gdvCadastroProduto);
 
-                        //MessageBox modificação realizada com sucesso e limpeza dos TextBox
-
-                        OpcaoDoUsuario = MessageBox.Show("Produto Excluido Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        if (OpcaoDoUsuario == DialogResult.OK)
-                        {
-                            txtFornecedor_CadastroProduto.Text = "";
-                            txtDataCadastro_CadastroProduto.Text = "";
-                            txtCNPJ_CadastroProduto.Text = "";
-                            txtCodProduto_CadastroProduto.Text = "";
-                            txtDescricao_CadastroProduto.Text = "";
-                            txtMedida_CadastroProduto.Text = "";
-                            txtPreco_CadastroProduto.Text = "";
-                        }
-                    }
+                    txtFornecedor_CadastroProduto.Text = "";
+                    txtDataCadastro_CadastroProduto.Text = "";
+                    txtCNPJ_CadastroProduto.Text = "";
+                    txtCodProduto_CadastroProduto.Text = "";
+                    txtDescricao_CadastroProduto.Text = "";
+                    txtMedida_CadastroProduto.Text = "";
+                    txtPreco_CadastroProduto.Text = "";
                 }
             }
             catch (Exception x)
@@ -179,7 +163,6 @@ namespace Inventory_Control
 
                     //Zerar os campos
                     txtCodProduto_CadastroProduto.Text = "";
-
                     AvisoPreenchimentoCodProduto.Text = "";
                 }
             }

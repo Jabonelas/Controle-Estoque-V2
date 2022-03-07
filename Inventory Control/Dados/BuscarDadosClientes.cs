@@ -12,21 +12,30 @@ namespace Inventory_Control.Dados
 {
     internal class BuscarDadosClientes : ConectarBanco
     {
+        private VerificacaoDeExistencia VC = new VerificacaoDeExistencia();
+
         public void BuscarClientes(string _cNPJ, GunaDataGridView _tabela)
         {
             try
             {
-                using (SqlConnection conexaoSQL = AbrirConexao())
+                if (VC.BuscarExistenciaCliente(_cNPJ))
                 {
-                    string query = "select * from Clientes where CNPJ =@cNPJ";
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
-                    adapter.SelectCommand.Parameters.AddWithValue("@cNPJ", _cNPJ);
+                    using (SqlConnection conexaoSQL = AbrirConexao())
+                    {
+                        string query = "select * from Clientes where CNPJ =@cNPJ";
+                        SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+                        adapter.SelectCommand.Parameters.AddWithValue("@cNPJ", _cNPJ);
 
-                    DataTable dataTable = new DataTable();
+                        DataTable dataTable = new DataTable();
 
-                    adapter.Fill(dataTable);
-                    _tabela.DataSource = dataTable;
-                    _tabela.Refresh();
+                        adapter.Fill(dataTable);
+                        _tabela.DataSource = dataTable;
+                        _tabela.Refresh();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Cliente Não Encontrado!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception x)

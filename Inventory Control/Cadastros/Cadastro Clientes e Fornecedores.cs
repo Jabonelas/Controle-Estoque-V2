@@ -30,8 +30,10 @@ namespace Inventory_Control
         private DeletarDadosFornecedor DF = new DeletarDadosFornecedor();
         private InserirDadosFornecedor IF = new InserirDadosFornecedor();
 
-        //Verificacao TextBox
+        //Verificacao
         private VerificacaoTextBox VT = new VerificacaoTextBox();
+
+        private VerificacaoDeExistencia VF = new VerificacaoDeExistencia();
 
         public Cadastro_Clientes_e_Fornecedores()
         {
@@ -42,6 +44,10 @@ namespace Inventory_Control
 
         private void btnIncluir_CadastroCliente_Click(object sender, EventArgs e)
         {
+            //Zerar os Labels * que informam que precisam ser preenchidos os textbox
+            AvisoDePreenchimentoCNPJ.Text = "";
+            AvisoDePreenchimentoTipo.Text = "";
+
             if (VT.VerificarTextBoxClienteFornecedor(this) == true) //Verificar se os textbox estão preenchidos
             {
                 txtCadastroCadastro.Text = DateTime.Today.ToShortDateString();
@@ -57,7 +63,7 @@ namespace Inventory_Control
                         IC.InserirClientes(Convert.ToInt32(txtCodProdutoCadastro.Text), txtNomeFantasiaCadastro.Text, Convert.ToDateTime(txtCadastroCadastro.Text),
                         txtCNPJCadastro.Text, txtRazaoSocialCadastro.Text, txtCEPCadastro.Text, txtUFCadastro.Text,
                         txtCidadeCadastro.Text, txtEnderecoCadastro.Text, Convert.ToInt32(txtNumeroCadastro.Text), txtComplementoCadastro.Text,
-                        txtBairroCadastro.Text);
+                        txtBairroCadastro.Text, gvdCadastroClienteFornecedor);
 
                         DialogResult OpcaoDoUsuario = new DialogResult();
                         OpcaoDoUsuario = MessageBox.Show("Cliente Cadastrado Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -86,38 +92,38 @@ namespace Inventory_Control
                 {
                     MessageBox.Show(x.ToString());
                 }
-            }
-            else if (txtTipoCadastro.Text == "Fornecedor")
-            {
-                try
+                if (txtTipoCadastro.Text == "Fornecedor")
                 {
-                    IF.InserirFornecedor(Convert.ToInt32(txtCodProdutoCadastro.Text), txtNomeFantasiaCadastro.Text, Convert.ToDateTime(txtCadastroCadastro.Text),
-                    txtCNPJCadastro.Text, txtRazaoSocialCadastro.Text, txtCEPCadastro.Text, txtUFCadastro.Text,
-                    txtCidadeCadastro.Text, txtEnderecoCadastro.Text, Convert.ToInt32(txtNumeroCadastro.Text), txtComplementoCadastro.Text,
-                    txtBairroCadastro.Text);
-
-                    DialogResult OpcaoDoUsuario = new DialogResult();
-                    OpcaoDoUsuario = MessageBox.Show("Fornecedor Cadastrado Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (OpcaoDoUsuario == DialogResult.OK)
+                    try
                     {
-                        txtTipoCadastro.Text = "";
-                        txtCodProdutoCadastro.Text = "";
-                        txtNomeFantasiaCadastro.Text = "";
-                        txtCadastroCadastro.Text = "";
-                        txtCNPJCadastro.Text = "";
-                        txtRazaoSocialCadastro.Text = "";
-                        txtCEPCadastro.Text = "";
-                        txtUFCadastro.Text = "";
-                        txtCidadeCadastro.Text = "";
-                        txtEnderecoCadastro.Text = "";
-                        txtNumeroCadastro.Text = "";
-                        txtComplementoCadastro.Text = "";
-                        txtBairroCadastro.Text = "";
+                        IF.InserirFornecedor(Convert.ToInt32(txtCodProdutoCadastro.Text), txtNomeFantasiaCadastro.Text, Convert.ToDateTime(txtCadastroCadastro.Text),
+                        txtCNPJCadastro.Text, txtRazaoSocialCadastro.Text, txtCEPCadastro.Text, txtUFCadastro.Text,
+                        txtCidadeCadastro.Text, txtEnderecoCadastro.Text, Convert.ToInt32(txtNumeroCadastro.Text), txtComplementoCadastro.Text,
+                        txtBairroCadastro.Text);
+
+                        DialogResult OpcaoDoUsuario = new DialogResult();
+                        OpcaoDoUsuario = MessageBox.Show("Fornecedor Cadastrado Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (OpcaoDoUsuario == DialogResult.OK)
+                        {
+                            txtTipoCadastro.Text = "";
+                            txtCodProdutoCadastro.Text = "";
+                            txtNomeFantasiaCadastro.Text = "";
+                            txtCadastroCadastro.Text = "";
+                            txtCNPJCadastro.Text = "";
+                            txtRazaoSocialCadastro.Text = "";
+                            txtCEPCadastro.Text = "";
+                            txtUFCadastro.Text = "";
+                            txtCidadeCadastro.Text = "";
+                            txtEnderecoCadastro.Text = "";
+                            txtNumeroCadastro.Text = "";
+                            txtComplementoCadastro.Text = "";
+                            txtBairroCadastro.Text = "";
+                        }
                     }
-                }
-                catch (Exception x)
-                {
-                    MessageBox.Show(x.ToString());
+                    catch (Exception x)
+                    {
+                        MessageBox.Show(x.ToString());
+                    }
                 }
             }
             else
@@ -132,7 +138,18 @@ namespace Inventory_Control
 
         private void btnPesquisa_CadastroCliente_Click(object sender, EventArgs e)
         {
-            if (VT.VerificarTextBoxClienteFornecedor(this) == true) //Verificar se os textbox estão preenchidos
+            //Zerar os Labels * que informam que precisam ser preenchidos os textbox
+            AvisoDePreenchimentoCNPJ.Text = "";
+            AvisoDePreenchimentoTipo.Text = "";
+
+            if (txtTipoCadastro.Text == "" || txtCNPJCadastro.Text == "")  //Verificar se os textbox estão preenchidos
+            {
+                AvisoDePreenchimentoCNPJ.Text = "*";
+                AvisoDePreenchimentoTipo.Text = "*";
+
+                MessageBox.Show("Os Campos Com * São Obrigatorios!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
             {
                 if (txtTipoCadastro.Text == "Cliente")
                 {
@@ -148,7 +165,7 @@ namespace Inventory_Control
                     }
                     catch (Exception x)
                     {
-                        MessageBox.Show(x.Message.ToString());
+                        MessageBox.Show("Erro ao Alterar Cliente!\n\n" + x.ToString());
                     }
                 }
                 else if (txtTipoCadastro.Text == "Fornecedor")
@@ -165,7 +182,7 @@ namespace Inventory_Control
                     }
                     catch (Exception x)
                     {
-                        MessageBox.Show(x.Message.ToString());
+                        MessageBox.Show("Erro ao Alterar Cliente!\n\n" + x.ToString());
                     }
                 }
             }
@@ -177,13 +194,11 @@ namespace Inventory_Control
 
         private void btnModificar_CadastroCliente_Click(object sender, EventArgs e)
         {
-            if (txtTipoCadastro.Text == "" || txtCNPJCadastro.Text == "")
-            {
-                AvisoDePreenchimentoCNPJ.Text = "*";
-                AvisoDePreenchimentoTipo.Text = "*";
-                MessageBox.Show("Os Campos Com * São Obrigatorios!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
+            //Zerar os Labels * que informam que precisam ser preenchidos os textbox
+            AvisoDePreenchimentoCNPJ.Text = "";
+            AvisoDePreenchimentoTipo.Text = "";
+
+            if (VT.VerificarTextBoxClienteFornecedor(this) == true) //Verificar se os textbox estão preenchidos
             {
                 if (txtTipoCadastro.Text == "Cliente")
                 {
@@ -193,16 +208,7 @@ namespace Inventory_Control
 
                         AC.AlterarCliente(Convert.ToInt32(txtCodProdutoCadastro.Text), txtNomeFantasiaCadastro.Text, Convert.ToDateTime(txtCadastroCadastro.Text),
                             txtCNPJCadastro.Text, txtRazaoSocialCadastro.Text, txtCEPCadastro.Text, txtUFCadastro.Text, txtCidadeCadastro.Text, txtEnderecoCadastro.Text,
-                            Convert.ToInt32(txtNumeroCadastro.Text), txtComplementoCadastro.Text, txtBairroCadastro.Text);
-
-                        //MessageBox modificação realizada com sucesso e limpeza dos TextBox
-                        DialogResult OpcaoDoUsuario = new DialogResult();
-                        OpcaoDoUsuario = MessageBox.Show("Modificação Realizada Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (OpcaoDoUsuario == DialogResult.OK)
-                        {
-                            txtTipoCadastro.Text = "";
-                            txtCNPJCadastro.Text = "";
-                        }
+                            Convert.ToInt32(txtNumeroCadastro.Text), txtComplementoCadastro.Text, txtBairroCadastro.Text, gvdCadastroClienteFornecedor);
                     }
                     catch (Exception x)
                     {
@@ -217,21 +223,16 @@ namespace Inventory_Control
                         AF.AlterarFornecedor(Convert.ToInt32(txtCodProdutoCadastro.Text), txtNomeFantasiaCadastro.Text, Convert.ToDateTime(txtCadastroCadastro.Text),
                                          txtCNPJCadastro.Text, txtRazaoSocialCadastro.Text, txtCEPCadastro.Text, txtUFCadastro.Text, txtCidadeCadastro.Text,
                                          txtEnderecoCadastro.Text, Convert.ToInt32(txtNumeroCadastro.Text), txtComplementoCadastro.Text, txtBairroCadastro.Text);
-
-                        //MessageBox modificação realizada com sucesso e limpeza dos TextBox
-                        DialogResult OpcaoDoUsuario = new DialogResult();
-                        OpcaoDoUsuario = MessageBox.Show("Modificação Realizada Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (OpcaoDoUsuario == DialogResult.OK)
-                        {
-                            txtTipoCadastro.Text = "";
-                            txtCNPJCadastro.Text = "";
-                        }
                     }
                     catch (Exception x)
                     {
-                        MessageBox.Show(x.Message.ToString());
+                        MessageBox.Show("Erro ao Alterar Cliente!\n\n" + x.ToString());
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Todos Os Campos São Obrigatorios!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -241,6 +242,10 @@ namespace Inventory_Control
 
         private void btnExcluir_CadastroCliente_Click(object sender, EventArgs e)
         {
+            //Zerar os Labels * que informam que precisam ser preenchidos os textbox
+            AvisoDePreenchimentoCNPJ.Text = "";
+            AvisoDePreenchimentoTipo.Text = "";
+
             if (txtTipoCadastro.Text == "" || txtCNPJCadastro.Text == "")
             {
                 AvisoDePreenchimentoCNPJ.Text = "*";
@@ -253,40 +258,28 @@ namespace Inventory_Control
                 {
                     try
                     {
-                        DC.DeletarClientes(txtCNPJCadastro.Text);
+                        DC.DeletarClientes(txtCNPJCadastro.Text, gvdCadastroClienteFornecedor);
 
-                        //MessageBox cadastro excluido com sucesso e limpeza dos TextBox
-                        DialogResult OpcaoDoUsuario = new DialogResult();
-                        OpcaoDoUsuario = MessageBox.Show("Cadastro Excluido Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (OpcaoDoUsuario == DialogResult.OK)
-                        {
-                            txtTipoCadastro.Text = "";
-                            txtCNPJCadastro.Text = "";
-                        }
+                        txtTipoCadastro.Text = "";
+                        txtCNPJCadastro.Text = "";
                     }
                     catch (Exception x)
                     {
-                        MessageBox.Show(x.Message.ToString());
+                        MessageBox.Show("Erro ao Alterar Cliente!\n\n" + x.ToString());
                     }
                 }
                 else if (txtTipoCadastro.Text == "Fornecedor")
                 {
                     try
                     {
-                        DF.DeletarFornecedor(txtCNPJCadastro.Text);
+                        DF.DeletarFornecedor(txtCNPJCadastro.Text, gvdCadastroClienteFornecedor);
 
-                        //MessageBox cadastro excluido com sucesso e limpeza dos TextBox
-                        DialogResult OpcaoDoUsuario = new DialogResult();
-                        OpcaoDoUsuario = MessageBox.Show("Fornecedor Excluido Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (OpcaoDoUsuario == DialogResult.OK)
-                        {
-                            txtTipoCadastro.Text = "";
-                            txtCNPJCadastro.Text = "";
-                        }
+                        txtTipoCadastro.Text = "";
+                        txtCNPJCadastro.Text = "";
                     }
                     catch (Exception x)
                     {
-                        MessageBox.Show(x.Message.ToString());
+                        MessageBox.Show("Erro ao Alterar Cliente!\n\n" + x.ToString());
                     }
                 }
             }
