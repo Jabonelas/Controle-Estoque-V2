@@ -13,39 +13,48 @@ namespace Inventory_Control
     internal class DeletarNotaFiscalEntrada : ConectarBanco
     {
         private VerificacaoDeExistencia VNF = new VerificacaoDeExistencia();
+        private VerificacaoDeExistencia BNF = new VerificacaoDeExistencia();
 
-        public void DeletarNotaFiscal(int _nF, Guna2DataGridView _tabela)
+        public void DeletarNotaFiscal(int _nota_Fiscal, Guna2DataGridView _tabela)
         {
             try
             {
-                using (SqlConnection conexaoSQL = AbrirConexao())
-                {
-                    //string query = "update NF set Estatus = 'TRANSITO' where NF = @nF";
+                //string query = "update NF set Estatus = 'TRANSITO' where NF = @nF";
 
-                    if (VNF.BuscarExistenciaNotaFiscal(_nF))
+                if (VNF.BuscarExistenciaNotaFiscal(_nota_Fiscal))
+                {
+                    using (SqlConnection conexaoSQL = AbrirConexao())
                     {
                         //SqlCommand cmd = new SqlCommand(query, conexaoSQL);
-                        //cmd.Parameters.Add("@nF", SqlDbType.Int).Value = _nF;
+                        //cmd.Parameters.Add("@nF", SqlDbType.Int).Value = _nota_Fiscal;
                         //cmd.ExecuteNonQuery();
                         //MessageBox.Show("Nota Fical Excluida Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         //string query = "select * from NF where NF = @nF";
-                        string query = "update NF set Estatus = 'TRANSITO'  where NF = @nF  select * from NF where NF = @nF ";
-                        SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
-                        adapter.SelectCommand.Parameters.AddWithValue("@nF", _nF);
 
-                        DataTable dataTable = new DataTable();
+                        BNF.BuscarExistenciaNotaFiscal(_nota_Fiscal);
 
-                        adapter.Fill(dataTable);
-                        _tabela.DataSource = dataTable;
-                        _tabela.Refresh();
+                        DialogResult OpcaoDoUsuario = new DialogResult();
+                        OpcaoDoUsuario = MessageBox.Show("Deseja Excluir?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (OpcaoDoUsuario == DialogResult.Yes)
+                        {
+                            string query = "update NF set Estatus = 'TRANSITO'  where NF = @nF  select NF,CNPJ,Nome_Razao_Social,Cod_Produto,Descricao_Produto,QUANT,UNIDADE,Valor_Unitario,Valor_Total,Data_Emissao,Data_Lancamento,Estatus from NF where NF = @nF ";
+                            SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+                            adapter.SelectCommand.Parameters.AddWithValue("@nF", _nota_Fiscal);
 
-                        MessageBox.Show("Nota Fical Excluida Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            DataTable dataTable = new DataTable();
+
+                            adapter.Fill(dataTable);
+                            _tabela.DataSource = dataTable;
+                            _tabela.Refresh();
+
+                            MessageBox.Show("Nota Fical Excluida Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Nota Fiscal Não Encontrada!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                }
+                else
+                {
+                    MessageBox.Show("Nota Fiscal Não Encontrada!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception x)

@@ -15,8 +15,9 @@ namespace Inventory_Control.Dados
         {
             using (SqlConnection conexaoSQL = AbrirConexao())
             {
-                string query = "insert into Fornecedor(Cod_Do_Produto,Nome_Fantasia,Data_Cadastro,CNPJ,Razao_Social,CEP,UF,Cidade,Endereco,Numero,Complemento,Bairro) " +
-               "values(@codproduto,@nomefantasia,@cadastro,@cnpj,@razaosocial,@cep,@uf,@cidade,@endereco,@numero,@complemento,@bairro) ";
+                string query = "insert into Fornecedor (ID_Fornecedor,Nome_Fantasia,Data_Cadastro,CNPJ,Razao_Social,CEP,UF,Cidade,Endereco,Numero,Complemento,Bairro) " +
+               "values(@codproduto,@nomefantasia,@cadastro,@cnpj,@razaosocial,@cep,@uf,@cidade,@endereco,@numero,@complemento,@bairro) select ID_Fornecedor,Nome_Fantasia," +
+               "Data_Cadastro,CNPJ,Razao_Social,CEP,UF,Cidade,Endereco,Numero,Complemento,Bairro from Clientes where CNPJ = @cnpj";
 
                 SqlCommand cmd = new SqlCommand(query, conexaoSQL);
                 cmd.Parameters.Add("@codproduto", SqlDbType.Int).Value = _codProduto;

@@ -54,6 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuscarDadosRelatorioEntrada.cs" />
+    <Compile Include="Count.cs" />
     <Compile Include="Dados\BuscarNotaFiscalEntrada.cs" />
     <Compile Include="Dados\AlterarDadosFornecedor.cs" />
     <Compile Include="Cadastros\Cadastro Clientes e Fornecedores.cs">

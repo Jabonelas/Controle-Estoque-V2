@@ -16,8 +16,9 @@ namespace Inventory_Control.Dados
         {
             using (SqlConnection conexaoSQL = AbrirConexao())
             {
-                string query = "insert into Clientes(Cod_Do_Produto,Nome_Fantasia,Data_Cadastro,CNPJ,Razao_Social,CEP,UF,Cidade,Endereco,Numero,Complemento,Bairro) " +
-               "values(@codproduto,@nomefantasia,@cadastro,@cnpj,@razaosocial,@cep,@uf,@cidade,@endereco,@numero,@complemento,@bairro) select * from Clientes where CNPJ = @cnpj";
+                string query = "insert into Clientes(ID_Cliente,Nome_Fantasia,Data_Cadastro,CNPJ,Razao_Social,CEP,UF,Cidade,Endereco,Numero,Complemento,Bairro) " +
+               "values(@codproduto,@nomefantasia,@cadastro,@cnpj,@razaosocial,@cep,@uf,@cidade,@endereco,@numero,@complemento,@bairro) select ID_Cliente,Nome_Fantasia," +
+               "Data_Cadastro,CNPJ,Razao_Social,CEP,UF,Cidade,Endereco,Numero,Complemento,Bairro from Clientes where CNPJ = @cnpj";
 
                 SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
 

@@ -31,9 +31,14 @@ namespace Inventory_Control
         private InserirDadosFornecedor IF = new InserirDadosFornecedor();
 
         //Verificacao
-        private VerificacaoTextBox VT = new VerificacaoTextBox();
 
-        private VerificacaoDeExistencia VF = new VerificacaoDeExistencia();
+        private VerificacaoTextBox VT = new VerificacaoTextBox();
+        //private VerificacaoDeExistencia VF = new VerificacaoDeExistencia();
+
+        //Preencher os codigo do produto
+
+        private Count CC = new Count();
+        private Count CF = new Count();
 
         public Cadastro_Clientes_e_Fornecedores()
         {
@@ -52,14 +57,12 @@ namespace Inventory_Control
             {
                 txtCadastroCadastro.Text = DateTime.Today.ToShortDateString();
 
-                Random randNum = new Random();
-
-                txtCodProdutoCadastro.Text = randNum.Next(100).ToString();
-
                 try
                 {
                     if (txtTipoCadastro.Text == "Cliente")
                     {
+                        txtCodProdutoCadastro.Text = Convert.ToString(CC.ContarCliente(txtCNPJCadastro.Text));
+
                         IC.InserirClientes(Convert.ToInt32(txtCodProdutoCadastro.Text), txtNomeFantasiaCadastro.Text, Convert.ToDateTime(txtCadastroCadastro.Text),
                         txtCNPJCadastro.Text, txtRazaoSocialCadastro.Text, txtCEPCadastro.Text, txtUFCadastro.Text,
                         txtCidadeCadastro.Text, txtEnderecoCadastro.Text, Convert.ToInt32(txtNumeroCadastro.Text), txtComplementoCadastro.Text,
@@ -90,10 +93,12 @@ namespace Inventory_Control
                 }
                 catch (Exception x)
                 {
-                    MessageBox.Show(x.ToString());
+                    MessageBox.Show("Erro ao Alterar Cliente!\n\n" + x.ToString());
                 }
                 if (txtTipoCadastro.Text == "Fornecedor")
                 {
+                    txtCodProdutoCadastro.Text = Convert.ToString(CF.ContarFornecedor(txtCNPJCadastro.Text));
+
                     try
                     {
                         IF.InserirFornecedor(Convert.ToInt32(txtCodProdutoCadastro.Text), txtNomeFantasiaCadastro.Text, Convert.ToDateTime(txtCadastroCadastro.Text),
@@ -122,7 +127,7 @@ namespace Inventory_Control
                     }
                     catch (Exception x)
                     {
-                        MessageBox.Show(x.ToString());
+                        MessageBox.Show("Erro ao Alterar Cliente!\n\n" + x.ToString());
                     }
                 }
             }

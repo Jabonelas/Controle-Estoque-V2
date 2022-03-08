@@ -22,9 +22,10 @@ namespace Inventory_Control
                 {
                     using (SqlConnection conexaoSQL = AbrirConexao())
                     {
-                        string query = "update Clientes set Cod_do_Produto=@codproduto,Nome_Fantasia = @nomeFantasia,Data_Cadastro = @cadastro,CNPJ = @cNPJ," +
-                          "Razao_Social=@razaoSocial,CEP = @cEP,UF=@uF,Cidade=@cidade,Endereco=@endereco,Numero=@numero," +
-                          "Complemento=@complemento,Bairro=@bairro where CNPJ = @cNPJ";
+                        string query = "update Fornecedor set ID_Fornecedor=@codproduto,Nome_Fantasia = @nomeFantasia,Data_Cadastro = @cadastro,CNPJ = @cNPJ," +
+                        "Razao_Social=@razaoSocial,CEP = @cEP,UF=@uF,Cidade=@cidade,Endereco=@endereco,Numero=@numero," +
+                        "Complemento=@complemento,Bairro=@bairro where CNPJ = @cNPJ select ID_Fornecedor,Nome_Fantasia,Data_Cadastro,CNPJ,Razao_Social,CEP,UF," +
+                        "Cidade,Endereco,Numero,Complemento,Bairro from Clientes where CNPJ = @cNPJ";
 
                         SqlCommand cmd = new SqlCommand(query, conexaoSQL);
                         cmd.Parameters.Add("@codproduto", SqlDbType.Int).Value = _codProduto;

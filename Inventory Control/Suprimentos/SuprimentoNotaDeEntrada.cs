@@ -60,25 +60,25 @@ namespace Inventory_Control
             }
             else
             {
-                DialogResult OpcaoDoUsuario = new DialogResult();
-                OpcaoDoUsuario = MessageBox.Show("Deseja Excluir?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (OpcaoDoUsuario == DialogResult.Yes)
+                //DialogResult OpcaoDoUsuario = new DialogResult();
+                //OpcaoDoUsuario = MessageBox.Show("Deseja Excluir?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                //if (OpcaoDoUsuario == DialogResult.Yes)
+                //{
+                try
                 {
-                    try
-                    {
-                        DN.DeletarNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), gdvNotaFiscal_Suprimento);
+                    DN.DeletarNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), gdvNotaFiscal_Suprimento);
 
-                        //MessageBox modificação realizada com sucesso e limpeza dos TextBox
+                    //MessageBox modificação realizada com sucesso e limpeza dos TextBox
 
-                        //OpcaoDoUsuario =
+                    //OpcaoDoUsuario =
 
-                        txtNotaFiscal_Suprimento.Text = "";
-                    }
-                    catch (Exception x)
-                    {
-                        MessageBox.Show(x.ToString());
-                    }
+                    txtNotaFiscal_Suprimento.Text = "";
                 }
+                catch (Exception x)
+                {
+                    MessageBox.Show(x.ToString());
+                }
+                //}
             }
         }
 
@@ -88,13 +88,20 @@ namespace Inventory_Control
 
         private void btnIncluir_CadastroCliente_Click(object sender, EventArgs e)
         {
-            try
+            if (txtNotaFiscal_Suprimento.Text == "")
             {
-                IN.InserirNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), gdvNotaFiscal_Suprimento);
+                MessageBox.Show("O Campo Nota Fical é Obrigatorio!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception x)
+            else
             {
-                MessageBox.Show(x.ToString());
+                try
+                {
+                    IN.InserirNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), gdvNotaFiscal_Suprimento);
+                }
+                catch (Exception x)
+                {
+                    MessageBox.Show(x.ToString());
+                }
             }
         }
 

@@ -25,6 +25,10 @@ namespace Inventory_Control
 
         private VerificacaoTextBox VT = new VerificacaoTextBox();
 
+        //Preencher os codigo do produto
+
+        private Count CP = new Count();
+
         public Cadastro_Produto()
         {
             InitializeComponent();
@@ -39,6 +43,8 @@ namespace Inventory_Control
                 if (VT.VerificarTextBoxProduto(this) == true)   //Verificar se os textbox estão preenchidos
                 {
                     txtDataCadastro_CadastroProduto.Text = DateTime.Today.ToShortDateString();
+
+                    txtFornecedor_CadastroProduto.Text = Convert.ToString(CP.ContarProduto(txtCNPJ_CadastroProduto.Text));
 
                     IP.InserirProduto(txtFornecedor_CadastroProduto.Text, Convert.ToDateTime(txtDataCadastro_CadastroProduto.Text),
                         txtCNPJ_CadastroProduto.Text, Convert.ToInt32(txtCodProduto_CadastroProduto.Text), txtDescricao_CadastroProduto.Text,

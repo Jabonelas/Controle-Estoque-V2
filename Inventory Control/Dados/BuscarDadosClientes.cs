@@ -22,7 +22,7 @@ namespace Inventory_Control.Dados
                 {
                     using (SqlConnection conexaoSQL = AbrirConexao())
                     {
-                        string query = "select * from Clientes where CNPJ =@cNPJ";
+                        string query = "select ID_Cliente,Nome_Fantasia,Data_Cadastro,CNPJ,Razao_Social,CEP,UF,Cidade,Endereco,Numero,Complemento,Bairro from Clientes where CNPJ =@cNPJ";
                         SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
                         adapter.SelectCommand.Parameters.AddWithValue("@cNPJ", _cNPJ);
 

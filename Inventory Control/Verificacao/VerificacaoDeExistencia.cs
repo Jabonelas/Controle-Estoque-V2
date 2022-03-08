@@ -161,5 +161,43 @@ namespace Inventory_Control
         }
 
         #endregion Nota Fiscal
+
+        #region Relatorio NF Entrada
+
+        public bool BuscarExistenciaRelatorioNFEntrada(DateTime _data_Lancamento)
+        {
+            try
+            {
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    bool isExist = false;
+                    string query = "select * from NF where Data_Lancamento >= @dataLancamento";
+                    SqlCommand cmd = new SqlCommand(query, conexaoSQL);
+                    SqlDataReader reader;
+                    cmd.Parameters.AddWithValue("@dataLancamento", _data_Lancamento);
+                    reader = cmd.ExecuteReader();
+
+                    reader.Read();
+
+                    if (reader.HasRows == true)
+                    {
+                        isExist = true;
+                    }
+                    else
+                    {
+                        isExist = false;
+                    }
+
+                    return isExist;
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+                return false;
+            }
+        }
+
+        #endregion Relatorio NF Entrada
     }
 }

@@ -26,9 +26,10 @@ namespace Inventory_Control.Dados
                 {
                     using (SqlConnection conexaoSQL = AbrirConexao())
                     {
-                        string query = "update Clientes set Cod_do_Produto=@codproduto,Nome_Fantasia = @nomeFantasia,Data_Cadastro = @cadastro,CNPJ = @cNPJ," +
+                        string query = "update Clientes set ID_Cliente=@codproduto,Nome_Fantasia = @nomeFantasia,Data_Cadastro = @cadastro,CNPJ = @cNPJ," +
                         "Razao_Social=@razaoSocial,CEP = @cEP,UF=@uF,Cidade=@cidade,Endereco=@endereco,Numero=@numero," +
-                        "Complemento=@complemento,Bairro=@bairro where CNPJ = @cNPJ select * from Clientes where CNPJ = @cNPJ";
+                        "Complemento=@complemento,Bairro=@bairro where CNPJ = @cNPJ select ID_Cliente,Nome_Fantasia,Data_Cadastro,CNPJ,Razao_Social,CEP,UF," +
+                        "Cidade,Endereco,Numero,Complemento,Bairro from Clientes where CNPJ = @cNPJ";
 
                         SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
 
