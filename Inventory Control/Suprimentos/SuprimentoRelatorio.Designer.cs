@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SuprimentoRelatorio));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.btnPesquisa_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
             this.txtDataInicioSuprimentosRelarorio = new Guna.UI.WinForms.GunaTextBox();
@@ -98,11 +98,13 @@
             this.txtDataInicioSuprimentosRelarorio.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtDataInicioSuprimentosRelarorio.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDataInicioSuprimentosRelarorio.Location = new System.Drawing.Point(103, 109);
+            this.txtDataInicioSuprimentosRelarorio.MaxLength = 10;
             this.txtDataInicioSuprimentosRelarorio.Name = "txtDataInicioSuprimentosRelarorio";
             this.txtDataInicioSuprimentosRelarorio.PasswordChar = '\0';
             this.txtDataInicioSuprimentosRelarorio.SelectedText = "";
             this.txtDataInicioSuprimentosRelarorio.Size = new System.Drawing.Size(162, 26);
             this.txtDataInicioSuprimentosRelarorio.TabIndex = 144;
+            this.txtDataInicioSuprimentosRelarorio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDataInicioSuprimentosRelarorio_KeyPress);
             // 
             // gunaLabel5
             // 
@@ -136,38 +138,40 @@
             this.txtDataFinalSuprimentosRelarorio.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtDataFinalSuprimentosRelarorio.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDataFinalSuprimentosRelarorio.Location = new System.Drawing.Point(103, 146);
+            this.txtDataFinalSuprimentosRelarorio.MaxLength = 10;
             this.txtDataFinalSuprimentosRelarorio.Name = "txtDataFinalSuprimentosRelarorio";
             this.txtDataFinalSuprimentosRelarorio.PasswordChar = '\0';
             this.txtDataFinalSuprimentosRelarorio.SelectedText = "";
             this.txtDataFinalSuprimentosRelarorio.Size = new System.Drawing.Size(162, 26);
             this.txtDataFinalSuprimentosRelarorio.TabIndex = 146;
+            this.txtDataFinalSuprimentosRelarorio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDataFinalSuprimentosRelarorio_KeyPress);
             // 
             // gdvRelatorioNFEntrada_Suprimento
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.gdvRelatorioNFEntrada_Suprimento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
+            this.gdvRelatorioNFEntrada_Suprimento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
             this.gdvRelatorioNFEntrada_Suprimento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gdvRelatorioNFEntrada_Suprimento.BackgroundColor = System.Drawing.Color.White;
             this.gdvRelatorioNFEntrada_Suprimento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gdvRelatorioNFEntrada_Suprimento.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gdvRelatorioNFEntrada_Suprimento.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gdvRelatorioNFEntrada_Suprimento.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gdvRelatorioNFEntrada_Suprimento.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.gdvRelatorioNFEntrada_Suprimento.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gdvRelatorioNFEntrada_Suprimento.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gdvRelatorioNFEntrada_Suprimento.DefaultCellStyle = dataGridViewCellStyle24;
             this.gdvRelatorioNFEntrada_Suprimento.EnableHeadersVisualStyles = false;
             this.gdvRelatorioNFEntrada_Suprimento.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gdvRelatorioNFEntrada_Suprimento.Location = new System.Drawing.Point(13, 199);

@@ -12,19 +12,18 @@ namespace Inventory_Control
     {
         #region Clinete
 
-        public int ContarCliente(string _cNPJ)
+        public string ContarCliente()
         {
             using (SqlConnection conexaoSQL = AbrirConexao())
             {
                 string query = "select IDENT_CURRENT('Clientes')";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
-                adapter.SelectCommand.Parameters.AddWithValue("@cNPJ", _cNPJ);
 
                 SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
                 dr.Read();
 
-                int x = dr.GetInt32(0);
-                return x;
+                Decimal x = dr.GetDecimal(0);
+                return (x + 1).ToString();
             }
         }
 
@@ -32,19 +31,18 @@ namespace Inventory_Control
 
         #region Fornecedor
 
-        public int ContarFornecedor(string _cNPJ)
+        public string ContarFornecedor()
         {
             using (SqlConnection conexaoSQL = AbrirConexao())
             {
                 string query = "select IDENT_CURRENT('Fornecedor')";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
-                adapter.SelectCommand.Parameters.AddWithValue("@cNPJ", _cNPJ);
 
                 SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
                 dr.Read();
 
-                int x = dr.GetInt32(0);
-                return x;
+                Decimal x = dr.GetDecimal(0);
+                return (x + 1).ToString();
             }
         }
 
@@ -52,22 +50,40 @@ namespace Inventory_Control
 
         #region Produto
 
-        public int ContarProduto(string _cNPJ)
+        public string ContarProduto()
         {
             using (SqlConnection conexaoSQL = AbrirConexao())
             {
                 string query = "select IDENT_CURRENT('Produto')";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
-                adapter.SelectCommand.Parameters.AddWithValue("@cNPJ", _cNPJ);
 
                 SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
                 dr.Read();
 
-                int x = dr.GetInt32(0);
-                return x;
+                Decimal x = dr.GetDecimal(0);
+                return (x + 1).ToString();
             }
         }
 
         #endregion Produto
+
+        #region Nota Fiscal Entrada
+
+        public string ContarNFEntrada()
+        {
+            using (SqlConnection conexaoSQL = AbrirConexao())
+            {
+                string query = "select IDENT_CURRENT('NF')";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+
+                SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
+                dr.Read();
+
+                Decimal x = dr.GetDecimal(0);
+                return (x + 1).ToString("D8");
+            }
+        }
+
+        #endregion Nota Fiscal Entrada
     }
 }

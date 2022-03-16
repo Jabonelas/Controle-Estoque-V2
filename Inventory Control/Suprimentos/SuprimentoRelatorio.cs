@@ -27,6 +27,11 @@ namespace Inventory_Control
             }
             else
             {
+                if (txtDataFinalSuprimentosRelarorio.Text == "")
+                {
+                    txtDataFinalSuprimentosRelarorio.Text = Convert.ToString(DateTime.Today);
+                }
+
                 try
                 {
                     BRNFE.BuscarDadosRelatorioNFEntrada(Convert.ToDateTime(txtDataInicioSuprimentosRelarorio.Text),
@@ -36,10 +41,59 @@ namespace Inventory_Control
                     txtDataInicioSuprimentosRelarorio.Text = "";
                     txtDataFinalSuprimentosRelarorio.Text = "";
                 }
-                catch (Exception x)
+                catch (Exception)
                 {
-                    MessageBox.Show(x.ToString());
+                    //MessageBox.Show(x.ToString());
+                    MessageBox.Show("Formato de Data incorreto!");
                 }
+            }
+        }
+
+        private void txtDataInicioSuprimentosRelarorio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+
+            if (char.IsNumber(e.KeyChar) == true)
+            {
+                switch (txtDataInicioSuprimentosRelarorio.TextLength)
+                {
+                    case 0:
+                        txtDataInicioSuprimentosRelarorio.Text = "";
+                        break;
+
+                    case 2:
+                        txtDataInicioSuprimentosRelarorio.Text = txtDataInicioSuprimentosRelarorio.Text + "/";
+                        txtDataInicioSuprimentosRelarorio.SelectionStart = 3;
+                        break;
+
+                    case 5:
+                        txtDataInicioSuprimentosRelarorio.Text = txtDataInicioSuprimentosRelarorio.Text + "/";
+                        txtDataInicioSuprimentosRelarorio.SelectionStart = 6;
+                        break;
+                }
+            }
+        }
+
+        private void txtDataFinalSuprimentosRelarorio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            switch (txtDataInicioSuprimentosRelarorio.TextLength)
+            {
+                case 0:
+                    txtDataInicioSuprimentosRelarorio.Text = "";
+                    break;
+
+                case 2:
+                    txtDataInicioSuprimentosRelarorio.Text = txtDataInicioSuprimentosRelarorio.Text + "/";
+                    txtDataInicioSuprimentosRelarorio.SelectionStart = 3;
+                    break;
+
+                case 5:
+                    txtDataInicioSuprimentosRelarorio.Text = txtDataInicioSuprimentosRelarorio.Text + "/";
+                    txtDataInicioSuprimentosRelarorio.SelectionStart = 6;
+                    break;
             }
         }
     }

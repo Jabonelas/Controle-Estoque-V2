@@ -96,7 +96,9 @@ namespace Inventory_Control
             {
                 try
                 {
-                    IN.InserirNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), gdvNotaFiscal_Suprimento);
+                    IN.InserirNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text));
+
+                    BN.BuscarNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), gdvNotaFiscal_Suprimento);
                 }
                 catch (Exception x)
                 {

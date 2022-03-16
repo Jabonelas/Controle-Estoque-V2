@@ -16,7 +16,7 @@ namespace Inventory_Control.Dados
 
         public DialogResult OpcaoDoUsuario { get; private set; }
 
-        public void AlterarCliente(int _codProduto, string _nomeFantasia, DateTime _cadastro, string _cNPJ, string _razaoSocial,
+        public void AlterarCliente(string _nomeFantasia, DateTime _cadastro, string _cNPJ, string _razaoSocial,
    string _cEP, string _uF, string _cidade, string _endereco, int _numero, string _complemento, string _bairro, GunaDataGridView _tabela)
 
         {
@@ -26,14 +26,13 @@ namespace Inventory_Control.Dados
                 {
                     using (SqlConnection conexaoSQL = AbrirConexao())
                     {
-                        string query = "update Clientes set ID_Cliente=@codproduto,Nome_Fantasia = @nomeFantasia,Data_Cadastro = @cadastro,CNPJ = @cNPJ," +
+                        string query = "update Clientes set Nome_Fantasia = @nomeFantasia,Data_Cadastro = @cadastro,CNPJ = @cNPJ," +
                         "Razao_Social=@razaoSocial,CEP = @cEP,UF=@uF,Cidade=@cidade,Endereco=@endereco,Numero=@numero," +
-                        "Complemento=@complemento,Bairro=@bairro where CNPJ = @cNPJ select ID_Cliente,Nome_Fantasia,Data_Cadastro,CNPJ,Razao_Social,CEP,UF," +
-                        "Cidade,Endereco,Numero,Complemento,Bairro from Clientes where CNPJ = @cNPJ";
+                        "Complemento=@complemento,Bairro=@bairro where CNPJ = @cNPJ";
 
                         SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
 
-                        adapter.SelectCommand.Parameters.AddWithValue("@codproduto", SqlDbType.Int).Value = _codProduto;
+                        //adapter.SelectCommand.Parameters.AddWithValue("@codproduto", SqlDbType.Int).Value = _codProduto;
                         adapter.SelectCommand.Parameters.AddWithValue("@nomefantasia", SqlDbType.VarChar).Value = _nomeFantasia;
                         adapter.SelectCommand.Parameters.AddWithValue("@cadastro", SqlDbType.DateTime).Value = _cadastro;
                         adapter.SelectCommand.Parameters.AddWithValue("@cnpj", SqlDbType.VarChar).Value = _cNPJ;

@@ -11,18 +11,19 @@ namespace Inventory_Control.Dados
 {
     internal class InserirDadosClientes : ConectarBanco
     {
-        public void InserirClientes(int _codProduto, string _nomeFantasia, DateTime _cadastro, string _cNPJ, string _razaoSocial,
+        public void InserirClientes(string _nomeFantasia, DateTime _cadastro, string _cNPJ, string _razaoSocial,
             string _cEP, string _uF, string _cidade, string _endereco, int _numero, string _complemento, string _bairro, GunaDataGridView _tabela)
         {
             using (SqlConnection conexaoSQL = AbrirConexao())
             {
-                string query = "insert into Clientes(ID_Cliente,Nome_Fantasia,Data_Cadastro,CNPJ,Razao_Social,CEP,UF,Cidade,Endereco,Numero,Complemento,Bairro) " +
-               "values(@codproduto,@nomefantasia,@cadastro,@cnpj,@razaosocial,@cep,@uf,@cidade,@endereco,@numero,@complemento,@bairro) select ID_Cliente,Nome_Fantasia," +
-               "Data_Cadastro,CNPJ,Razao_Social,CEP,UF,Cidade,Endereco,Numero,Complemento,Bairro from Clientes where CNPJ = @cnpj";
+                string query = "insert into Clientes(Nome_Fantasia,Data_Cadastro,CNPJ,Razao_Social,CEP,UF,Cidade,Endereco,Numero,Complemento,Bairro) " +
+               "values(@nomefantasia,@cadastro,@cnpj,@razaosocial,@cep,@uf,@cidade,@endereco,@numero,@complemento,@bairro) ";
+                //    string query = "insert into Clientes(ID_Cliente,Nome_Fantasia,Data_Cadastro,CNPJ,Razao_Social,CEP,UF,Cidade,Endereco,Numero,Complemento,Bairro) " +
+                //"values(@codproduto,@nomefantasia,@cadastro,@cnpj,@razaosocial,@cep,@uf,@cidade,@endereco,@numero,@complemento,@bairro) ";
 
                 SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
 
-                adapter.SelectCommand.Parameters.AddWithValue("@codproduto", SqlDbType.Int).Value = _codProduto;
+                //adapter.SelectCommand.Parameters.AddWithValue("@codproduto", SqlDbType.Int).Value = _codProduto;
                 adapter.SelectCommand.Parameters.AddWithValue("@nomefantasia", SqlDbType.VarChar).Value = _nomeFantasia;
                 adapter.SelectCommand.Parameters.AddWithValue("@cadastro", SqlDbType.DateTime).Value = _cadastro;
                 adapter.SelectCommand.Parameters.AddWithValue("@cnpj", SqlDbType.VarChar).Value = _cNPJ;

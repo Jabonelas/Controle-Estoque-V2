@@ -53,9 +53,9 @@
             this.txtMedida_CadastroProduto = new System.Windows.Forms.ComboBox();
             this.txtFornecedor_CadastroProduto = new Guna.UI.WinForms.GunaTextBox();
             this.gdvCadastroProduto = new Guna.UI.WinForms.GunaDataGridView();
-            this.txtCodProduto_CadastroProduto = new Guna.UI.WinForms.GunaTextBox();
             this.txtDataCadastro_CadastroProduto = new System.Windows.Forms.TextBox();
             this.AvisoPreenchimentoCodProduto = new System.Windows.Forms.Label();
+            this.txtCodProduto_CadastroProduto = new Guna.UI.WinForms.GunaTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gdvCadastroProduto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -461,23 +461,6 @@
             this.gdvCadastroProduto.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gdvCadastroProduto.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
-            // txtCodProduto_CadastroProduto
-            // 
-            this.txtCodProduto_CadastroProduto.BaseColor = System.Drawing.Color.White;
-            this.txtCodProduto_CadastroProduto.BorderColor = System.Drawing.Color.Silver;
-            this.txtCodProduto_CadastroProduto.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCodProduto_CadastroProduto.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtCodProduto_CadastroProduto.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
-            this.txtCodProduto_CadastroProduto.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtCodProduto_CadastroProduto.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCodProduto_CadastroProduto.Location = new System.Drawing.Point(103, 186);
-            this.txtCodProduto_CadastroProduto.MaxLength = 18;
-            this.txtCodProduto_CadastroProduto.Name = "txtCodProduto_CadastroProduto";
-            this.txtCodProduto_CadastroProduto.PasswordChar = '\0';
-            this.txtCodProduto_CadastroProduto.SelectedText = "";
-            this.txtCodProduto_CadastroProduto.Size = new System.Drawing.Size(162, 26);
-            this.txtCodProduto_CadastroProduto.TabIndex = 153;
-            // 
             // txtDataCadastro_CadastroProduto
             // 
             this.txtDataCadastro_CadastroProduto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -497,11 +480,28 @@
             this.AvisoPreenchimentoCodProduto.Size = new System.Drawing.Size(0, 18);
             this.AvisoPreenchimentoCodProduto.TabIndex = 154;
             // 
+            // txtCodProduto_CadastroProduto
+            // 
+            this.txtCodProduto_CadastroProduto.BaseColor = System.Drawing.Color.White;
+            this.txtCodProduto_CadastroProduto.BorderColor = System.Drawing.Color.Silver;
+            this.txtCodProduto_CadastroProduto.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCodProduto_CadastroProduto.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtCodProduto_CadastroProduto.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
+            this.txtCodProduto_CadastroProduto.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtCodProduto_CadastroProduto.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCodProduto_CadastroProduto.Location = new System.Drawing.Point(103, 186);
+            this.txtCodProduto_CadastroProduto.MaxLength = 18;
+            this.txtCodProduto_CadastroProduto.Name = "txtCodProduto_CadastroProduto";
+            this.txtCodProduto_CadastroProduto.PasswordChar = '\0';
+            this.txtCodProduto_CadastroProduto.SelectedText = "";
+            this.txtCodProduto_CadastroProduto.Size = new System.Drawing.Size(162, 26);
+            this.txtCodProduto_CadastroProduto.TabIndex = 153;
+            // 
             // Cadastro_Produto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 542);
+            this.ClientSize = new System.Drawing.Size(1044, 542);
             this.Controls.Add(this.txtDataCadastro_CadastroProduto);
             this.Controls.Add(this.AvisoPreenchimentoCodProduto);
             this.Controls.Add(this.txtCodProduto_CadastroProduto);
@@ -558,8 +558,8 @@
         private System.Windows.Forms.ComboBox txtMedida_CadastroProduto;
         private Guna.UI.WinForms.GunaTextBox txtFornecedor_CadastroProduto;
         private Guna.UI.WinForms.GunaDataGridView gdvCadastroProduto;
-        private Guna.UI.WinForms.GunaTextBox txtCodProduto_CadastroProduto;
         private System.Windows.Forms.TextBox txtDataCadastro_CadastroProduto;
         private System.Windows.Forms.Label AvisoPreenchimentoCodProduto;
+        private Guna.UI.WinForms.GunaTextBox txtCodProduto_CadastroProduto;
     }
 }

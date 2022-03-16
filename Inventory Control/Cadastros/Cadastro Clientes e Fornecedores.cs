@@ -33,7 +33,8 @@ namespace Inventory_Control
         //Verificacao
 
         private VerificacaoTextBox VT = new VerificacaoTextBox();
-        //private VerificacaoDeExistencia VF = new VerificacaoDeExistencia();
+        private VerificacaoDeExistencia VC = new VerificacaoDeExistencia();
+        private VerificacaoDeExistencia VF = new VerificacaoDeExistencia();
 
         //Preencher os codigo do produto
 
@@ -61,74 +62,93 @@ namespace Inventory_Control
                 {
                     if (txtTipoCadastro.Text == "Cliente")
                     {
-                        txtCodProdutoCadastro.Text = Convert.ToString(CC.ContarCliente(txtCNPJCadastro.Text));
-
-                        IC.InserirClientes(Convert.ToInt32(txtCodProdutoCadastro.Text), txtNomeFantasiaCadastro.Text, Convert.ToDateTime(txtCadastroCadastro.Text),
-                        txtCNPJCadastro.Text, txtRazaoSocialCadastro.Text, txtCEPCadastro.Text, txtUFCadastro.Text,
-                        txtCidadeCadastro.Text, txtEnderecoCadastro.Text, Convert.ToInt32(txtNumeroCadastro.Text), txtComplementoCadastro.Text,
-                        txtBairroCadastro.Text, gvdCadastroClienteFornecedor);
-
-                        DialogResult OpcaoDoUsuario = new DialogResult();
-                        OpcaoDoUsuario = MessageBox.Show("Cliente Cadastrado Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (OpcaoDoUsuario == DialogResult.OK)
+                        if (VC.BuscarExistenciaCliente(txtCNPJCadastro.Text) == false)
                         {
-                            txtTipoCadastro.Text = "";
-                            txtCodProdutoCadastro.Text = "";
-                            txtNomeFantasiaCadastro.Text = "";
-                            txtCadastroCadastro.Text = "";
-                            txtCNPJCadastro.Text = "";
-                            txtRazaoSocialCadastro.Text = "";
-                            txtCEPCadastro.Text = "";
-                            txtUFCadastro.Text = "";
-                            txtCidadeCadastro.Text = "";
-                            txtEnderecoCadastro.Text = "";
-                            txtNumeroCadastro.Text = "";
-                            txtComplementoCadastro.Text = "";
-                            txtBairroCadastro.Text = "";
+                            txtCodProdutoCadastro.Text = CC.ContarCliente().ToString();// Gerar ID cliente
 
-                            AvisoDePreenchimentoCNPJ.Text = "";
-                            AvisoDePreenchimentoTipo.Text = "";
+                            IC.InserirClientes(txtNomeFantasiaCadastro.Text, Convert.ToDateTime(txtCadastroCadastro.Text),
+                            txtCNPJCadastro.Text, txtRazaoSocialCadastro.Text, txtCEPCadastro.Text, txtUFCadastro.Text,
+                            txtCidadeCadastro.Text, txtEnderecoCadastro.Text, Convert.ToInt32(txtNumeroCadastro.Text), txtComplementoCadastro.Text,
+                            txtBairroCadastro.Text, gvdCadastroClienteFornecedor);
+
+                            DialogResult OpcaoDoUsuario = new DialogResult();
+                            OpcaoDoUsuario = MessageBox.Show("Cliente Cadastrado Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (OpcaoDoUsuario == DialogResult.OK)
+                            {
+                                BC.BuscarClientes(txtCNPJCadastro.Text, gvdCadastroClienteFornecedor);
+
+                                txtTipoCadastro.Text = "";
+                                txtCodProdutoCadastro.Text = "";
+                                txtNomeFantasiaCadastro.Text = "";
+                                txtCadastroCadastro.Text = "";
+                                txtCNPJCadastro.Text = "";
+                                txtRazaoSocialCadastro.Text = "";
+                                txtCEPCadastro.Text = "";
+                                txtUFCadastro.Text = "";
+                                txtCidadeCadastro.Text = "";
+                                txtEnderecoCadastro.Text = "";
+                                txtNumeroCadastro.Text = "";
+                                txtComplementoCadastro.Text = "";
+                                txtBairroCadastro.Text = "";
+
+                                AvisoDePreenchimentoCNPJ.Text = "";
+                                AvisoDePreenchimentoTipo.Text = "";
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("CNPJ já Cadastrado!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                 }
                 catch (Exception x)
                 {
-                    MessageBox.Show("Erro ao Alterar Cliente!\n\n" + x.ToString());
+                    MessageBox.Show("Erro ao Incluir Cliente!\n\n" + x.ToString());
                 }
-                if (txtTipoCadastro.Text == "Fornecedor")
+
+                try
                 {
-                    txtCodProdutoCadastro.Text = Convert.ToString(CF.ContarFornecedor(txtCNPJCadastro.Text));
-
-                    try
+                    if (txtTipoCadastro.Text == "Fornecedor")
                     {
-                        IF.InserirFornecedor(Convert.ToInt32(txtCodProdutoCadastro.Text), txtNomeFantasiaCadastro.Text, Convert.ToDateTime(txtCadastroCadastro.Text),
-                        txtCNPJCadastro.Text, txtRazaoSocialCadastro.Text, txtCEPCadastro.Text, txtUFCadastro.Text,
-                        txtCidadeCadastro.Text, txtEnderecoCadastro.Text, Convert.ToInt32(txtNumeroCadastro.Text), txtComplementoCadastro.Text,
-                        txtBairroCadastro.Text);
-
-                        DialogResult OpcaoDoUsuario = new DialogResult();
-                        OpcaoDoUsuario = MessageBox.Show("Fornecedor Cadastrado Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (OpcaoDoUsuario == DialogResult.OK)
+                        if (VF.BuscarExistenciaFornecedor(txtCNPJCadastro.Text) == false)
                         {
-                            txtTipoCadastro.Text = "";
-                            txtCodProdutoCadastro.Text = "";
-                            txtNomeFantasiaCadastro.Text = "";
-                            txtCadastroCadastro.Text = "";
-                            txtCNPJCadastro.Text = "";
-                            txtRazaoSocialCadastro.Text = "";
-                            txtCEPCadastro.Text = "";
-                            txtUFCadastro.Text = "";
-                            txtCidadeCadastro.Text = "";
-                            txtEnderecoCadastro.Text = "";
-                            txtNumeroCadastro.Text = "";
-                            txtComplementoCadastro.Text = "";
-                            txtBairroCadastro.Text = "";
+                            txtCodProdutoCadastro.Text = CF.ContarFornecedor().ToString();//Gerar o ID fornecedor
+
+                            IF.InserirFornecedor(txtNomeFantasiaCadastro.Text, Convert.ToDateTime(txtCadastroCadastro.Text),
+                            txtCNPJCadastro.Text, txtRazaoSocialCadastro.Text, txtCEPCadastro.Text, txtUFCadastro.Text,
+                            txtCidadeCadastro.Text, txtEnderecoCadastro.Text, Convert.ToInt32(txtNumeroCadastro.Text), txtComplementoCadastro.Text,
+                            txtBairroCadastro.Text);
+
+                            DialogResult OpcaoDoUsuario = new DialogResult();
+                            OpcaoDoUsuario = MessageBox.Show("Fornecedor Cadastrado Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (OpcaoDoUsuario == DialogResult.OK)
+                            {
+                                BF.BuscarFornecedor(txtCNPJCadastro.Text, gvdCadastroClienteFornecedor);
+
+                                txtTipoCadastro.Text = "";
+                                txtCodProdutoCadastro.Text = "";
+                                txtNomeFantasiaCadastro.Text = "";
+                                txtCadastroCadastro.Text = "";
+                                txtCNPJCadastro.Text = "";
+                                txtRazaoSocialCadastro.Text = "";
+                                txtCEPCadastro.Text = "";
+                                txtUFCadastro.Text = "";
+                                txtCidadeCadastro.Text = "";
+                                txtEnderecoCadastro.Text = "";
+                                txtNumeroCadastro.Text = "";
+                                txtComplementoCadastro.Text = "";
+                                txtBairroCadastro.Text = "";
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("CNPJ já Cadastrado!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
-                    catch (Exception x)
-                    {
-                        MessageBox.Show("Erro ao Alterar Cliente!\n\n" + x.ToString());
-                    }
+                }
+                catch (Exception x)
+                {
+                    MessageBox.Show("Erro ao Incluir Fornecedor!\n\n" + x.ToString());
                 }
             }
             else
@@ -205,33 +225,85 @@ namespace Inventory_Control
 
             if (VT.VerificarTextBoxClienteFornecedor(this) == true) //Verificar se os textbox estão preenchidos
             {
-                if (txtTipoCadastro.Text == "Cliente")
+                DialogResult OpcaoDoUsuario = new DialogResult();
+                OpcaoDoUsuario = MessageBox.Show("Deseja Realizar a Modificação?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (OpcaoDoUsuario == DialogResult.Yes)
                 {
                     try
                     {
-                        txtCadastroCadastro.Text = DateTime.Today.ToShortDateString();
+                        if (txtTipoCadastro.Text == "Cliente")
+                        {
+                            if (VC.BuscarExistenciaCliente(txtCNPJCadastro.Text) == true)
+                            {
+                                txtCadastroCadastro.Text = DateTime.Today.ToShortDateString();
 
-                        AC.AlterarCliente(Convert.ToInt32(txtCodProdutoCadastro.Text), txtNomeFantasiaCadastro.Text, Convert.ToDateTime(txtCadastroCadastro.Text),
-                            txtCNPJCadastro.Text, txtRazaoSocialCadastro.Text, txtCEPCadastro.Text, txtUFCadastro.Text, txtCidadeCadastro.Text, txtEnderecoCadastro.Text,
-                            Convert.ToInt32(txtNumeroCadastro.Text), txtComplementoCadastro.Text, txtBairroCadastro.Text, gvdCadastroClienteFornecedor);
+                                AC.AlterarCliente(txtNomeFantasiaCadastro.Text, Convert.ToDateTime(txtCadastroCadastro.Text),
+                                    txtCNPJCadastro.Text, txtRazaoSocialCadastro.Text, txtCEPCadastro.Text, txtUFCadastro.Text, txtCidadeCadastro.Text, txtEnderecoCadastro.Text,
+                                    Convert.ToInt32(txtNumeroCadastro.Text), txtComplementoCadastro.Text, txtBairroCadastro.Text, gvdCadastroClienteFornecedor);
+
+                                BC.BuscarClientes(txtCNPJCadastro.Text, gvdCadastroClienteFornecedor);
+
+                                txtTipoCadastro.Text = "";
+                                txtCodProdutoCadastro.Text = "";
+                                txtNomeFantasiaCadastro.Text = "";
+                                txtCadastroCadastro.Text = "";
+                                txtCNPJCadastro.Text = "";
+                                txtRazaoSocialCadastro.Text = "";
+                                txtCEPCadastro.Text = "";
+                                txtUFCadastro.Text = "";
+                                txtCidadeCadastro.Text = "";
+                                txtEnderecoCadastro.Text = "";
+                                txtNumeroCadastro.Text = "";
+                                txtComplementoCadastro.Text = "";
+                                txtBairroCadastro.Text = "";
+                            }
+                            else
+                            {
+                                MessageBox.Show("CNPJ Não Encontrado!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
                     }
                     catch (Exception x)
                     {
                         MessageBox.Show("Erro ao Alterar Cliente!\n\n" + x.ToString());
                     }
-                }
-                else if (txtTipoCadastro.Text == "Fornecedor")
-                {
-                    txtCadastroCadastro.Text = DateTime.Today.ToShortDateString();
+
                     try
                     {
-                        AF.AlterarFornecedor(Convert.ToInt32(txtCodProdutoCadastro.Text), txtNomeFantasiaCadastro.Text, Convert.ToDateTime(txtCadastroCadastro.Text),
-                                         txtCNPJCadastro.Text, txtRazaoSocialCadastro.Text, txtCEPCadastro.Text, txtUFCadastro.Text, txtCidadeCadastro.Text,
-                                         txtEnderecoCadastro.Text, Convert.ToInt32(txtNumeroCadastro.Text), txtComplementoCadastro.Text, txtBairroCadastro.Text);
+                        if (txtTipoCadastro.Text == "Fornecedor")
+                        {
+                            txtCadastroCadastro.Text = DateTime.Today.ToShortDateString();
+                            if (VF.BuscarExistenciaFornecedor(txtCNPJCadastro.Text) == true)
+                            {
+                                AF.AlterarFornecedor(Convert.ToInt32(txtCodProdutoCadastro.Text), txtNomeFantasiaCadastro.Text, Convert.ToDateTime(txtCadastroCadastro.Text),
+                                             txtCNPJCadastro.Text, txtRazaoSocialCadastro.Text, txtCEPCadastro.Text, txtUFCadastro.Text, txtCidadeCadastro.Text,
+                                             txtEnderecoCadastro.Text, Convert.ToInt32(txtNumeroCadastro.Text), txtComplementoCadastro.Text, txtBairroCadastro.Text);
+
+                                BF.BuscarFornecedor(txtCNPJCadastro.Text, gvdCadastroClienteFornecedor);
+
+                                txtTipoCadastro.Text = "";
+                                txtCodProdutoCadastro.Text = "";
+                                txtNomeFantasiaCadastro.Text = "";
+                                txtCadastroCadastro.Text = "";
+                                txtCNPJCadastro.Text = "";
+                                txtRazaoSocialCadastro.Text = "";
+                                txtCEPCadastro.Text = "";
+                                txtUFCadastro.Text = "";
+                                txtCidadeCadastro.Text = "";
+                                txtEnderecoCadastro.Text = "";
+                                txtNumeroCadastro.Text = "";
+                                txtComplementoCadastro.Text = "";
+                                txtBairroCadastro.Text = "";
+                            }
+                            else
+                            {
+                                MessageBox.Show("CNPJ Não Encontrado!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
                     }
                     catch (Exception x)
                     {
-                        MessageBox.Show("Erro ao Alterar Cliente!\n\n" + x.ToString());
+                        MessageBox.Show("Erro ao Alterar Fornecedor!\n\n" + x.ToString());
                     }
                 }
             }

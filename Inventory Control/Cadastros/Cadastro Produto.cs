@@ -21,9 +21,10 @@ namespace Inventory_Control
         private DeletarDadosProduto DP = new DeletarDadosProduto();
         private InserirDadosProduto IP = new InserirDadosProduto();
 
-        //Verificacao TextBox
+        //Verificacao Existencia
 
         private VerificacaoTextBox VT = new VerificacaoTextBox();
+        private VerificacaoDeExistencia VP = new VerificacaoDeExistencia();
 
         //Preencher os codigo do produto
 
@@ -44,7 +45,7 @@ namespace Inventory_Control
                 {
                     txtDataCadastro_CadastroProduto.Text = DateTime.Today.ToShortDateString();
 
-                    txtFornecedor_CadastroProduto.Text = Convert.ToString(CP.ContarProduto(txtCNPJ_CadastroProduto.Text));
+                    txtCodProduto_CadastroProduto.Text = Convert.ToString(CP.ContarProduto());
 
                     IP.InserirProduto(txtFornecedor_CadastroProduto.Text, Convert.ToDateTime(txtDataCadastro_CadastroProduto.Text),
                         txtCNPJ_CadastroProduto.Text, Convert.ToInt32(txtCodProduto_CadastroProduto.Text), txtDescricao_CadastroProduto.Text,
@@ -55,6 +56,8 @@ namespace Inventory_Control
                     OpcaoDoUsuario = MessageBox.Show("Produto Cadastrado Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (OpcaoDoUsuario == DialogResult.OK)
                     {
+                        BP.BuscarProduto(Convert.ToInt32(txtCodProduto_CadastroProduto.Text), gdvCadastroProduto);
+
                         txtFornecedor_CadastroProduto.Text = "";
                         txtDataCadastro_CadastroProduto.Text = "";
                         txtCNPJ_CadastroProduto.Text = "";
@@ -89,23 +92,32 @@ namespace Inventory_Control
                     OpcaoDoUsuario = MessageBox.Show("Deseja Realizar a Modificação?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (OpcaoDoUsuario == DialogResult.Yes)
                     {
-                        txtDataCadastro_CadastroProduto.Text = DateTime.Today.ToShortDateString();
-
-                        AP.AlterarProduto(txtFornecedor_CadastroProduto.Text, Convert.ToDateTime(txtDataCadastro_CadastroProduto.Text), txtCNPJ_CadastroProduto.Text,
-                                             Convert.ToInt32(txtCodProduto_CadastroProduto.Text), txtDescricao_CadastroProduto.Text, txtMedida_CadastroProduto.Text,
-                                             Convert.ToDouble(txtPreco_CadastroProduto.Text));
-
-                        //MessageBox modificação realizada com sucesso e limpeza dos TextBox
-                        OpcaoDoUsuario = MessageBox.Show("Modificação Realizada Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (OpcaoDoUsuario == DialogResult.OK)
+                        if (VP.BuscarExistenciaProduto(Convert.ToInt32(txtCodProduto_CadastroProduto.Text)) == true)
                         {
-                            txtFornecedor_CadastroProduto.Text = "";
-                            txtDataCadastro_CadastroProduto.Text = "";
-                            txtCNPJ_CadastroProduto.Text = "";
-                            txtCodProduto_CadastroProduto.Text = "";
-                            txtDescricao_CadastroProduto.Text = "";
-                            txtMedida_CadastroProduto.Text = "";
-                            txtPreco_CadastroProduto.Text = "";
+                            txtDataCadastro_CadastroProduto.Text = DateTime.Today.ToShortDateString();
+
+                            AP.AlterarProduto(txtFornecedor_CadastroProduto.Text, Convert.ToDateTime(txtDataCadastro_CadastroProduto.Text), txtCNPJ_CadastroProduto.Text,
+                                                 Convert.ToInt32(txtCodProduto_CadastroProduto.Text), txtDescricao_CadastroProduto.Text, txtMedida_CadastroProduto.Text,
+                                                 Convert.ToDouble(txtPreco_CadastroProduto.Text));
+
+                            //MessageBox modificação realizada com sucesso e limpeza dos TextBox
+                            OpcaoDoUsuario = MessageBox.Show("Modificação Realizada Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (OpcaoDoUsuario == DialogResult.OK)
+                            {
+                                BP.BuscarProduto(Convert.ToInt32(txtCodProduto_CadastroProduto.Text), gdvCadastroProduto);
+
+                                txtFornecedor_CadastroProduto.Text = "";
+                                txtDataCadastro_CadastroProduto.Text = "";
+                                txtCNPJ_CadastroProduto.Text = "";
+                                txtCodProduto_CadastroProduto.Text = "";
+                                txtDescricao_CadastroProduto.Text = "";
+                                txtMedida_CadastroProduto.Text = "";
+                                txtPreco_CadastroProduto.Text = "";
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Item Não Localizado!");
                         }
                     }
                 }
