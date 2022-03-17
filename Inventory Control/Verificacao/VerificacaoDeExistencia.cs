@@ -86,6 +86,44 @@ namespace Inventory_Control
 
         #endregion Fornecedor
 
+        #region Codigo de Barras
+
+        public bool BuscarExistenciaCodigoDeBarras(int _cod_De_Barras)
+        {
+            try
+            {
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    bool isExist = false;
+                    string query = "select * from Estoque where Cod_De_Barras = @cod_De_Barras";
+                    SqlCommand cmd = new SqlCommand(query, conexaoSQL);
+                    SqlDataReader reader;
+                    cmd.Parameters.AddWithValue("@cod_De_Barras", _cod_De_Barras);
+                    reader = cmd.ExecuteReader();
+
+                    reader.Read();
+
+                    if (reader.HasRows == true)
+                    {
+                        isExist = true;
+                    }
+                    else
+                    {
+                        isExist = false;
+                    }
+
+                    return isExist;
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+                return false;
+            }
+        }
+
+        #endregion Codigo de Barras
+
         #region Produto
 
         public bool BuscarExistenciaProduto(int _cod_Produto)

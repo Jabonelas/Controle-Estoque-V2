@@ -19,6 +19,8 @@ namespace Inventory_Control
 
         private InserirNotaFiscalEntrada IN = new InserirNotaFiscalEntrada();
 
+        private InserirDadosEstoque IE = new InserirDadosEstoque();
+
         public SuprimentoNotaDeEntrada()
         {
             InitializeComponent();
@@ -90,13 +92,15 @@ namespace Inventory_Control
         {
             if (txtNotaFiscal_Suprimento.Text == "")
             {
-                MessageBox.Show("O Campo Nota Fical é Obrigatorio!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("O Campo Nota Fiscal é Obrigatorio!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 try
                 {
                     IN.InserirNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text));
+
+                    IE.InserirEstoque(Convert.ToInt32(txtNotaFiscal_Suprimento.Text));
 
                     BN.BuscarNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), gdvNotaFiscal_Suprimento);
                 }

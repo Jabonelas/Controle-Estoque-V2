@@ -1,34 +1,27 @@
-﻿using Guna.UI2.WinForms;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Inventory_Control.Dados
 {
-    internal class InserirNotaFiscalEntrada : ConectarBanco
+    internal class InserirDadosEstoque : ConectarBanco
     {
         private VerificacaoDeExistencia VNF = new VerificacaoDeExistencia();
 
-        public void InserirNotaFiscal(int _nota_Fiscal)
+        public void InserirEstoque(int _nota_Fiscal)
         {
             if (VNF.BuscarExistenciaNotaFiscal(_nota_Fiscal))
             {
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
-                    string query = "update NF set Estatus = 'RECEBIMENTO' where NF = @nF" +
-                        " update NF set Data_Lancamento = GETDATE() where NF = @nF  ";
+                    string query = "INSERT INTO Estoque(Cod_Produto,Lote, Descricao, Quantidade, Local) " +
+                        "SELECT  Cod_Produto,Data_Lancamento,Descricao_Produto, QUANT, Estatus FROM NF where NF = @nF";
 
                     SqlCommand cmd = new SqlCommand(query, conexaoSQL);
                     cmd.Parameters.AddWithValue("@nF", _nota_Fiscal);
 
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Nota Fiscal Incluida Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se apareceu aqui deu certo", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
