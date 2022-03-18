@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dados\AlterarDadosEstoque .cs" />
     <Compile Include="Dados\BuscarDadosEstoque .cs" />
     <Compile Include="Dados\BuscarDadosRelatorioEntrada.cs" />
     <Compile Include="Count.cs" />

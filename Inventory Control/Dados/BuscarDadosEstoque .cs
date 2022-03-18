@@ -16,6 +16,8 @@ namespace Inventory_Control.Dados
         private VerificacaoDeExistencia VCP = new VerificacaoDeExistencia();
         private VerificacaoDeExistencia VCB = new VerificacaoDeExistencia();
 
+        #region Buscar Codigo do Produto
+
         public void BuscarCodDoProduto(int _cod_Produto, Guna2DataGridView _tabela)
         {
             try
@@ -24,7 +26,6 @@ namespace Inventory_Control.Dados
                 {
                     using (SqlConnection conexaoSQL = AbrirConexao())
                     {
-                        //SqlDataReader reader;
                         string query = "select * from Estoque where Cod_Produto = @codproduto";
                         SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
                         adapter.SelectCommand.Parameters.AddWithValue("@codproduto", _cod_Produto);
@@ -47,6 +48,10 @@ namespace Inventory_Control.Dados
             }
         }
 
+        #endregion Buscar Codigo do Produto
+
+        #region Buscar Codigo de Barras
+
         public void BuscarCodBarras(int _cod_De_Barras, Guna2DataGridView _tabela)
         {
             try
@@ -55,7 +60,6 @@ namespace Inventory_Control.Dados
                 {
                     using (SqlConnection conexaoSQL = AbrirConexao())
                     {
-                        //SqlDataReader reader;
                         string query = "select * from Estoque where Cod_De_Barras = @codDeBarras";
                         SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
                         adapter.SelectCommand.Parameters.AddWithValue("@codDeBarras", _cod_De_Barras);
@@ -77,5 +81,142 @@ namespace Inventory_Control.Dados
                 MessageBox.Show(x.Message);
             }
         }
+
+        #endregion Buscar Codigo de Barras
+
+        #region Buscar Lote
+
+        public string BuscarLote(int _cod_De_Barras)
+        {
+            try
+            {
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    string query = "select Lote from Estoque where Cod_De_Barras = @codDeBarras";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+                    adapter.SelectCommand.Parameters.AddWithValue("@codDeBarras", _cod_De_Barras);
+                    SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
+                    dr.Read();
+
+                    DateTime x = dr.GetDateTime(0);
+                    return x.ToShortDateString();
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message);
+                return "";
+            }
+        }
+
+        #endregion Buscar Lote
+
+        #region Buscar Codigo do Produto TextBox
+
+        public string BuscarCodProdutoTextBox(int _cod_De_Barras)
+        {
+            try
+            {
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    string query = "select Cod_Produto from Estoque where Cod_De_Barras = @codDeBarras";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+                    adapter.SelectCommand.Parameters.AddWithValue("@codDeBarras", _cod_De_Barras);
+                    SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
+                    dr.Read();
+
+                    int x = dr.GetInt32(0);
+                    return x.ToString();
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message);
+                return "";
+            }
+        }
+
+        #endregion Buscar Codigo do Produto TextBox
+
+        #region Buscar Descrição
+
+        public string BuscarDescricao(int _cod_De_Barras)
+        {
+            try
+            {
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    string query = "select Descricao from Estoque where Cod_De_Barras = @codDeBarras";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+                    adapter.SelectCommand.Parameters.AddWithValue("@codDeBarras", _cod_De_Barras);
+                    SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
+                    dr.Read();
+
+                    string x = dr.GetString(0);
+                    return x.ToString();
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message);
+                return "";
+            }
+        }
+
+        #endregion Buscar Descrição
+
+        #region Buscar Quantidade
+
+        public string BuscarQuantidade(int _cod_De_Barras)
+        {
+            try
+            {
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    string query = "select Quantidade from Estoque where Cod_De_Barras = @codDeBarras";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+                    adapter.SelectCommand.Parameters.AddWithValue("@codDeBarras", _cod_De_Barras);
+                    SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
+                    dr.Read();
+
+                    int x = dr.GetInt32(0);
+                    return x.ToString();
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message);
+                return "";
+            }
+        }
+
+        #endregion Buscar Quantidade
+
+        #region Buscar Local
+
+        public string BuscarLocal(int _cod_De_Barras)
+        {
+            try
+            {
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    string query = "select Local from Estoque where Cod_De_Barras = @codDeBarras";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+                    adapter.SelectCommand.Parameters.AddWithValue("@codDeBarras", _cod_De_Barras);
+                    SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
+                    dr.Read();
+
+                    string x = dr.GetString(0);
+                    return x.ToString();
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message);
+                return "";
+            }
+        }
+
+        #endregion Buscar Local
     }
 }
