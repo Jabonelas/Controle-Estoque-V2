@@ -202,6 +202,7 @@
             this.txtNotaFiscal_Suprimento.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtNotaFiscal_Suprimento.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNotaFiscal_Suprimento.Location = new System.Drawing.Point(103, 109);
+            this.txtNotaFiscal_Suprimento.MaxLength = 10;
             this.txtNotaFiscal_Suprimento.Name = "txtNotaFiscal_Suprimento";
             this.txtNotaFiscal_Suprimento.PasswordChar = '\0';
             this.txtNotaFiscal_Suprimento.SelectedText = "";
@@ -270,7 +271,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 542);
+            this.ClientSize = new System.Drawing.Size(1044, 542);
             this.Controls.Add(this.gdvNotaFiscal_Suprimento);
             this.Controls.Add(this.txtNotaFiscal_Suprimento);
             this.Controls.Add(this.gunaLabel16);

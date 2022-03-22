@@ -20,13 +20,11 @@ namespace Inventory_Control.Dados
                     cmd.Parameters.AddWithValue("@nF", _nota_Fiscal);
 
                     cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Se apareceu aqui deu certo", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
-                MessageBox.Show("Nota Fiscal Não Encontrada!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Nota Fiscal Não Encontrada!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

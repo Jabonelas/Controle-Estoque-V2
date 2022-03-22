@@ -79,20 +79,20 @@ namespace Inventory_Control
 
         private void txtDataFinalSuprimentosRelarorio_KeyPress(object sender, KeyPressEventArgs e)
         {
-            switch (txtDataInicioSuprimentosRelarorio.TextLength)
+            switch (txtDataFinalSuprimentosRelarorio.TextLength)
             {
                 case 0:
-                    txtDataInicioSuprimentosRelarorio.Text = "";
+                    txtDataFinalSuprimentosRelarorio.Text = "";
                     break;
 
                 case 2:
-                    txtDataInicioSuprimentosRelarorio.Text = txtDataInicioSuprimentosRelarorio.Text + "/";
-                    txtDataInicioSuprimentosRelarorio.SelectionStart = 3;
+                    txtDataFinalSuprimentosRelarorio.Text = txtDataFinalSuprimentosRelarorio.Text + "/";
+                    txtDataFinalSuprimentosRelarorio.SelectionStart = 3;
                     break;
 
                 case 5:
-                    txtDataInicioSuprimentosRelarorio.Text = txtDataInicioSuprimentosRelarorio.Text + "/";
-                    txtDataInicioSuprimentosRelarorio.SelectionStart = 6;
+                    txtDataFinalSuprimentosRelarorio.Text = txtDataFinalSuprimentosRelarorio.Text + "/";
+                    txtDataFinalSuprimentosRelarorio.SelectionStart = 6;
                     break;
             }
         }

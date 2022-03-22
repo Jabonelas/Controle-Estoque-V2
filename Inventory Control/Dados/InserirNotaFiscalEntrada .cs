@@ -33,7 +33,7 @@ namespace Inventory_Control.Dados
             }
             else
             {
-                MessageBox.Show("Nota Fiscal Não Encontrada!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Nota Fiscal Não Encontrada!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

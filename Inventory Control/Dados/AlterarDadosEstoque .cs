@@ -15,7 +15,6 @@ namespace Inventory_Control.Dados
         private VerificacaoDeExistencia VE = new VerificacaoDeExistencia();
 
         public void AlterarEstoque(string _local, int _cod_de_barras)
-
         {
             try
             {
@@ -23,10 +22,10 @@ namespace Inventory_Control.Dados
                 {
                     using (SqlConnection conexaoSQL = AbrirConexao())
                     {
-                        string query = "update Estoque set Local=@local Cod_De_Barras = @codDeBarras";
+                        string query = "update Estoque set Local=@local where Cod_De_Barras = @codDeBarras";
                         SqlCommand cmd = new SqlCommand(query, conexaoSQL);
                         cmd.Parameters.Add("@local", SqlDbType.VarChar).Value = _local;
-                        cmd.Parameters.Add("@codDeBarras", SqlDbType.DateTime).Value = _cod_de_barras;
+                        cmd.Parameters.Add("@codDeBarras", SqlDbType.Int).Value = _cod_de_barras;
 
                         cmd.ExecuteNonQuery();
                     }

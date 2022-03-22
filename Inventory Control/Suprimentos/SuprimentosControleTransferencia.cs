@@ -48,7 +48,7 @@ namespace Inventory_Control
             //{
             try
             {
-                if (txtCodDeBarras_MovimentacaoEstoque.Text != "")
+                if (txtCodDeBarras_MovimentacaoEstoque.Text != "" && cmbDestino_MovimentacaoEstoque.Text != "")
                 {
                     if (VCB.BuscarExistenciaCodigoDeBarras(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text)) == true)
                     {
@@ -80,6 +80,9 @@ namespace Inventory_Control
                                 txtQuantidade_MovimentocaoEstoque.Text = "";
                                 txtLocal_MovimentacaoEstoque.Text = "";
                                 cmbDestino_MovimentacaoEstoque.Text = "";
+
+                                label1.Text = "";
+                                label2.Text = "";
                             }
                         }
                     }
@@ -90,7 +93,10 @@ namespace Inventory_Control
                 }
                 else
                 {
-                    MessageBox.Show("O Campo  Codigo de Barras é Obrigatorio!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    label1.Text = "*";
+                    label2.Text = "*";
+
+                    MessageBox.Show("Os Campos Com * é Obrigatorio!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception x)

@@ -23,12 +23,6 @@ namespace Inventory_Control
 
         private void btnPesquisa_CadastroCliente_Click(object sender, EventArgs e)
         {
-            //if (txtCodBarras_Buscar.Text == "")
-            //{
-            //    MessageBox.Show("O Campo Nota Fiscal é Obrigatorio!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
-            //else
-            //{
             try
             {
                 if (txtCodBarras_Buscar.Text != "")

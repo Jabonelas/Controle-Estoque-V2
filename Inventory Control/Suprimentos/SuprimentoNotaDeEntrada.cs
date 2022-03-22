@@ -21,6 +21,14 @@ namespace Inventory_Control
 
         private InserirDadosEstoque IE = new InserirDadosEstoque();
 
+        private VerificacaoDeExistencia VC = new VerificacaoDeExistencia();
+
+        private VerificacaoDeExistencia VF = new VerificacaoDeExistencia();
+
+        private VerificacaoDeExistencia VP = new VerificacaoDeExistencia();
+
+        private VerificacaoDeExistencia VNF = new VerificacaoDeExistencia();
+
         public SuprimentoNotaDeEntrada()
         {
             InitializeComponent();
@@ -62,25 +70,19 @@ namespace Inventory_Control
             }
             else
             {
-                //DialogResult OpcaoDoUsuario = new DialogResult();
-                //OpcaoDoUsuario = MessageBox.Show("Deseja Excluir?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                //if (OpcaoDoUsuario == DialogResult.Yes)
-                //{
-                try
+                if (VNF.BuscarExistenciaDeLancamentoNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)) != "TRANSITO")
                 {
-                    DN.DeletarNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), gdvNotaFiscal_Suprimento);
+                    try
+                    {
+                        DN.DeletarNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), gdvNotaFiscal_Suprimento);
 
-                    //MessageBox modificação realizada com sucesso e limpeza dos TextBox
-
-                    //OpcaoDoUsuario =
-
-                    txtNotaFiscal_Suprimento.Text = "";
+                        txtNotaFiscal_Suprimento.Text = "";
+                    }
+                    catch (Exception x)
+                    {
+                        MessageBox.Show(x.ToString());
+                    }
                 }
-                catch (Exception x)
-                {
-                    MessageBox.Show(x.ToString());
-                }
-                //}
             }
         }
 
@@ -96,17 +98,34 @@ namespace Inventory_Control
             }
             else
             {
-                try
+                //BCP.BuscarCodDoProduto(Convert.ToInt32(txtCodProduto_Buscar.Text), gdvBuscarEstoque_Suprimentos);
+
+                if (VF.BuscarExistenciaDeFornecedorNaTabela(txtNotaFiscal_Suprimento.Text) == true &&
+                    VP.BuscarExistenciaDeProdutoNaTabela(txtNotaFiscal_Suprimento.Text) == true)
                 {
-                    IN.InserirNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text));
+                    if (VNF.BuscarExistenciaDeLancamentoNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)) == "TRANSITO")
+                    {
+                        try
+                        {
+                            IN.InserirNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text));
 
-                    IE.InserirEstoque(Convert.ToInt32(txtNotaFiscal_Suprimento.Text));
+                            IE.InserirEstoque(Convert.ToInt32(txtNotaFiscal_Suprimento.Text));
 
-                    BN.BuscarNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), gdvNotaFiscal_Suprimento);
+                            BN.BuscarNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), gdvNotaFiscal_Suprimento);
+                        }
+                        catch (Exception x)
+                        {
+                            MessageBox.Show(x.ToString());
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nota Fiscal´Já Inclusa no Sistema!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
-                catch (Exception x)
+                else
                 {
-                    MessageBox.Show(x.ToString());
+                    MessageBox.Show("Fornecedor ou Produto Não Cadastrado!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
