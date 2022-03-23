@@ -58,6 +58,7 @@
     <Compile Include="Dados\BuscarDadosEstoque .cs" />
     <Compile Include="Dados\BuscarDadosRelatorioEntrada.cs" />
     <Compile Include="Count.cs" />
+    <Compile Include="Dados\BuscarNotaFiscalSaida .cs" />
     <Compile Include="Dados\BuscarNotaFiscalEntrada.cs" />
     <Compile Include="Dados\AlterarDadosFornecedor.cs" />
     <Compile Include="Cadastros\Cadastro Clientes e Fornecedores.cs">
@@ -84,6 +85,7 @@
     <Compile Include="Dados\InserirDadosClientes.cs" />
     <Compile Include="Dados\InserirDadosFornecedor.cs" />
     <Compile Include="Dados\InserirDadosEstoque .cs" />
+    <Compile Include="Dados\InserirNotaFiscalSaida.cs" />
     <Compile Include="Dados\InserirNotaFiscalEntrada .cs" />
     <Compile Include="Dados\InserirDadosProduto.cs" />
     <Compile Include="Dados\DeletarNotaFiscalEntrada.cs" />

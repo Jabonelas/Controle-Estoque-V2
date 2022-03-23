@@ -85,5 +85,24 @@ namespace Inventory_Control
         }
 
         #endregion Nota Fiscal Entrada
+
+        #region Nota Fiscal Saida
+
+        public string ContarNFSaida()
+        {
+            using (SqlConnection conexaoSQL = AbrirConexao())
+            {
+                string query = "select IDENT_CURRENT('NF_Saida')";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+
+                SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
+                dr.Read();
+
+                Decimal x = dr.GetDecimal(0);
+                return (x + 1).ToString();
+            }
+        }
+
+        #endregion Nota Fiscal Saida
     }
 }

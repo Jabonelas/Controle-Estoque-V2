@@ -13,8 +13,9 @@ namespace Inventory_Control.Dados
             {
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
-                    string query = "INSERT INTO Estoque(Cod_Produto,Lote, Descricao, Quantidade, Local) " +
-                        "SELECT  Cod_Produto,Data_Lancamento,Descricao_Produto, QUANT, Estatus FROM NF where NF = @nF";
+                    string query = "INSERT INTO Estoque(Cod_Produto,Lote, Descricao, Quantidade, Local,Valor_Unitario,Valor_Total) " +
+                        "SELECT  Cod_Produto,Data_Lancamento,Descricao_Produto, QUANT, Estatus,Valor_Unitario,Valor_Total" +
+                        " FROM NF where NF = @nF";
 
                     SqlCommand cmd = new SqlCommand(query, conexaoSQL);
                     cmd.Parameters.AddWithValue("@nF", _nota_Fiscal);

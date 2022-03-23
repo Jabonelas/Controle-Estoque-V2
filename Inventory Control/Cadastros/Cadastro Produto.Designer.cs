@@ -1,6 +1,6 @@
 ﻿namespace Inventory_Control
 {
-    partial class Cadastro_Produto
+    partial class Vendas_Nota_Fiscal_Saida
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cadastro_Produto));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Vendas_Nota_Fiscal_Saida));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -55,7 +55,7 @@
             this.gdvCadastroProduto = new Guna.UI.WinForms.GunaDataGridView();
             this.txtDataCadastro_CadastroProduto = new System.Windows.Forms.TextBox();
             this.AvisoPreenchimentoCodProduto = new System.Windows.Forms.Label();
-            this.txtCodProduto_CadastroProduto = new Guna.UI.WinForms.GunaTextBox();
+            this.txtCodProduto_CadastroProduto = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gdvCadastroProduto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -482,29 +482,21 @@
             // 
             // txtCodProduto_CadastroProduto
             // 
-            this.txtCodProduto_CadastroProduto.BaseColor = System.Drawing.Color.White;
-            this.txtCodProduto_CadastroProduto.BorderColor = System.Drawing.Color.Silver;
-            this.txtCodProduto_CadastroProduto.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCodProduto_CadastroProduto.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtCodProduto_CadastroProduto.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
-            this.txtCodProduto_CadastroProduto.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtCodProduto_CadastroProduto.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCodProduto_CadastroProduto.Location = new System.Drawing.Point(103, 186);
-            this.txtCodProduto_CadastroProduto.MaxLength = 18;
+            this.txtCodProduto_CadastroProduto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodProduto_CadastroProduto.Location = new System.Drawing.Point(103, 187);
             this.txtCodProduto_CadastroProduto.Name = "txtCodProduto_CadastroProduto";
-            this.txtCodProduto_CadastroProduto.PasswordChar = '\0';
-            this.txtCodProduto_CadastroProduto.SelectedText = "";
-            this.txtCodProduto_CadastroProduto.Size = new System.Drawing.Size(162, 26);
-            this.txtCodProduto_CadastroProduto.TabIndex = 153;
+            this.txtCodProduto_CadastroProduto.ReadOnly = true;
+            this.txtCodProduto_CadastroProduto.Size = new System.Drawing.Size(162, 25);
+            this.txtCodProduto_CadastroProduto.TabIndex = 156;
             // 
             // Cadastro_Produto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1044, 542);
+            this.Controls.Add(this.txtCodProduto_CadastroProduto);
             this.Controls.Add(this.txtDataCadastro_CadastroProduto);
             this.Controls.Add(this.AvisoPreenchimentoCodProduto);
-            this.Controls.Add(this.txtCodProduto_CadastroProduto);
             this.Controls.Add(this.gdvCadastroProduto);
             this.Controls.Add(this.txtFornecedor_CadastroProduto);
             this.Controls.Add(this.txtMedida_CadastroProduto);
@@ -560,6 +552,6 @@
         private Guna.UI.WinForms.GunaDataGridView gdvCadastroProduto;
         private System.Windows.Forms.TextBox txtDataCadastro_CadastroProduto;
         private System.Windows.Forms.Label AvisoPreenchimentoCodProduto;
-        private Guna.UI.WinForms.GunaTextBox txtCodProduto_CadastroProduto;
+        private System.Windows.Forms.TextBox txtCodProduto_CadastroProduto;
     }
 }

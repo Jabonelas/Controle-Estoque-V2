@@ -98,6 +98,7 @@
             this.txtCodProduto_Buscar.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtCodProduto_Buscar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCodProduto_Buscar.Location = new System.Drawing.Point(103, 146);
+            this.txtCodProduto_Buscar.MaxLength = 10;
             this.txtCodProduto_Buscar.Name = "txtCodProduto_Buscar";
             this.txtCodProduto_Buscar.PasswordChar = '\0';
             this.txtCodProduto_Buscar.SelectedText = "";
@@ -124,6 +125,7 @@
             this.txtCodBarras_Buscar.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtCodBarras_Buscar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCodBarras_Buscar.Location = new System.Drawing.Point(103, 109);
+            this.txtCodBarras_Buscar.MaxLength = 10;
             this.txtCodBarras_Buscar.Name = "txtCodBarras_Buscar";
             this.txtCodBarras_Buscar.PasswordChar = '\0';
             this.txtCodBarras_Buscar.SelectedText = "";

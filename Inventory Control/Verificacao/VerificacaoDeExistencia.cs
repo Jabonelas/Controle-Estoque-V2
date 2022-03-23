@@ -281,7 +281,7 @@ namespace Inventory_Control
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
                     bool isExist = false;
-                    string query = "select * from NF where NF = @nF";
+                    string query = "select * from NF_Saida where NF_Saida = @nF";
                     SqlCommand cmd = new SqlCommand(query, conexaoSQL);
                     SqlDataReader reader;
                     cmd.Parameters.AddWithValue("@nF", _nota_Fiscal);

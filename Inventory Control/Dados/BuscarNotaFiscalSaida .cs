@@ -11,22 +11,22 @@ using System.Windows.Forms;
 
 namespace Inventory_Control
 {
-    internal class BuscarNotaFiscalEntrada : ConectarBanco
+    internal class BuscarNotaFiscalSaida : ConectarBanco
     {
         private VerificacaoDeExistencia VNF = new VerificacaoDeExistencia();
 
-        public void BuscarNotaFiscal(int _nota_Fiscal, Guna2DataGridView _tabela)
+        public void BuscarNFSaida(int _nota_Fiscal_Saida, Guna2DataGridView _tabela)
         {
             try
             {
-                if (VNF.BuscarExistenciaNotaFiscal(_nota_Fiscal))
+                if (VNF.BuscarExistenciaNotaFiscal(_nota_Fiscal_Saida))
                 {
                     using (SqlConnection conexaoSQL = AbrirConexao())
                     {
-                        string query = "select NF_Saida,Cod_Produto,Lote,Descricao,Quantidade,Valor_Total,Emissao" +
-                            " from NF where NF = @nF";
+                        string query = "select NF,CNPJ,Nome_Razao_Social,Cod_Produto,Descricao_Produto,QUANT,UNIDADE,Valor_Unitario,Valor_Total,Data_Emissao,Data_Lancamento,Estatus" +
+                            " from NF_Saida where NF_Saida = @nF";
                         SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
-                        adapter.SelectCommand.Parameters.AddWithValue("@nF", _nota_Fiscal);
+                        adapter.SelectCommand.Parameters.AddWithValue("@nF", _nota_Fiscal_Saida);
 
                         DataTable dataTable = new DataTable();
 

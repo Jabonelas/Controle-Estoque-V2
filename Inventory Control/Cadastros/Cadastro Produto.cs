@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Inventory_Control
 {
-    public partial class Cadastro_Produto : Form
+    public partial class Vendas_Nota_Fiscal_Saida : Form
     {
         //Dados Produto
 
@@ -30,7 +30,7 @@ namespace Inventory_Control
 
         private Count CP = new Count();
 
-        public Cadastro_Produto()
+        public Vendas_Nota_Fiscal_Saida()
         {
             InitializeComponent();
         }

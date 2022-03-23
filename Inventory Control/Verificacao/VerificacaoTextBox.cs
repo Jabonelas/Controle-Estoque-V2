@@ -41,11 +41,16 @@ namespace Inventory_Control
             }
         }
 
+        internal bool VerificarTextBoxNFSaida(VendasNotaFiscalSaida vendasNotaFiscalSaida)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion Cliente/Fornecedor
 
         #region Produto
 
-        public bool VerificarTextBoxProduto(Cadastro_Produto _form)
+        public bool VerificarTextBoxProduto(Vendas_Nota_Fiscal_Saida _form)
         {
             try
             {
@@ -75,5 +80,38 @@ namespace Inventory_Control
         }
 
         #endregion Produto
+
+        #region Nota Fiscal Saida
+
+        public bool VerificarTextBoxNFSaida(Vendas_Nota_Fiscal_Saida _form)
+        {
+            try
+            {
+                bool isExit = true;
+                foreach (Control ctrl in _form.Controls)
+                {
+                    if (ctrl is GunaTextBox)
+                    {
+                        if (ctrl.Text == string.Empty)
+                        {
+                            isExit = false;
+                        }
+                    }
+                    else if (ctrl is ComboBox)
+                    {
+                        if (ctrl.Text == string.Empty)
+                            isExit = false;
+                    }
+                }
+                return isExit;
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+                return false;
+            }
+        }
+
+        #endregion Nota Fiscal Saida
     }
 }

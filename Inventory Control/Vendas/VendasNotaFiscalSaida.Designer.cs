@@ -29,29 +29,33 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VendasNotaFiscalSaida));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaTextBox2 = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.btnPesquisa_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnExcluir_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnModificar_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnIncluir_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaTextBox3 = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaTextBox4 = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaTextBox5 = new Guna.UI.WinForms.GunaTextBox();
+            this.txtDescricao_VendasNFSaida = new Guna.UI.WinForms.GunaTextBox();
+            this.txtValor_VendasNFSaida = new Guna.UI.WinForms.GunaTextBox();
+            this.txtQuantidade_VendasNFSaida = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
-            this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
+            this.gdvVendasNFSaida = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.txtDataDeEmissao_VendasNFSaida = new System.Windows.Forms.TextBox();
+            this.gunaLabel10 = new Guna.UI.WinForms.GunaLabel();
+            this.txtCodProduto_VendasNFSaida = new Guna.UI.WinForms.GunaTextBox();
+            this.txtNFSaida_VendasNFSaida = new Guna.UI.WinForms.GunaTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.gdvVendasNFSaida)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaLabel4
@@ -93,22 +97,6 @@
             this.gunaLabel1.Size = new System.Drawing.Size(40, 15);
             this.gunaLabel1.TabIndex = 113;
             this.gunaLabel1.Text = "Incluir";
-            // 
-            // gunaTextBox2
-            // 
-            this.gunaTextBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox2.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox2.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox2.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
-            this.gunaTextBox2.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox2.Location = new System.Drawing.Point(103, 109);
-            this.gunaTextBox2.Name = "gunaTextBox2";
-            this.gunaTextBox2.PasswordChar = '\0';
-            this.gunaTextBox2.SelectedText = "";
-            this.gunaTextBox2.Size = new System.Drawing.Size(162, 26);
-            this.gunaTextBox2.TabIndex = 119;
             // 
             // gunaLabel5
             // 
@@ -259,70 +247,58 @@
             this.btnIncluir_CadastroCliente.Size = new System.Drawing.Size(44, 47);
             this.btnIncluir_CadastroCliente.TabIndex = 109;
             this.btnIncluir_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnIncluir_CadastroCliente.Click += new System.EventHandler(this.btnIncluir_CadastroCliente_Click);
             // 
-            // gunaTextBox1
+            // txtDescricao_VendasNFSaida
             // 
-            this.gunaTextBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
-            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox1.Location = new System.Drawing.Point(103, 186);
-            this.gunaTextBox1.Name = "gunaTextBox1";
-            this.gunaTextBox1.PasswordChar = '\0';
-            this.gunaTextBox1.SelectedText = "";
-            this.gunaTextBox1.Size = new System.Drawing.Size(479, 26);
-            this.gunaTextBox1.TabIndex = 120;
+            this.txtDescricao_VendasNFSaida.BaseColor = System.Drawing.Color.White;
+            this.txtDescricao_VendasNFSaida.BorderColor = System.Drawing.Color.Silver;
+            this.txtDescricao_VendasNFSaida.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDescricao_VendasNFSaida.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtDescricao_VendasNFSaida.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
+            this.txtDescricao_VendasNFSaida.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtDescricao_VendasNFSaida.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDescricao_VendasNFSaida.Location = new System.Drawing.Point(103, 186);
+            this.txtDescricao_VendasNFSaida.Name = "txtDescricao_VendasNFSaida";
+            this.txtDescricao_VendasNFSaida.PasswordChar = '\0';
+            this.txtDescricao_VendasNFSaida.ReadOnly = true;
+            this.txtDescricao_VendasNFSaida.SelectedText = "";
+            this.txtDescricao_VendasNFSaida.Size = new System.Drawing.Size(479, 26);
+            this.txtDescricao_VendasNFSaida.TabIndex = 120;
             // 
-            // gunaTextBox3
+            // txtValor_VendasNFSaida
             // 
-            this.gunaTextBox3.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox3.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox3.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox3.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
-            this.gunaTextBox3.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox3.Location = new System.Drawing.Point(103, 269);
-            this.gunaTextBox3.Name = "gunaTextBox3";
-            this.gunaTextBox3.PasswordChar = '\0';
-            this.gunaTextBox3.SelectedText = "";
-            this.gunaTextBox3.Size = new System.Drawing.Size(90, 26);
-            this.gunaTextBox3.TabIndex = 121;
+            this.txtValor_VendasNFSaida.BaseColor = System.Drawing.Color.White;
+            this.txtValor_VendasNFSaida.BorderColor = System.Drawing.Color.Silver;
+            this.txtValor_VendasNFSaida.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtValor_VendasNFSaida.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtValor_VendasNFSaida.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
+            this.txtValor_VendasNFSaida.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtValor_VendasNFSaida.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtValor_VendasNFSaida.Location = new System.Drawing.Point(103, 266);
+            this.txtValor_VendasNFSaida.Name = "txtValor_VendasNFSaida";
+            this.txtValor_VendasNFSaida.PasswordChar = '\0';
+            this.txtValor_VendasNFSaida.ReadOnly = true;
+            this.txtValor_VendasNFSaida.SelectedText = "";
+            this.txtValor_VendasNFSaida.Size = new System.Drawing.Size(90, 26);
+            this.txtValor_VendasNFSaida.TabIndex = 121;
             // 
-            // gunaTextBox4
+            // txtQuantidade_VendasNFSaida
             // 
-            this.gunaTextBox4.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox4.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox4.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox4.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
-            this.gunaTextBox4.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox4.Location = new System.Drawing.Point(103, 226);
-            this.gunaTextBox4.Name = "gunaTextBox4";
-            this.gunaTextBox4.PasswordChar = '\0';
-            this.gunaTextBox4.SelectedText = "";
-            this.gunaTextBox4.Size = new System.Drawing.Size(90, 26);
-            this.gunaTextBox4.TabIndex = 122;
-            // 
-            // gunaTextBox5
-            // 
-            this.gunaTextBox5.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox5.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox5.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox5.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
-            this.gunaTextBox5.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox5.Location = new System.Drawing.Point(103, 146);
-            this.gunaTextBox5.Name = "gunaTextBox5";
-            this.gunaTextBox5.PasswordChar = '\0';
-            this.gunaTextBox5.SelectedText = "";
-            this.gunaTextBox5.Size = new System.Drawing.Size(162, 26);
-            this.gunaTextBox5.TabIndex = 123;
+            this.txtQuantidade_VendasNFSaida.BaseColor = System.Drawing.Color.White;
+            this.txtQuantidade_VendasNFSaida.BorderColor = System.Drawing.Color.Silver;
+            this.txtQuantidade_VendasNFSaida.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtQuantidade_VendasNFSaida.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtQuantidade_VendasNFSaida.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
+            this.txtQuantidade_VendasNFSaida.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtQuantidade_VendasNFSaida.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtQuantidade_VendasNFSaida.Location = new System.Drawing.Point(103, 226);
+            this.txtQuantidade_VendasNFSaida.MaxLength = 5;
+            this.txtQuantidade_VendasNFSaida.Name = "txtQuantidade_VendasNFSaida";
+            this.txtQuantidade_VendasNFSaida.PasswordChar = '\0';
+            this.txtQuantidade_VendasNFSaida.SelectedText = "";
+            this.txtQuantidade_VendasNFSaida.Size = new System.Drawing.Size(90, 26);
+            this.txtQuantidade_VendasNFSaida.TabIndex = 122;
             // 
             // gunaLabel6
             // 
@@ -364,78 +340,157 @@
             this.gunaLabel9.TabIndex = 127;
             this.gunaLabel9.Text = "Cód. Produto:";
             // 
-            // guna2DataGridView1
+            // gdvVendasNFSaida
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.guna2DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.guna2DataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.guna2DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.guna2DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.guna2DataGridView1.EnableHeadersVisualStyles = false;
-            this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(13, 312);
-            this.guna2DataGridView1.Name = "guna2DataGridView1";
-            this.guna2DataGridView1.RowHeadersVisible = false;
-            this.guna2DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(1131, 218);
-            this.guna2DataGridView1.TabIndex = 128;
-            this.guna2DataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
-            this.guna2DataGridView1.ThemeStyle.ReadOnly = false;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            this.gdvVendasNFSaida.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.gdvVendasNFSaida.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gdvVendasNFSaida.BackgroundColor = System.Drawing.Color.White;
+            this.gdvVendasNFSaida.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gdvVendasNFSaida.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.gdvVendasNFSaida.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gdvVendasNFSaida.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.gdvVendasNFSaida.ColumnHeadersHeight = 4;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gdvVendasNFSaida.DefaultCellStyle = dataGridViewCellStyle18;
+            this.gdvVendasNFSaida.EnableHeadersVisualStyles = false;
+            this.gdvVendasNFSaida.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gdvVendasNFSaida.Location = new System.Drawing.Point(13, 312);
+            this.gdvVendasNFSaida.Name = "gdvVendasNFSaida";
+            this.gdvVendasNFSaida.RowHeadersVisible = false;
+            this.gdvVendasNFSaida.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gdvVendasNFSaida.Size = new System.Drawing.Size(1131, 218);
+            this.gdvVendasNFSaida.TabIndex = 128;
+            this.gdvVendasNFSaida.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
+            this.gdvVendasNFSaida.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.gdvVendasNFSaida.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.gdvVendasNFSaida.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.gdvVendasNFSaida.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.gdvVendasNFSaida.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.gdvVendasNFSaida.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.gdvVendasNFSaida.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gdvVendasNFSaida.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gdvVendasNFSaida.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gdvVendasNFSaida.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.gdvVendasNFSaida.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.gdvVendasNFSaida.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.gdvVendasNFSaida.ThemeStyle.HeaderStyle.Height = 4;
+            this.gdvVendasNFSaida.ThemeStyle.ReadOnly = false;
+            this.gdvVendasNFSaida.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.gdvVendasNFSaida.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.gdvVendasNFSaida.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.gdvVendasNFSaida.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.gdvVendasNFSaida.ThemeStyle.RowsStyle.Height = 22;
+            this.gdvVendasNFSaida.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gdvVendasNFSaida.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // txtDataDeEmissao_VendasNFSaida
+            // 
+            this.txtDataDeEmissao_VendasNFSaida.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataDeEmissao_VendasNFSaida.Location = new System.Drawing.Point(468, 112);
+            this.txtDataDeEmissao_VendasNFSaida.Name = "txtDataDeEmissao_VendasNFSaida";
+            this.txtDataDeEmissao_VendasNFSaida.ReadOnly = true;
+            this.txtDataDeEmissao_VendasNFSaida.Size = new System.Drawing.Size(114, 25);
+            this.txtDataDeEmissao_VendasNFSaida.TabIndex = 158;
+            // 
+            // gunaLabel10
+            // 
+            this.gunaLabel10.AutoSize = true;
+            this.gunaLabel10.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaLabel10.Location = new System.Drawing.Point(366, 117);
+            this.gunaLabel10.Name = "gunaLabel10";
+            this.gunaLabel10.Size = new System.Drawing.Size(96, 15);
+            this.gunaLabel10.TabIndex = 159;
+            this.gunaLabel10.Text = "Data de Emissão:";
+            // 
+            // txtCodProduto_VendasNFSaida
+            // 
+            this.txtCodProduto_VendasNFSaida.BaseColor = System.Drawing.Color.White;
+            this.txtCodProduto_VendasNFSaida.BorderColor = System.Drawing.Color.Silver;
+            this.txtCodProduto_VendasNFSaida.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCodProduto_VendasNFSaida.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtCodProduto_VendasNFSaida.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
+            this.txtCodProduto_VendasNFSaida.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtCodProduto_VendasNFSaida.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCodProduto_VendasNFSaida.Location = new System.Drawing.Point(103, 146);
+            this.txtCodProduto_VendasNFSaida.MaxLength = 10;
+            this.txtCodProduto_VendasNFSaida.Name = "txtCodProduto_VendasNFSaida";
+            this.txtCodProduto_VendasNFSaida.PasswordChar = '\0';
+            this.txtCodProduto_VendasNFSaida.SelectedText = "";
+            this.txtCodProduto_VendasNFSaida.Size = new System.Drawing.Size(162, 26);
+            this.txtCodProduto_VendasNFSaida.TabIndex = 161;
+            this.txtCodProduto_VendasNFSaida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodProduto_VendasNFSaida_KeyPress);
+            // 
+            // txtNFSaida_VendasNFSaida
+            // 
+            this.txtNFSaida_VendasNFSaida.BaseColor = System.Drawing.Color.White;
+            this.txtNFSaida_VendasNFSaida.BorderColor = System.Drawing.Color.Silver;
+            this.txtNFSaida_VendasNFSaida.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNFSaida_VendasNFSaida.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtNFSaida_VendasNFSaida.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
+            this.txtNFSaida_VendasNFSaida.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtNFSaida_VendasNFSaida.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtNFSaida_VendasNFSaida.Location = new System.Drawing.Point(103, 106);
+            this.txtNFSaida_VendasNFSaida.MaxLength = 10;
+            this.txtNFSaida_VendasNFSaida.Name = "txtNFSaida_VendasNFSaida";
+            this.txtNFSaida_VendasNFSaida.PasswordChar = '\0';
+            this.txtNFSaida_VendasNFSaida.SelectedText = "";
+            this.txtNFSaida_VendasNFSaida.Size = new System.Drawing.Size(162, 26);
+            this.txtNFSaida_VendasNFSaida.TabIndex = 162;
+            this.txtNFSaida_VendasNFSaida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNFSaida_VendasNFSaida_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(265, 151);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 24);
+            this.label1.TabIndex = 163;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(192, 230);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 24);
+            this.label2.TabIndex = 164;
             // 
             // VendasNotaFiscalSaida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 542);
-            this.Controls.Add(this.guna2DataGridView1);
+            this.ClientSize = new System.Drawing.Size(1044, 542);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtNFSaida_VendasNFSaida);
+            this.Controls.Add(this.txtCodProduto_VendasNFSaida);
+            this.Controls.Add(this.gunaLabel10);
+            this.Controls.Add(this.txtDataDeEmissao_VendasNFSaida);
+            this.Controls.Add(this.gdvVendasNFSaida);
             this.Controls.Add(this.gunaLabel9);
             this.Controls.Add(this.gunaLabel8);
             this.Controls.Add(this.gunaLabel7);
             this.Controls.Add(this.gunaLabel6);
-            this.Controls.Add(this.gunaTextBox5);
-            this.Controls.Add(this.gunaTextBox4);
-            this.Controls.Add(this.gunaTextBox3);
-            this.Controls.Add(this.gunaTextBox1);
-            this.Controls.Add(this.gunaTextBox2);
+            this.Controls.Add(this.txtQuantidade_VendasNFSaida);
+            this.Controls.Add(this.txtValor_VendasNFSaida);
+            this.Controls.Add(this.txtDescricao_VendasNFSaida);
             this.Controls.Add(this.gunaLabel5);
             this.Controls.Add(this.gunaLabel4);
             this.Controls.Add(this.gunaLabel3);
@@ -448,7 +503,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VendasNotaFiscalSaida";
             this.Text = "VendasNotaFiscalSaida";
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gdvVendasNFSaida)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -464,16 +519,20 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnExcluir_CadastroCliente;
         private Guna.UI.WinForms.GunaAdvenceButton btnModificar_CadastroCliente;
         private Guna.UI.WinForms.GunaAdvenceButton btnIncluir_CadastroCliente;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox2;
         private Guna.UI.WinForms.GunaLabel gunaLabel5;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox3;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox4;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox5;
+        private Guna.UI.WinForms.GunaTextBox txtDescricao_VendasNFSaida;
+        private Guna.UI.WinForms.GunaTextBox txtValor_VendasNFSaida;
+        private Guna.UI.WinForms.GunaTextBox txtQuantidade_VendasNFSaida;
         private Guna.UI.WinForms.GunaLabel gunaLabel6;
         private Guna.UI.WinForms.GunaLabel gunaLabel7;
         private Guna.UI.WinForms.GunaLabel gunaLabel8;
         private Guna.UI.WinForms.GunaLabel gunaLabel9;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private Guna.UI2.WinForms.Guna2DataGridView gdvVendasNFSaida;
+        private System.Windows.Forms.TextBox txtDataDeEmissao_VendasNFSaida;
+        private Guna.UI.WinForms.GunaLabel gunaLabel10;
+        private Guna.UI.WinForms.GunaTextBox txtCodProduto_VendasNFSaida;
+        private Guna.UI.WinForms.GunaTextBox txtNFSaida_VendasNFSaida;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

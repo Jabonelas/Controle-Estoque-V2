@@ -44,7 +44,7 @@ namespace Inventory_Control
 
         private void btnProdutos_Click(object sender, EventArgs e)
         {
-            loadform(new Cadastro_Produto());
+            loadform(new Vendas_Nota_Fiscal_Saida());
         }
 
         //Tela de Suprimentos

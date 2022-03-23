@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SuprimentosControleTransferencia));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtCodDeBarras_MovimentacaoEstoque = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.cmbDestino_MovimentacaoEstoque = new System.Windows.Forms.ComboBox();
@@ -45,14 +45,14 @@
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
-            this.txtCodDaProduto_MovimentacaoEstoque = new Guna.UI.WinForms.GunaTextBox();
-            this.txtLocal_MovimentacaoEstoque = new Guna.UI.WinForms.GunaTextBox();
-            this.txtQuantidade_MovimentocaoEstoque = new Guna.UI.WinForms.GunaTextBox();
-            this.txtDescricao_MovimentocaoEstoque = new Guna.UI.WinForms.GunaTextBox();
-            this.txtLote_MovimentocaoEstoque = new Guna.UI.WinForms.GunaTextBox();
             this.gvdMovimentacaoEstoque = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtLote_MovimentocaoEstoque = new System.Windows.Forms.TextBox();
+            this.txtDescricao_MovimentocaoEstoque = new System.Windows.Forms.TextBox();
+            this.txtQuantidade_MovimentocaoEstoque = new System.Windows.Forms.TextBox();
+            this.txtLocal_MovimentacaoEstoque = new System.Windows.Forms.TextBox();
+            this.txtCodDaProduto_MovimentacaoEstoque = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvdMovimentacaoEstoque)).BeginInit();
             this.SuspendLayout();
             // 
@@ -259,117 +259,32 @@
             this.gunaLabel9.TabIndex = 146;
             this.gunaLabel9.Text = "Destino:";
             // 
-            // txtCodDaProduto_MovimentacaoEstoque
-            // 
-            this.txtCodDaProduto_MovimentacaoEstoque.BaseColor = System.Drawing.Color.White;
-            this.txtCodDaProduto_MovimentacaoEstoque.BorderColor = System.Drawing.Color.Silver;
-            this.txtCodDaProduto_MovimentacaoEstoque.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCodDaProduto_MovimentacaoEstoque.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtCodDaProduto_MovimentacaoEstoque.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
-            this.txtCodDaProduto_MovimentacaoEstoque.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtCodDaProduto_MovimentacaoEstoque.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCodDaProduto_MovimentacaoEstoque.Location = new System.Drawing.Point(103, 146);
-            this.txtCodDaProduto_MovimentacaoEstoque.Name = "txtCodDaProduto_MovimentacaoEstoque";
-            this.txtCodDaProduto_MovimentacaoEstoque.PasswordChar = '\0';
-            this.txtCodDaProduto_MovimentacaoEstoque.ReadOnly = true;
-            this.txtCodDaProduto_MovimentacaoEstoque.SelectedText = "";
-            this.txtCodDaProduto_MovimentacaoEstoque.Size = new System.Drawing.Size(162, 26);
-            this.txtCodDaProduto_MovimentacaoEstoque.TabIndex = 147;
-            // 
-            // txtLocal_MovimentacaoEstoque
-            // 
-            this.txtLocal_MovimentacaoEstoque.BaseColor = System.Drawing.Color.White;
-            this.txtLocal_MovimentacaoEstoque.BorderColor = System.Drawing.Color.Silver;
-            this.txtLocal_MovimentacaoEstoque.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtLocal_MovimentacaoEstoque.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtLocal_MovimentacaoEstoque.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
-            this.txtLocal_MovimentacaoEstoque.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtLocal_MovimentacaoEstoque.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtLocal_MovimentacaoEstoque.Location = new System.Drawing.Point(103, 306);
-            this.txtLocal_MovimentacaoEstoque.Name = "txtLocal_MovimentacaoEstoque";
-            this.txtLocal_MovimentacaoEstoque.PasswordChar = '\0';
-            this.txtLocal_MovimentacaoEstoque.ReadOnly = true;
-            this.txtLocal_MovimentacaoEstoque.SelectedText = "";
-            this.txtLocal_MovimentacaoEstoque.Size = new System.Drawing.Size(162, 26);
-            this.txtLocal_MovimentacaoEstoque.TabIndex = 148;
-            // 
-            // txtQuantidade_MovimentocaoEstoque
-            // 
-            this.txtQuantidade_MovimentocaoEstoque.BaseColor = System.Drawing.Color.White;
-            this.txtQuantidade_MovimentocaoEstoque.BorderColor = System.Drawing.Color.Silver;
-            this.txtQuantidade_MovimentocaoEstoque.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtQuantidade_MovimentocaoEstoque.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtQuantidade_MovimentocaoEstoque.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
-            this.txtQuantidade_MovimentocaoEstoque.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtQuantidade_MovimentocaoEstoque.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtQuantidade_MovimentocaoEstoque.Location = new System.Drawing.Point(103, 266);
-            this.txtQuantidade_MovimentocaoEstoque.Name = "txtQuantidade_MovimentocaoEstoque";
-            this.txtQuantidade_MovimentocaoEstoque.PasswordChar = '\0';
-            this.txtQuantidade_MovimentocaoEstoque.ReadOnly = true;
-            this.txtQuantidade_MovimentocaoEstoque.SelectedText = "";
-            this.txtQuantidade_MovimentocaoEstoque.Size = new System.Drawing.Size(97, 26);
-            this.txtQuantidade_MovimentocaoEstoque.TabIndex = 149;
-            // 
-            // txtDescricao_MovimentocaoEstoque
-            // 
-            this.txtDescricao_MovimentocaoEstoque.BaseColor = System.Drawing.Color.White;
-            this.txtDescricao_MovimentocaoEstoque.BorderColor = System.Drawing.Color.Silver;
-            this.txtDescricao_MovimentocaoEstoque.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDescricao_MovimentocaoEstoque.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtDescricao_MovimentocaoEstoque.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
-            this.txtDescricao_MovimentocaoEstoque.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtDescricao_MovimentocaoEstoque.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtDescricao_MovimentocaoEstoque.Location = new System.Drawing.Point(103, 226);
-            this.txtDescricao_MovimentocaoEstoque.Name = "txtDescricao_MovimentocaoEstoque";
-            this.txtDescricao_MovimentocaoEstoque.PasswordChar = '\0';
-            this.txtDescricao_MovimentocaoEstoque.ReadOnly = true;
-            this.txtDescricao_MovimentocaoEstoque.SelectedText = "";
-            this.txtDescricao_MovimentocaoEstoque.Size = new System.Drawing.Size(556, 26);
-            this.txtDescricao_MovimentocaoEstoque.TabIndex = 150;
-            // 
-            // txtLote_MovimentocaoEstoque
-            // 
-            this.txtLote_MovimentocaoEstoque.BaseColor = System.Drawing.Color.White;
-            this.txtLote_MovimentocaoEstoque.BorderColor = System.Drawing.Color.Silver;
-            this.txtLote_MovimentocaoEstoque.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtLote_MovimentocaoEstoque.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtLote_MovimentocaoEstoque.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
-            this.txtLote_MovimentocaoEstoque.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtLote_MovimentocaoEstoque.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtLote_MovimentocaoEstoque.Location = new System.Drawing.Point(103, 186);
-            this.txtLote_MovimentocaoEstoque.Name = "txtLote_MovimentocaoEstoque";
-            this.txtLote_MovimentocaoEstoque.PasswordChar = '\0';
-            this.txtLote_MovimentocaoEstoque.ReadOnly = true;
-            this.txtLote_MovimentocaoEstoque.SelectedText = "";
-            this.txtLote_MovimentocaoEstoque.Size = new System.Drawing.Size(162, 26);
-            this.txtLote_MovimentocaoEstoque.TabIndex = 151;
-            // 
             // gvdMovimentacaoEstoque
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.gvdMovimentacaoEstoque.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.gvdMovimentacaoEstoque.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gvdMovimentacaoEstoque.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvdMovimentacaoEstoque.BackgroundColor = System.Drawing.Color.White;
             this.gvdMovimentacaoEstoque.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvdMovimentacaoEstoque.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gvdMovimentacaoEstoque.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvdMovimentacaoEstoque.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvdMovimentacaoEstoque.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gvdMovimentacaoEstoque.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvdMovimentacaoEstoque.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvdMovimentacaoEstoque.DefaultCellStyle = dataGridViewCellStyle3;
             this.gvdMovimentacaoEstoque.EnableHeadersVisualStyles = false;
             this.gvdMovimentacaoEstoque.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gvdMovimentacaoEstoque.Location = new System.Drawing.Point(12, 394);
@@ -422,19 +337,64 @@
             this.label2.Size = new System.Drawing.Size(0, 24);
             this.label2.TabIndex = 155;
             // 
+            // txtLote_MovimentocaoEstoque
+            // 
+            this.txtLote_MovimentocaoEstoque.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLote_MovimentocaoEstoque.Location = new System.Drawing.Point(103, 187);
+            this.txtLote_MovimentocaoEstoque.Name = "txtLote_MovimentocaoEstoque";
+            this.txtLote_MovimentocaoEstoque.ReadOnly = true;
+            this.txtLote_MovimentocaoEstoque.Size = new System.Drawing.Size(161, 25);
+            this.txtLote_MovimentocaoEstoque.TabIndex = 156;
+            // 
+            // txtDescricao_MovimentocaoEstoque
+            // 
+            this.txtDescricao_MovimentocaoEstoque.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricao_MovimentocaoEstoque.Location = new System.Drawing.Point(103, 227);
+            this.txtDescricao_MovimentocaoEstoque.Name = "txtDescricao_MovimentocaoEstoque";
+            this.txtDescricao_MovimentocaoEstoque.ReadOnly = true;
+            this.txtDescricao_MovimentocaoEstoque.Size = new System.Drawing.Size(556, 25);
+            this.txtDescricao_MovimentocaoEstoque.TabIndex = 158;
+            // 
+            // txtQuantidade_MovimentocaoEstoque
+            // 
+            this.txtQuantidade_MovimentocaoEstoque.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantidade_MovimentocaoEstoque.Location = new System.Drawing.Point(103, 267);
+            this.txtQuantidade_MovimentocaoEstoque.Name = "txtQuantidade_MovimentocaoEstoque";
+            this.txtQuantidade_MovimentocaoEstoque.ReadOnly = true;
+            this.txtQuantidade_MovimentocaoEstoque.Size = new System.Drawing.Size(97, 25);
+            this.txtQuantidade_MovimentocaoEstoque.TabIndex = 159;
+            // 
+            // txtLocal_MovimentacaoEstoque
+            // 
+            this.txtLocal_MovimentacaoEstoque.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocal_MovimentacaoEstoque.Location = new System.Drawing.Point(103, 307);
+            this.txtLocal_MovimentacaoEstoque.Name = "txtLocal_MovimentacaoEstoque";
+            this.txtLocal_MovimentacaoEstoque.ReadOnly = true;
+            this.txtLocal_MovimentacaoEstoque.Size = new System.Drawing.Size(161, 25);
+            this.txtLocal_MovimentacaoEstoque.TabIndex = 160;
+            // 
+            // txtCodDaProduto_MovimentacaoEstoque
+            // 
+            this.txtCodDaProduto_MovimentacaoEstoque.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodDaProduto_MovimentacaoEstoque.Location = new System.Drawing.Point(103, 147);
+            this.txtCodDaProduto_MovimentacaoEstoque.Name = "txtCodDaProduto_MovimentacaoEstoque";
+            this.txtCodDaProduto_MovimentacaoEstoque.ReadOnly = true;
+            this.txtCodDaProduto_MovimentacaoEstoque.Size = new System.Drawing.Size(161, 25);
+            this.txtCodDaProduto_MovimentacaoEstoque.TabIndex = 161;
+            // 
             // SuprimentosControleTransferencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1044, 542);
+            this.Controls.Add(this.txtCodDaProduto_MovimentacaoEstoque);
+            this.Controls.Add(this.txtLocal_MovimentacaoEstoque);
+            this.Controls.Add(this.txtQuantidade_MovimentocaoEstoque);
+            this.Controls.Add(this.txtDescricao_MovimentocaoEstoque);
+            this.Controls.Add(this.txtLote_MovimentocaoEstoque);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gvdMovimentacaoEstoque);
-            this.Controls.Add(this.txtLote_MovimentocaoEstoque);
-            this.Controls.Add(this.txtDescricao_MovimentocaoEstoque);
-            this.Controls.Add(this.txtQuantidade_MovimentocaoEstoque);
-            this.Controls.Add(this.txtLocal_MovimentacaoEstoque);
-            this.Controls.Add(this.txtCodDaProduto_MovimentacaoEstoque);
             this.Controls.Add(this.gunaLabel9);
             this.Controls.Add(this.gunaLabel8);
             this.Controls.Add(this.gunaLabel7);
@@ -471,13 +431,13 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel7;
         private Guna.UI.WinForms.GunaLabel gunaLabel8;
         private Guna.UI.WinForms.GunaLabel gunaLabel9;
-        private Guna.UI.WinForms.GunaTextBox txtCodDaProduto_MovimentacaoEstoque;
-        private Guna.UI.WinForms.GunaTextBox txtLocal_MovimentacaoEstoque;
-        private Guna.UI.WinForms.GunaTextBox txtQuantidade_MovimentocaoEstoque;
-        private Guna.UI.WinForms.GunaTextBox txtDescricao_MovimentocaoEstoque;
-        private Guna.UI.WinForms.GunaTextBox txtLote_MovimentocaoEstoque;
         private Guna.UI2.WinForms.Guna2DataGridView gvdMovimentacaoEstoque;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtLote_MovimentocaoEstoque;
+        private System.Windows.Forms.TextBox txtDescricao_MovimentocaoEstoque;
+        private System.Windows.Forms.TextBox txtQuantidade_MovimentocaoEstoque;
+        private System.Windows.Forms.TextBox txtLocal_MovimentacaoEstoque;
+        private System.Windows.Forms.TextBox txtCodDaProduto_MovimentacaoEstoque;
     }
 }

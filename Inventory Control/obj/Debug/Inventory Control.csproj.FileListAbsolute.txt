@@ -5,7 +5,6 @@ C:\Users\israe\source\repos\Inventory Control\Inventory Control\bin\Debug\Guna.U
 C:\Users\israe\source\repos\Inventory Control\Inventory Control\bin\Debug\Guna.UI2.dll
 C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Inventory Control.csproj.SuggestedBindingRedirects.cache
 C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Inventory_Control.Cadastro_Clientes_e_Fornecedores.resources
-C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Inventory_Control.Cadastro_Produto.resources
 C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Inventory_Control.SuprimentoControleBusca.resources
 C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Inventory_Control.SuprimentoNotaDeEntrada.resources
 C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Inventory_Control.SuprimentoRelatorio.resources
@@ -22,3 +21,4 @@ C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Invent
 C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Inventory Control.exe
 C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Inventory Control.pdb
 C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Inventory Control.csproj.AssemblyReference.cache
+C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Inventory_Control.Vendas_Nota_Fiscal_Saida.resources
