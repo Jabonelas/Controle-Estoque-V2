@@ -140,7 +140,7 @@ namespace Inventory_Control.Dados
 
         #region Buscar Descrição
 
-        public string BuscarDescricao(int _cod_De_Barras)
+        public string BuscarDescricao(int _cod_De_Barras) //usado na aba Suprimento tranferencias
         {
             try
             {
@@ -149,6 +149,29 @@ namespace Inventory_Control.Dados
                     string query = "select Descricao from Estoque where Cod_De_Barras = @codDeBarras";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
                     adapter.SelectCommand.Parameters.AddWithValue("@codDeBarras", _cod_De_Barras);
+                    SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
+                    dr.Read();
+
+                    string x = dr.GetString(0);
+                    return x.ToString();
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message);
+                return "";
+            }
+        }
+
+        public string BuscarDescricaoNFSaida(int _cod_Produto) //usado na aba Vendas
+        {
+            try
+            {
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    string query = "select Descricao from Estoque where Cod_Produto = @codProduto";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+                    adapter.SelectCommand.Parameters.AddWithValue("@codProduto", _cod_Produto);
                     SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
                     dr.Read();
 

@@ -88,18 +88,34 @@ namespace Inventory_Control
 
         #region Nota Fiscal Saida
 
-        public string ContarNFSaida()
+        public string ContarNFSaidaGerando()
         {
             using (SqlConnection conexaoSQL = AbrirConexao())
             {
-                string query = "select IDENT_CURRENT('NF_Saida')";
+                //string query = "select IDENT_CURRENT('NF_Saida')";
+                string query = "select NF_Saida from NF_Saida where NF_Saida = (select max(NF_Saida) from NF_Saida)";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
 
                 SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
                 dr.Read();
 
-                Decimal x = dr.GetDecimal(0);
+                int x = dr.GetInt32(0);
                 return (x + 1).ToString();
+            }
+        }
+
+        public string ContarNFSaidaContinuacao()
+        {
+            using (SqlConnection conexaoSQL = AbrirConexao())
+            {
+                string query = "select NF_Saida from NF_Saida where NF_Saida = (select max(NF_Saida) from NF_Saida)";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+
+                SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
+                dr.Read();
+
+                int x = dr.GetInt32(0);
+                return x.ToString();
             }
         }
 

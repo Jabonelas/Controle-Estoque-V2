@@ -21,6 +21,8 @@ namespace Inventory_Control
 
         private BuscarNotaFiscalSaida BNFS = new BuscarNotaFiscalSaida();
 
+        private BuscarDadosEstoque BE = new BuscarDadosEstoque();
+
         public VendasNotaFiscalSaida()
         {
             InitializeComponent();
@@ -30,6 +32,9 @@ namespace Inventory_Control
 
         private void btnIncluir_CadastroCliente_Click(object sender, EventArgs e)
         {
+            label1.Text = "";
+            label2.Text = "";
+
             try
             {
                 //if (VT.VerificarTextBoxNFSaida(this) == true)   //Verificar se os textbox estão preenchidos
@@ -38,28 +43,36 @@ namespace Inventory_Control
                 {
                     txtDataDeEmissao_VendasNFSaida.Text = DateTime.Today.ToShortDateString();
 
-                    txtNFSaida_VendasNFSaida.Text = Convert.ToString(CNFS.ContarNFSaida());//gerar o numero da NF de Saida
+                    if (txtNFSaida_VendasNFSaida.Text == "")
+                    {
+                        txtNFSaida_VendasNFSaida.Text = Convert.ToString(CNFS.ContarNFSaidaGerando());//gerar o numero da NF de Saida
+                    }
+                    else
+                    {
+                        txtNFSaida_VendasNFSaida.Text = Convert.ToString(CNFS.ContarNFSaidaContinuacao());//gerar o numero da NF de Saida
+                    }
+
+                    INFS.InserirNFSaidaNumeroDeNF(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text));
+
+                    INFS.InserirNFSaidaIncremento(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), Convert.ToInt32(txtQuantidade_VendasNFSaida.Text),
+                 Convert.ToDateTime(txtDataDeEmissao_VendasNFSaida.Text));
 
                     INFS.InserirNFSaida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text));
 
-                    INFS.InserirNFSaidaIncremento(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), Convert.ToInt32(txtQuantidade_VendasNFSaida.Text)
-                    , Convert.ToDateTime(txtDataDeEmissao_VendasNFSaida.Text));
-
-                    BNFS.BuscarNFSaida(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), gdvVendasNFSaida);
+                    txtDescricao_VendasNFSaida.Text = BE.BuscarDescricaoNFSaida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text));
 
                     //MessageBox cadastrado com sucesso e limpeza dos TextBox
                     DialogResult OpcaoDoUsuario = new DialogResult();
                     OpcaoDoUsuario = MessageBox.Show("Nota Fiscal Emitida com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (OpcaoDoUsuario == DialogResult.OK)
                     {
-                        //BNFS.BuscarNFSaida(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), gdvVendasNFSaida);
+                        BNFS.BuscarNFSaida(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), gdvVendasNFSaida);
 
-                        txtNFSaida_VendasNFSaida.Text = "";
+                        //txtNFSaida_VendasNFSaida.Text = "";
                         txtDataDeEmissao_VendasNFSaida.Text = "";
                         txtCodProduto_VendasNFSaida.Text = "";
                         txtDescricao_VendasNFSaida.Text = "";
                         txtQuantidade_VendasNFSaida.Text = "";
-                        txtValor_VendasNFSaida.Text = "";
                     }
                 }
                 else
@@ -72,11 +85,38 @@ namespace Inventory_Control
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.Message.ToString());
+                MessageBox.Show(x.ToString());
             }
         }
 
         #endregion Bontão Incluir
+
+        #region Botão Buscar
+
+        private void btnPesquisa_CadastroCliente_Click(object sender, EventArgs e)
+        {
+            label1.Text = "";
+            label2.Text = "";
+            try
+            {
+                if (txtNFSaida_VendasNFSaida.Text != "")
+                {
+                    BNFS.BuscarNFSaida(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), gdvVendasNFSaida);
+                }
+                else if (txtCodProduto_VendasNFSaida.Text != "")
+                {
+                    txtDescricao_VendasNFSaida.Text = BE.BuscarDescricaoNFSaida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text));
+
+                    BNFS.BuscarNFSaidaConsulta(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text), gdvVendasNFSaida);
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+        }
+
+        #endregion Botão Buscar
 
         #region TextBox NF Saida
 

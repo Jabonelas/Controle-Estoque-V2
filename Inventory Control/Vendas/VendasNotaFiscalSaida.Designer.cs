@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VendasNotaFiscalSaida));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
@@ -42,9 +42,7 @@
             this.btnModificar_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnIncluir_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
             this.txtDescricao_VendasNFSaida = new Guna.UI.WinForms.GunaTextBox();
-            this.txtValor_VendasNFSaida = new Guna.UI.WinForms.GunaTextBox();
             this.txtQuantidade_VendasNFSaida = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
@@ -142,6 +140,7 @@
             this.btnPesquisa_CadastroCliente.Size = new System.Drawing.Size(44, 47);
             this.btnPesquisa_CadastroCliente.TabIndex = 112;
             this.btnPesquisa_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnPesquisa_CadastroCliente.Click += new System.EventHandler(this.btnPesquisa_CadastroCliente_Click);
             // 
             // btnExcluir_CadastroCliente
             // 
@@ -266,23 +265,6 @@
             this.txtDescricao_VendasNFSaida.Size = new System.Drawing.Size(479, 26);
             this.txtDescricao_VendasNFSaida.TabIndex = 120;
             // 
-            // txtValor_VendasNFSaida
-            // 
-            this.txtValor_VendasNFSaida.BaseColor = System.Drawing.Color.White;
-            this.txtValor_VendasNFSaida.BorderColor = System.Drawing.Color.Silver;
-            this.txtValor_VendasNFSaida.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtValor_VendasNFSaida.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtValor_VendasNFSaida.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
-            this.txtValor_VendasNFSaida.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtValor_VendasNFSaida.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtValor_VendasNFSaida.Location = new System.Drawing.Point(103, 266);
-            this.txtValor_VendasNFSaida.Name = "txtValor_VendasNFSaida";
-            this.txtValor_VendasNFSaida.PasswordChar = '\0';
-            this.txtValor_VendasNFSaida.ReadOnly = true;
-            this.txtValor_VendasNFSaida.SelectedText = "";
-            this.txtValor_VendasNFSaida.Size = new System.Drawing.Size(90, 26);
-            this.txtValor_VendasNFSaida.TabIndex = 121;
-            // 
             // txtQuantidade_VendasNFSaida
             // 
             this.txtQuantidade_VendasNFSaida.BaseColor = System.Drawing.Color.White;
@@ -299,16 +281,6 @@
             this.txtQuantidade_VendasNFSaida.SelectedText = "";
             this.txtQuantidade_VendasNFSaida.Size = new System.Drawing.Size(90, 26);
             this.txtQuantidade_VendasNFSaida.TabIndex = 122;
-            // 
-            // gunaLabel6
-            // 
-            this.gunaLabel6.AutoSize = true;
-            this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel6.Location = new System.Drawing.Point(10, 277);
-            this.gunaLabel6.Name = "gunaLabel6";
-            this.gunaLabel6.Size = new System.Drawing.Size(36, 15);
-            this.gunaLabel6.TabIndex = 124;
-            this.gunaLabel6.Text = "Valor:";
             // 
             // gunaLabel7
             // 
@@ -342,37 +314,37 @@
             // 
             // gdvVendasNFSaida
             // 
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            this.gdvVendasNFSaida.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.gdvVendasNFSaida.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gdvVendasNFSaida.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gdvVendasNFSaida.BackgroundColor = System.Drawing.Color.White;
             this.gdvVendasNFSaida.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gdvVendasNFSaida.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gdvVendasNFSaida.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gdvVendasNFSaida.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
-            this.gdvVendasNFSaida.ColumnHeadersHeight = 4;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gdvVendasNFSaida.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gdvVendasNFSaida.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gdvVendasNFSaida.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gdvVendasNFSaida.DefaultCellStyle = dataGridViewCellStyle3;
             this.gdvVendasNFSaida.EnableHeadersVisualStyles = false;
             this.gdvVendasNFSaida.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gdvVendasNFSaida.Location = new System.Drawing.Point(13, 312);
+            this.gdvVendasNFSaida.Location = new System.Drawing.Point(13, 271);
             this.gdvVendasNFSaida.Name = "gdvVendasNFSaida";
             this.gdvVendasNFSaida.RowHeadersVisible = false;
             this.gdvVendasNFSaida.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gdvVendasNFSaida.Size = new System.Drawing.Size(1131, 218);
+            this.gdvVendasNFSaida.Size = new System.Drawing.Size(1131, 259);
             this.gdvVendasNFSaida.TabIndex = 128;
             this.gdvVendasNFSaida.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.gdvVendasNFSaida.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -387,7 +359,7 @@
             this.gdvVendasNFSaida.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.gdvVendasNFSaida.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.gdvVendasNFSaida.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.gdvVendasNFSaida.ThemeStyle.HeaderStyle.Height = 4;
+            this.gdvVendasNFSaida.ThemeStyle.HeaderStyle.Height = 30;
             this.gdvVendasNFSaida.ThemeStyle.ReadOnly = false;
             this.gdvVendasNFSaida.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.gdvVendasNFSaida.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -487,9 +459,7 @@
             this.Controls.Add(this.gunaLabel9);
             this.Controls.Add(this.gunaLabel8);
             this.Controls.Add(this.gunaLabel7);
-            this.Controls.Add(this.gunaLabel6);
             this.Controls.Add(this.txtQuantidade_VendasNFSaida);
-            this.Controls.Add(this.txtValor_VendasNFSaida);
             this.Controls.Add(this.txtDescricao_VendasNFSaida);
             this.Controls.Add(this.gunaLabel5);
             this.Controls.Add(this.gunaLabel4);
@@ -521,9 +491,7 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnIncluir_CadastroCliente;
         private Guna.UI.WinForms.GunaLabel gunaLabel5;
         private Guna.UI.WinForms.GunaTextBox txtDescricao_VendasNFSaida;
-        private Guna.UI.WinForms.GunaTextBox txtValor_VendasNFSaida;
         private Guna.UI.WinForms.GunaTextBox txtQuantidade_VendasNFSaida;
-        private Guna.UI.WinForms.GunaLabel gunaLabel6;
         private Guna.UI.WinForms.GunaLabel gunaLabel7;
         private Guna.UI.WinForms.GunaLabel gunaLabel8;
         private Guna.UI.WinForms.GunaLabel gunaLabel9;
