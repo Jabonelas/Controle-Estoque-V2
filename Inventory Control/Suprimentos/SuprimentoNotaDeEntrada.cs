@@ -70,7 +70,7 @@ namespace Inventory_Control
             }
             else
             {
-                if (VNF.BuscarExistenciaDeLancamentoNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)) != "TRANSITO")
+                if (VNF.BuscarExistenciaDeLancamentoNotaFiscalEntrada(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)) != "TRANSITO")
                 {
                     try
                     {
@@ -103,7 +103,7 @@ namespace Inventory_Control
                 if (VF.BuscarExistenciaDeFornecedorNaTabela(txtNotaFiscal_Suprimento.Text) == true &&
                     VP.BuscarExistenciaDeProdutoNaTabela(txtNotaFiscal_Suprimento.Text) == true)
                 {
-                    if (VNF.BuscarExistenciaDeLancamentoNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)) == "TRANSITO")
+                    if (VNF.BuscarExistenciaDeLancamentoNotaFiscalEntrada(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)) == "TRANSITO")
                     {
                         try
                         {

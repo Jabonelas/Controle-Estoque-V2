@@ -21,7 +21,7 @@ namespace Inventory_Control
         {
             try
             {
-                if (VNF.BuscarExistenciaNotaFiscal(_nota_Fiscal_Saida))
+                if (VNF.BuscarExistenciaNotaFiscalSaida(_nota_Fiscal_Saida))
                 {
                     using (SqlConnection conexaoSQL = AbrirConexao())
                     {

@@ -10,37 +10,30 @@ using System.Windows.Forms;
 
 namespace Inventory_Control
 {
-    internal class DeletarNotaFiscalEntrada : ConectarBanco
+    internal class DeletarNotaFiscalSaida : ConectarBanco
     {
-        private VerificacaoDeExistencia VNF = new VerificacaoDeExistencia();
+        private VerificacaoDeExistencia VNFS = new VerificacaoDeExistencia();
         private VerificacaoDeExistencia BNF = new VerificacaoDeExistencia();
 
-        public void DeletarNotaFiscal(int _nota_Fiscal, Guna2DataGridView _tabela)
+        public void DeletarNFSaida(int _nota_Fiscal, Guna2DataGridView _tabela)
         {
             try
             {
                 //string query = "update NF set Estatus = 'TRANSITO' where NF = @nF";
 
-                if (VNF.BuscarExistenciaNotaFiscalSaida(_nota_Fiscal))
+                if (VNFS.BuscarExistenciaNotaFiscalSaida(_nota_Fiscal))
                 {
                     using (SqlConnection conexaoSQL = AbrirConexao())
                     {
-                        //SqlCommand cmd = new SqlCommand(query, conexaoSQL);
-                        //cmd.Parameters.Add("@nF", SqlDbType.Int).Value = _nota_Fiscal;
-                        //cmd.ExecuteNonQuery();
-                        //MessageBox.Show("Nota Fical Excluida Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        //string query = "select * from NF where NF = @nF";
-
                         BNF.BuscarExistenciaNotaFiscalSaida(_nota_Fiscal);
 
                         DialogResult OpcaoDoUsuario = new DialogResult();
                         OpcaoDoUsuario = MessageBox.Show("Deseja Excluir?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (OpcaoDoUsuario == DialogResult.Yes)
                         {
-                            string query = "update NF set Estatus = 'TRANSITO'  where NF = @nF  select NF,CNPJ,Nome_Razao_Social,Cod_Produto,Descricao_Produto,QUANT,UNIDADE,Valor_Unitario,Valor_Total,Data_Emissao,Data_Lancamento,Estatus from NF where NF = @nF ";
+                            string query = "delete NF_Saida where NF_Saida = @nfsaida";
                             SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
-                            adapter.SelectCommand.Parameters.AddWithValue("@nF", _nota_Fiscal);
+                            adapter.SelectCommand.Parameters.AddWithValue("@nfsaida", _nota_Fiscal);
 
                             DataTable dataTable = new DataTable();
 

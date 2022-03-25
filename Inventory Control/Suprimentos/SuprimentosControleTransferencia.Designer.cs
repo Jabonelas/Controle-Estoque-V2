@@ -101,7 +101,7 @@
             "EST. C - 1 - 2",
             "EST. C - 2 - 1",
             "EST. C - 2 - 2",
-            "PRODUÇÃO"});
+            "EXPEDICAO"});
             this.cmbDestino_MovimentacaoEstoque.Location = new System.Drawing.Point(103, 349);
             this.cmbDestino_MovimentacaoEstoque.Name = "cmbDestino_MovimentacaoEstoque";
             this.cmbDestino_MovimentacaoEstoque.Size = new System.Drawing.Size(162, 23);

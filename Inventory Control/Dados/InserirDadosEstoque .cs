@@ -9,7 +9,7 @@ namespace Inventory_Control.Dados
 
         public void InserirEstoque(int _nota_Fiscal)
         {
-            if (VNF.BuscarExistenciaNotaFiscal(_nota_Fiscal))
+            if (VNF.BuscarExistenciaNotaFiscalSaida(_nota_Fiscal))
             {
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {

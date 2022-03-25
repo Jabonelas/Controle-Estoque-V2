@@ -40,5 +40,49 @@ namespace Inventory_Control.Dados
                 MessageBox.Show(x.ToString());
             }
         }
+
+        //Realizar a movimentacao na quantidade do Estoque com forme a Nota Fiscal de Saida
+        // Tirando a quantidade
+
+        public void AlterarQuantidadeEstoqueSubtracao(int _cod_Produto, int _quantidade)
+        {
+            try
+            {
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    string query = "update Estoque set Quantidade=(Quantidade - @quantidadeNFS) where Cod_Produto = @codProduto";
+                    SqlCommand cmd = new SqlCommand(query, conexaoSQL);
+                    cmd.Parameters.Add("@codProduto", SqlDbType.VarChar).Value = _cod_Produto;
+                    cmd.Parameters.Add("@quantidadeNFS", SqlDbType.Int).Value = _quantidade;
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+        }
+
+        public void AlterarQuantidadeEstoqueAdicao(int _nf_Saida)
+        {
+            try
+            {
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    string query = "update Estoque  set Quantidade = (Quantidade +" +
+                        " (select B.Quantidade from  NF_Saida B " +
+                        "where Cod_Produto = B.Cod_Produto and B.NF_Saida = @nfsaida ))";
+                    SqlCommand cmd = new SqlCommand(query, conexaoSQL);
+                    cmd.Parameters.Add("@nfsaida", SqlDbType.VarChar).Value = _nf_Saida;
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+        }
     }
 }

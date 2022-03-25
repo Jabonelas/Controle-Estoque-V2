@@ -82,6 +82,7 @@
     <Compile Include="Dados\DeletarDadosClientes.cs" />
     <Compile Include="Dados\DeletarDadosFornecedor.cs" />
     <Compile Include="Dados\DeletarDadosProduto.cs" />
+    <Compile Include="Dados\DeletarNotaFiscalSaida .cs" />
     <Compile Include="Dados\InserirDadosClientes.cs" />
     <Compile Include="Dados\InserirDadosFornecedor.cs" />
     <Compile Include="Dados\InserirDadosEstoque .cs" />
@@ -147,6 +148,7 @@
     </Compile>
     <Compile Include="Verificacao\VerificacaoDeExistencia.cs" />
     <Compile Include="Verificacao\VerificacaoTextBox.cs" />
+    <Compile Include="Verificacao\VerificarEstoqueLiberado.cs" />
     <EmbeddedResource Include="Cadastros\Cadastro Clientes e Fornecedores.resx">
       <DependentUpon>Cadastro Clientes e Fornecedores.cs</DependentUpon>
     </EmbeddedResource>

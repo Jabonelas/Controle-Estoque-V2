@@ -176,6 +176,7 @@
             this.btnExcluir_CadastroCliente.Size = new System.Drawing.Size(44, 47);
             this.btnExcluir_CadastroCliente.TabIndex = 111;
             this.btnExcluir_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnExcluir_CadastroCliente.Click += new System.EventHandler(this.btnExcluir_CadastroCliente_Click);
             // 
             // btnModificar_CadastroCliente
             // 
@@ -211,6 +212,7 @@
             this.btnModificar_CadastroCliente.Size = new System.Drawing.Size(44, 47);
             this.btnModificar_CadastroCliente.TabIndex = 110;
             this.btnModificar_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnModificar_CadastroCliente.Click += new System.EventHandler(this.btnModificar_CadastroCliente_Click);
             // 
             // btnIncluir_CadastroCliente
             // 
@@ -281,6 +283,7 @@
             this.txtQuantidade_VendasNFSaida.SelectedText = "";
             this.txtQuantidade_VendasNFSaida.Size = new System.Drawing.Size(90, 26);
             this.txtQuantidade_VendasNFSaida.TabIndex = 122;
+            this.txtQuantidade_VendasNFSaida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantidade_VendasNFSaida_KeyPress);
             // 
             // gunaLabel7
             // 

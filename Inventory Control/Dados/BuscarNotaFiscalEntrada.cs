@@ -19,12 +19,11 @@ namespace Inventory_Control
         {
             try
             {
-                if (VNF.BuscarExistenciaNotaFiscal(_nota_Fiscal))
+                if (VNF.BuscarExistenciaNotaFiscalEntrada(_nota_Fiscal))
                 {
                     using (SqlConnection conexaoSQL = AbrirConexao())
                     {
-                        string query = "select NF_Saida,Cod_Produto,Lote,Descricao,Quantidade,Valor_Total,Emissao" +
-                            " from NF where NF = @nF";
+                        string query = "select * from NF where NF = @nF";
                         SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
                         adapter.SelectCommand.Parameters.AddWithValue("@nF", _nota_Fiscal);
 

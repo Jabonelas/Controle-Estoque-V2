@@ -271,17 +271,16 @@ namespace Inventory_Control
 
         #endregion Produto
 
-        #region Nota Fiscal
+        #region Nota Fiscal Entrada
 
-        //Verifica se existe da Nota Fiscal na tabela NF
-        public bool BuscarExistenciaNotaFiscal(int _nota_Fiscal)
+        public bool BuscarExistenciaNotaFiscalEntrada(int _nota_Fiscal)
         {
             try
             {
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
                     bool isExist = false;
-                    string query = "select * from NF_Saida where NF_Saida = @nF";
+                    string query = "select * from NF where NF = @nF";
                     SqlCommand cmd = new SqlCommand(query, conexaoSQL);
                     SqlDataReader reader;
                     cmd.Parameters.AddWithValue("@nF", _nota_Fiscal);
@@ -309,7 +308,7 @@ namespace Inventory_Control
         }
 
         //Verifica se a NF já foi lançada no sistema
-        public string BuscarExistenciaDeLancamentoNotaFiscal(int _nota_Fiscal)
+        public string BuscarExistenciaDeLancamentoNotaFiscalEntrada(int _nota_Fiscal)
         {
             try
             {
@@ -332,7 +331,7 @@ namespace Inventory_Control
             }
         }
 
-        #endregion Nota Fiscal
+        #endregion Nota Fiscal Entrada
 
         #region Relatorio NF Entrada
 
@@ -371,5 +370,43 @@ namespace Inventory_Control
         }
 
         #endregion Relatorio NF Entrada
+
+        #region Nota Fiscal Saida
+
+        public bool BuscarExistenciaNotaFiscalSaida(int _nota_Fiscal)
+        {
+            try
+            {
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    bool isExist = false;
+                    string query = "select * from NF_Saida where NF_Saida = @nF";
+                    SqlCommand cmd = new SqlCommand(query, conexaoSQL);
+                    SqlDataReader reader;
+                    cmd.Parameters.AddWithValue("@nF", _nota_Fiscal);
+                    reader = cmd.ExecuteReader();
+
+                    reader.Read();
+
+                    if (reader.HasRows == true)
+                    {
+                        isExist = true;
+                    }
+                    else
+                    {
+                        isExist = false;
+                    }
+
+                    return isExist;
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+                return false;
+            }
+        }
+
+        #endregion Nota Fiscal Saida
     }
 }
