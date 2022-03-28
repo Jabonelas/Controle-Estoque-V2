@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Dados\AlterarDadosEstoque .cs" />
     <Compile Include="Dados\BuscarDadosEstoque .cs" />
+    <Compile Include="Dados\BuscarDadosRelatorioSaida.cs" />
     <Compile Include="Dados\BuscarDadosRelatorioEntrada.cs" />
     <Compile Include="Count.cs" />
     <Compile Include="Dados\BuscarNotaFiscalSaida .cs" />

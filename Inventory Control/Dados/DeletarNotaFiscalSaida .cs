@@ -19,8 +19,6 @@ namespace Inventory_Control
         {
             try
             {
-                //string query = "update NF set Estatus = 'TRANSITO' where NF = @nF";
-
                 if (VNFS.BuscarExistenciaNotaFiscalSaida(_nota_Fiscal))
                 {
                     using (SqlConnection conexaoSQL = AbrirConexao())

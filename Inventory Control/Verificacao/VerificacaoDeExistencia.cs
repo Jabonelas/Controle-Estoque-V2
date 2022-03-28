@@ -408,5 +408,43 @@ namespace Inventory_Control
         }
 
         #endregion Nota Fiscal Saida
+
+        #region Relatorio NF Saida
+
+        public bool BuscarExistenciaRelatorioNFSaida(DateTime _data_Emissao)
+        {
+            try
+            {
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    bool isExist = false;
+                    string query = "select * from NF_Saida where Emissao >= @dataEmissao";
+                    SqlCommand cmd = new SqlCommand(query, conexaoSQL);
+                    SqlDataReader reader;
+                    cmd.Parameters.AddWithValue("@dataEmissao", _data_Emissao);
+                    reader = cmd.ExecuteReader();
+
+                    reader.Read();
+
+                    if (reader.HasRows == true)
+                    {
+                        isExist = true;
+                    }
+                    else
+                    {
+                        isExist = false;
+                    }
+
+                    return isExist;
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+                return false;
+            }
+        }
+
+        #endregion Relatorio NF Saida
     }
 }

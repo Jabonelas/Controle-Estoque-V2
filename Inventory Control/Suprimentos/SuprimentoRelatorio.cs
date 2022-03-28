@@ -79,6 +79,11 @@ namespace Inventory_Control
 
         private void txtDataFinalSuprimentosRelarorio_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+
             switch (txtDataFinalSuprimentosRelarorio.TextLength)
             {
                 case 0:

@@ -41,8 +41,9 @@ namespace Inventory_Control.Dados
             }
         }
 
-        //Realizar a movimentacao na quantidade do Estoque com forme a Nota Fiscal de Saida
-        // Tirando a quantidade
+        //Realiza a Subritracao no estoque quando a Nota Fiscal de Saida e gerada
+
+        #region Altera a Quantidade de Estoque Subtracao
 
         public void AlterarQuantidadeEstoqueSubtracao(int _cod_Produto, int _quantidade)
         {
@@ -64,17 +65,23 @@ namespace Inventory_Control.Dados
             }
         }
 
-        public void AlterarQuantidadeEstoqueAdicao(int _nf_Saida)
+        #endregion Altera a Quantidade de Estoque Subtracao
+
+        //Realiza a Adicao no estoque quando a Nota Fiscal de Saida e gerada
+
+        #region Altera a Quantidae de Estoque Adicao
+
+        public void AlterarQuantidadeEstoqueAdicao(int _nf_Saida, int _cod_Produto, int _quantidade)
         {
             try
             {
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
-                    string query = "update Estoque  set Quantidade = (Quantidade +" +
-                        " (select B.Quantidade from  NF_Saida B " +
-                        "where Cod_Produto = B.Cod_Produto and B.NF_Saida = @nfsaida ))";
+                    string query = "update Estoque set Quantidade = (Quantidade + @quantidade) where Cod_Produto = @codProduto";
                     SqlCommand cmd = new SqlCommand(query, conexaoSQL);
                     cmd.Parameters.Add("@nfsaida", SqlDbType.VarChar).Value = _nf_Saida;
+                    cmd.Parameters.Add("@codProduto", SqlDbType.VarChar).Value = _cod_Produto;
+                    cmd.Parameters.Add("@quantidade", SqlDbType.VarChar).Value = _quantidade;
 
                     cmd.ExecuteNonQuery();
                 }
@@ -84,5 +91,7 @@ namespace Inventory_Control.Dados
                 MessageBox.Show(x.ToString());
             }
         }
+
+        #endregion Altera a Quantidae de Estoque Adicao
     }
 }

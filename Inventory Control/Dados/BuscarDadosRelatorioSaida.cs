@@ -11,21 +11,19 @@ using System.Windows.Forms;
 
 namespace Inventory_Control
 {
-    internal class BuscarDadosRelatorioEntrada : ConectarBanco
+    internal class BuscarDadosRelatorioSaida : ConectarBanco
     {
-        private VerificacaoDeExistencia VNFE = new VerificacaoDeExistencia();
+        private VerificacaoDeExistencia VNFS = new VerificacaoDeExistencia(); // Verifiracao de Existencia de Nota Fiscal de Saida
 
         public void BuscarDadosRelatorioNFEntrada(DateTime _data_Inicial, DateTime _data_Final, Guna2DataGridView _tabela)
         {
             try
             {
-                if (VNFE.BuscarExistenciaRelatorioNFEntrada(_data_Inicial))
+                if (VNFS.BuscarExistenciaRelatorioNFSaida(_data_Inicial))
                 {
                     using (SqlConnection conexaoSQL = AbrirConexao())
                     {
-                        string query = "select NF, CNPJ, Nome_Razao_Social, Cod_Produto, Descricao_Produto," +
-                            " QUANT, UNIDADE, Valor_Unitario, Valor_Total, Data_Emissao, Data_Lancamento," +
-                            " Estatus from NF where Estatus <> 'TRANSITO' and Data_Lancamento >= @dataInical and Data_Lancamento <= @dataFinal";
+                        string query = "select * from NF_Saida where Emissao >= @dataInical and Emissao <= @dataFinal";
                         SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
                         adapter.SelectCommand.Parameters.AddWithValue("@dataInical", _data_Inicial);
                         adapter.SelectCommand.Parameters.AddWithValue("@dataFinal", _data_Final);

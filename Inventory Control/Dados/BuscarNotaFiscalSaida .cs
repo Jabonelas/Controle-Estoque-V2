@@ -13,9 +13,13 @@ namespace Inventory_Control
 {
     internal class BuscarNotaFiscalSaida : ConectarBanco
     {
-        private VerificacaoDeExistencia VNF = new VerificacaoDeExistencia();
+        private VerificacaoDeExistencia VNF = new VerificacaoDeExistencia(); // Verificar existencia de Nota Fiscal de entrada
 
-        private VerificacaoDeExistencia VP = new VerificacaoDeExistencia();
+        private VerificacaoDeExistencia VP = new VerificacaoDeExistencia(); // Verificar existencia de produto
+
+        // Busca a ultima Nota Fiscal de saida que foi feita para iniciar uma nova
+
+        #region Buscar Nota Fiscal de Saida
 
         public void BuscarNFSaida(int _nota_Fiscal_Saida, Guna2DataGridView _tabela)
         {
@@ -48,6 +52,12 @@ namespace Inventory_Control
             }
         }
 
+        #endregion Buscar Nota Fiscal de Saida
+
+        // Buscar a Nota Fiscal que já esta sendo feita
+
+        #region Buscar Nota Fiscal de Saida Consulta
+
         public void BuscarNFSaidaConsulta(int _cod_Produto, Guna2DataGridView _tabela)
         {
             try
@@ -78,5 +88,78 @@ namespace Inventory_Control
                 MessageBox.Show(x.ToString());
             }
         }
+
+        #endregion Buscar Nota Fiscal de Saida Consulta
+
+        // Buscar a quantidade da Nota Fiscal de Saida, usado para cancelamento
+
+        #region Buscar Nota Fiscal de Saida Quantidade
+
+        public List<int> BuscarNFSaidaQuantidade(int _nf_Saida, int _cod_Produto)
+        {
+            try
+            {
+                List<int> QuantidadeProduto = new List<int>();
+
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    string query = "select Quantidade from NF_Saida where NF_Saida = @nfsaida and Cod_Produto = @codProduto";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+                    adapter.SelectCommand.Parameters.AddWithValue("@nfsaida", _nf_Saida);
+                    adapter.SelectCommand.Parameters.AddWithValue("@codProduto", _cod_Produto);
+
+                    SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        QuantidadeProduto.Add(dr.GetInt32(0));
+                    }
+
+                    return QuantidadeProduto;
+                }
+            }
+            catch (Exception x)
+            {
+                return new List<int>();
+
+                MessageBox.Show(x.ToString());
+            }
+        }
+
+        #endregion Buscar Nota Fiscal de Saida Quantidade
+
+        // Buscar o codigo do produto da NF de saida que vai ser excluida
+
+        #region Bucar Nota Fiscal de Saida Produto
+
+        public List<int> BuscarNFSaidaCodProduto(int _nf_Saida)
+        {
+            try
+            {
+                List<int> CodProduto = new List<int>();
+
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    string query = "select Cod_Produto from NF_Saida where NF_Saida = @nfsaida";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+                    adapter.SelectCommand.Parameters.AddWithValue("@nfsaida", _nf_Saida);
+
+                    SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        CodProduto.Add(dr.GetInt32(0));
+                    }
+
+                    return CodProduto;
+                }
+            }
+            catch (Exception x)
+            {
+                return new List<int>();
+
+                MessageBox.Show(x.ToString());
+            }
+        }
+
+        #endregion Bucar Nota Fiscal de Saida Produto
     }
 }
