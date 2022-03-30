@@ -30,9 +30,9 @@ namespace Inventory_Control
 
         private AlterarDadosEstoque AQEA = new AlterarDadosEstoque(); // Alterar a quantidade do estoque adicionando
 
-        private BuscarNotaFiscalSaida BNFQ = new BuscarNotaFiscalSaida(); // Buscar a quandidade de produto na NF de saida
+        private BuscarNotaFiscalSaida BNFSQ = new BuscarNotaFiscalSaida(); // Buscar a quandidade de produto na NF de saida
 
-        private BuscarNotaFiscalSaida BNFP = new BuscarNotaFiscalSaida(); // Buscar o codigo do produto na NF de saida
+        private BuscarNotaFiscalSaida BNFSP = new BuscarNotaFiscalSaida(); // Buscar o codigo do produto na NF de saida
 
         public VendasNotaFiscalSaida()
         {
@@ -64,7 +64,7 @@ namespace Inventory_Control
                             txtNFSaida_VendasNFSaida.Text = Convert.ToString(CNFS.ContarNFSaidaContinuacao());
                         }
 
-                        AQES.AlterarQuantidadeEstoqueSubtracao(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text), Convert.ToInt32(txtQuantidade_VendasNFSaida.Text));
+                        AQES.AlterarQuantidadeEstoqueSubtracaoSaida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text), Convert.ToInt32(txtQuantidade_VendasNFSaida.Text));
 
                         INFS.InserirNFSaida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text));
 
@@ -149,24 +149,33 @@ namespace Inventory_Control
             label2.Text = "";
             label3.Text = "";
 
-            if (txtNFSaida_VendasNFSaida.Text != "")
+            try
             {
-                MessageBox.Show("NF Emitida com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                txtNFSaida_VendasNFSaida.Text = "";
-                txtDataDeEmissao_VendasNFSaida.Text = "";
-                txtCodProduto_VendasNFSaida.Text = "";
-                txtDescricao_VendasNFSaida.Text = "";
-                txtQuantidade_VendasNFSaida.Text = "";
+                if (txtNFSaida_VendasNFSaida.Text != "")
+                {
+                    MessageBox.Show("NF Emitida com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                object Nothing = null;
-                gdvVendasNFSaida.DataSource = Nothing;
+                    txtNFSaida_VendasNFSaida.Text = "";
+                    txtDataDeEmissao_VendasNFSaida.Text = "";
+                    txtCodProduto_VendasNFSaida.Text = "";
+                    txtDescricao_VendasNFSaida.Text = "";
+                    txtQuantidade_VendasNFSaida.Text = "";
+
+                    object Nothing = null;
+                    gdvVendasNFSaida.DataSource = Nothing;
+                }
+                else
+                {
+                    label3.Text = "*";
+                    MessageBox.Show("Todos Os Campos Com * São Obrigatorios!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            else
+            catch (Exception x)
             {
-                label3.Text = "*";
-                MessageBox.Show("Todos Os Campos Com * São Obrigatorios!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(x.ToString());
             }
+
         }
 
         #endregion Botao Confirmar
@@ -179,32 +188,41 @@ namespace Inventory_Control
             label2.Text = "";
             label3.Text = "";
 
-            if (txtNFSaida_VendasNFSaida.Text != "")
+            try
             {
-                BNFP.BuscarNFSaidaCodProduto(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text));
-
-                foreach (var item1 in BNFP.BuscarNFSaidaCodProduto(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text)))
+                if (txtNFSaida_VendasNFSaida.Text != "")
                 {
-                    foreach (var item2 in BNFQ.BuscarNFSaidaQuantidade(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), item1))
+
+                    foreach (var CodProduto in BNFSP.BuscarNFSaidaCodProduto(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text)))
                     {
-                        AQEA.AlterarQuantidadeEstoqueAdicao(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), item1, item2);
+                        foreach (var Quantidade in BNFSQ.BuscarNFSaidaQuantidade(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), CodProduto))
+                        {
+                            AQEA.AlterarQuantidadeEstoqueAdicao(CodProduto, Quantidade);
 
-                        break;
+                            break;
+                        }
                     }
-                }
-                DNFS.DeletarNFSaida(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), gdvVendasNFSaida);
 
-                txtNFSaida_VendasNFSaida.Text = "";
-                txtDataDeEmissao_VendasNFSaida.Text = "";
-                txtCodProduto_VendasNFSaida.Text = "";
-                txtDescricao_VendasNFSaida.Text = "";
-                txtQuantidade_VendasNFSaida.Text = "";
+                    DNFS.DeletarNFSaida(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), gdvVendasNFSaida);
+
+                    txtNFSaida_VendasNFSaida.Text = "";
+                    txtDataDeEmissao_VendasNFSaida.Text = "";
+                    txtCodProduto_VendasNFSaida.Text = "";
+                    txtDescricao_VendasNFSaida.Text = "";
+                    txtQuantidade_VendasNFSaida.Text = "";
+                }
+                else
+                {
+                    label3.Text = "*";
+                    MessageBox.Show("Todos Os Campos Com * São Obrigatorios!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            else
+            catch (Exception x)
             {
-                label3.Text = "*";
-                MessageBox.Show("Todos Os Campos Com * São Obrigatorios!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(x.ToString());
             }
+
+           
         }
 
         #endregion Botao Excluir

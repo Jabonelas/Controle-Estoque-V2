@@ -104,7 +104,7 @@ namespace Inventory_Control.Dados
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.Message);
+                MessageBox.Show(x.ToString());
                 return "";
             }
         }

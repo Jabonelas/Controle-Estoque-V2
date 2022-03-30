@@ -16,7 +16,7 @@ namespace Inventory_Control.Dados
 
         public void InserirNotaFiscal(int _nota_Fiscal)
         {
-            if (VNF.BuscarExistenciaNotaFiscalSaida(_nota_Fiscal))
+            if (VNF.BuscarExistenciaNotaFiscalEntrada(_nota_Fiscal))
             {
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {

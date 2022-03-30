@@ -13,7 +13,10 @@ namespace Inventory_Control
 {
     public partial class SuprimentosControleTransferencia : Form
     {
-        private VerificacaoDeExistencia VCB = new VerificacaoDeExistencia(); // Verificar a existencia do Codigo de Barras na tabela Estoque
+        private VerificacaoDeExistencia VCB = new VerificacaoDeExistencia(); // Verificar a existencia do Codigo de
+                                                                             //
+                                                                             //
+                                                                             // s na tabela Estoque
 
         private VerificacaoDeExistencia VCP = new VerificacaoDeExistencia(); // Verificar a existencia do Codigo do Produto na tabela Estoque
 

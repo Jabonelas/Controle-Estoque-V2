@@ -37,7 +37,7 @@
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.btnPesquisa_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnExcluir_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnIncluir_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnIncluirNFEntrada_Suprimento = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaLabel16 = new Guna.UI.WinForms.GunaLabel();
             this.txtNotaFiscal_Suprimento = new Guna.UI.WinForms.GunaTextBox();
             this.gdvNotaFiscal_Suprimento = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -146,41 +146,41 @@
             this.btnExcluir_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExcluir_CadastroCliente.Click += new System.EventHandler(this.btnExcluir_CadastroCliente_Click);
             // 
-            // btnIncluir_CadastroCliente
+            // btnIncluirNFEntrada_Suprimento
             // 
-            this.btnIncluir_CadastroCliente.Animated = true;
-            this.btnIncluir_CadastroCliente.AnimationHoverSpeed = 0.4F;
-            this.btnIncluir_CadastroCliente.AnimationSpeed = 0.03F;
-            this.btnIncluir_CadastroCliente.BackColor = System.Drawing.Color.Transparent;
-            this.btnIncluir_CadastroCliente.BackgroundImage = global::Inventory_Control.Properties.Resources.Incluir;
-            this.btnIncluir_CadastroCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnIncluir_CadastroCliente.BaseColor = System.Drawing.Color.Transparent;
-            this.btnIncluir_CadastroCliente.BorderColor = System.Drawing.Color.Black;
-            this.btnIncluir_CadastroCliente.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnIncluir_CadastroCliente.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnIncluir_CadastroCliente.CheckedForeColor = System.Drawing.Color.White;
-            this.btnIncluir_CadastroCliente.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnIncluir_CadastroCliente.CheckedImage")));
-            this.btnIncluir_CadastroCliente.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnIncluir_CadastroCliente.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnIncluir_CadastroCliente.FocusedColor = System.Drawing.Color.Empty;
-            this.btnIncluir_CadastroCliente.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncluir_CadastroCliente.ForeColor = System.Drawing.Color.White;
-            this.btnIncluir_CadastroCliente.Image = null;
-            this.btnIncluir_CadastroCliente.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnIncluir_CadastroCliente.LineBottom = 4;
-            this.btnIncluir_CadastroCliente.LineColor = System.Drawing.Color.Transparent;
-            this.btnIncluir_CadastroCliente.Location = new System.Drawing.Point(7, 3);
-            this.btnIncluir_CadastroCliente.Name = "btnIncluir_CadastroCliente";
-            this.btnIncluir_CadastroCliente.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.btnIncluir_CadastroCliente.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnIncluir_CadastroCliente.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnIncluir_CadastroCliente.OnHoverImage = null;
-            this.btnIncluir_CadastroCliente.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnIncluir_CadastroCliente.OnPressedColor = System.Drawing.Color.Black;
-            this.btnIncluir_CadastroCliente.Size = new System.Drawing.Size(44, 47);
-            this.btnIncluir_CadastroCliente.TabIndex = 109;
-            this.btnIncluir_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnIncluir_CadastroCliente.Click += new System.EventHandler(this.btnIncluir_CadastroCliente_Click);
+            this.btnIncluirNFEntrada_Suprimento.Animated = true;
+            this.btnIncluirNFEntrada_Suprimento.AnimationHoverSpeed = 0.4F;
+            this.btnIncluirNFEntrada_Suprimento.AnimationSpeed = 0.03F;
+            this.btnIncluirNFEntrada_Suprimento.BackColor = System.Drawing.Color.Transparent;
+            this.btnIncluirNFEntrada_Suprimento.BackgroundImage = global::Inventory_Control.Properties.Resources.Incluir;
+            this.btnIncluirNFEntrada_Suprimento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnIncluirNFEntrada_Suprimento.BaseColor = System.Drawing.Color.Transparent;
+            this.btnIncluirNFEntrada_Suprimento.BorderColor = System.Drawing.Color.Black;
+            this.btnIncluirNFEntrada_Suprimento.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnIncluirNFEntrada_Suprimento.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnIncluirNFEntrada_Suprimento.CheckedForeColor = System.Drawing.Color.White;
+            this.btnIncluirNFEntrada_Suprimento.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnIncluirNFEntrada_Suprimento.CheckedImage")));
+            this.btnIncluirNFEntrada_Suprimento.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnIncluirNFEntrada_Suprimento.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnIncluirNFEntrada_Suprimento.FocusedColor = System.Drawing.Color.Empty;
+            this.btnIncluirNFEntrada_Suprimento.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncluirNFEntrada_Suprimento.ForeColor = System.Drawing.Color.White;
+            this.btnIncluirNFEntrada_Suprimento.Image = null;
+            this.btnIncluirNFEntrada_Suprimento.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnIncluirNFEntrada_Suprimento.LineBottom = 4;
+            this.btnIncluirNFEntrada_Suprimento.LineColor = System.Drawing.Color.Transparent;
+            this.btnIncluirNFEntrada_Suprimento.Location = new System.Drawing.Point(7, 3);
+            this.btnIncluirNFEntrada_Suprimento.Name = "btnIncluirNFEntrada_Suprimento";
+            this.btnIncluirNFEntrada_Suprimento.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.btnIncluirNFEntrada_Suprimento.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnIncluirNFEntrada_Suprimento.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnIncluirNFEntrada_Suprimento.OnHoverImage = null;
+            this.btnIncluirNFEntrada_Suprimento.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnIncluirNFEntrada_Suprimento.OnPressedColor = System.Drawing.Color.Black;
+            this.btnIncluirNFEntrada_Suprimento.Size = new System.Drawing.Size(44, 47);
+            this.btnIncluirNFEntrada_Suprimento.TabIndex = 109;
+            this.btnIncluirNFEntrada_Suprimento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnIncluirNFEntrada_Suprimento.Click += new System.EventHandler(this.btnIncluir_CadastroCliente_Click);
             // 
             // gunaLabel16
             // 
@@ -280,7 +280,7 @@
             this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.btnPesquisa_CadastroCliente);
             this.Controls.Add(this.btnExcluir_CadastroCliente);
-            this.Controls.Add(this.btnIncluir_CadastroCliente);
+            this.Controls.Add(this.btnIncluirNFEntrada_Suprimento);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SuprimentoNotaDeEntrada";
             this.Text = "SuprimentoNotaDeEntrada";
@@ -297,7 +297,7 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaAdvenceButton btnPesquisa_CadastroCliente;
         private Guna.UI.WinForms.GunaAdvenceButton btnExcluir_CadastroCliente;
-        private Guna.UI.WinForms.GunaAdvenceButton btnIncluir_CadastroCliente;
+        private Guna.UI.WinForms.GunaAdvenceButton btnIncluirNFEntrada_Suprimento;
         private Guna.UI.WinForms.GunaLabel gunaLabel16;
         private Guna.UI.WinForms.GunaTextBox txtNotaFiscal_Suprimento;
         private Guna.UI2.WinForms.Guna2DataGridView gdvNotaFiscal_Suprimento;
