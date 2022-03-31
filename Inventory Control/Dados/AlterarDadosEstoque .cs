@@ -16,6 +16,7 @@ namespace Inventory_Control.Dados
 
         #region Alterar Local Estoque
 
+        // Alterar estoque na aba de transeferencia
         public void AlterarEstoque(string _local, int _cod_de_barras)
         {
             try
@@ -43,13 +44,41 @@ namespace Inventory_Control.Dados
             }
         }
 
+        // Alterar local quando  a Nota Fiscal de entrada for excluida
+        public void AlterarEstoqueExclusaoNFEntrada(int _nf_Entrada, int _cod_de_barras)
+        {
+            try
+            {
+                if (VE.BuscarExistenciaCodigoDeBarras(_cod_de_barras))
+                {
+                    using (SqlConnection conexaoSQL = AbrirConexao())
+                    {
+                        string query = "update Estoque set Local= 'EXCLUIDA' where Cod_De_Barras = @codDeBarras";
+                        SqlCommand cmd = new SqlCommand(query, conexaoSQL);
+                        cmd.Parameters.Add("@nfentrada", SqlDbType.VarChar).Value = _nf_Entrada;
+                        cmd.Parameters.Add("@codDeBarras", SqlDbType.Int).Value = _cod_de_barras;
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Codigo de Barras Não Encontrado!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+        }
+
         #endregion Alterar Local Estoque
 
         //Realiza a Subritracao no estoque quando a Nota Fiscal de Saida e gerada
 
         #region Altera a Quantidade de Estoque Subtracao
 
-        // Nota Fiscal de saida
+        // Nota Fiscal de saida altera a quantidade subtraindo
         public void AlterarQuantidadeEstoqueSubtracaoSaida(int _cod_Produto, int _quantidade)
         {
             try
@@ -70,8 +99,8 @@ namespace Inventory_Control.Dados
             }
         }
 
-        // Nota fiscal de entrada
-        public void AlterarQuantidadeEstoqueSubtracaoEntrada(int _nf_Entrada, int _cod_Produto, int _quantidade, int _cod_Barras)
+        // Nota fiscal de entrada altera a quantidade subtraindo
+        public void AlterarQuantidadeEstoqueEntradaSubtracao(int _nf_Entrada, int _cod_Produto, int _quantidade, int _cod_Barras)
         {
             try
             {
@@ -79,7 +108,7 @@ namespace Inventory_Control.Dados
                 {
                     string query = "update Estoque set Quantidade=(Quantidade - @quantidadeNFS)" +
                         " where Cod_Produto = @codProduto and" +
-                        " NF_Entrada = @nfentrada and Cod_de_Barras = @codBarras";
+                        " NF_Entrada = @nfentrada and Cod_de_Barras = @codBarras and Local = 'RECEBIMENTO'";
                     SqlCommand cmd = new SqlCommand(query, conexaoSQL);
                     cmd.Parameters.Add("@nfentrada", SqlDbType.VarChar).Value = _nf_Entrada;
                     cmd.Parameters.Add("@codProduto", SqlDbType.VarChar).Value = _cod_Produto;

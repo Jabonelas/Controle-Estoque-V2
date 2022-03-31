@@ -133,7 +133,8 @@ namespace Inventory_Control
 
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
-                    string query = "select Cod_de_Barras from Estoque where NF_Entrada = @nfentrada";
+                    string query = "select Cod_de_Barras from Estoque where NF_Entrada = @nfentrada and Cod_Produto = @codProduto " +
+                        "and Quantidade > 0";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
                     adapter.SelectCommand.Parameters.AddWithValue("@nfentrada", _nf_Entrada);
                     adapter.SelectCommand.Parameters.AddWithValue("@codProduto", _cod_Produto);

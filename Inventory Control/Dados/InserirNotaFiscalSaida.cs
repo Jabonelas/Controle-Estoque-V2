@@ -35,7 +35,8 @@ namespace Inventory_Control.Dados
                 //string query = "update NF_Saida set Quantidade=@quantidade, Emissao=@emissao, Valor=(Valor* @quantidade)" +
                 //    " where NF_Saida = @nfsaida";
 
-                string query = "update NF_Saida set NF_Saida=@nfsaida,Quantidade=@quantidade, Emissao=@emissao, Valor=(Valor* @quantidade)" +
+                string query = "update NF_Saida set NF_Saida = @nfsaida,Quantidade = @quantidade, " +
+                    "Emissao = @emissao, Valor = (Valor * @quantidade), Estatus = 'FATURADA'" +
                    " where NF_Saida is null";
                 SqlCommand cmd = new SqlCommand(query, conexaoSQL);
                 cmd.Parameters.AddWithValue("@nfsaida", _nf_Saida);

@@ -407,6 +407,31 @@ namespace Inventory_Control
             }
         }
 
+        // Verificar se a Nota Fiscal ja foi cancelada
+
+        public string BuscarExistenciaNotaFiscalSaidaEstatus(int _NF_Saida)
+        {
+            try
+            {
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    string query = "select Estatus from NF_Saida where NF_Saida = @nfsaida";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+                    adapter.SelectCommand.Parameters.AddWithValue("@nfsaida", _NF_Saida);
+                    SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
+                    dr.Read();
+
+                    string x = dr.GetString(0);
+                    return x.ToString();
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+                return "";
+            }
+        }
+
         #endregion Nota Fiscal Saida
 
         #region Relatorio NF Saida

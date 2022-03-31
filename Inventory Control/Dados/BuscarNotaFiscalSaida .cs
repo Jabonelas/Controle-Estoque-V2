@@ -29,7 +29,7 @@ namespace Inventory_Control
                 {
                     using (SqlConnection conexaoSQL = AbrirConexao())
                     {
-                        string query = "select NF_Saida,Cod_Produto,Lote,Descricao,Valor,Quantidade,Emissao" +
+                        string query = "select NF_Saida,Cod_Produto,Lote,Descricao,Valor,Quantidade,Emissao,Estatus" +
                             " from NF_Saida where NF_Saida = @nF";
                         SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
                         adapter.SelectCommand.Parameters.AddWithValue("@nF", _nota_Fiscal_Saida);
@@ -54,7 +54,7 @@ namespace Inventory_Control
 
         #endregion Buscar Nota Fiscal de Saida
 
-        // Buscar a Nota Fiscal que já esta sendo feita
+        // Buscar a Nota Fiscal que já esta sendo feita para manter o mesmo numero da nota fiscal
 
         #region Buscar Nota Fiscal de Saida Consulta
 

@@ -37,6 +37,8 @@ namespace Inventory_Control
 
         private DeletarNotaFiscalEntrada DNFE = new DeletarNotaFiscalEntrada(); // Deletar Nota Fiscal de entrada
 
+        private AlterarDadosEstoque AEENFE = new AlterarDadosEstoque(); // Alterar estoque quando excluir a nota fiscal de entrada
+
         public SuprimentoNotaDeEntrada()
         {
             InitializeComponent();
@@ -88,10 +90,13 @@ namespace Inventory_Control
                             {
                                 foreach (var Quantidade in BNFEQ.BuscarNFEntradaQuantidade(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), CodProduto))
                                 {
-                                    AQEES.AlterarQuantidadeEstoqueSubtracaoEntrada(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), CodProduto, Quantidade, CodBarras);
+                                    AQEES.AlterarQuantidadeEstoqueEntradaSubtracao(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), CodProduto, Quantidade, CodBarras);
+
+                                    AEENFE.AlterarEstoqueExclusaoNFEntrada(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), CodBarras);
 
                                     break;
                                 }
+                                break;
                             }
                         }
 
@@ -128,35 +133,35 @@ namespace Inventory_Control
                     if (VF.BuscarExistenciaDeFornecedorNaTabela(txtNotaFiscal_Suprimento.Text) == true &&
                         VP.BuscarExistenciaDeProdutoNaTabela(txtNotaFiscal_Suprimento.Text) == true)
                     {
-                        if (VNF.BuscarExistenciaDeLancamentoNotaFiscalEntrada(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)) == "TRANSITO")
+                        //if (VNF.BuscarExistenciaDeLancamentoNotaFiscalEntrada(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)) == "TRANSITO")
+                        //{
+                        try
                         {
-                            try
+                            IN.InserirNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text));
+
+                            IE.InserirEstoque(Convert.ToInt32(txtNotaFiscal_Suprimento.Text));
+
+                            foreach (var CodProduto in BNFEP.BuscarNFEntradaCodProduto(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)))
                             {
-                                IN.InserirNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text));
+                                //foreach (var CodBarras in BNFEC.BuscarNFEntradaCodBarras(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), CodProduto))
+                                //{
+                                ACNFE.AlterarCodBarrasNFEntrada(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), CodProduto);
 
-                                IE.InserirEstoque(Convert.ToInt32(txtNotaFiscal_Suprimento.Text));
-
-                                foreach (var CodProduto in BNFEP.BuscarNFEntradaCodProduto(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)))
-                                {
-                                    //foreach (var CodBarras in BNFEC.BuscarNFEntradaCodBarras(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), CodProduto))
-                                    //{
-                                    ACNFE.AlterarCodBarrasNFEntrada(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), CodProduto);
-
-                                    //break;
-                                    //}
-                                }
-
-                                BN.BuscarNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), gdvNotaFiscal_Suprimento);
+                                //break;
+                                //}
                             }
-                            catch (Exception x)
-                            {
-                                MessageBox.Show(x.ToString());
-                            }
+
+                            BN.BuscarNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), gdvNotaFiscal_Suprimento);
                         }
-                        else
+                        catch (Exception x)
                         {
-                            MessageBox.Show("Nota Fiscal´Já Inclusa no Sistema!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show(x.ToString());
                         }
+                        //}
+                        //else
+                        //{
+                        //    MessageBox.Show("Nota Fiscal´Já Inclusa no Sistema!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        //}
                     }
                     else
                     {

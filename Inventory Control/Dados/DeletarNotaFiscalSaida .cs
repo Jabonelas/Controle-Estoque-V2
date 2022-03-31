@@ -29,7 +29,7 @@ namespace Inventory_Control
                         OpcaoDoUsuario = MessageBox.Show("Deseja Excluir?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (OpcaoDoUsuario == DialogResult.Yes)
                         {
-                            string query = "delete NF_Saida where NF_Saida = @nfsaida";
+                            string query = "update NF_Saida set Estatus = 'CANCELADA' where NF_Saida = @nfsaida";
                             SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
                             adapter.SelectCommand.Parameters.AddWithValue("@nfsaida", _nota_Fiscal);
 

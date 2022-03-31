@@ -32,7 +32,11 @@ namespace Inventory_Control
 
         private BuscarNotaFiscalSaida BNFSQ = new BuscarNotaFiscalSaida(); // Buscar a quandidade de produto na NF de saida
 
-        private BuscarNotaFiscalSaida BNFSP = new BuscarNotaFiscalSaida(); // Buscar o codigo do produto na NF de saida
+        private BuscarNotaFiscalSaida BNFSP = new BuscarNotaFiscalSaida(); // Buscar NF de Saida o codigo do Produto
+
+        private BuscarDadosEstoque BEQL = new BuscarDadosEstoque(); // Buscar no Estoque a Quantidade por Local
+
+        private VerificacaoDeExistencia BENFSE = new VerificacaoDeExistencia(); // Buscar Existencia Nota Fiscal de Saida e retorna o Estatus
 
         public VendasNotaFiscalSaida()
         {
@@ -55,34 +59,41 @@ namespace Inventory_Control
 
                     if (VEL.VerificarLocalEstoque(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text)) == "EXPEDICAO")
                     {
-                        if (txtNFSaida_VendasNFSaida.Text == "") //gerar o numero da NF de Saida
+                        if (BEQL.BuscarQuantidadeLocal(Convert.ToInt32(txtQuantidade_VendasNFSaida.Text)) == true)
                         {
-                            txtNFSaida_VendasNFSaida.Text = Convert.ToString(CNFS.ContarNFSaidaGerando());
+                            if (txtNFSaida_VendasNFSaida.Text == "") //gerar o numero da NF de Saida
+                            {
+                                txtNFSaida_VendasNFSaida.Text = Convert.ToString(CNFS.ContarNFSaidaGerando());
+                            }
+                            else //manter  o numero da NF de Saida que já foi gerado
+                            {
+                                txtNFSaida_VendasNFSaida.Text = Convert.ToString(CNFS.ContarNFSaidaContinuacao());
+                            }
+
+                            AQES.AlterarQuantidadeEstoqueSubtracaoSaida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text), Convert.ToInt32(txtQuantidade_VendasNFSaida.Text));
+
+                            INFS.InserirNFSaida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text));
+
+                            INFS.InserirNFSaidaIncremento(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), Convert.ToInt32(txtQuantidade_VendasNFSaida.Text),
+                            Convert.ToDateTime(txtDataDeEmissao_VendasNFSaida.Text));
+
+                            txtDescricao_VendasNFSaida.Text = BE.BuscarDescricaoNFSaida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text));
+
+                            DialogResult OpcaoDoUsuario = new DialogResult();
+                            OpcaoDoUsuario = MessageBox.Show("Item Adicionado com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (OpcaoDoUsuario == DialogResult.OK)
+                            {
+                                BNFS.BuscarNFSaida(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), gdvVendasNFSaida);
+
+                                txtDataDeEmissao_VendasNFSaida.Text = "";
+                                txtCodProduto_VendasNFSaida.Text = "";
+                                txtDescricao_VendasNFSaida.Text = "";
+                                txtQuantidade_VendasNFSaida.Text = "";
+                            }
                         }
-                        else //manter  o numero da NF de Saida que já foi gerado
+                        else
                         {
-                            txtNFSaida_VendasNFSaida.Text = Convert.ToString(CNFS.ContarNFSaidaContinuacao());
-                        }
-
-                        AQES.AlterarQuantidadeEstoqueSubtracaoSaida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text), Convert.ToInt32(txtQuantidade_VendasNFSaida.Text));
-
-                        INFS.InserirNFSaida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text));
-
-                        INFS.InserirNFSaidaIncremento(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), Convert.ToInt32(txtQuantidade_VendasNFSaida.Text),
-                     Convert.ToDateTime(txtDataDeEmissao_VendasNFSaida.Text));
-
-                        txtDescricao_VendasNFSaida.Text = BE.BuscarDescricaoNFSaida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text));
-
-                        DialogResult OpcaoDoUsuario = new DialogResult();
-                        OpcaoDoUsuario = MessageBox.Show("Item Adicionado com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (OpcaoDoUsuario == DialogResult.OK)
-                        {
-                            BNFS.BuscarNFSaida(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), gdvVendasNFSaida);
-
-                            txtDataDeEmissao_VendasNFSaida.Text = "";
-                            txtCodProduto_VendasNFSaida.Text = "";
-                            txtDescricao_VendasNFSaida.Text = "";
-                            txtQuantidade_VendasNFSaida.Text = "";
+                            MessageBox.Show("Quantidade Disponivel Menor Que a Solicitada ", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else
@@ -151,7 +162,6 @@ namespace Inventory_Control
 
             try
             {
-
                 if (txtNFSaida_VendasNFSaida.Text != "")
                 {
                     MessageBox.Show("NF Emitida com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -175,7 +185,6 @@ namespace Inventory_Control
             {
                 MessageBox.Show(x.ToString());
             }
-
         }
 
         #endregion Botao Confirmar
@@ -192,24 +201,30 @@ namespace Inventory_Control
             {
                 if (txtNFSaida_VendasNFSaida.Text != "")
                 {
-
-                    foreach (var CodProduto in BNFSP.BuscarNFSaidaCodProduto(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text)))
+                    if (BENFSE.BuscarExistenciaNotaFiscalSaidaEstatus(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text)) == "FATURADA")
                     {
-                        foreach (var Quantidade in BNFSQ.BuscarNFSaidaQuantidade(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), CodProduto))
+                        foreach (var CodProduto in BNFSP.BuscarNFSaidaCodProduto(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text)))
                         {
-                            AQEA.AlterarQuantidadeEstoqueAdicao(CodProduto, Quantidade);
+                            foreach (var Quantidade in BNFSQ.BuscarNFSaidaQuantidade(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), CodProduto))
+                            {
+                                AQEA.AlterarQuantidadeEstoqueAdicao(CodProduto, Quantidade);
 
-                            break;
+                                break;
+                            }
                         }
+
+                        DNFS.DeletarNFSaida(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), gdvVendasNFSaida);
+
+                        txtNFSaida_VendasNFSaida.Text = "";
+                        txtDataDeEmissao_VendasNFSaida.Text = "";
+                        txtCodProduto_VendasNFSaida.Text = "";
+                        txtDescricao_VendasNFSaida.Text = "";
+                        txtQuantidade_VendasNFSaida.Text = "";
                     }
-
-                    DNFS.DeletarNFSaida(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), gdvVendasNFSaida);
-
-                    txtNFSaida_VendasNFSaida.Text = "";
-                    txtDataDeEmissao_VendasNFSaida.Text = "";
-                    txtCodProduto_VendasNFSaida.Text = "";
-                    txtDescricao_VendasNFSaida.Text = "";
-                    txtQuantidade_VendasNFSaida.Text = "";
+                    else
+                    {
+                        MessageBox.Show("Nota Fiscal Indisponivel", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
@@ -221,8 +236,6 @@ namespace Inventory_Control
             {
                 MessageBox.Show(x.ToString());
             }
-
-           
         }
 
         #endregion Botao Excluir
