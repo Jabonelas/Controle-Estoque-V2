@@ -192,7 +192,10 @@ namespace Inventory_Control.Dados
 
         #region Buscar Quantidade
 
-        // Quantidade por codigo de barras
+        // Buscar a quantidade por codigo de barras, para informar a quantidade na etiqueta
+
+        #region Buscar Quantidade por Codigo de Barras
+
         public string BuscarQuantidade(int _cod_De_Barras)
         {
             try
@@ -216,40 +219,37 @@ namespace Inventory_Control.Dados
             }
         }
 
-        // Quantidade por Local
-        public bool BuscarQuantidadeLocal(int _quantidade)
+        #endregion Buscar Quantidade por Codigo de Barras
+
+        // Buscar quantiade para verificar se ainda possui saldo na etiqueta
+
+        #region Buscar Quantidade verificando saldo
+
+        public int BuscarQuantidadeValida()
         {
             try
             {
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
-                    bool isExist = false;
-                    string query = "select Quantidade from Estoque where Quantidade >= @quantidade";
-                    SqlCommand cmd = new SqlCommand(query, conexaoSQL);
-                    SqlDataReader reader;
-                    cmd.Parameters.AddWithValue("@quantidade", _quantidade);
-                    reader = cmd.ExecuteReader();
+                    string query = "select Quantidade from Estoque where Cod_De_Barras = " +
+                        "(select MIN(Cod_de_Barras) from Estoque where Local='EXPEDICAO')";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+                    //adapter.SelectCommand.Parameters.AddWithValue("@codDeBarras", _cod_De_Barras);
+                    SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
+                    dr.Read();
 
-                    reader.Read();
-
-                    if (reader.HasRows == true)
-                    {
-                        isExist = true;
-                    }
-                    else
-                    {
-                        isExist = false;
-                    }
-
-                    return isExist;
+                    int x = dr.GetInt32(0);
+                    return x;
                 }
             }
             catch (Exception x)
             {
                 MessageBox.Show(x.Message);
-                return false;
+                return 0;
             }
         }
+
+        #endregion Buscar Quantidade verificando saldo
 
         #endregion Buscar Quantidade
 

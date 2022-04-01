@@ -16,9 +16,10 @@ namespace Inventory_Control.Dados
         {
             using (SqlConnection conexaoSQL = AbrirConexao())
             {
-                string query = "INSERT INTO NF_Saida(Cod_Produto,Lote,Descricao,Valor)" +
-                    "SELECT Cod_Produto,Lote,Descricao,Valor_Unitario" +
-                    " FROM Estoque where Cod_Produto = @codproduto";
+                string query = "INSERT INTO NF_Saida(Cod_Produto,Lote,Descricao,Valor,Cod_de_Barras)" +
+                    "SELECT Cod_Produto,Lote,Descricao,Valor_Unitario,Cod_de_Barras" +
+                    " FROM Estoque where Cod_Produto = @codproduto and Cod_de_Barras = " +
+                    "(select MIN(Cod_de_Barras) from Estoque where Local = 'EXPEDICAO')";
 
                 SqlCommand cmd = new SqlCommand(query, conexaoSQL);
                 cmd.Parameters.AddWithValue("@codproduto", _cod_Produto);

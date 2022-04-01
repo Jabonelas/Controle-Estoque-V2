@@ -34,9 +34,11 @@ namespace Inventory_Control
 
         private BuscarNotaFiscalSaida BNFSP = new BuscarNotaFiscalSaida(); // Buscar NF de Saida o codigo do Produto
 
-        private BuscarDadosEstoque BEQL = new BuscarDadosEstoque(); // Buscar no Estoque a Quantidade por Local
-
         private VerificacaoDeExistencia BENFSE = new VerificacaoDeExistencia(); // Buscar Existencia Nota Fiscal de Saida e retorna o Estatus
+
+        private BuscarDadosEstoque BEQV = new BuscarDadosEstoque(); // Buscar no Estoque a Quantiade Valida para saber se esta zerada
+
+        private AlterarDadosEstoque ALEZ = new AlterarDadosEstoque(); // Alterar o Local de Estoque Zerado
 
         public VendasNotaFiscalSaida()
         {
@@ -59,7 +61,8 @@ namespace Inventory_Control
 
                     if (VEL.VerificarLocalEstoque(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text)) == "EXPEDICAO")
                     {
-                        if (BEQL.BuscarQuantidadeLocal(Convert.ToInt32(txtQuantidade_VendasNFSaida.Text)) == true)
+                        if (BEQV.BuscarQuantidadeValida() >= 0 && BEQV.BuscarQuantidadeValida() >= Convert.ToInt32(txtQuantidade_VendasNFSaida.Text))
+
                         {
                             if (txtNFSaida_VendasNFSaida.Text == "") //gerar o numero da NF de Saida
                             {
@@ -90,10 +93,16 @@ namespace Inventory_Control
                                 txtDescricao_VendasNFSaida.Text = "";
                                 txtQuantidade_VendasNFSaida.Text = "";
                             }
+
+                            // Verificação de saldo no estoque caso esteja zerado, tranferi o loccal de estoque para FATURADO
+                            if (BEQV.BuscarQuantidadeValida() <= 0)
+                            {
+                                ALEZ.AlterarEstoqueZerado();
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Quantidade Disponivel Menor Que a Solicitada ", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show($"Quantidade Disponivel {BEQV.BuscarQuantidadeValida()}", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else

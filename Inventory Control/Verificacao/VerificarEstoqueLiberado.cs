@@ -16,7 +16,8 @@ namespace Inventory_Control.Verificacao
             {
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
-                    string query = "select Local from Estoque where Cod_Produto = @codProduto";
+                    string query = "select Local from Estoque where Cod_Produto = @codProduto " +
+                        "and Local = 'EXPEDICAO' and Cod_de_Barras = (select MIN(Cod_de_Barras) from Estoque)";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
                     adapter.SelectCommand.Parameters.AddWithValue("@codProduto", _cod_Produto);
                     SqlDataReader dr = adapter.SelectCommand.ExecuteReader();

@@ -16,7 +16,10 @@ namespace Inventory_Control.Dados
 
         #region Alterar Local Estoque
 
-        // Alterar estoque na aba de transeferencia
+        // Alterar local de estoque realizando a transeferencia
+
+        #region Alterar local de estoque
+
         public void AlterarEstoque(string _local, int _cod_de_barras)
         {
             try
@@ -44,7 +47,12 @@ namespace Inventory_Control.Dados
             }
         }
 
-        // Alterar local quando  a Nota Fiscal de entrada for excluida
+        #endregion Alterar local de estoque
+
+        // Alterar local de estoque quando  a Nota Fiscal de entrada for excluida
+
+        #region Alterar Estoque na Exclusão da Nota Fiscal de Entrada
+
         public void AlterarEstoqueExclusaoNFEntrada(int _nf_Entrada, int _cod_de_barras)
         {
             try
@@ -72,6 +80,41 @@ namespace Inventory_Control.Dados
             }
         }
 
+        #endregion Alterar Estoque na Exclusão da Nota Fiscal de Entrada
+
+        // Alterar o local do estoque quando a etiqueta tiver seu saldo todo consumido
+
+        #region Alterar Local Estoque Zerado
+
+        public void AlterarEstoqueZerado()
+        {
+            try
+            {
+                //if (VE.BuscarExistenciaCodigoDeBarras(_cod_de_barras))
+                //{
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    string query = "update Estoque set Local= 'FATURADA' where Quantidade = 0 ";
+                    SqlCommand cmd = new SqlCommand(query, conexaoSQL);
+                    //cmd.Parameters.Add("@nfentrada", SqlDbType.VarChar).Value = _nf_Entrada;
+                    //cmd.Parameters.Add("@codDeBarras", SqlDbType.Int).Value = _cod_de_barras;
+
+                    cmd.ExecuteNonQuery();
+                }
+                //}
+                //else
+                //{
+                //MessageBox.Show("Codigo de Barras Não Encontrado!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //}
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+        }
+
+        #endregion Alterar Local Estoque Zerado
+
         #endregion Alterar Local Estoque
 
         //Realiza a Subritracao no estoque quando a Nota Fiscal de Saida e gerada
@@ -85,7 +128,8 @@ namespace Inventory_Control.Dados
             {
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
-                    string query = "update Estoque set Quantidade=(Quantidade - @quantidadeNFS) where Cod_Produto = @codProduto";
+                    string query = "update Estoque set Quantidade=(Quantidade - @quantidadeNFS) where Cod_Produto = @codProduto " +
+                        "and Cod_de_Barras = (select MIN(Cod_de_Barras) from Estoque) and Local = 'EXPEDICAO'";
                     SqlCommand cmd = new SqlCommand(query, conexaoSQL);
                     cmd.Parameters.Add("@codProduto", SqlDbType.VarChar).Value = _cod_Produto;
                     cmd.Parameters.Add("@quantidadeNFS", SqlDbType.Int).Value = _quantidade;
