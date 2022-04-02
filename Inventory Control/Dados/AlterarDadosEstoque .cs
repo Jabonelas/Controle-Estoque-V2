@@ -129,7 +129,8 @@ namespace Inventory_Control.Dados
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
                     string query = "update Estoque set Quantidade=(Quantidade - @quantidadeNFS) where Cod_Produto = @codProduto " +
-                        "and Cod_de_Barras = (select MIN(Cod_de_Barras) from Estoque) and Local = 'EXPEDICAO'";
+                        "and Cod_de_Barras = (select MIN(Cod_de_Barras) from Estoque where Cod_Produto = @codProduto " +
+                        "and Local = 'EXPEDICAO')";
                     SqlCommand cmd = new SqlCommand(query, conexaoSQL);
                     cmd.Parameters.Add("@codProduto", SqlDbType.VarChar).Value = _cod_Produto;
                     cmd.Parameters.Add("@quantidadeNFS", SqlDbType.Int).Value = _quantidade;

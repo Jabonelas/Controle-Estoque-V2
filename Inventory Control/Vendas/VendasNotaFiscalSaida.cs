@@ -59,9 +59,10 @@ namespace Inventory_Control
                 {
                     txtDataDeEmissao_VendasNFSaida.Text = DateTime.Today.ToShortDateString();
 
-                    if (VEL.VerificarLocalEstoque(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text)) == "EXPEDICAO")
+                    if (VEL.VerificarLocalEstoque(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text)) == true)
                     {
-                        if (BEQV.BuscarQuantidadeValida() >= 0 && BEQV.BuscarQuantidadeValida() >= Convert.ToInt32(txtQuantidade_VendasNFSaida.Text))
+                        if (BEQV.BuscarQuantidadeValida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text)) >= 0 &&
+                            BEQV.BuscarQuantidadeValida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text)) >= Convert.ToInt32(txtQuantidade_VendasNFSaida.Text))
 
                         {
                             if (txtNFSaida_VendasNFSaida.Text == "") //gerar o numero da NF de Saida
@@ -82,6 +83,12 @@ namespace Inventory_Control
 
                             txtDescricao_VendasNFSaida.Text = BE.BuscarDescricaoNFSaida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text));
 
+                            // Verificação de saldo no estoque caso esteja zerado, tranferi o loccal de estoque para FATURADO
+                            if (BEQV.BuscarQuantidadeValida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text)) <= 0)
+                            {
+                                ALEZ.AlterarEstoqueZerado();
+                            }
+
                             DialogResult OpcaoDoUsuario = new DialogResult();
                             OpcaoDoUsuario = MessageBox.Show("Item Adicionado com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             if (OpcaoDoUsuario == DialogResult.OK)
@@ -93,16 +100,10 @@ namespace Inventory_Control
                                 txtDescricao_VendasNFSaida.Text = "";
                                 txtQuantidade_VendasNFSaida.Text = "";
                             }
-
-                            // Verificação de saldo no estoque caso esteja zerado, tranferi o loccal de estoque para FATURADO
-                            if (BEQV.BuscarQuantidadeValida() <= 0)
-                            {
-                                ALEZ.AlterarEstoqueZerado();
-                            }
                         }
                         else
                         {
-                            MessageBox.Show($"Quantidade Disponivel {BEQV.BuscarQuantidadeValida()}", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show($"Quantidade Disponivel {BEQV.BuscarQuantidadeValida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text))}", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else

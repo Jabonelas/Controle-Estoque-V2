@@ -15,7 +15,6 @@ namespace Inventory_Control.Dados
     {
         private VerificacaoDeExistencia VCP = new VerificacaoDeExistencia();
         private VerificacaoDeExistencia VCB = new VerificacaoDeExistencia();
-        private SqlConnection conexaoSQL;
 
         #region Buscar Codigo do Produto
 
@@ -46,13 +45,15 @@ namespace Inventory_Control.Dados
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.Message);
+                MessageBox.Show(x.ToString());
             }
         }
 
         #endregion Buscar Codigo do Produto
 
-        #region Buscar Codigo de Barras
+        #region Bucar Codigo de Barras
+
+        #region Buscar por Codigo de Barras para preencher o GridView
 
         public void BuscarCodBarras(int _cod_De_Barras, Guna2DataGridView _tabela)
         {
@@ -62,7 +63,7 @@ namespace Inventory_Control.Dados
                 {
                     using (SqlConnection conexaoSQL = AbrirConexao())
                     {
-                        string query = "select * from Estoque where Cod_De_Barras = @codDeBarras ";
+                        string query = "select * from Estoque where Cod_de_Barras = @codDeBarras ";
                         SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
                         adapter.SelectCommand.Parameters.AddWithValue("@codDeBarras", _cod_De_Barras);
 
@@ -80,11 +81,43 @@ namespace Inventory_Control.Dados
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.Message);
+                MessageBox.Show(x.ToString());
             }
         }
 
-        #endregion Buscar Codigo de Barras
+        #endregion Buscar por Codigo de Barras para preencher o GridView
+
+        #region Buscar o Codigo de Barras da Vez
+
+        // Buscar o codigo de barras da vez para seguir o FIFO na transferencia de local
+        public int BuscarCodBarrasDaVez(int _cod_de_Barras)
+
+        {
+            try
+            {
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    string query = "select MIN(Cod_de_Barras) from Estoque where Local <> 'EXPEDICAO' " +
+                        "and Local<> 'EXCLUIDA' and Local<> 'FATURADA'";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+                    adapter.SelectCommand.Parameters.AddWithValue("@codDeBarras", _cod_de_Barras);
+                    SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
+                    dr.Read();
+
+                    int x = dr.GetInt32(0);
+                    return x;
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+                return 0;
+            }
+        }
+
+        #endregion Buscar o Codigo de Barras da Vez
+
+        #endregion Bucar Codigo de Barras
 
         #region Buscar Lote
 
@@ -133,7 +166,7 @@ namespace Inventory_Control.Dados
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.Message);
+                MessageBox.Show(x.ToString());
                 return "";
             }
         }
@@ -160,7 +193,7 @@ namespace Inventory_Control.Dados
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.Message);
+                MessageBox.Show(x.ToString());
                 return "";
             }
         }
@@ -214,7 +247,7 @@ namespace Inventory_Control.Dados
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.Message);
+                MessageBox.Show(x.ToString());
                 return "";
             }
         }
@@ -225,16 +258,17 @@ namespace Inventory_Control.Dados
 
         #region Buscar Quantidade verificando saldo
 
-        public int BuscarQuantidadeValida()
+        public int BuscarQuantidadeValida(int _cod_Produto)
         {
             try
             {
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
                     string query = "select Quantidade from Estoque where Cod_De_Barras = " +
-                        "(select MIN(Cod_de_Barras) from Estoque where Local='EXPEDICAO')";
+                        "(select MIN(Cod_de_Barras) from Estoque where Cod_Produto = @codProduto " +
+                        "and Local = 'EXPEDICAO')";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
-                    //adapter.SelectCommand.Parameters.AddWithValue("@codDeBarras", _cod_De_Barras);
+                    adapter.SelectCommand.Parameters.AddWithValue("@codProduto", _cod_Produto);
                     SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
                     dr.Read();
 
@@ -244,7 +278,7 @@ namespace Inventory_Control.Dados
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.Message);
+                MessageBox.Show(x.ToString());
                 return 0;
             }
         }
@@ -273,7 +307,7 @@ namespace Inventory_Control.Dados
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.Message);
+                MessageBox.Show(x.ToString());
                 return "";
             }
         }

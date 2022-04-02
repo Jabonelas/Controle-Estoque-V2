@@ -32,7 +32,9 @@ namespace Inventory_Control
 
         private BuscarDadosEstoque BELO = new BuscarDadosEstoque(); // Buscar por Codigo de Barras na tabela Estoque o campo Lote
 
-        private AlterarDadosEstoque AE = new AlterarDadosEstoque();
+        private AlterarDadosEstoque AE = new AlterarDadosEstoque(); // Alterar dados de Estoque
+
+        private BuscarDadosEstoque BCBDV = new BuscarDadosEstoque(); // Buscar o Codigo de Barras da Vez, para poder seguir o FIFO
 
         public SuprimentosControleTransferencia()
         {
@@ -53,45 +55,52 @@ namespace Inventory_Control
             {
                 if (txtCodDeBarras_MovimentacaoEstoque.Text != "" && cmbDestino_MovimentacaoEstoque.Text != "")
                 {
-                    if (VCB.BuscarExistenciaCodigoDeBarras(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text)) == true)
+                    if (BCBDV.BuscarCodBarrasDaVez(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text)) == Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text))
                     {
-                        txtCodDaProduto_MovimentacaoEstoque.Text = BECP.BuscarCodProdutoTextBox(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text));//Preencher o textbox Codigo do Produto
-
-                        txtLote_MovimentocaoEstoque.Text = BEL.BuscarLote(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text));//Preencher o textbox Lote
-
-                        txtDescricao_MovimentocaoEstoque.Text = BED.BuscarDescricao(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text)); //Preencher o textbox Descrição
-
-                        txtQuantidade_MovimentocaoEstoque.Text = BEQ.BuscarQuantidade(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text));//Preencher o textbox Quantidade
-
-                        txtLocal_MovimentacaoEstoque.Text = BELO.BuscarLocal(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text));//Preencher o textbox Local
-
-                        DialogResult OpcaoDoUsuario = new DialogResult();
-                        OpcaoDoUsuario = MessageBox.Show("Deseja Realizar a Modificação?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                        if (OpcaoDoUsuario == DialogResult.Yes)
+                        if (VCB.BuscarExistenciaCodigoDeBarras(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text)) == true)
                         {
-                            AE.AlterarEstoque(cmbDestino_MovimentacaoEstoque.Text, Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text));
+                            txtCodDaProduto_MovimentacaoEstoque.Text = BECP.BuscarCodProdutoTextBox(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text));//Preencher o textbox Codigo do Produto
 
-                            OpcaoDoUsuario = MessageBox.Show("Modificação Realizada Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            if (OpcaoDoUsuario == DialogResult.OK)
+                            txtLote_MovimentocaoEstoque.Text = BEL.BuscarLote(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text));//Preencher o textbox Lote
+
+                            txtDescricao_MovimentocaoEstoque.Text = BED.BuscarDescricao(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text)); //Preencher o textbox Descrição
+
+                            txtQuantidade_MovimentocaoEstoque.Text = BEQ.BuscarQuantidade(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text));//Preencher o textbox Quantidade
+
+                            txtLocal_MovimentacaoEstoque.Text = BELO.BuscarLocal(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text));//Preencher o textbox Local
+
+                            DialogResult OpcaoDoUsuario = new DialogResult();
+                            OpcaoDoUsuario = MessageBox.Show("Deseja Realizar a Modificação?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                            if (OpcaoDoUsuario == DialogResult.Yes)
                             {
-                                BE.BuscarCodBarras(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text), gvdMovimentacaoEstoque);
+                                AE.AlterarEstoque(cmbDestino_MovimentacaoEstoque.Text, Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text));
 
-                                txtCodDeBarras_MovimentacaoEstoque.Text = "";
-                                txtCodDaProduto_MovimentacaoEstoque.Text = "";
-                                txtLote_MovimentocaoEstoque.Text = "";
-                                txtDescricao_MovimentocaoEstoque.Text = "";
-                                txtQuantidade_MovimentocaoEstoque.Text = "";
-                                txtLocal_MovimentacaoEstoque.Text = "";
-                                cmbDestino_MovimentacaoEstoque.Text = "";
+                                OpcaoDoUsuario = MessageBox.Show("Modificação Realizada Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                if (OpcaoDoUsuario == DialogResult.OK)
+                                {
+                                    BE.BuscarCodBarras(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text), gvdMovimentacaoEstoque);
 
-                                label1.Text = "";
-                                label2.Text = "";
+                                    txtCodDeBarras_MovimentacaoEstoque.Text = "";
+                                    txtCodDaProduto_MovimentacaoEstoque.Text = "";
+                                    txtLote_MovimentocaoEstoque.Text = "";
+                                    txtDescricao_MovimentocaoEstoque.Text = "";
+                                    txtQuantidade_MovimentocaoEstoque.Text = "";
+                                    txtLocal_MovimentacaoEstoque.Text = "";
+                                    cmbDestino_MovimentacaoEstoque.Text = "";
+
+                                    label1.Text = "";
+                                    label2.Text = "";
+                                }
                             }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Codigo de Barras Não Encontrado!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Codigo de Barras Não Encontrado!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Por Favor Seguir FIFO!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
