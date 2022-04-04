@@ -39,6 +39,12 @@ namespace Inventory_Control
 
         private AlterarDadosEstoque AEENFE = new AlterarDadosEstoque(); // Alterar estoque quando excluir a nota fiscal de entrada
 
+        private BuscarDadosEstoque BEL = new BuscarDadosEstoque(); // Buscar Local em Estoque
+
+        private BuscarDadosEstoque BEQ = new BuscarDadosEstoque(); // Buscar Estoque Quantiade
+
+        private BuscarNotaFiscalEntrada BENFE = new BuscarNotaFiscalEntrada(); // Buscar o Estatus da Nota Fiscal de Entrada
+
         public SuprimentoNotaDeEntrada()
         {
             InitializeComponent();
@@ -72,6 +78,9 @@ namespace Inventory_Control
 
         #region Botão EXcluir Nota Fiscal
 
+        private bool IndicadorDeLocal = true;
+        private bool IndicadorQuantidade = true;
+
         private void btnExcluir_CadastroCliente_Click(object sender, EventArgs e)
         {
             try
@@ -82,29 +91,76 @@ namespace Inventory_Control
                 }
                 else
                 {
-                    if (VNF.BuscarExistenciaDeLancamentoNotaFiscalEntrada(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)) == "RECEBIMENTO")
+                    foreach (var CodBarras in BNFEC.BuscarNFEntradaCodBarras(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)))
                     {
-                        foreach (var CodProduto in BNFEP.BuscarNFEntradaCodProduto(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)))
+                        foreach (var Local in BEL.BuscarLocalEstoque(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), CodBarras))
                         {
-                            foreach (var CodBarras in BNFEC.BuscarNFEntradaCodBarras(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), CodProduto))
+                            if (Local != "RECEBIMENTO")
                             {
-                                foreach (var Quantidade in BNFEQ.BuscarNFEntradaQuantidade(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), CodProduto))
+                                IndicadorDeLocal = false;
+                                break;
+                            }
+                            break;
+                        }
+
+                        if (IndicadorDeLocal == false)
+                        {
+                            break;
+                        }
+                    }
+
+                    foreach (var CodBarras in BNFEC.BuscarNFEntradaCodBarras(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)))
+                    {
+                        foreach (var QuantidadeEstoque in BEQ.BuscarQuantidadeEstoque(CodBarras))
+                        {
+                            foreach (var QuantidadeNFEntrada in BNFEQ.BuscarNFEntradaQuantidade(CodBarras))
+                            {
+                                if (QuantidadeEstoque != QuantidadeNFEntrada)
                                 {
-                                    AQEES.AlterarQuantidadeEstoqueEntradaSubtracao(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), CodProduto, Quantidade, CodBarras);
+                                    IndicadorQuantidade = false;
+                                    break;
+                                }
+                                break;
+                            }
+                            break;
+                        }
+
+                        if (IndicadorQuantidade == false)
+                        {
+                            break;
+                        }
+                    }
+
+                    if (VNF.BuscarExistenciaNotaFiscalEntrada(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)) == true)
+                    {
+                        if (IndicadorDeLocal == true && IndicadorQuantidade == true)
+                        {
+                            //foreach (var CodProduto in BNFEP.BuscarNFEntradaCodProduto(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)))
+                            //{
+                            foreach (var CodBarras in BNFEC.BuscarNFEntradaCodBarras(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)))
+                            {
+                                foreach (var Quantidade in BNFEQ.BuscarNFEntradaQuantidade(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)))
+                                {
+                                    AQEES.AlterarQuantidadeEstoqueEntradaSubtracao(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), Quantidade, CodBarras);
 
                                     AEENFE.AlterarEstoqueExclusaoNFEntrada(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), CodBarras);
 
                                     break;
                                 }
-                                break;
+                                //break;
                             }
-                        }
+                            //}
 
-                        DNFE.DeletarNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), gdvNotaFiscal_Suprimento);
+                            DNFE.DeletarNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), gdvNotaFiscal_Suprimento);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Itens Não Disponiveis Local/Quantidade!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("O Saldo Deve Estar Disponivel Em RECEBIMENTO!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Nota Fiscal Não Encontrada!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
@@ -133,35 +189,42 @@ namespace Inventory_Control
                     if (VF.BuscarExistenciaDeFornecedorNaTabela(txtNotaFiscal_Suprimento.Text) == true &&
                         VP.BuscarExistenciaDeProdutoNaTabela(txtNotaFiscal_Suprimento.Text) == true)
                     {
-                        //if (VNF.BuscarExistenciaDeLancamentoNotaFiscalEntrada(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)) == "TRANSITO")
-                        //{
-                        try
+                        if (VNF.BuscarExistenciaNotaFiscalEntrada(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)) == true)
                         {
-                            IN.InserirNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text));
-
-                            IE.InserirEstoque(Convert.ToInt32(txtNotaFiscal_Suprimento.Text));
-
-                            foreach (var CodProduto in BNFEP.BuscarNFEntradaCodProduto(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)))
+                            if (BENFE.BuscarNotaFiscalEntradaEstatus(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)) == "TRANSITO")
                             {
-                                //foreach (var CodBarras in BNFEC.BuscarNFEntradaCodBarras(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), CodProduto))
-                                //{
-                                ACNFE.AlterarCodBarrasNFEntrada(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), CodProduto);
+                                try
+                                {
+                                    IN.InserirNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text));
 
-                                //break;
-                                //}
+                                    IE.InserirEstoque(Convert.ToInt32(txtNotaFiscal_Suprimento.Text));
+
+                                    foreach (var CodProduto in BNFEP.BuscarNFEntradaCodProduto(Convert.ToInt32(txtNotaFiscal_Suprimento.Text)))
+                                    {
+                                        //foreach (var CodBarras in BNFEC.BuscarNFEntradaCodBarras(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), CodProduto))
+                                        //{
+                                        ACNFE.AlterarCodBarrasNFEntrada(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), CodProduto);
+
+                                        //break;
+                                        //}
+                                    }
+
+                                    BN.BuscarNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), gdvNotaFiscal_Suprimento);
+                                }
+                                catch (Exception x)
+                                {
+                                    MessageBox.Show(x.ToString());
+                                }
                             }
-
-                            BN.BuscarNotaFiscal(Convert.ToInt32(txtNotaFiscal_Suprimento.Text), gdvNotaFiscal_Suprimento);
+                            else
+                            {
+                                MessageBox.Show("Nota Fiscal Já Inclusa!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
                         }
-                        catch (Exception x)
+                        else
                         {
-                            MessageBox.Show(x.ToString());
+                            MessageBox.Show("Nota Fiscal Não Encontrada!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                        //}
-                        //else
-                        //{
-                        //    MessageBox.Show("Nota Fiscal´Já Inclusa no Sistema!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        //}
                     }
                     else
                     {

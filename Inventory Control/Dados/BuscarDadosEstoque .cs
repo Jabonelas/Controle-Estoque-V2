@@ -26,7 +26,8 @@ namespace Inventory_Control.Dados
                 {
                     using (SqlConnection conexaoSQL = AbrirConexao())
                     {
-                        string query = "select * from Estoque where Cod_Produto = @codproduto and Local <> 'TRANSITO' " +
+                        string query = "select * from Estoque where Cod_Produto = @codproduto" +
+                            " and Local <> 'TRANSITO' and Local <> 'EXCLUIDA' " +
                             "and Quantidade > 0 ";
                         SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
                         adapter.SelectCommand.Parameters.AddWithValue("@codproduto", _cod_Produto);
@@ -98,7 +99,8 @@ namespace Inventory_Control.Dados
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
                     string query = "select MIN(Cod_de_Barras) from Estoque where Local <> 'EXPEDICAO' " +
-                        "and Local<> 'EXCLUIDA' and Local<> 'FATURADA'";
+                        "and Local<> 'EXCLUIDA' and Local<> 'FATURADA' and " +
+                        "Cod_Produto = (select Cod_Produto from Estoque where Cod_de_Barras = @codDeBarras)";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
                     adapter.SelectCommand.Parameters.AddWithValue("@codDeBarras", _cod_de_Barras);
                     SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
@@ -254,6 +256,42 @@ namespace Inventory_Control.Dados
 
         #endregion Buscar Quantidade por Codigo de Barras
 
+        // Buscar a quantidade por codigo de barras, para preencher a lista
+
+        #region Buscar Quantidade Estoque
+
+        public List<int> BuscarQuantidadeEstoque(int _cod_De_Barras)
+        {
+            try
+            {
+                List<int> QuantidadeEstoque = new List<int>();
+
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    string query = "select Quantidade from Estoque where Cod_De_Barras = @codDeBarras";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+                    adapter.SelectCommand.Parameters.AddWithValue("@codDeBarras", _cod_De_Barras);
+                    //adapter.SelectCommand.Parameters.AddWithValue("@codProduto", _cod_Produto);
+
+                    SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        QuantidadeEstoque.Add(dr.GetInt32(0));
+                    }
+
+                    return QuantidadeEstoque;
+                }
+            }
+            catch (Exception x)
+            {
+                return new List<int>();
+
+                MessageBox.Show(x.ToString());
+            }
+        }
+
+        #endregion Buscar Quantidade Estoque
+
         // Buscar quantiade para verificar se ainda possui saldo na etiqueta
 
         #region Buscar Quantidade verificando saldo
@@ -313,5 +351,40 @@ namespace Inventory_Control.Dados
         }
 
         #endregion Buscar Local
+
+        #region Buscar Local Estoque
+
+        public List<string> BuscarLocalEstoque(int _nf_Entrada, int _cod_De_Barras)
+        {
+            try
+            {
+                List<string> LocalProduto = new List<string>();
+
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    string query = "select Local from Estoque where NF_Entrada = @nfentrada and Cod_de_Barras = @codDeBarras " +
+                        "and Quantidade > 0";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+                    adapter.SelectCommand.Parameters.AddWithValue("@nfentrada", _nf_Entrada);
+                    adapter.SelectCommand.Parameters.AddWithValue("@codDeBarras", _cod_De_Barras);
+
+                    SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        LocalProduto.Add(dr.GetString(0));
+                    }
+
+                    return LocalProduto;
+                }
+            }
+            catch (Exception x)
+            {
+                return new List<string>();
+
+                MessageBox.Show(x.ToString());
+            }
+        }
+
+        #endregion Buscar Local Estoque
     }
 }

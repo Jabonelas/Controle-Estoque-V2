@@ -85,11 +85,11 @@ namespace Inventory_Control
 
         #endregion Buscar Nota Fiscal Entrada Codigo Produto
 
-        // Buscar a quantidade da Nota Fiscal de entrda, usado para cancelamento
+        // Buscar a quantidade da Nota Fiscal de entrada, usando para cancelamento
 
         #region Buscar Nota Fiscal Entrada Quantidade
 
-        public List<int> BuscarNFEntradaQuantidade(int _nf_Entrada, int _cod_Produto)
+        public List<int> BuscarNFEntradaQuantidade(int _nf_Entrada)
         {
             try
             {
@@ -97,10 +97,10 @@ namespace Inventory_Control
 
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
-                    string query = "select QUANT from NF where NF = @nfentrada and Cod_Produto = @codProduto";
+                    string query = "select QUANT from NF where NF = @nfentrada";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
                     adapter.SelectCommand.Parameters.AddWithValue("@nfentrada", _nf_Entrada);
-                    adapter.SelectCommand.Parameters.AddWithValue("@codProduto", _cod_Produto);
+                    //adapter.SelectCommand.Parameters.AddWithValue("@codProduto", _cod_Produto);
 
                     SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
                     while (dr.Read())
@@ -121,31 +121,31 @@ namespace Inventory_Control
 
         #endregion Buscar Nota Fiscal Entrada Quantidade
 
-        //// Buscar o numero do Codigo de barras para prencher Nota Fiscal de entrda, usado para cancelamento
+        // Buscar o numero do Codigo de barras para prencher Nota Fiscal de entrada, usado para cancelamento
 
         #region Buscar Numero da Codigo de Barras Nota Fiscal Entrada
 
-        public List<int> BuscarNFEntradaCodBarras(int _nf_Entrada, int _cod_Produto)
+        public List<int> BuscarNFEntradaCodBarras(int _nf_Entrada)
         {
             try
             {
-                List<int> QuantidadeProduto = new List<int>();
+                List<int> CodBarras = new List<int>();
 
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
-                    string query = "select Cod_de_Barras from Estoque where NF_Entrada = @nfentrada and Cod_Produto = @codProduto " +
-                        "and Quantidade > 0";
+                    string query = "select Cod_de_Barras from Estoque where NF_Entrada = @nfentrada" +
+                        " and Quantidade > 0 ";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
                     adapter.SelectCommand.Parameters.AddWithValue("@nfentrada", _nf_Entrada);
-                    adapter.SelectCommand.Parameters.AddWithValue("@codProduto", _cod_Produto);
+                    //adapter.SelectCommand.Parameters.AddWithValue("@codProduto", _cod_Produto);
 
                     SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
                     while (dr.Read())
                     {
-                        QuantidadeProduto.Add(dr.GetInt32(0));
+                        CodBarras.Add(dr.GetInt32(0));
                     }
 
-                    return QuantidadeProduto;
+                    return CodBarras;
                 }
             }
             catch (Exception x)
@@ -157,5 +157,34 @@ namespace Inventory_Control
         }
 
         #endregion Buscar Numero da Codigo de Barras Nota Fiscal Entrada
+
+        // Buscar o Estatus da Nota Fiscal de entrada
+
+        #region Buscar Estatus
+
+        public string BuscarNotaFiscalEntradaEstatus(int _nf_Entrada)
+        {
+            try
+            {
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    string query = "select Estatus from NF where NF = @nfentrada";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+                    adapter.SelectCommand.Parameters.AddWithValue("@nfentrada", _nf_Entrada);
+                    SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
+                    dr.Read();
+
+                    string x = dr.GetString(0);
+                    return x;
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+                return "";
+            }
+        }
+
+        #endregion Buscar Estatus
     }
 }

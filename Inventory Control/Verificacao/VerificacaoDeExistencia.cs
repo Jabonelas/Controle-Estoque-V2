@@ -273,6 +273,8 @@ namespace Inventory_Control
 
         #region Nota Fiscal Entrada
 
+        #region Buscar Existencia Nota Fiscal Entrada
+
         public bool BuscarExistenciaNotaFiscalEntrada(int _nota_Fiscal)
         {
             try
@@ -307,29 +309,7 @@ namespace Inventory_Control
             }
         }
 
-        //Verifica se a NF já foi lançada no sistema
-        public string BuscarExistenciaDeLancamentoNotaFiscalEntrada(int _nota_Fiscal)
-        {
-            try
-            {
-                using (SqlConnection conexaoSQL = AbrirConexao())
-                {
-                    string query = "select Estatus from NF where NF = @nF";
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
-                    adapter.SelectCommand.Parameters.AddWithValue("@nF", _nota_Fiscal);
-                    SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
-                    dr.Read();
-
-                    string x = dr.GetString(0);
-                    return x;
-                }
-            }
-            catch (Exception x)
-            {
-                MessageBox.Show(x.ToString());
-                return "";
-            }
-        }
+        #endregion Buscar Existencia Nota Fiscal Entrada
 
         #endregion Nota Fiscal Entrada
 

@@ -145,18 +145,17 @@ namespace Inventory_Control.Dados
         }
 
         // Nota fiscal de entrada altera a quantidade subtraindo
-        public void AlterarQuantidadeEstoqueEntradaSubtracao(int _nf_Entrada, int _cod_Produto, int _quantidade, int _cod_Barras)
+        public void AlterarQuantidadeEstoqueEntradaSubtracao(int _nf_Entrada, int _quantidade, int _cod_Barras)
         {
             try
             {
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
                     string query = "update Estoque set Quantidade=(Quantidade - @quantidadeNFS)" +
-                        " where Cod_Produto = @codProduto and" +
-                        " NF_Entrada = @nfentrada and Cod_de_Barras = @codBarras and Local = 'RECEBIMENTO'";
+                        " where NF_Entrada = @nfentrada and Cod_de_Barras = @codBarras and Local = 'RECEBIMENTO'";
                     SqlCommand cmd = new SqlCommand(query, conexaoSQL);
                     cmd.Parameters.Add("@nfentrada", SqlDbType.VarChar).Value = _nf_Entrada;
-                    cmd.Parameters.Add("@codProduto", SqlDbType.VarChar).Value = _cod_Produto;
+                    //cmd.Parameters.Add("@codProduto", SqlDbType.VarChar).Value = _cod_Produto;
                     cmd.Parameters.Add("@quantidadeNFS", SqlDbType.Int).Value = _quantidade;
                     cmd.Parameters.Add("@codBarras", SqlDbType.Int).Value = _cod_Barras;
 
@@ -208,7 +207,8 @@ namespace Inventory_Control.Dados
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
                     string query = "update NF set Cod_Barras = " +
-                        "(select Cod_de_Barras from Estoque where Cod_Produto = @codProduto and NF_Entrada = @nfentrada and Quantidade>0) " +
+                        "(select Cod_de_Barras from Estoque where Cod_Produto = @codProduto " +
+                        "and NF_Entrada = @nfentrada and Quantidade>0) " +
                         "where Cod_Produto = @codProduto and NF = @nfentrada";
                     SqlCommand cmd = new SqlCommand(query, conexaoSQL);
                     cmd.Parameters.Add("@nfentrada", SqlDbType.VarChar).Value = _nf_Entrada;
