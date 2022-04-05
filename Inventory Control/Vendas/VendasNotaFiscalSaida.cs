@@ -213,11 +213,11 @@ namespace Inventory_Control
                 {
                     if (BENFSE.BuscarExistenciaNotaFiscalSaidaEstatus(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text)) == "FATURADA")
                     {
-                        foreach (var CodProduto in BNFSP.BuscarNFSaidaCodProduto(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text)))
+                        foreach (var CodDeBarras in BNFSP.BuscarNFSaidaCodDeBarras(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text)))
                         {
-                            foreach (var Quantidade in BNFSQ.BuscarNFSaidaQuantidade(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), CodProduto))
+                            foreach (var Quantidade in BNFSQ.BuscarNFSaidaQuantidade(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), CodDeBarras))
                             {
-                                AQEA.AlterarQuantidadeEstoqueAdicao(CodProduto, Quantidade);
+                                AQEA.AlterarQuantidadeEstoqueAdicao(CodDeBarras, Quantidade);
 
                                 break;
                             }

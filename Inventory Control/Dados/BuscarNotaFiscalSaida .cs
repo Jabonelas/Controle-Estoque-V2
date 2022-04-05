@@ -95,7 +95,7 @@ namespace Inventory_Control
 
         #region Buscar Nota Fiscal de Saida Quantidade
 
-        public List<int> BuscarNFSaidaQuantidade(int _nf_Saida, int _cod_Produto)
+        public List<int> BuscarNFSaidaQuantidade(int _nf_Saida, int _cod_De_Barras)
         {
             try
             {
@@ -103,10 +103,10 @@ namespace Inventory_Control
 
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
-                    string query = "select Quantidade from NF_Saida where NF_Saida = @nfsaida and Cod_Produto = @codProduto";
+                    string query = "select Quantidade from NF_Saida where NF_Saida = @nfsaida and Cod_de_Barras = @codDeBarras";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
                     adapter.SelectCommand.Parameters.AddWithValue("@nfsaida", _nf_Saida);
-                    adapter.SelectCommand.Parameters.AddWithValue("@codProduto", _cod_Produto);
+                    adapter.SelectCommand.Parameters.AddWithValue("@codDeBarras", _cod_De_Barras);
 
                     SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
                     while (dr.Read())
@@ -131,7 +131,7 @@ namespace Inventory_Control
 
         #region Bucar Nota Fiscal de Saida Produto
 
-        public List<int> BuscarNFSaidaCodProduto(int _nf_Saida)
+        public List<int> BuscarNFSaidaCodDeBarras(int _nf_Saida)
         {
             try
             {
@@ -139,7 +139,7 @@ namespace Inventory_Control
 
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
-                    string query = "select Cod_Produto from NF_Saida where NF_Saida = @nfsaida";
+                    string query = "select Cod_de_Barras from NF_Saida where NF_Saida = @nfsaida";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
                     adapter.SelectCommand.Parameters.AddWithValue("@nfsaida", _nf_Saida);
 

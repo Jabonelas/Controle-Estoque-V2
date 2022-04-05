@@ -28,17 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SuprimentosControleTransferencia));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtCodDeBarras_MovimentacaoEstoque = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.cmbDestino_MovimentacaoEstoque = new System.Windows.Forms.ComboBox();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
-            this.btnPesquisa_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnModificar_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
@@ -53,6 +51,8 @@
             this.txtQuantidade_MovimentocaoEstoque = new System.Windows.Forms.TextBox();
             this.txtLocal_MovimentacaoEstoque = new System.Windows.Forms.TextBox();
             this.txtCodDaProduto_MovimentacaoEstoque = new System.Windows.Forms.TextBox();
+            this.btnPesquisa_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnModificar_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
             ((System.ComponentModel.ISupportInitialize)(this.gvdMovimentacaoEstoque)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,78 +127,6 @@
             this.gunaLabel2.TabIndex = 139;
             this.gunaLabel2.Text = "Modificar";
             // 
-            // btnPesquisa_CadastroCliente
-            // 
-            this.btnPesquisa_CadastroCliente.Animated = true;
-            this.btnPesquisa_CadastroCliente.AnimationHoverSpeed = 0.4F;
-            this.btnPesquisa_CadastroCliente.AnimationSpeed = 0.03F;
-            this.btnPesquisa_CadastroCliente.BackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisa_CadastroCliente.BackgroundImage = global::Inventory_Control.Properties.Resources.Buscar;
-            this.btnPesquisa_CadastroCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPesquisa_CadastroCliente.BaseColor = System.Drawing.Color.Transparent;
-            this.btnPesquisa_CadastroCliente.BorderColor = System.Drawing.Color.Black;
-            this.btnPesquisa_CadastroCliente.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnPesquisa_CadastroCliente.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnPesquisa_CadastroCliente.CheckedForeColor = System.Drawing.Color.White;
-            this.btnPesquisa_CadastroCliente.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnPesquisa_CadastroCliente.CheckedImage")));
-            this.btnPesquisa_CadastroCliente.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnPesquisa_CadastroCliente.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnPesquisa_CadastroCliente.FocusedColor = System.Drawing.Color.Empty;
-            this.btnPesquisa_CadastroCliente.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisa_CadastroCliente.ForeColor = System.Drawing.Color.White;
-            this.btnPesquisa_CadastroCliente.Image = null;
-            this.btnPesquisa_CadastroCliente.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnPesquisa_CadastroCliente.LineBottom = 4;
-            this.btnPesquisa_CadastroCliente.LineColor = System.Drawing.Color.Transparent;
-            this.btnPesquisa_CadastroCliente.Location = new System.Drawing.Point(77, 3);
-            this.btnPesquisa_CadastroCliente.Name = "btnPesquisa_CadastroCliente";
-            this.btnPesquisa_CadastroCliente.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.btnPesquisa_CadastroCliente.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnPesquisa_CadastroCliente.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnPesquisa_CadastroCliente.OnHoverImage = null;
-            this.btnPesquisa_CadastroCliente.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnPesquisa_CadastroCliente.OnPressedColor = System.Drawing.Color.Black;
-            this.btnPesquisa_CadastroCliente.Size = new System.Drawing.Size(44, 47);
-            this.btnPesquisa_CadastroCliente.TabIndex = 138;
-            this.btnPesquisa_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnPesquisa_CadastroCliente.Click += new System.EventHandler(this.btnPesquisa_CadastroCliente_Click);
-            // 
-            // btnModificar_CadastroCliente
-            // 
-            this.btnModificar_CadastroCliente.Animated = true;
-            this.btnModificar_CadastroCliente.AnimationHoverSpeed = 0.4F;
-            this.btnModificar_CadastroCliente.AnimationSpeed = 0.03F;
-            this.btnModificar_CadastroCliente.BackColor = System.Drawing.Color.Transparent;
-            this.btnModificar_CadastroCliente.BackgroundImage = global::Inventory_Control.Properties.Resources.Editar;
-            this.btnModificar_CadastroCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnModificar_CadastroCliente.BaseColor = System.Drawing.Color.Transparent;
-            this.btnModificar_CadastroCliente.BorderColor = System.Drawing.Color.Black;
-            this.btnModificar_CadastroCliente.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnModificar_CadastroCliente.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnModificar_CadastroCliente.CheckedForeColor = System.Drawing.Color.White;
-            this.btnModificar_CadastroCliente.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnModificar_CadastroCliente.CheckedImage")));
-            this.btnModificar_CadastroCliente.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnModificar_CadastroCliente.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnModificar_CadastroCliente.FocusedColor = System.Drawing.Color.Empty;
-            this.btnModificar_CadastroCliente.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar_CadastroCliente.ForeColor = System.Drawing.Color.White;
-            this.btnModificar_CadastroCliente.Image = null;
-            this.btnModificar_CadastroCliente.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnModificar_CadastroCliente.LineBottom = 4;
-            this.btnModificar_CadastroCliente.LineColor = System.Drawing.Color.Transparent;
-            this.btnModificar_CadastroCliente.Location = new System.Drawing.Point(7, 3);
-            this.btnModificar_CadastroCliente.Name = "btnModificar_CadastroCliente";
-            this.btnModificar_CadastroCliente.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.btnModificar_CadastroCliente.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnModificar_CadastroCliente.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnModificar_CadastroCliente.OnHoverImage = null;
-            this.btnModificar_CadastroCliente.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnModificar_CadastroCliente.OnPressedColor = System.Drawing.Color.Black;
-            this.btnModificar_CadastroCliente.Size = new System.Drawing.Size(44, 47);
-            this.btnModificar_CadastroCliente.TabIndex = 137;
-            this.btnModificar_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnModificar_CadastroCliente.Click += new System.EventHandler(this.btnModificar_CadastroCliente_Click);
-            // 
             // gunaLabel1
             // 
             this.gunaLabel1.AutoSize = true;
@@ -261,30 +189,30 @@
             // 
             // gvdMovimentacaoEstoque
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.gvdMovimentacaoEstoque.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.gvdMovimentacaoEstoque.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.gvdMovimentacaoEstoque.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvdMovimentacaoEstoque.BackgroundColor = System.Drawing.Color.White;
             this.gvdMovimentacaoEstoque.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvdMovimentacaoEstoque.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gvdMovimentacaoEstoque.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvdMovimentacaoEstoque.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvdMovimentacaoEstoque.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gvdMovimentacaoEstoque.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvdMovimentacaoEstoque.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvdMovimentacaoEstoque.DefaultCellStyle = dataGridViewCellStyle6;
             this.gvdMovimentacaoEstoque.EnableHeadersVisualStyles = false;
             this.gvdMovimentacaoEstoque.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gvdMovimentacaoEstoque.Location = new System.Drawing.Point(12, 394);
@@ -381,6 +309,78 @@
             this.txtCodDaProduto_MovimentacaoEstoque.ReadOnly = true;
             this.txtCodDaProduto_MovimentacaoEstoque.Size = new System.Drawing.Size(161, 25);
             this.txtCodDaProduto_MovimentacaoEstoque.TabIndex = 161;
+            // 
+            // btnPesquisa_CadastroCliente
+            // 
+            this.btnPesquisa_CadastroCliente.Animated = true;
+            this.btnPesquisa_CadastroCliente.AnimationHoverSpeed = 0.4F;
+            this.btnPesquisa_CadastroCliente.AnimationSpeed = 0.03F;
+            this.btnPesquisa_CadastroCliente.BackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa_CadastroCliente.BackgroundImage = global::Inventory_Control.Properties.Resources.Buscar;
+            this.btnPesquisa_CadastroCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPesquisa_CadastroCliente.BaseColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa_CadastroCliente.BorderColor = System.Drawing.Color.Black;
+            this.btnPesquisa_CadastroCliente.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnPesquisa_CadastroCliente.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnPesquisa_CadastroCliente.CheckedForeColor = System.Drawing.Color.White;
+            this.btnPesquisa_CadastroCliente.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnPesquisa_CadastroCliente.CheckedImage")));
+            this.btnPesquisa_CadastroCliente.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnPesquisa_CadastroCliente.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPesquisa_CadastroCliente.FocusedColor = System.Drawing.Color.Empty;
+            this.btnPesquisa_CadastroCliente.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisa_CadastroCliente.ForeColor = System.Drawing.Color.White;
+            this.btnPesquisa_CadastroCliente.Image = null;
+            this.btnPesquisa_CadastroCliente.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnPesquisa_CadastroCliente.LineBottom = 4;
+            this.btnPesquisa_CadastroCliente.LineColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa_CadastroCliente.Location = new System.Drawing.Point(77, 3);
+            this.btnPesquisa_CadastroCliente.Name = "btnPesquisa_CadastroCliente";
+            this.btnPesquisa_CadastroCliente.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.btnPesquisa_CadastroCliente.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnPesquisa_CadastroCliente.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnPesquisa_CadastroCliente.OnHoverImage = null;
+            this.btnPesquisa_CadastroCliente.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnPesquisa_CadastroCliente.OnPressedColor = System.Drawing.Color.Black;
+            this.btnPesquisa_CadastroCliente.Size = new System.Drawing.Size(44, 47);
+            this.btnPesquisa_CadastroCliente.TabIndex = 138;
+            this.btnPesquisa_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnPesquisa_CadastroCliente.Click += new System.EventHandler(this.btnPesquisa_CadastroCliente_Click);
+            // 
+            // btnModificar_CadastroCliente
+            // 
+            this.btnModificar_CadastroCliente.Animated = true;
+            this.btnModificar_CadastroCliente.AnimationHoverSpeed = 0.4F;
+            this.btnModificar_CadastroCliente.AnimationSpeed = 0.03F;
+            this.btnModificar_CadastroCliente.BackColor = System.Drawing.Color.Transparent;
+            this.btnModificar_CadastroCliente.BackgroundImage = global::Inventory_Control.Properties.Resources.Editar;
+            this.btnModificar_CadastroCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnModificar_CadastroCliente.BaseColor = System.Drawing.Color.Transparent;
+            this.btnModificar_CadastroCliente.BorderColor = System.Drawing.Color.Black;
+            this.btnModificar_CadastroCliente.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnModificar_CadastroCliente.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnModificar_CadastroCliente.CheckedForeColor = System.Drawing.Color.White;
+            this.btnModificar_CadastroCliente.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnModificar_CadastroCliente.CheckedImage")));
+            this.btnModificar_CadastroCliente.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnModificar_CadastroCliente.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnModificar_CadastroCliente.FocusedColor = System.Drawing.Color.Empty;
+            this.btnModificar_CadastroCliente.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar_CadastroCliente.ForeColor = System.Drawing.Color.White;
+            this.btnModificar_CadastroCliente.Image = null;
+            this.btnModificar_CadastroCliente.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnModificar_CadastroCliente.LineBottom = 4;
+            this.btnModificar_CadastroCliente.LineColor = System.Drawing.Color.Transparent;
+            this.btnModificar_CadastroCliente.Location = new System.Drawing.Point(7, 3);
+            this.btnModificar_CadastroCliente.Name = "btnModificar_CadastroCliente";
+            this.btnModificar_CadastroCliente.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.btnModificar_CadastroCliente.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnModificar_CadastroCliente.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnModificar_CadastroCliente.OnHoverImage = null;
+            this.btnModificar_CadastroCliente.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnModificar_CadastroCliente.OnPressedColor = System.Drawing.Color.Black;
+            this.btnModificar_CadastroCliente.Size = new System.Drawing.Size(44, 47);
+            this.btnModificar_CadastroCliente.TabIndex = 137;
+            this.btnModificar_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnModificar_CadastroCliente.Click += new System.EventHandler(this.btnModificar_CadastroCliente_Click);
             // 
             // SuprimentosControleTransferencia
             // 

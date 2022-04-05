@@ -121,7 +121,10 @@ namespace Inventory_Control.Dados
 
         #region Altera a Quantidade de Estoque Subtracao
 
-        // Nota Fiscal de saida altera a quantidade subtraindo
+        // Nota Fiscal de Saida altera a quantidade subtraindo
+
+        #region Alterar Quantidade Nota Fiscal Saida
+
         public void AlterarQuantidadeEstoqueSubtracaoSaida(int _cod_Produto, int _quantidade)
         {
             try
@@ -144,7 +147,12 @@ namespace Inventory_Control.Dados
             }
         }
 
-        // Nota fiscal de entrada altera a quantidade subtraindo
+        #endregion Alterar Quantidade Nota Fiscal Saida
+
+        // Nota Fiscal de Entrada altera a quantidade subtraindo
+
+        #region Alterar Quantidade Nota Fiscal Entrada
+
         public void AlterarQuantidadeEstoqueEntradaSubtracao(int _nf_Entrada, int _quantidade, int _cod_Barras)
         {
             try
@@ -168,21 +176,50 @@ namespace Inventory_Control.Dados
             }
         }
 
+        #endregion Alterar Quantidade Nota Fiscal Entrada
+
+        // Estoque altera a quantidade subtraindo
+
+        #region Alterar Quantidade Estoque
+
+        public void AlterarQuantidadeEstoqueSubtracao(int _cod_Barras, int _quantidade)
+        {
+            try
+            {
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    string query = "update Estoque set Quantidade=(Quantidade - @quantidadeNFS)" +
+                        " where Cod_de_Barras = @codBarras";
+                    SqlCommand cmd = new SqlCommand(query, conexaoSQL);
+                    cmd.Parameters.Add("@quantidadeNFS", SqlDbType.Int).Value = _quantidade;
+                    cmd.Parameters.Add("@codBarras", SqlDbType.Int).Value = _cod_Barras;
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+        }
+
+        #endregion Alterar Quantidade Estoque
+
         #endregion Altera a Quantidade de Estoque Subtracao
 
         //Realiza a Adicao no estoque quando a Nota Fiscal de Saida e gerada
 
         #region Altera a Quantidade de Estoque Adicao
 
-        public void AlterarQuantidadeEstoqueAdicao(int _cod_Produto, int _quantidade)
+        public void AlterarQuantidadeEstoqueAdicao(int _cod_De_Barras, int _quantidade)
         {
             try
             {
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
-                    string query = "update Estoque set Quantidade = (Quantidade + @quantidade) where Cod_Produto = @codProduto";
+                    string query = "update Estoque set Quantidade = (Quantidade + @quantidade) where Cod_De_Barras = @codDeBarras";
                     SqlCommand cmd = new SqlCommand(query, conexaoSQL);
-                    cmd.Parameters.Add("@codProduto", SqlDbType.VarChar).Value = _cod_Produto;
+                    cmd.Parameters.Add("@codDeBarras", SqlDbType.VarChar).Value = _cod_De_Barras;
                     cmd.Parameters.Add("@quantidade", SqlDbType.VarChar).Value = _quantidade;
 
                     cmd.ExecuteNonQuery();

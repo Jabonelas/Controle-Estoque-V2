@@ -113,5 +113,38 @@ namespace Inventory_Control
         }
 
         #endregion Nota Fiscal Saida
+
+        #region Tranferencia Entre Etiquetas
+
+        public bool VerificarTextBoxTransferenciaEtiquetas(Transferencia_Etiqueta _form)
+        {
+            try
+            {
+                bool isExit = true;
+                foreach (Control ctrl in _form.Controls)
+                {
+                    if (ctrl is GunaTextBox)
+                    {
+                        if (ctrl.Text == string.Empty)
+                        {
+                            isExit = false;
+                        }
+                    }
+                    else if (ctrl is ComboBox)
+                    {
+                        if (ctrl.Text == string.Empty)
+                            isExit = false;
+                    }
+                }
+                return isExit;
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+                return false;
+            }
+        }
+
+        #endregion Tranferencia Entre Etiquetas
     }
 }

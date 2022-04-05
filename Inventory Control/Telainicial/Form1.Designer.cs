@@ -40,8 +40,11 @@
             this.btnProdutos = new System.Windows.Forms.ToolStripMenuItem();
             this.esfasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asfafsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnTransferencia = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnBusca = new System.Windows.Forms.ToolStripMenuItem();
+            this.movimentaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnTransferenciaDeEstoque = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnTransferenciaEntreEtiqueta = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEstorno = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnBuscar = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNotaDeEntrada = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSuprimentosRelatorio = new System.Windows.Forms.ToolStripMenuItem();
             this.fasdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +63,7 @@
             this.gunaControlBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.gunaControlBox1.IconColor = System.Drawing.Color.White;
             this.gunaControlBox1.IconSize = 15F;
-            this.gunaControlBox1.Location = new System.Drawing.Point(1139, -1);
+            this.gunaControlBox1.Location = new System.Drawing.Point(1003, -1);
             this.gunaControlBox1.Name = "gunaControlBox1";
             this.gunaControlBox1.OnHoverBackColor = System.Drawing.SystemColors.Highlight;
             this.gunaControlBox1.OnHoverIconColor = System.Drawing.Color.White;
@@ -77,7 +80,7 @@
             this.gunaControlBox2.ControlBoxType = Guna.UI.WinForms.FormControlBoxType.MinimizeBox;
             this.gunaControlBox2.IconColor = System.Drawing.Color.White;
             this.gunaControlBox2.IconSize = 15F;
-            this.gunaControlBox2.Location = new System.Drawing.Point(1093, -1);
+            this.gunaControlBox2.Location = new System.Drawing.Point(957, -1);
             this.gunaControlBox2.Name = "gunaControlBox2";
             this.gunaControlBox2.OnHoverBackColor = System.Drawing.SystemColors.Highlight;
             this.gunaControlBox2.OnHoverIconColor = System.Drawing.Color.White;
@@ -104,7 +107,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(1180, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1044, 28);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -158,25 +161,49 @@
             // asfafsToolStripMenuItem
             // 
             this.asfafsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnTransferencia,
-            this.btnBusca});
+            this.movimentaçãoToolStripMenuItem,
+            this.btnBuscar});
             this.asfafsToolStripMenuItem.Name = "asfafsToolStripMenuItem";
             this.asfafsToolStripMenuItem.Size = new System.Drawing.Size(202, 24);
             this.asfafsToolStripMenuItem.Text = "Controle de Estoque";
             // 
-            // btnTransferencia
+            // movimentaçãoToolStripMenuItem
             // 
-            this.btnTransferencia.Name = "btnTransferencia";
-            this.btnTransferencia.Size = new System.Drawing.Size(231, 24);
-            this.btnTransferencia.Text = "Transferencia de Estoque";
-            this.btnTransferencia.Click += new System.EventHandler(this.btnTransferencia_Click);
+            this.movimentaçãoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnTransferenciaDeEstoque,
+            this.btnTransferenciaEntreEtiqueta,
+            this.btnEstorno});
+            this.movimentaçãoToolStripMenuItem.Name = "movimentaçãoToolStripMenuItem";
+            this.movimentaçãoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.movimentaçãoToolStripMenuItem.Text = "Movimentação";
             // 
-            // btnBusca
+            // btnTransferenciaDeEstoque
             // 
-            this.btnBusca.Name = "btnBusca";
-            this.btnBusca.Size = new System.Drawing.Size(231, 24);
-            this.btnBusca.Text = "Busca";
-            this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
+            this.btnTransferenciaDeEstoque.Name = "btnTransferenciaDeEstoque";
+            this.btnTransferenciaDeEstoque.Size = new System.Drawing.Size(251, 24);
+            this.btnTransferenciaDeEstoque.Text = "Transferencia Local";
+            this.btnTransferenciaDeEstoque.Click += new System.EventHandler(this.btnTransferenciaDeEstoque_Click_1);
+            // 
+            // btnTransferenciaEntreEtiqueta
+            // 
+            this.btnTransferenciaEntreEtiqueta.Name = "btnTransferenciaEntreEtiqueta";
+            this.btnTransferenciaEntreEtiqueta.Size = new System.Drawing.Size(251, 24);
+            this.btnTransferenciaEntreEtiqueta.Text = "Transferencia Entre Etiquetas";
+            this.btnTransferenciaEntreEtiqueta.Click += new System.EventHandler(this.btnTransferenciaEntreEtiqueta_Click);
+            // 
+            // btnEstorno
+            // 
+            this.btnEstorno.Name = "btnEstorno";
+            this.btnEstorno.Size = new System.Drawing.Size(251, 24);
+            this.btnEstorno.Text = "Estorno";
+            this.btnEstorno.Click += new System.EventHandler(this.btnEstorno_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(180, 24);
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnNotaDeEntrada
             // 
@@ -206,14 +233,14 @@
             // btnNotaFiscalSaida
             // 
             this.btnNotaFiscalSaida.Name = "btnNotaFiscalSaida";
-            this.btnNotaFiscalSaida.Size = new System.Drawing.Size(180, 24);
+            this.btnNotaFiscalSaida.Size = new System.Drawing.Size(169, 24);
             this.btnNotaFiscalSaida.Text = "Nota Fiscal ";
             this.btnNotaFiscalSaida.Click += new System.EventHandler(this.btnNotaFiscalSaida_Click);
             // 
             // btnVendasRelatorio
             // 
             this.btnVendasRelatorio.Name = "btnVendasRelatorio";
-            this.btnVendasRelatorio.Size = new System.Drawing.Size(180, 24);
+            this.btnVendasRelatorio.Size = new System.Drawing.Size(169, 24);
             this.btnVendasRelatorio.Text = "Relatório Saída";
             this.btnVendasRelatorio.Click += new System.EventHandler(this.btnVendasRelatorio_Click);
             // 
@@ -239,7 +266,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1180, 589);
+            this.ClientSize = new System.Drawing.Size(1044, 589);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gunaControlBox1);
             this.Controls.Add(this.TelaInicial);
@@ -274,10 +301,13 @@
         private System.Windows.Forms.ToolStripMenuItem btnNotaDeEntrada;
         private System.Windows.Forms.ToolStripMenuItem btnSuprimentosRelatorio;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
-        private System.Windows.Forms.ToolStripMenuItem btnTransferencia;
-        private System.Windows.Forms.ToolStripMenuItem btnBusca;
         private System.Windows.Forms.Panel TelaInicial;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem movimentaçãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnTransferenciaDeEstoque;
+        private System.Windows.Forms.ToolStripMenuItem btnTransferenciaEntreEtiqueta;
+        private System.Windows.Forms.ToolStripMenuItem btnEstorno;
+        private System.Windows.Forms.ToolStripMenuItem btnBuscar;
     }
 }
 

@@ -48,12 +48,23 @@ namespace Inventory_Control
         }
 
         //Tela de Suprimentos
-        private void btnTransferencia_Click(object sender, EventArgs e)
+
+        private void btnTransferenciaDeEstoque_Click_1(object sender, EventArgs e)
         {
             loadform(new SuprimentosControleTransferencia());
         }
 
-        private void btnBusca_Click(object sender, EventArgs e)
+        private void btnTransferenciaEntreEtiqueta_Click(object sender, EventArgs e)
+        {
+            loadform(new Transferencia_Etiqueta());
+        }
+
+        private void btnEstorno_Click(object sender, EventArgs e)
+        {
+            loadform(new Estorno());
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
             loadform(new SuprimentoControleBusca());
         }
