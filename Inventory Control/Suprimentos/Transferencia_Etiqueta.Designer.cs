@@ -47,7 +47,19 @@
             this.gunaLabel13 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel14 = new Guna.UI.WinForms.GunaLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTransferirOrigem_MovimentocaoEtiqueta = new Guna.UI.WinForms.GunaTextBox();
+            this.btnBuscarListaOrigem = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
+            this.btnBuscarEtiquetaOrigem = new Guna.UI.WinForms.GunaAdvenceButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtRecebidoDestino_MovimentocaoEtiqueta = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
+            this.txtQuantidadeDestino_MovimentocaoEtiqueta = new System.Windows.Forms.TextBox();
+            this.btnBuscarEtiquetaDestino = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnBuscarListaDestino = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaLabel15 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel16 = new Guna.UI.WinForms.GunaLabel();
             this.txtCodDeBarrasDestino_MovimentacaoEtiqueta = new Guna.UI.WinForms.GunaTextBox();
@@ -63,15 +75,6 @@
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.btnModificar_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnBuscarListaOrigem = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnBuscarEtiquetaOrigem = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnBuscarListaDestino = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnBuscarEtiquetaDestino = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.txtQuantidadeDestino_MovimentocaoEtiqueta = new System.Windows.Forms.TextBox();
-            this.txtTransferirOrigem_MovimentocaoEtiqueta = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
-            this.txtRecebidoDestino_MovimentocaoEtiqueta = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvdMovimentacaoEtiqueta)).BeginInit();
@@ -224,6 +227,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtTransferirOrigem_MovimentocaoEtiqueta);
             this.panel1.Controls.Add(this.btnBuscarListaOrigem);
             this.panel1.Controls.Add(this.gunaLabel4);
@@ -245,11 +250,132 @@
             this.panel1.Size = new System.Drawing.Size(344, 295);
             this.panel1.TabIndex = 189;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(208, 256);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 24);
+            this.label3.TabIndex = 199;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(271, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 24);
+            this.label1.TabIndex = 194;
+            // 
+            // txtTransferirOrigem_MovimentocaoEtiqueta
+            // 
+            this.txtTransferirOrigem_MovimentocaoEtiqueta.BaseColor = System.Drawing.Color.White;
+            this.txtTransferirOrigem_MovimentocaoEtiqueta.BorderColor = System.Drawing.Color.Silver;
+            this.txtTransferirOrigem_MovimentocaoEtiqueta.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTransferirOrigem_MovimentocaoEtiqueta.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtTransferirOrigem_MovimentocaoEtiqueta.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
+            this.txtTransferirOrigem_MovimentocaoEtiqueta.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtTransferirOrigem_MovimentocaoEtiqueta.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTransferirOrigem_MovimentocaoEtiqueta.Location = new System.Drawing.Point(111, 251);
+            this.txtTransferirOrigem_MovimentocaoEtiqueta.MaxLength = 4;
+            this.txtTransferirOrigem_MovimentocaoEtiqueta.Name = "txtTransferirOrigem_MovimentocaoEtiqueta";
+            this.txtTransferirOrigem_MovimentocaoEtiqueta.PasswordChar = '\0';
+            this.txtTransferirOrigem_MovimentocaoEtiqueta.SelectedText = "";
+            this.txtTransferirOrigem_MovimentocaoEtiqueta.Size = new System.Drawing.Size(98, 26);
+            this.txtTransferirOrigem_MovimentocaoEtiqueta.TabIndex = 196;
+            this.txtTransferirOrigem_MovimentocaoEtiqueta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTransferirOrigem_MovimentocaoEtiqueta_KeyPress);
+            // 
+            // btnBuscarListaOrigem
+            // 
+            this.btnBuscarListaOrigem.Animated = true;
+            this.btnBuscarListaOrigem.AnimationHoverSpeed = 0.4F;
+            this.btnBuscarListaOrigem.AnimationSpeed = 0.03F;
+            this.btnBuscarListaOrigem.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuscarListaOrigem.BackgroundImage = global::Inventory_Control.Properties.Resources.lista;
+            this.btnBuscarListaOrigem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarListaOrigem.BaseColor = System.Drawing.Color.Transparent;
+            this.btnBuscarListaOrigem.BorderColor = System.Drawing.Color.Black;
+            this.btnBuscarListaOrigem.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnBuscarListaOrigem.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnBuscarListaOrigem.CheckedForeColor = System.Drawing.Color.White;
+            this.btnBuscarListaOrigem.CheckedImage = global::Inventory_Control.Properties.Resources.Lupa;
+            this.btnBuscarListaOrigem.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnBuscarListaOrigem.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnBuscarListaOrigem.FocusedColor = System.Drawing.Color.Empty;
+            this.btnBuscarListaOrigem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarListaOrigem.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarListaOrigem.Image = null;
+            this.btnBuscarListaOrigem.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnBuscarListaOrigem.LineBottom = 4;
+            this.btnBuscarListaOrigem.LineColor = System.Drawing.Color.Transparent;
+            this.btnBuscarListaOrigem.Location = new System.Drawing.Point(311, 15);
+            this.btnBuscarListaOrigem.Name = "btnBuscarListaOrigem";
+            this.btnBuscarListaOrigem.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.btnBuscarListaOrigem.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnBuscarListaOrigem.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnBuscarListaOrigem.OnHoverImage = null;
+            this.btnBuscarListaOrigem.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnBuscarListaOrigem.OnPressedColor = System.Drawing.Color.Black;
+            this.btnBuscarListaOrigem.Size = new System.Drawing.Size(21, 26);
+            this.btnBuscarListaOrigem.TabIndex = 195;
+            this.btnBuscarListaOrigem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnBuscarListaOrigem.Click += new System.EventHandler(this.btnBuscarListaOrigem_Click);
+            // 
+            // gunaLabel4
+            // 
+            this.gunaLabel4.AutoSize = true;
+            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaLabel4.Location = new System.Drawing.Point(18, 178);
+            this.gunaLabel4.Name = "gunaLabel4";
+            this.gunaLabel4.Size = new System.Drawing.Size(38, 15);
+            this.gunaLabel4.TabIndex = 197;
+            this.gunaLabel4.Text = "Local:";
+            // 
+            // btnBuscarEtiquetaOrigem
+            // 
+            this.btnBuscarEtiquetaOrigem.Animated = true;
+            this.btnBuscarEtiquetaOrigem.AnimationHoverSpeed = 0.4F;
+            this.btnBuscarEtiquetaOrigem.AnimationSpeed = 0.03F;
+            this.btnBuscarEtiquetaOrigem.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuscarEtiquetaOrigem.BackgroundImage = global::Inventory_Control.Properties.Resources.Lupa;
+            this.btnBuscarEtiquetaOrigem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarEtiquetaOrigem.BaseColor = System.Drawing.Color.Transparent;
+            this.btnBuscarEtiquetaOrigem.BorderColor = System.Drawing.Color.Black;
+            this.btnBuscarEtiquetaOrigem.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnBuscarEtiquetaOrigem.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnBuscarEtiquetaOrigem.CheckedForeColor = System.Drawing.Color.White;
+            this.btnBuscarEtiquetaOrigem.CheckedImage = global::Inventory_Control.Properties.Resources.Lupa;
+            this.btnBuscarEtiquetaOrigem.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnBuscarEtiquetaOrigem.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnBuscarEtiquetaOrigem.FocusedColor = System.Drawing.Color.Empty;
+            this.btnBuscarEtiquetaOrigem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarEtiquetaOrigem.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarEtiquetaOrigem.Image = null;
+            this.btnBuscarEtiquetaOrigem.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnBuscarEtiquetaOrigem.LineBottom = 4;
+            this.btnBuscarEtiquetaOrigem.LineColor = System.Drawing.Color.Transparent;
+            this.btnBuscarEtiquetaOrigem.Location = new System.Drawing.Point(287, 15);
+            this.btnBuscarEtiquetaOrigem.Name = "btnBuscarEtiquetaOrigem";
+            this.btnBuscarEtiquetaOrigem.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.btnBuscarEtiquetaOrigem.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnBuscarEtiquetaOrigem.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnBuscarEtiquetaOrigem.OnHoverImage = null;
+            this.btnBuscarEtiquetaOrigem.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnBuscarEtiquetaOrigem.OnPressedColor = System.Drawing.Color.Black;
+            this.btnBuscarEtiquetaOrigem.Size = new System.Drawing.Size(21, 26);
+            this.btnBuscarEtiquetaOrigem.TabIndex = 194;
+            this.btnBuscarEtiquetaOrigem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnBuscarEtiquetaOrigem.Click += new System.EventHandler(this.btnBuscarEtiquetaOrigem_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.txtRecebidoDestino_MovimentocaoEtiqueta);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.gunaLabel9);
             this.panel2.Controls.Add(this.txtQuantidadeDestino_MovimentocaoEtiqueta);
             this.panel2.Controls.Add(this.btnBuscarEtiquetaDestino);
@@ -269,6 +395,115 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(344, 295);
             this.panel2.TabIndex = 190;
+            // 
+            // txtRecebidoDestino_MovimentocaoEtiqueta
+            // 
+            this.txtRecebidoDestino_MovimentocaoEtiqueta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRecebidoDestino_MovimentocaoEtiqueta.Location = new System.Drawing.Point(111, 251);
+            this.txtRecebidoDestino_MovimentocaoEtiqueta.Name = "txtRecebidoDestino_MovimentocaoEtiqueta";
+            this.txtRecebidoDestino_MovimentocaoEtiqueta.ReadOnly = true;
+            this.txtRecebidoDestino_MovimentocaoEtiqueta.Size = new System.Drawing.Size(97, 25);
+            this.txtRecebidoDestino_MovimentocaoEtiqueta.TabIndex = 199;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(271, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 24);
+            this.label2.TabIndex = 198;
+            // 
+            // gunaLabel9
+            // 
+            this.gunaLabel9.AutoSize = true;
+            this.gunaLabel9.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaLabel9.Location = new System.Drawing.Point(18, 257);
+            this.gunaLabel9.Name = "gunaLabel9";
+            this.gunaLabel9.Size = new System.Drawing.Size(59, 15);
+            this.gunaLabel9.TabIndex = 198;
+            this.gunaLabel9.Text = "Recebido:";
+            // 
+            // txtQuantidadeDestino_MovimentocaoEtiqueta
+            // 
+            this.txtQuantidadeDestino_MovimentocaoEtiqueta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantidadeDestino_MovimentocaoEtiqueta.Location = new System.Drawing.Point(111, 213);
+            this.txtQuantidadeDestino_MovimentocaoEtiqueta.Name = "txtQuantidadeDestino_MovimentocaoEtiqueta";
+            this.txtQuantidadeDestino_MovimentocaoEtiqueta.ReadOnly = true;
+            this.txtQuantidadeDestino_MovimentocaoEtiqueta.Size = new System.Drawing.Size(97, 25);
+            this.txtQuantidadeDestino_MovimentocaoEtiqueta.TabIndex = 196;
+            // 
+            // btnBuscarEtiquetaDestino
+            // 
+            this.btnBuscarEtiquetaDestino.Animated = true;
+            this.btnBuscarEtiquetaDestino.AnimationHoverSpeed = 0.4F;
+            this.btnBuscarEtiquetaDestino.AnimationSpeed = 0.03F;
+            this.btnBuscarEtiquetaDestino.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuscarEtiquetaDestino.BackgroundImage = global::Inventory_Control.Properties.Resources.Lupa;
+            this.btnBuscarEtiquetaDestino.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarEtiquetaDestino.BaseColor = System.Drawing.Color.Transparent;
+            this.btnBuscarEtiquetaDestino.BorderColor = System.Drawing.Color.Black;
+            this.btnBuscarEtiquetaDestino.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnBuscarEtiquetaDestino.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnBuscarEtiquetaDestino.CheckedForeColor = System.Drawing.Color.White;
+            this.btnBuscarEtiquetaDestino.CheckedImage = global::Inventory_Control.Properties.Resources.Lupa;
+            this.btnBuscarEtiquetaDestino.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnBuscarEtiquetaDestino.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnBuscarEtiquetaDestino.FocusedColor = System.Drawing.Color.Empty;
+            this.btnBuscarEtiquetaDestino.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarEtiquetaDestino.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarEtiquetaDestino.Image = null;
+            this.btnBuscarEtiquetaDestino.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnBuscarEtiquetaDestino.LineBottom = 4;
+            this.btnBuscarEtiquetaDestino.LineColor = System.Drawing.Color.Transparent;
+            this.btnBuscarEtiquetaDestino.Location = new System.Drawing.Point(287, 15);
+            this.btnBuscarEtiquetaDestino.Name = "btnBuscarEtiquetaDestino";
+            this.btnBuscarEtiquetaDestino.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.btnBuscarEtiquetaDestino.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnBuscarEtiquetaDestino.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnBuscarEtiquetaDestino.OnHoverImage = null;
+            this.btnBuscarEtiquetaDestino.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnBuscarEtiquetaDestino.OnPressedColor = System.Drawing.Color.Black;
+            this.btnBuscarEtiquetaDestino.Size = new System.Drawing.Size(21, 26);
+            this.btnBuscarEtiquetaDestino.TabIndex = 196;
+            this.btnBuscarEtiquetaDestino.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnBuscarEtiquetaDestino.Click += new System.EventHandler(this.btnBuscarEtiquetaDestino_Click);
+            // 
+            // btnBuscarListaDestino
+            // 
+            this.btnBuscarListaDestino.Animated = true;
+            this.btnBuscarListaDestino.AnimationHoverSpeed = 0.4F;
+            this.btnBuscarListaDestino.AnimationSpeed = 0.03F;
+            this.btnBuscarListaDestino.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuscarListaDestino.BackgroundImage = global::Inventory_Control.Properties.Resources.lista;
+            this.btnBuscarListaDestino.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarListaDestino.BaseColor = System.Drawing.Color.Transparent;
+            this.btnBuscarListaDestino.BorderColor = System.Drawing.Color.Black;
+            this.btnBuscarListaDestino.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnBuscarListaDestino.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnBuscarListaDestino.CheckedForeColor = System.Drawing.Color.White;
+            this.btnBuscarListaDestino.CheckedImage = global::Inventory_Control.Properties.Resources.Lupa;
+            this.btnBuscarListaDestino.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnBuscarListaDestino.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnBuscarListaDestino.FocusedColor = System.Drawing.Color.Empty;
+            this.btnBuscarListaDestino.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarListaDestino.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarListaDestino.Image = null;
+            this.btnBuscarListaDestino.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnBuscarListaDestino.LineBottom = 4;
+            this.btnBuscarListaDestino.LineColor = System.Drawing.Color.Transparent;
+            this.btnBuscarListaDestino.Location = new System.Drawing.Point(312, 15);
+            this.btnBuscarListaDestino.Name = "btnBuscarListaDestino";
+            this.btnBuscarListaDestino.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.btnBuscarListaDestino.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnBuscarListaDestino.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnBuscarListaDestino.OnHoverImage = null;
+            this.btnBuscarListaDestino.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnBuscarListaDestino.OnPressedColor = System.Drawing.Color.Black;
+            this.btnBuscarListaDestino.Size = new System.Drawing.Size(21, 26);
+            this.btnBuscarListaDestino.TabIndex = 196;
+            this.btnBuscarListaDestino.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // gunaLabel15
             // 
@@ -411,12 +646,12 @@
             this.gvdMovimentacaoEtiqueta.DefaultCellStyle = dataGridViewCellStyle3;
             this.gvdMovimentacaoEtiqueta.EnableHeadersVisualStyles = false;
             this.gvdMovimentacaoEtiqueta.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gvdMovimentacaoEtiqueta.Location = new System.Drawing.Point(12, 413);
+            this.gvdMovimentacaoEtiqueta.Location = new System.Drawing.Point(12, 423);
             this.gvdMovimentacaoEtiqueta.Name = "gvdMovimentacaoEtiqueta";
             this.gvdMovimentacaoEtiqueta.RowHeadersVisible = false;
             this.gvdMovimentacaoEtiqueta.RowHeadersWidth = 30;
             this.gvdMovimentacaoEtiqueta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvdMovimentacaoEtiqueta.Size = new System.Drawing.Size(1019, 117);
+            this.gvdMovimentacaoEtiqueta.Size = new System.Drawing.Size(1019, 107);
             this.gvdMovimentacaoEtiqueta.TabIndex = 187;
             this.gvdMovimentacaoEtiqueta.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.gvdMovimentacaoEtiqueta.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -496,203 +731,6 @@
             this.pictureBox1.TabIndex = 191;
             this.pictureBox1.TabStop = false;
             // 
-            // btnBuscarListaOrigem
-            // 
-            this.btnBuscarListaOrigem.Animated = true;
-            this.btnBuscarListaOrigem.AnimationHoverSpeed = 0.4F;
-            this.btnBuscarListaOrigem.AnimationSpeed = 0.03F;
-            this.btnBuscarListaOrigem.BackColor = System.Drawing.Color.Transparent;
-            this.btnBuscarListaOrigem.BackgroundImage = global::Inventory_Control.Properties.Resources.lista;
-            this.btnBuscarListaOrigem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarListaOrigem.BaseColor = System.Drawing.Color.Transparent;
-            this.btnBuscarListaOrigem.BorderColor = System.Drawing.Color.Black;
-            this.btnBuscarListaOrigem.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnBuscarListaOrigem.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnBuscarListaOrigem.CheckedForeColor = System.Drawing.Color.White;
-            this.btnBuscarListaOrigem.CheckedImage = global::Inventory_Control.Properties.Resources.Lupa;
-            this.btnBuscarListaOrigem.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnBuscarListaOrigem.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnBuscarListaOrigem.FocusedColor = System.Drawing.Color.Empty;
-            this.btnBuscarListaOrigem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarListaOrigem.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarListaOrigem.Image = null;
-            this.btnBuscarListaOrigem.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnBuscarListaOrigem.LineBottom = 4;
-            this.btnBuscarListaOrigem.LineColor = System.Drawing.Color.Transparent;
-            this.btnBuscarListaOrigem.Location = new System.Drawing.Point(306, 15);
-            this.btnBuscarListaOrigem.Name = "btnBuscarListaOrigem";
-            this.btnBuscarListaOrigem.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.btnBuscarListaOrigem.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnBuscarListaOrigem.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnBuscarListaOrigem.OnHoverImage = null;
-            this.btnBuscarListaOrigem.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnBuscarListaOrigem.OnPressedColor = System.Drawing.Color.Black;
-            this.btnBuscarListaOrigem.Size = new System.Drawing.Size(21, 26);
-            this.btnBuscarListaOrigem.TabIndex = 195;
-            this.btnBuscarListaOrigem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnBuscarEtiquetaOrigem
-            // 
-            this.btnBuscarEtiquetaOrigem.Animated = true;
-            this.btnBuscarEtiquetaOrigem.AnimationHoverSpeed = 0.4F;
-            this.btnBuscarEtiquetaOrigem.AnimationSpeed = 0.03F;
-            this.btnBuscarEtiquetaOrigem.BackColor = System.Drawing.Color.Transparent;
-            this.btnBuscarEtiquetaOrigem.BackgroundImage = global::Inventory_Control.Properties.Resources.Lupa;
-            this.btnBuscarEtiquetaOrigem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarEtiquetaOrigem.BaseColor = System.Drawing.Color.Transparent;
-            this.btnBuscarEtiquetaOrigem.BorderColor = System.Drawing.Color.Black;
-            this.btnBuscarEtiquetaOrigem.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnBuscarEtiquetaOrigem.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnBuscarEtiquetaOrigem.CheckedForeColor = System.Drawing.Color.White;
-            this.btnBuscarEtiquetaOrigem.CheckedImage = global::Inventory_Control.Properties.Resources.Lupa;
-            this.btnBuscarEtiquetaOrigem.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnBuscarEtiquetaOrigem.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnBuscarEtiquetaOrigem.FocusedColor = System.Drawing.Color.Empty;
-            this.btnBuscarEtiquetaOrigem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarEtiquetaOrigem.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarEtiquetaOrigem.Image = null;
-            this.btnBuscarEtiquetaOrigem.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnBuscarEtiquetaOrigem.LineBottom = 4;
-            this.btnBuscarEtiquetaOrigem.LineColor = System.Drawing.Color.Transparent;
-            this.btnBuscarEtiquetaOrigem.Location = new System.Drawing.Point(279, 15);
-            this.btnBuscarEtiquetaOrigem.Name = "btnBuscarEtiquetaOrigem";
-            this.btnBuscarEtiquetaOrigem.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.btnBuscarEtiquetaOrigem.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnBuscarEtiquetaOrigem.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnBuscarEtiquetaOrigem.OnHoverImage = null;
-            this.btnBuscarEtiquetaOrigem.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnBuscarEtiquetaOrigem.OnPressedColor = System.Drawing.Color.Black;
-            this.btnBuscarEtiquetaOrigem.Size = new System.Drawing.Size(21, 26);
-            this.btnBuscarEtiquetaOrigem.TabIndex = 194;
-            this.btnBuscarEtiquetaOrigem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnBuscarEtiquetaOrigem.Click += new System.EventHandler(this.btnBuscarEtiquetaOrigem_Click);
-            // 
-            // btnBuscarListaDestino
-            // 
-            this.btnBuscarListaDestino.Animated = true;
-            this.btnBuscarListaDestino.AnimationHoverSpeed = 0.4F;
-            this.btnBuscarListaDestino.AnimationSpeed = 0.03F;
-            this.btnBuscarListaDestino.BackColor = System.Drawing.Color.Transparent;
-            this.btnBuscarListaDestino.BackgroundImage = global::Inventory_Control.Properties.Resources.lista;
-            this.btnBuscarListaDestino.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarListaDestino.BaseColor = System.Drawing.Color.Transparent;
-            this.btnBuscarListaDestino.BorderColor = System.Drawing.Color.Black;
-            this.btnBuscarListaDestino.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnBuscarListaDestino.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnBuscarListaDestino.CheckedForeColor = System.Drawing.Color.White;
-            this.btnBuscarListaDestino.CheckedImage = global::Inventory_Control.Properties.Resources.Lupa;
-            this.btnBuscarListaDestino.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnBuscarListaDestino.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnBuscarListaDestino.FocusedColor = System.Drawing.Color.Empty;
-            this.btnBuscarListaDestino.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarListaDestino.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarListaDestino.Image = null;
-            this.btnBuscarListaDestino.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnBuscarListaDestino.LineBottom = 4;
-            this.btnBuscarListaDestino.LineColor = System.Drawing.Color.Transparent;
-            this.btnBuscarListaDestino.Location = new System.Drawing.Point(306, 15);
-            this.btnBuscarListaDestino.Name = "btnBuscarListaDestino";
-            this.btnBuscarListaDestino.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.btnBuscarListaDestino.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnBuscarListaDestino.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnBuscarListaDestino.OnHoverImage = null;
-            this.btnBuscarListaDestino.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnBuscarListaDestino.OnPressedColor = System.Drawing.Color.Black;
-            this.btnBuscarListaDestino.Size = new System.Drawing.Size(21, 26);
-            this.btnBuscarListaDestino.TabIndex = 196;
-            this.btnBuscarListaDestino.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnBuscarEtiquetaDestino
-            // 
-            this.btnBuscarEtiquetaDestino.Animated = true;
-            this.btnBuscarEtiquetaDestino.AnimationHoverSpeed = 0.4F;
-            this.btnBuscarEtiquetaDestino.AnimationSpeed = 0.03F;
-            this.btnBuscarEtiquetaDestino.BackColor = System.Drawing.Color.Transparent;
-            this.btnBuscarEtiquetaDestino.BackgroundImage = global::Inventory_Control.Properties.Resources.Lupa;
-            this.btnBuscarEtiquetaDestino.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarEtiquetaDestino.BaseColor = System.Drawing.Color.Transparent;
-            this.btnBuscarEtiquetaDestino.BorderColor = System.Drawing.Color.Black;
-            this.btnBuscarEtiquetaDestino.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnBuscarEtiquetaDestino.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnBuscarEtiquetaDestino.CheckedForeColor = System.Drawing.Color.White;
-            this.btnBuscarEtiquetaDestino.CheckedImage = global::Inventory_Control.Properties.Resources.Lupa;
-            this.btnBuscarEtiquetaDestino.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnBuscarEtiquetaDestino.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnBuscarEtiquetaDestino.FocusedColor = System.Drawing.Color.Empty;
-            this.btnBuscarEtiquetaDestino.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarEtiquetaDestino.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarEtiquetaDestino.Image = null;
-            this.btnBuscarEtiquetaDestino.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnBuscarEtiquetaDestino.LineBottom = 4;
-            this.btnBuscarEtiquetaDestino.LineColor = System.Drawing.Color.Transparent;
-            this.btnBuscarEtiquetaDestino.Location = new System.Drawing.Point(279, 15);
-            this.btnBuscarEtiquetaDestino.Name = "btnBuscarEtiquetaDestino";
-            this.btnBuscarEtiquetaDestino.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.btnBuscarEtiquetaDestino.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnBuscarEtiquetaDestino.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnBuscarEtiquetaDestino.OnHoverImage = null;
-            this.btnBuscarEtiquetaDestino.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnBuscarEtiquetaDestino.OnPressedColor = System.Drawing.Color.Black;
-            this.btnBuscarEtiquetaDestino.Size = new System.Drawing.Size(21, 26);
-            this.btnBuscarEtiquetaDestino.TabIndex = 196;
-            this.btnBuscarEtiquetaDestino.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnBuscarEtiquetaDestino.Click += new System.EventHandler(this.btnBuscarEtiquetaDestino_Click);
-            // 
-            // txtQuantidadeDestino_MovimentocaoEtiqueta
-            // 
-            this.txtQuantidadeDestino_MovimentocaoEtiqueta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantidadeDestino_MovimentocaoEtiqueta.Location = new System.Drawing.Point(111, 213);
-            this.txtQuantidadeDestino_MovimentocaoEtiqueta.Name = "txtQuantidadeDestino_MovimentocaoEtiqueta";
-            this.txtQuantidadeDestino_MovimentocaoEtiqueta.ReadOnly = true;
-            this.txtQuantidadeDestino_MovimentocaoEtiqueta.Size = new System.Drawing.Size(97, 25);
-            this.txtQuantidadeDestino_MovimentocaoEtiqueta.TabIndex = 196;
-            // 
-            // txtTransferirOrigem_MovimentocaoEtiqueta
-            // 
-            this.txtTransferirOrigem_MovimentocaoEtiqueta.BaseColor = System.Drawing.Color.White;
-            this.txtTransferirOrigem_MovimentocaoEtiqueta.BorderColor = System.Drawing.Color.Silver;
-            this.txtTransferirOrigem_MovimentocaoEtiqueta.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTransferirOrigem_MovimentocaoEtiqueta.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtTransferirOrigem_MovimentocaoEtiqueta.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
-            this.txtTransferirOrigem_MovimentocaoEtiqueta.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtTransferirOrigem_MovimentocaoEtiqueta.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTransferirOrigem_MovimentocaoEtiqueta.Location = new System.Drawing.Point(111, 251);
-            this.txtTransferirOrigem_MovimentocaoEtiqueta.Name = "txtTransferirOrigem_MovimentocaoEtiqueta";
-            this.txtTransferirOrigem_MovimentocaoEtiqueta.PasswordChar = '\0';
-            this.txtTransferirOrigem_MovimentocaoEtiqueta.SelectedText = "";
-            this.txtTransferirOrigem_MovimentocaoEtiqueta.Size = new System.Drawing.Size(98, 26);
-            this.txtTransferirOrigem_MovimentocaoEtiqueta.TabIndex = 196;
-            this.txtTransferirOrigem_MovimentocaoEtiqueta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTransferirOrigem_MovimentocaoEtiqueta_KeyPress);
-            // 
-            // gunaLabel4
-            // 
-            this.gunaLabel4.AutoSize = true;
-            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel4.Location = new System.Drawing.Point(18, 178);
-            this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(38, 15);
-            this.gunaLabel4.TabIndex = 197;
-            this.gunaLabel4.Text = "Local:";
-            // 
-            // gunaLabel9
-            // 
-            this.gunaLabel9.AutoSize = true;
-            this.gunaLabel9.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel9.Location = new System.Drawing.Point(18, 257);
-            this.gunaLabel9.Name = "gunaLabel9";
-            this.gunaLabel9.Size = new System.Drawing.Size(59, 15);
-            this.gunaLabel9.TabIndex = 198;
-            this.gunaLabel9.Text = "Recebido:";
-            // 
-            // txtRecebidoDestino_MovimentocaoEtiqueta
-            // 
-            this.txtRecebidoDestino_MovimentocaoEtiqueta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRecebidoDestino_MovimentocaoEtiqueta.Location = new System.Drawing.Point(111, 251);
-            this.txtRecebidoDestino_MovimentocaoEtiqueta.Name = "txtRecebidoDestino_MovimentocaoEtiqueta";
-            this.txtRecebidoDestino_MovimentocaoEtiqueta.ReadOnly = true;
-            this.txtRecebidoDestino_MovimentocaoEtiqueta.Size = new System.Drawing.Size(97, 25);
-            this.txtRecebidoDestino_MovimentocaoEtiqueta.TabIndex = 199;
-            // 
             // Transferencia_Etiqueta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -762,5 +800,8 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private Guna.UI.WinForms.GunaLabel gunaLabel9;
         private System.Windows.Forms.TextBox txtRecebidoDestino_MovimentocaoEtiqueta;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

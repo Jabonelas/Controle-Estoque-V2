@@ -16,20 +16,42 @@ namespace Inventory_Control
         private VerificacaoDeExistencia VCB = new VerificacaoDeExistencia(); // Verificar a existencia do Codigo de barrass na tabela Estoque
 
         private BuscarDadosEstoque BP = new BuscarDadosEstoque(); // Buscar Produto na tabela Estoque
+
         private BuscarDadosEstoque BLote = new BuscarDadosEstoque(); // Buscar Lote na tabela Estoque
+
         private BuscarDadosEstoque BD = new BuscarDadosEstoque(); // Buscar Descricao na tabela Estoque
+
         private BuscarDadosEstoque BQ = new BuscarDadosEstoque(); // Buscar Quantidade na tabela Estoque
+
         private BuscarDadosEstoque BLocal = new BuscarDadosEstoque(); // Buscar Local na tabela Estoque
 
         private AlterarDadosEstoque AEQA = new AlterarDadosEstoque(); // Alterar Estoque Quantidade Adicao
+
         private AlterarDadosEstoque AEQS = new AlterarDadosEstoque(); // Alterar Estoque Quantidade Subtracao
 
         private VerificacaoTextBox VT = new VerificacaoTextBox(); // Verificacao se os Textbox estao preenchidos
+
+        private BuscarDadosEstoque BECD = new BuscarDadosEstoque(); // Buscar Estoque Codigo de barras de Duas tiquetas
+
+        private BuscarDadosEstoque BEC = new BuscarDadosEstoque(); // Buscar Estoque Codigo do produto por codigo de barras
 
         public Transferencia_Etiqueta()
         {
             InitializeComponent();
         }
+
+        //public void loadform(object Form)
+        //{
+        //    if (gvdMovimentacaoEtiqueta.Controls.Count > 0)
+        //        gvdMovimentacaoEtiqueta.Controls.RemoveAt(0);
+
+        //    Form f = Form as Form;
+        //    f.TopLevel = false;
+        //    f.Dock = DockStyle.Fill;
+        //    gvdMovimentacaoEtiqueta.Controls.Add(f);
+        //    gvdMovimentacaoEtiqueta.Tag = f;
+        //    f.Show();
+        //}
 
         #region Etiqueta Origem
 
@@ -41,7 +63,8 @@ namespace Inventory_Control
                 {
                     if (VCB.BuscarExistenciaCodigoDeBarras(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text)) == true)
                     {
-                        if (BLocal.BuscarLocal(Convert.ToInt32(txtCodDaProdutoOrigem_MovimentacaoEtiqueta.Text)) != "EXCLUIDA" && BLocal.BuscarLocal(Convert.ToInt32(txtCodDaProdutoOrigem_MovimentacaoEtiqueta.Text)) != "FATURADA")
+                        if (BLocal.BuscarLocal(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text)) != "EXCLUIDA" &&
+                            BLocal.BuscarLocal(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text)) != "FATURADA")
                         {
                             txtCodDaProdutoOrigem_MovimentacaoEtiqueta.Text = BP.BuscarCodProdutoTextBox(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text));
 
@@ -49,7 +72,7 @@ namespace Inventory_Control
 
                             txtDescricaoOrigem_MovimentocaoEtiqueta.Text = BD.BuscarDescricao(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text));
 
-                            txtQuantidadeOrigem_MovimentocaoEtiqueta.Text = BQ.BuscarQuantidade(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text));
+                            txtQuantidadeOrigem_MovimentocaoEtiqueta.Text = BQ.BuscarQuantidade(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text)).ToString();
 
                             txtLocalOrigem_MovimentacaoEtiqueta.Text = BLocal.BuscarLocal(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text));
                         }
@@ -92,7 +115,7 @@ namespace Inventory_Control
 
                             txtDescricaoDestino_MovimentocaoEtiqueta.Text = BD.BuscarDescricao(Convert.ToInt32(txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text));
 
-                            txtQuantidadeDestino_MovimentocaoEtiqueta.Text = BQ.BuscarQuantidade(Convert.ToInt32(txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text));
+                            txtQuantidadeDestino_MovimentocaoEtiqueta.Text = BQ.BuscarQuantidade(Convert.ToInt32(txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text)).ToString();
 
                             txtLocalDestino_MovimentacaoEtiqueta.Text = BLocal.BuscarLocal(Convert.ToInt32(txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text));
                         }
@@ -115,6 +138,65 @@ namespace Inventory_Control
         }
 
         #endregion Etiqueta Destino
+
+        #region Botao Confirmar Transferencia
+
+        private void btnModificar_CadastroCliente_Click(object sender, EventArgs e)
+        {
+            if (BEC.BuscarCodProdutoTextBox(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text)) ==
+                BEC.BuscarCodProdutoTextBox(Convert.ToInt32(txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text)))
+            {
+                if (BLocal.BuscarLocal(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text)) != "EXCLUIDA" &&
+                    BLocal.BuscarLocal(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text)) != "FATURADA" &&
+                    BLocal.BuscarLocal(Convert.ToInt32(txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text)) != "EXCLUIDA" &&
+                    BLocal.BuscarLocal(Convert.ToInt32(txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text)) != "FATURADA")
+                {
+                    if (BQ.BuscarQuantidade(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text)) >= Convert.ToInt32(txtTransferirOrigem_MovimentocaoEtiqueta.Text))
+                    {
+                        if (txtTransferirOrigem_MovimentocaoEtiqueta.Text != "" && txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text != "" &&
+                            txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text != "")
+                        {
+                            txtRecebidoDestino_MovimentocaoEtiqueta.Text = txtTransferirOrigem_MovimentocaoEtiqueta.Text;
+
+                            AEQA.AlterarQuantidadeEstoqueAdicao(Convert.ToInt32(txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text),
+                            Convert.ToInt32(txtTransferirOrigem_MovimentocaoEtiqueta.Text));
+
+                            AEQS.AlterarQuantidadeEstoqueSubtracao(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text),
+                            Convert.ToInt32(txtRecebidoDestino_MovimentocaoEtiqueta.Text));
+
+                            BECD.BuscarCodBarrasEtiquetas(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text),
+                            Convert.ToInt32(txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text), gvdMovimentacaoEtiqueta);
+
+                            label1.Text = "";
+                            label2.Text = "";
+                            label3.Text = "";
+                        }
+                        else
+                        {
+                            label1.Text = "*";
+                            label2.Text = "*";
+                            label3.Text = "*";
+
+                            MessageBox.Show("Os Campos Com * São Obrigadotios!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Quantidade Solicitada Maior Que A Disponivel!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Etiquetas Não Acessiveis!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Itens Divergentes!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        #endregion Botao Confirmar Transferencia
 
         #region TextBox Codigo de Barras Origem
 
@@ -152,15 +234,9 @@ namespace Inventory_Control
 
         #endregion TextBox Codigo de Barras Destino
 
-        private void btnModificar_CadastroCliente_Click(object sender, EventArgs e)
+        private void btnBuscarListaOrigem_Click(object sender, EventArgs e)
         {
-            if (VT.VerificarTextBoxTransferenciaEtiquetas(this) == false)
-            {
-            }
-            else
-            {
-                MessageBox.Show("Todos Os Campos Devem Estar Preenchidos!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            //loadform(new ListaEstoque());
         }
     }
 }

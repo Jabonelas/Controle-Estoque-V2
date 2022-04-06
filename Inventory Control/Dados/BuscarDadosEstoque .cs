@@ -119,6 +119,35 @@ namespace Inventory_Control.Dados
 
         #endregion Buscar o Codigo de Barras da Vez
 
+        #region Buscar por Codigo de Barras de Duas Etiquetas
+
+        public void BuscarCodBarrasEtiquetas(int _cod_De_Barras1, int _cod_De_Barras2, Guna2DataGridView _tabela)
+        {
+            try
+            {
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    string query = "select * from Estoque where Cod_de_Barras = @codDeBarras1 " +
+                        "union select * from Estoque where Cod_de_Barras = @codDeBarras2";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+                    adapter.SelectCommand.Parameters.AddWithValue("@codDeBarras1", _cod_De_Barras1);
+                    adapter.SelectCommand.Parameters.AddWithValue("@codDeBarras2", _cod_De_Barras2);
+
+                    DataTable dataTable = new DataTable();
+
+                    adapter.Fill(dataTable);
+                    _tabela.DataSource = dataTable;
+                    _tabela.Refresh();
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+        }
+
+        #endregion Buscar por Codigo de Barras de Duas Etiquetas
+
         #endregion Bucar Codigo de Barras
 
         #region Buscar Lote
@@ -231,7 +260,7 @@ namespace Inventory_Control.Dados
 
         #region Buscar Quantidade por Codigo de Barras
 
-        public string BuscarQuantidade(int _cod_De_Barras)
+        public int BuscarQuantidade(int _cod_De_Barras)
         {
             try
             {
@@ -244,13 +273,13 @@ namespace Inventory_Control.Dados
                     dr.Read();
 
                     int x = dr.GetInt32(0);
-                    return x.ToString();
+                    return x;
                 }
             }
             catch (Exception x)
             {
                 MessageBox.Show(x.ToString());
-                return "";
+                return 0;
             }
         }
 

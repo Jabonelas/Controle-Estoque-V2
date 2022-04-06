@@ -38,8 +38,6 @@ namespace Inventory_Control
             InitializeComponent();
         }
 
-     
-
         #region Botão Modificar
 
         private void btnModificar_CadastroCliente_Click(object sender, EventArgs e)
@@ -64,7 +62,7 @@ namespace Inventory_Control
 
                             txtDescricao_MovimentocaoEstoque.Text = BED.BuscarDescricao(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text)); //Preencher o textbox Descrição
 
-                            txtQuantidade_MovimentocaoEstoque.Text = BEQ.BuscarQuantidade(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text));//Preencher o textbox Quantidade
+                            txtQuantidade_MovimentocaoEstoque.Text = BEQ.BuscarQuantidade(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text)).ToString();//Preencher o textbox Quantidade
 
                             txtLocal_MovimentacaoEstoque.Text = BELO.BuscarLocal(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text));//Preencher o textbox Local
 
@@ -158,7 +156,5 @@ namespace Inventory_Control
         }
 
         #endregion TextBox Codigo de Barras
-
-       
     }
 }
