@@ -33,7 +33,8 @@
             this.gunaControlBox2 = new Guna.UI.WinForms.GunaControlBox();
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.TelaInicial = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.ToolStripMenuItem();
             this.tesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnClientesEFornecedores = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,8 +51,7 @@
             this.fasdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNotaFiscalSaida = new System.Windows.Forms.ToolStripMenuItem();
             this.btnVendasRelatorio = new System.Windows.Forms.ToolStripMenuItem();
-            this.TelaInicial = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,20 +96,22 @@
             // 
             this.guna2DragControl1.TargetControl = this.menuStrip1;
             // 
-            // menuStrip1
+            // TelaInicial
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnHome,
-            this.tesToolStripMenuItem,
-            this.esfasToolStripMenuItem,
-            this.fasdfToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(1044, 28);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
+            this.TelaInicial.BackColor = System.Drawing.Color.White;
+            this.TelaInicial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TelaInicial.Location = new System.Drawing.Point(12, 34);
+            this.TelaInicial.Name = "TelaInicial";
+            this.TelaInicial.Size = new System.Drawing.Size(1156, 542);
+            this.TelaInicial.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel1.Location = new System.Drawing.Point(0, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1180, 10);
+            this.panel1.TabIndex = 0;
             // 
             // btnHome
             // 
@@ -174,7 +176,7 @@
             this.btnTransferenciaEntreEtiqueta,
             this.btnEstorno});
             this.movimentaçãoToolStripMenuItem.Name = "movimentaçãoToolStripMenuItem";
-            this.movimentaçãoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.movimentaçãoToolStripMenuItem.Size = new System.Drawing.Size(165, 24);
             this.movimentaçãoToolStripMenuItem.Text = "Movimentação";
             // 
             // btnTransferenciaDeEstoque
@@ -201,7 +203,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(180, 24);
+            this.btnBuscar.Size = new System.Drawing.Size(165, 24);
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -244,22 +246,20 @@
             this.btnVendasRelatorio.Text = "Relatório Saída";
             this.btnVendasRelatorio.Click += new System.EventHandler(this.btnVendasRelatorio_Click);
             // 
-            // TelaInicial
+            // menuStrip1
             // 
-            this.TelaInicial.BackColor = System.Drawing.Color.White;
-            this.TelaInicial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TelaInicial.Location = new System.Drawing.Point(12, 34);
-            this.TelaInicial.Name = "TelaInicial";
-            this.TelaInicial.Size = new System.Drawing.Size(1156, 542);
-            this.TelaInicial.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel1.Location = new System.Drawing.Point(0, 24);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1180, 10);
-            this.panel1.TabIndex = 0;
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnHome,
+            this.tesToolStripMenuItem,
+            this.esfasToolStripMenuItem,
+            this.fasdfToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuStrip1.Size = new System.Drawing.Size(1044, 28);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // Forms
             // 
@@ -288,6 +288,9 @@
         private Guna.UI.WinForms.GunaControlBox gunaControlBox1;
         private Guna.UI.WinForms.GunaControlBox gunaControlBox2;
         private Guna.UI.WinForms.GunaDragControl gunaDragControl1;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private System.Windows.Forms.Panel TelaInicial;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem btnHome;
         private System.Windows.Forms.ToolStripMenuItem tesToolStripMenuItem;
@@ -295,19 +298,16 @@
         private System.Windows.Forms.ToolStripMenuItem btnProdutos;
         private System.Windows.Forms.ToolStripMenuItem esfasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asfafsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fasdfToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem btnNotaFiscalSaida;
-        private System.Windows.Forms.ToolStripMenuItem btnVendasRelatorio;
-        private System.Windows.Forms.ToolStripMenuItem btnNotaDeEntrada;
-        private System.Windows.Forms.ToolStripMenuItem btnSuprimentosRelatorio;
-        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
-        private System.Windows.Forms.Panel TelaInicial;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem movimentaçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnTransferenciaDeEstoque;
         private System.Windows.Forms.ToolStripMenuItem btnTransferenciaEntreEtiqueta;
         private System.Windows.Forms.ToolStripMenuItem btnEstorno;
         private System.Windows.Forms.ToolStripMenuItem btnBuscar;
+        private System.Windows.Forms.ToolStripMenuItem btnNotaDeEntrada;
+        private System.Windows.Forms.ToolStripMenuItem btnSuprimentosRelatorio;
+        private System.Windows.Forms.ToolStripMenuItem fasdfToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnNotaFiscalSaida;
+        private System.Windows.Forms.ToolStripMenuItem btnVendasRelatorio;
     }
 }
 

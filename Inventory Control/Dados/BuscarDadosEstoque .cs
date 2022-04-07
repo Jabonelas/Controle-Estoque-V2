@@ -50,6 +50,40 @@ namespace Inventory_Control.Dados
             }
         }
 
+        // Listar determinados dados da tabela
+        public void BuscarCodDoProdutoListar(int _cod_Produto, Guna2DataGridView _tabela)
+        {
+            try
+            {
+                if (VCP.BuscarExistenciaProduto(_cod_Produto))
+                {
+                    using (SqlConnection conexaoSQL = AbrirConexao())
+                    {
+                        string query = "select Cod_Produto,Cod_de_Barras,Lote,Descricao,Quantidade,Local " +
+                            "from Estoque where Cod_Produto = @codproduto" +
+                            " and Local <> 'TRANSITO' and Local <> 'EXCLUIDA' " +
+                            "and Quantidade > 0 ";
+                        SqlDataAdapter adapter = new SqlDataAdapter(query, conexaoSQL);
+                        adapter.SelectCommand.Parameters.AddWithValue("@codproduto", _cod_Produto);
+
+                        DataTable dataTable = new DataTable();
+
+                        adapter.Fill(dataTable);
+                        _tabela.DataSource = dataTable;
+                        _tabela.Refresh();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Produto Não Encontrado!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+        }
+
         #endregion Buscar Codigo do Produto
 
         #region Bucar Codigo de Barras

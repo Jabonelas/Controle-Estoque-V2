@@ -40,19 +40,6 @@ namespace Inventory_Control
             InitializeComponent();
         }
 
-        //public void loadform(object Form)
-        //{
-        //    if (gvdMovimentacaoEtiqueta.Controls.Count > 0)
-        //        gvdMovimentacaoEtiqueta.Controls.RemoveAt(0);
-
-        //    Form f = Form as Form;
-        //    f.TopLevel = false;
-        //    f.Dock = DockStyle.Fill;
-        //    gvdMovimentacaoEtiqueta.Controls.Add(f);
-        //    gvdMovimentacaoEtiqueta.Tag = f;
-        //    f.Show();
-        //}
-
         #region Etiqueta Origem
 
         private void btnBuscarEtiquetaOrigem_Click(object sender, EventArgs e)
@@ -198,6 +185,24 @@ namespace Inventory_Control
 
         #endregion Botao Confirmar Transferencia
 
+        #region Botao Buscar Lista
+
+        // Origem
+        private void btnBuscarListaOrigem_Click(object sender, EventArgs e)
+        {
+            ListaEstoque ListarProdutos = new ListaEstoque();
+            ListarProdutos.ShowDialog();
+        }
+
+        // Destino
+        private void btnBuscarListaDestino_Click(object sender, EventArgs e)
+        {
+            ListaEstoque ListarProdutos = new ListaEstoque();
+            ListarProdutos.ShowDialog();
+        }
+
+        #endregion Botao Buscar Lista
+
         #region TextBox Codigo de Barras Origem
 
         private void txtCodDeBarrasOrigem_MovimentacaoEtiqueta_KeyPress(object sender, KeyPressEventArgs e)
@@ -233,10 +238,5 @@ namespace Inventory_Control
         }
 
         #endregion TextBox Codigo de Barras Destino
-
-        private void btnBuscarListaOrigem_Click(object sender, EventArgs e)
-        {
-            //loadform(new ListaEstoque());
-        }
     }
 }
