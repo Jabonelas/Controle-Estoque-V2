@@ -15,9 +15,17 @@ namespace Inventory_Control
     {
         private BuscarDadosEstoque BEP = new BuscarDadosEstoque();// Buscar no Estoque por Produto
 
-        public ListaEstoque()
+        private Transferencia_Etiqueta formTransferencia;
+
+        private string formPrincipal = "";
+
+        public ListaEstoque(Transferencia_Etiqueta _transferencia_Etiqueta, string _form)
         {
             InitializeComponent();
+
+            formTransferencia = _transferencia_Etiqueta;
+
+            formPrincipal = _form;
         }
 
         #region Botao Buscar
@@ -59,16 +67,22 @@ namespace Inventory_Control
 
         #endregion TextBox Codigo Produto
 
-        private void gvdListaEstoque_SelectionChanged(object sender, EventArgs e)
-        {
-            //gvdListaEstoque row = gvdListaEstoque.SelectedRows;
-            //txtCodProduto_MovimentacaoEtiqueta.Text = row.Cells[1].Text;
-        }
+        #region GridView
 
         private void gvdListaEstoque_DoubleClick(object sender, EventArgs e)
         {
-            guna2DataGridView1 row = gvdListaEstoque.SelectedRows;
-            txtCodProduto_MovimentacaoEtiqueta.Text = row.Cells[1].Text;
+            if (formPrincipal == "Origem")
+            {
+                formTransferencia.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text = gvdListaEstoque.SelectedCells[1].Value.ToString();
+                this.Close();
+            }
+            else if (formPrincipal == "Destino")
+            {
+                formTransferencia.txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text = gvdListaEstoque.SelectedCells[1].Value.ToString();
+                this.Close();
+            }
         }
+
+        #endregion GridView
     }
 }

@@ -33,8 +33,7 @@
             this.gunaControlBox2 = new Guna.UI.WinForms.GunaControlBox();
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.TelaInicial = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnHome = new System.Windows.Forms.ToolStripMenuItem();
             this.tesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnClientesEFornecedores = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,14 +43,14 @@
             this.movimentaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnTransferenciaDeEstoque = new System.Windows.Forms.ToolStripMenuItem();
             this.btnTransferenciaEntreEtiqueta = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnEstorno = new System.Windows.Forms.ToolStripMenuItem();
             this.btnBuscar = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNotaDeEntrada = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSuprimentosRelatorio = new System.Windows.Forms.ToolStripMenuItem();
             this.fasdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNotaFiscalSaida = new System.Windows.Forms.ToolStripMenuItem();
             this.btnVendasRelatorio = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.TelaInicial = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,22 +95,20 @@
             // 
             this.guna2DragControl1.TargetControl = this.menuStrip1;
             // 
-            // TelaInicial
+            // menuStrip1
             // 
-            this.TelaInicial.BackColor = System.Drawing.Color.White;
-            this.TelaInicial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TelaInicial.Location = new System.Drawing.Point(12, 34);
-            this.TelaInicial.Name = "TelaInicial";
-            this.TelaInicial.Size = new System.Drawing.Size(1156, 542);
-            this.TelaInicial.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel1.Location = new System.Drawing.Point(0, 24);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1180, 10);
-            this.panel1.TabIndex = 0;
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnHome,
+            this.tesToolStripMenuItem,
+            this.esfasToolStripMenuItem,
+            this.fasdfToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuStrip1.Size = new System.Drawing.Size(1044, 28);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // btnHome
             // 
@@ -173,10 +170,9 @@
             // 
             this.movimentaçãoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnTransferenciaDeEstoque,
-            this.btnTransferenciaEntreEtiqueta,
-            this.btnEstorno});
+            this.btnTransferenciaEntreEtiqueta});
             this.movimentaçãoToolStripMenuItem.Name = "movimentaçãoToolStripMenuItem";
-            this.movimentaçãoToolStripMenuItem.Size = new System.Drawing.Size(165, 24);
+            this.movimentaçãoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.movimentaçãoToolStripMenuItem.Text = "Movimentação";
             // 
             // btnTransferenciaDeEstoque
@@ -193,17 +189,10 @@
             this.btnTransferenciaEntreEtiqueta.Text = "Transferencia Entre Etiquetas";
             this.btnTransferenciaEntreEtiqueta.Click += new System.EventHandler(this.btnTransferenciaEntreEtiqueta_Click);
             // 
-            // btnEstorno
-            // 
-            this.btnEstorno.Name = "btnEstorno";
-            this.btnEstorno.Size = new System.Drawing.Size(251, 24);
-            this.btnEstorno.Text = "Estorno";
-            this.btnEstorno.Click += new System.EventHandler(this.btnEstorno_Click);
-            // 
             // btnBuscar
             // 
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(165, 24);
+            this.btnBuscar.Size = new System.Drawing.Size(180, 24);
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -235,31 +224,33 @@
             // btnNotaFiscalSaida
             // 
             this.btnNotaFiscalSaida.Name = "btnNotaFiscalSaida";
-            this.btnNotaFiscalSaida.Size = new System.Drawing.Size(169, 24);
+            this.btnNotaFiscalSaida.Size = new System.Drawing.Size(180, 24);
             this.btnNotaFiscalSaida.Text = "Nota Fiscal ";
             this.btnNotaFiscalSaida.Click += new System.EventHandler(this.btnNotaFiscalSaida_Click);
             // 
             // btnVendasRelatorio
             // 
             this.btnVendasRelatorio.Name = "btnVendasRelatorio";
-            this.btnVendasRelatorio.Size = new System.Drawing.Size(169, 24);
+            this.btnVendasRelatorio.Size = new System.Drawing.Size(180, 24);
             this.btnVendasRelatorio.Text = "Relatório Saída";
             this.btnVendasRelatorio.Click += new System.EventHandler(this.btnVendasRelatorio_Click);
             // 
-            // menuStrip1
+            // TelaInicial
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnHome,
-            this.tesToolStripMenuItem,
-            this.esfasToolStripMenuItem,
-            this.fasdfToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(1044, 28);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
+            this.TelaInicial.BackColor = System.Drawing.Color.White;
+            this.TelaInicial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TelaInicial.Location = new System.Drawing.Point(12, 34);
+            this.TelaInicial.Name = "TelaInicial";
+            this.TelaInicial.Size = new System.Drawing.Size(1156, 542);
+            this.TelaInicial.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel1.Location = new System.Drawing.Point(0, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1180, 10);
+            this.panel1.TabIndex = 0;
             // 
             // Forms
             // 
@@ -301,7 +292,6 @@
         private System.Windows.Forms.ToolStripMenuItem movimentaçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnTransferenciaDeEstoque;
         private System.Windows.Forms.ToolStripMenuItem btnTransferenciaEntreEtiqueta;
-        private System.Windows.Forms.ToolStripMenuItem btnEstorno;
         private System.Windows.Forms.ToolStripMenuItem btnBuscar;
         private System.Windows.Forms.ToolStripMenuItem btnNotaDeEntrada;
         private System.Windows.Forms.ToolStripMenuItem btnSuprimentosRelatorio;

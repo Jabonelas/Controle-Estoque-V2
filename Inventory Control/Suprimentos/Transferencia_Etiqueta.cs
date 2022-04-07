@@ -62,6 +62,9 @@ namespace Inventory_Control
                             txtQuantidadeOrigem_MovimentocaoEtiqueta.Text = BQ.BuscarQuantidade(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text)).ToString();
 
                             txtLocalOrigem_MovimentacaoEtiqueta.Text = BLocal.BuscarLocal(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text));
+
+                            label1.Text = "";
+                            label3.Text = "";
                         }
                         else
                         {
@@ -73,7 +76,12 @@ namespace Inventory_Control
                         MessageBox.Show("Codigo de Barras Não Encontrado!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-                else { MessageBox.Show("O Campo Cód. Barras é Obrigatorio!"); }
+                else
+                {
+                    label1.Text = "*";
+                    label3.Text = "*";
+                    MessageBox.Show("Os Campos Com * São Obrigadotios!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             catch (Exception x)
             {
@@ -105,6 +113,8 @@ namespace Inventory_Control
                             txtQuantidadeDestino_MovimentocaoEtiqueta.Text = BQ.BuscarQuantidade(Convert.ToInt32(txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text)).ToString();
 
                             txtLocalDestino_MovimentacaoEtiqueta.Text = BLocal.BuscarLocal(Convert.ToInt32(txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text));
+
+                            label2.Text = "";
                         }
                         else
                         {
@@ -116,7 +126,11 @@ namespace Inventory_Control
                         MessageBox.Show("Codigo de Barras Não Encontrado!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-                else { MessageBox.Show("O Campo Cód. Barras é Obrigatorio!"); }
+                else
+                {
+                    label2.Text = "*";
+                    MessageBox.Show("Os Campos Com * São Obrigadotios!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             catch (Exception x)
             {
@@ -130,18 +144,18 @@ namespace Inventory_Control
 
         private void btnModificar_CadastroCliente_Click(object sender, EventArgs e)
         {
-            if (BEC.BuscarCodProdutoTextBox(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text)) ==
-                BEC.BuscarCodProdutoTextBox(Convert.ToInt32(txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text)))
+            if (txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text != "" && txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text != ""
+                && txtTransferirOrigem_MovimentocaoEtiqueta.Text != "")
             {
-                if (BLocal.BuscarLocal(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text)) != "EXCLUIDA" &&
-                    BLocal.BuscarLocal(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text)) != "FATURADA" &&
-                    BLocal.BuscarLocal(Convert.ToInt32(txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text)) != "EXCLUIDA" &&
-                    BLocal.BuscarLocal(Convert.ToInt32(txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text)) != "FATURADA")
+                if (BEC.BuscarCodProdutoTextBox(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text)) ==
+                    BEC.BuscarCodProdutoTextBox(Convert.ToInt32(txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text)))
                 {
-                    if (BQ.BuscarQuantidade(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text)) >= Convert.ToInt32(txtTransferirOrigem_MovimentocaoEtiqueta.Text))
+                    if (BLocal.BuscarLocal(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text)) != "EXCLUIDA" &&
+                        BLocal.BuscarLocal(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text)) != "FATURADA" &&
+                        BLocal.BuscarLocal(Convert.ToInt32(txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text)) != "EXCLUIDA" &&
+                        BLocal.BuscarLocal(Convert.ToInt32(txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text)) != "FATURADA")
                     {
-                        if (txtTransferirOrigem_MovimentocaoEtiqueta.Text != "" && txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text != "" &&
-                            txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text != "")
+                        if (BQ.BuscarQuantidade(Convert.ToInt32(txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text)) >= Convert.ToInt32(txtTransferirOrigem_MovimentocaoEtiqueta.Text))
                         {
                             txtRecebidoDestino_MovimentocaoEtiqueta.Text = txtTransferirOrigem_MovimentocaoEtiqueta.Text;
 
@@ -157,29 +171,62 @@ namespace Inventory_Control
                             label1.Text = "";
                             label2.Text = "";
                             label3.Text = "";
+
+                            DialogResult OpcaoDoUsuario = new DialogResult();
+                            OpcaoDoUsuario = MessageBox.Show("Modificação Realizada Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (OpcaoDoUsuario == DialogResult.OK)
+                            {
+                                txtCodDaProdutoOrigem_MovimentacaoEtiqueta.Text = "";
+
+                                txtLoteOrigem_MovimentocaoEtiqueta.Text = "";
+
+                                txtDescricaoOrigem_MovimentocaoEtiqueta.Text = "";
+
+                                txtQuantidadeOrigem_MovimentocaoEtiqueta.Text = "";
+
+                                txtLocalOrigem_MovimentacaoEtiqueta.Text = "";
+
+                                txtCodDaProdutoDestino_MovimentacaoEtiqueta.Text = "";
+
+                                txtLoteDestino_MovimentocaoEtiqueta.Text = "";
+
+                                txtDescricaoDestino_MovimentocaoEtiqueta.Text = "";
+
+                                txtQuantidadeDestino_MovimentocaoEtiqueta.Text = "";
+
+                                txtLocalDestino_MovimentacaoEtiqueta.Text = "";
+
+                                txtTransferirOrigem_MovimentocaoEtiqueta.Text = "";
+
+                                txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text = "";
+
+                                txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text = "";
+
+                                txtRecebidoDestino_MovimentocaoEtiqueta.Text = "";
+                            }
                         }
                         else
                         {
-                            label1.Text = "*";
-                            label2.Text = "*";
-                            label3.Text = "*";
-
-                            MessageBox.Show("Os Campos Com * São Obrigadotios!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Quantidade Solicitada Maior Que A Disponivel!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Quantidade Solicitada Maior Que A Disponivel!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Etiquetas Não Acessiveis!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Etiquetas Não Acessiveis!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Itens Divergentes!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Itens Divergentes!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                label1.Text = "*";
+                label2.Text = "*";
+                label3.Text = "*";
+
+                MessageBox.Show("Os Campos Com * São Obrigadotios!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -190,14 +237,14 @@ namespace Inventory_Control
         // Origem
         private void btnBuscarListaOrigem_Click(object sender, EventArgs e)
         {
-            ListaEstoque ListarProdutos = new ListaEstoque();
+            ListaEstoque ListarProdutos = new ListaEstoque(this, "Origem");
             ListarProdutos.ShowDialog();
         }
 
         // Destino
         private void btnBuscarListaDestino_Click(object sender, EventArgs e)
         {
-            ListaEstoque ListarProdutos = new ListaEstoque();
+            ListaEstoque ListarProdutos = new ListaEstoque(this, "Destino");
             ListarProdutos.ShowDialog();
         }
 

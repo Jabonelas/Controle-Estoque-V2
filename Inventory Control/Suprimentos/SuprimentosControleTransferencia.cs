@@ -42,12 +42,6 @@ namespace Inventory_Control
 
         private void btnModificar_CadastroCliente_Click(object sender, EventArgs e)
         {
-            //Zerar os Labels * que informam que precisam ser preenchidos os textbox
-            //AvisoDePreenchimentoCNPJ.Text = "";
-            //AvisoDePreenchimentoTipo.Text = "";
-
-            //if (VT.VerificarTextBoxClienteFornecedor(this) == true) //Verificar se os textbox estão preenchidos
-            //{
             try
             {
                 if (txtCodDeBarras_MovimentacaoEstoque.Text != "" && cmbDestino_MovimentacaoEstoque.Text != "")
@@ -128,7 +122,15 @@ namespace Inventory_Control
                     {
                         BE.BuscarCodBarras(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text), gvdMovimentacaoEstoque);
 
-                        txtCodDeBarras_MovimentacaoEstoque.Text = "";
+                        txtCodDaProduto_MovimentacaoEstoque.Text = BECP.BuscarCodProdutoTextBox(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text));//Preencher o textbox Codigo do Produto
+
+                        txtLote_MovimentocaoEstoque.Text = BEL.BuscarLote(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text));//Preencher o textbox Lote
+
+                        txtDescricao_MovimentocaoEstoque.Text = BED.BuscarDescricao(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text)); //Preencher o textbox Descrição
+
+                        txtQuantidade_MovimentocaoEstoque.Text = BEQ.BuscarQuantidade(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text)).ToString();//Preencher o textbox Quantidade
+
+                        txtLocal_MovimentacaoEstoque.Text = BELO.BuscarLocal(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text));//Preencher o textbox Local
                     }
                     else
                     {
@@ -156,5 +158,63 @@ namespace Inventory_Control
         }
 
         #endregion TextBox Codigo de Barras
+
+        #region Botao Estornar
+
+        private void btnEstornar_CadastroCliente_Click(object sender, EventArgs e)
+        {
+            if (txtCodDeBarras_MovimentacaoEstoque.Text != "" && cmbDestino_MovimentacaoEstoque.Text != "")
+            {
+                if (BELO.BuscarLocal(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text)) != "FATURADA" &&
+                    BELO.BuscarLocal(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text)) != "EXCLUIDA")
+                {
+                    txtCodDaProduto_MovimentacaoEstoque.Text = BECP.BuscarCodProdutoTextBox(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text));//Preencher o textbox Codigo do Produto
+
+                    txtLote_MovimentocaoEstoque.Text = BEL.BuscarLote(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text));//Preencher o textbox Lote
+
+                    txtDescricao_MovimentocaoEstoque.Text = BED.BuscarDescricao(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text)); //Preencher o textbox Descrição
+
+                    txtQuantidade_MovimentocaoEstoque.Text = BEQ.BuscarQuantidade(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text)).ToString();//Preencher o textbox Quantidade
+
+                    txtLocal_MovimentacaoEstoque.Text = BELO.BuscarLocal(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text));//Preencher o textbox Local
+
+                    label1.Text = "";
+                    label2.Text = "";
+
+                    DialogResult OpcaoDoUsuario = new DialogResult();
+                    OpcaoDoUsuario = MessageBox.Show("Deseja Realizar a Modificação?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (OpcaoDoUsuario == DialogResult.Yes)
+                    {
+                        AE.AlterarEstoque(cmbDestino_MovimentacaoEstoque.Text, Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text));
+
+                        OpcaoDoUsuario = MessageBox.Show("Modificação Realizada Com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (OpcaoDoUsuario == DialogResult.OK)
+                        {
+                            BE.BuscarCodBarras(Convert.ToInt32(txtCodDeBarras_MovimentacaoEstoque.Text), gvdMovimentacaoEstoque);
+
+                            txtCodDeBarras_MovimentacaoEstoque.Text = "";
+                            txtCodDaProduto_MovimentacaoEstoque.Text = "";
+                            txtLote_MovimentocaoEstoque.Text = "";
+                            txtDescricao_MovimentocaoEstoque.Text = "";
+                            txtQuantidade_MovimentocaoEstoque.Text = "";
+                            txtLocal_MovimentacaoEstoque.Text = "";
+                            cmbDestino_MovimentacaoEstoque.Text = "";
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Etiqueta Já Consumida!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Os Campos Com * São Obrigatorios!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                label1.Text = "*";
+                label2.Text = "*";
+            }
+        }
+
+        #endregion Botao Estornar
     }
 }

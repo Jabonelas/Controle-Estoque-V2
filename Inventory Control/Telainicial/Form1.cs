@@ -59,11 +59,6 @@ namespace Inventory_Control
             loadform(new Transferencia_Etiqueta());
         }
 
-        private void btnEstorno_Click(object sender, EventArgs e)
-        {
-            loadform(new Estorno());
-        }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             loadform(new SuprimentoControleBusca());
