@@ -40,6 +40,8 @@ namespace Inventory_Control
 
         private AlterarDadosEstoque ALEZ = new AlterarDadosEstoque(); // Alterar o Local de Estoque Zerado
 
+        private VerificacaoDeExistencia VEC = new VerificacaoDeExistencia(); // Verificar Existencia de Cleinte
+
         public VendasNotaFiscalSaida()
         {
             InitializeComponent();
@@ -52,69 +54,79 @@ namespace Inventory_Control
             label1.Text = "";
             label2.Text = "";
             label3.Text = "";
+            label4.Text = "";
 
             try
             {
-                if (txtCodProduto_VendasNFSaida.Text != "" && txtQuantidade_VendasNFSaida.Text != "")
+                if (txtCodProduto_VendasNFSaida.Text != "" && txtQuantidade_VendasNFSaida.Text != "" &&
+                    txtCNPJCliente_VendasNFSaida.Text != "")
                 {
-                    txtDataDeEmissao_VendasNFSaida.Text = DateTime.Today.ToShortDateString();
-
-                    if (VEL.VerificarLocalEstoque(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text)) == true)
+                    if (VEC.BuscarExistenciaCliente(txtCNPJCliente_VendasNFSaida.Text) == true)
                     {
-                        if (BEQV.BuscarQuantidadeValida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text)) >= 0 &&
-                            BEQV.BuscarQuantidadeValida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text)) >= Convert.ToInt32(txtQuantidade_VendasNFSaida.Text))
+                        txtDataDeEmissao_VendasNFSaida.Text = DateTime.Today.ToShortDateString();
 
+                        if (VEL.VerificarLocalEstoque(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text)) == true)
                         {
-                            if (txtNFSaida_VendasNFSaida.Text == "") //gerar o numero da NF de Saida
+                            if (BEQV.BuscarQuantidadeValida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text)) >= 0 &&
+                                BEQV.BuscarQuantidadeValida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text)) >= Convert.ToInt32(txtQuantidade_VendasNFSaida.Text))
+
                             {
-                                txtNFSaida_VendasNFSaida.Text = Convert.ToString(CNFS.ContarNFSaidaGerando());
+                                if (txtNFSaida_VendasNFSaida.Text == "") //gerar o numero da NF de Saida
+                                {
+                                    txtNFSaida_VendasNFSaida.Text = Convert.ToString(CNFS.ContarNFSaidaGerando());
+                                }
+                                else //manter  o numero da NF de Saida que já foi gerado
+                                {
+                                    txtNFSaida_VendasNFSaida.Text = Convert.ToString(CNFS.ContarNFSaidaContinuacao());
+                                }
+
+                                AQES.AlterarQuantidadeEstoqueSubtracaoSaida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text), Convert.ToInt32(txtQuantidade_VendasNFSaida.Text));
+
+                                INFS.InserirNFSaida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text));
+
+                                INFS.InserirNFSaidaIncremento(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), Convert.ToInt32(txtQuantidade_VendasNFSaida.Text),
+                                Convert.ToDateTime(txtDataDeEmissao_VendasNFSaida.Text), txtCNPJCliente_VendasNFSaida.Text);
+
+                                txtDescricao_VendasNFSaida.Text = BE.BuscarDescricaoNFSaida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text));
+
+                                // Verificação de saldo no estoque caso esteja zerado, tranferi o loccal de estoque para FATURADO
+                                if (BEQV.BuscarQuantidadeValida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text)) <= 0)
+                                {
+                                    ALEZ.AlterarEstoqueZerado();
+                                }
+
+                                DialogResult OpcaoDoUsuario = new DialogResult();
+                                OpcaoDoUsuario = MessageBox.Show("Item Adicionado com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                if (OpcaoDoUsuario == DialogResult.OK)
+                                {
+                                    BNFS.BuscarNFSaida(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), gdvVendasNFSaida);
+
+                                    txtDataDeEmissao_VendasNFSaida.Text = "";
+                                    txtCodProduto_VendasNFSaida.Text = "";
+                                    txtDescricao_VendasNFSaida.Text = "";
+                                    txtQuantidade_VendasNFSaida.Text = "";
+                                }
                             }
-                            else //manter  o numero da NF de Saida que já foi gerado
+                            else
                             {
-                                txtNFSaida_VendasNFSaida.Text = Convert.ToString(CNFS.ContarNFSaidaContinuacao());
-                            }
-
-                            AQES.AlterarQuantidadeEstoqueSubtracaoSaida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text), Convert.ToInt32(txtQuantidade_VendasNFSaida.Text));
-
-                            INFS.InserirNFSaida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text));
-
-                            INFS.InserirNFSaidaIncremento(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), Convert.ToInt32(txtQuantidade_VendasNFSaida.Text),
-                            Convert.ToDateTime(txtDataDeEmissao_VendasNFSaida.Text));
-
-                            txtDescricao_VendasNFSaida.Text = BE.BuscarDescricaoNFSaida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text));
-
-                            // Verificação de saldo no estoque caso esteja zerado, tranferi o loccal de estoque para FATURADO
-                            if (BEQV.BuscarQuantidadeValida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text)) <= 0)
-                            {
-                                ALEZ.AlterarEstoqueZerado();
-                            }
-
-                            DialogResult OpcaoDoUsuario = new DialogResult();
-                            OpcaoDoUsuario = MessageBox.Show("Item Adicionado com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            if (OpcaoDoUsuario == DialogResult.OK)
-                            {
-                                BNFS.BuscarNFSaida(Convert.ToInt32(txtNFSaida_VendasNFSaida.Text), gdvVendasNFSaida);
-
-                                txtDataDeEmissao_VendasNFSaida.Text = "";
-                                txtCodProduto_VendasNFSaida.Text = "";
-                                txtDescricao_VendasNFSaida.Text = "";
-                                txtQuantidade_VendasNFSaida.Text = "";
+                                MessageBox.Show($"Quantidade Disponivel {BEQV.BuscarQuantidadeValida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text))}", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                         else
                         {
-                            MessageBox.Show($"Quantidade Disponivel {BEQV.BuscarQuantidadeValida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text))}", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Item Não Disponivel!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Item Não Disponivel!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Cliente Não Cadastrado!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
                     label1.Text = "*";
                     label2.Text = "*";
+                    label4.Text = "*";
 
                     MessageBox.Show("Todos Os Campos Com * São Obrigatorios!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -134,6 +146,7 @@ namespace Inventory_Control
             label1.Text = "";
             label2.Text = "";
             label3.Text = "";
+            label4.Text = "";
 
             try
             {
@@ -176,6 +189,7 @@ namespace Inventory_Control
                 {
                     MessageBox.Show("NF Emitida com Sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    txtCNPJCliente_VendasNFSaida.Text = "";
                     txtNFSaida_VendasNFSaida.Text = "";
                     txtDataDeEmissao_VendasNFSaida.Text = "";
                     txtCodProduto_VendasNFSaida.Text = "";
@@ -206,6 +220,7 @@ namespace Inventory_Control
             label1.Text = "";
             label2.Text = "";
             label3.Text = "";
+            label4.Text = "";
 
             try
             {
@@ -285,5 +300,47 @@ namespace Inventory_Control
         }
 
         #endregion TextBox Quantidade
+
+        #region TextBox CNPJ Cliente
+
+        private void txtCNPJCliente_VendasNFSaida_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+
+            if (char.IsNumber(e.KeyChar) == true)
+            {
+                switch (txtCNPJCliente_VendasNFSaida.TextLength)
+                {
+                    case 0:
+                        txtCNPJCliente_VendasNFSaida.Text = "";
+                        break;
+
+                    case 2:
+                        txtCNPJCliente_VendasNFSaida.Text = txtCNPJCliente_VendasNFSaida.Text + ".";
+                        txtCNPJCliente_VendasNFSaida.SelectionStart = 3;
+                        break;
+
+                    case 6:
+                        txtCNPJCliente_VendasNFSaida.Text = txtCNPJCliente_VendasNFSaida.Text + ".";
+                        txtCNPJCliente_VendasNFSaida.SelectionStart = 7;
+                        break;
+
+                    case 10:
+                        txtCNPJCliente_VendasNFSaida.Text = txtCNPJCliente_VendasNFSaida.Text + "/";
+                        txtCNPJCliente_VendasNFSaida.SelectionStart = 11;
+                        break;
+
+                    case 15:
+                        txtCNPJCliente_VendasNFSaida.Text = txtCNPJCliente_VendasNFSaida.Text + "-";
+                        txtCNPJCliente_VendasNFSaida.SelectionStart = 16;
+                        break;
+                }
+            }
+        }
+
+        #endregion TextBox CNPJ Cliente
     }
 }

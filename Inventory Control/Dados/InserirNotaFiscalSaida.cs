@@ -36,17 +36,18 @@ namespace Inventory_Control.Dados
         #region Atualizacao dos dados em Nota Fiscal Saida
 
         // feita para preencher a quantidade, a data de emissao e o valor da Nota Fiscal que foi feita
-        public void InserirNFSaidaIncremento(int _nf_Saida, int _quantidade, DateTime _emissao)
+        public void InserirNFSaidaIncremento(int _nf_Saida, int _quantidade, DateTime _emissao, string _cnpjCliente)
         {
             using (SqlConnection conexaoSQL = AbrirConexao())
             {
                 string query = "update NF_Saida set NF_Saida = @nfsaida,Quantidade = @quantidade, " +
-                    "Emissao = @emissao, Valor = (Valor * @quantidade), Estatus = 'FATURADA'" +
+                    "Emissao = @emissao, Valor = (Valor * @quantidade), Estatus = 'FATURADA', CNPJ_Cliente = @cnpjCliente" +
                    " where NF_Saida is null";
                 SqlCommand cmd = new SqlCommand(query, conexaoSQL);
                 cmd.Parameters.AddWithValue("@nfsaida", _nf_Saida);
                 cmd.Parameters.AddWithValue("@quantidade", _quantidade);
                 cmd.Parameters.AddWithValue("@emissao", _emissao);
+                cmd.Parameters.AddWithValue("@cnpjCliente", _cnpjCliente);
 
                 cmd.ExecuteNonQuery();
             }
