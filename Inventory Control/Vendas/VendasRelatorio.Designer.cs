@@ -44,6 +44,9 @@
             // 
             // gdvRelatorioNFSaida_Vendas
             // 
+            this.gdvRelatorioNFSaida_Vendas.AllowUserToAddRows = false;
+            this.gdvRelatorioNFSaida_Vendas.AllowUserToDeleteRows = false;
+            this.gdvRelatorioNFSaida_Vendas.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.gdvRelatorioNFSaida_Vendas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gdvRelatorioNFSaida_Vendas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -52,7 +55,7 @@
             this.gdvRelatorioNFSaida_Vendas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gdvRelatorioNFSaida_Vendas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -71,7 +74,9 @@
             this.gdvRelatorioNFSaida_Vendas.EnableHeadersVisualStyles = false;
             this.gdvRelatorioNFSaida_Vendas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gdvRelatorioNFSaida_Vendas.Location = new System.Drawing.Point(13, 199);
+            this.gdvRelatorioNFSaida_Vendas.MultiSelect = false;
             this.gdvRelatorioNFSaida_Vendas.Name = "gdvRelatorioNFSaida_Vendas";
+            this.gdvRelatorioNFSaida_Vendas.ReadOnly = true;
             this.gdvRelatorioNFSaida_Vendas.RowHeadersVisible = false;
             this.gdvRelatorioNFSaida_Vendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gdvRelatorioNFSaida_Vendas.Size = new System.Drawing.Size(1131, 331);
@@ -84,13 +89,13 @@
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.BackColor = System.Drawing.Color.White;
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gdvRelatorioNFSaida_Vendas.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gdvRelatorioNFSaida_Vendas.ThemeStyle.HeaderStyle.BackColor = System.Drawing.SystemColors.Highlight;
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.HeaderStyle.Height = 30;
-            this.gdvRelatorioNFSaida_Vendas.ThemeStyle.ReadOnly = false;
+            this.gdvRelatorioNFSaida_Vendas.ThemeStyle.ReadOnly = true;
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);

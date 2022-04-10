@@ -405,6 +405,9 @@
             // 
             // gdvCadastroProduto
             // 
+            this.gdvCadastroProduto.AllowUserToAddRows = false;
+            this.gdvCadastroProduto.AllowUserToDeleteRows = false;
+            this.gdvCadastroProduto.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.gdvCadastroProduto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gdvCadastroProduto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -432,7 +435,9 @@
             this.gdvCadastroProduto.EnableHeadersVisualStyles = false;
             this.gdvCadastroProduto.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gdvCadastroProduto.Location = new System.Drawing.Point(13, 378);
+            this.gdvCadastroProduto.MultiSelect = false;
             this.gdvCadastroProduto.Name = "gdvCadastroProduto";
+            this.gdvCadastroProduto.ReadOnly = true;
             this.gdvCadastroProduto.RowHeadersVisible = false;
             this.gdvCadastroProduto.RowHeadersWidth = 45;
             this.gdvCadastroProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -452,7 +457,7 @@
             this.gdvCadastroProduto.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.gdvCadastroProduto.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.gdvCadastroProduto.ThemeStyle.HeaderStyle.Height = 30;
-            this.gdvCadastroProduto.ThemeStyle.ReadOnly = false;
+            this.gdvCadastroProduto.ThemeStyle.ReadOnly = true;
             this.gdvCadastroProduto.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.gdvCadastroProduto.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.gdvCadastroProduto.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -489,7 +494,7 @@
             this.txtCodProduto_CadastroProduto.Size = new System.Drawing.Size(162, 25);
             this.txtCodProduto_CadastroProduto.TabIndex = 156;
             // 
-            // Cadastro_Produto
+            // Vendas_Nota_Fiscal_Saida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -519,7 +524,7 @@
             this.Controls.Add(this.btnModificar_CadastroProduto);
             this.Controls.Add(this.btnIncluir_CadastroProduto);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Cadastro_Produto";
+            this.Name = "Vendas_Nota_Fiscal_Saida";
             this.Text = "Cadastro_Produto";
             ((System.ComponentModel.ISupportInitialize)(this.gdvCadastroProduto)).EndInit();
             this.ResumeLayout(false);

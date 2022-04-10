@@ -144,6 +144,9 @@
             // 
             // gdvBuscarEstoque_Suprimentos
             // 
+            this.gdvBuscarEstoque_Suprimentos.AllowUserToAddRows = false;
+            this.gdvBuscarEstoque_Suprimentos.AllowUserToDeleteRows = false;
+            this.gdvBuscarEstoque_Suprimentos.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.gdvBuscarEstoque_Suprimentos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gdvBuscarEstoque_Suprimentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -152,7 +155,7 @@
             this.gdvBuscarEstoque_Suprimentos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gdvBuscarEstoque_Suprimentos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -171,7 +174,9 @@
             this.gdvBuscarEstoque_Suprimentos.EnableHeadersVisualStyles = false;
             this.gdvBuscarEstoque_Suprimentos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gdvBuscarEstoque_Suprimentos.Location = new System.Drawing.Point(13, 194);
+            this.gdvBuscarEstoque_Suprimentos.MultiSelect = false;
             this.gdvBuscarEstoque_Suprimentos.Name = "gdvBuscarEstoque_Suprimentos";
+            this.gdvBuscarEstoque_Suprimentos.ReadOnly = true;
             this.gdvBuscarEstoque_Suprimentos.RowHeadersVisible = false;
             this.gdvBuscarEstoque_Suprimentos.RowHeadersWidth = 30;
             this.gdvBuscarEstoque_Suprimentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -185,13 +190,13 @@
             this.gdvBuscarEstoque_Suprimentos.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.gdvBuscarEstoque_Suprimentos.ThemeStyle.BackColor = System.Drawing.Color.White;
             this.gdvBuscarEstoque_Suprimentos.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gdvBuscarEstoque_Suprimentos.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gdvBuscarEstoque_Suprimentos.ThemeStyle.HeaderStyle.BackColor = System.Drawing.SystemColors.Highlight;
             this.gdvBuscarEstoque_Suprimentos.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.gdvBuscarEstoque_Suprimentos.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.gdvBuscarEstoque_Suprimentos.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.gdvBuscarEstoque_Suprimentos.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.gdvBuscarEstoque_Suprimentos.ThemeStyle.HeaderStyle.Height = 30;
-            this.gdvBuscarEstoque_Suprimentos.ThemeStyle.ReadOnly = false;
+            this.gdvBuscarEstoque_Suprimentos.ThemeStyle.ReadOnly = true;
             this.gdvBuscarEstoque_Suprimentos.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.gdvBuscarEstoque_Suprimentos.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gdvBuscarEstoque_Suprimentos.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);

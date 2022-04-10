@@ -321,6 +321,9 @@
             // 
             // gdvVendasNFSaida
             // 
+            this.gdvVendasNFSaida.AllowUserToAddRows = false;
+            this.gdvVendasNFSaida.AllowUserToDeleteRows = false;
+            this.gdvVendasNFSaida.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.gdvVendasNFSaida.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gdvVendasNFSaida.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -329,7 +332,7 @@
             this.gdvVendasNFSaida.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gdvVendasNFSaida.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -348,7 +351,9 @@
             this.gdvVendasNFSaida.EnableHeadersVisualStyles = false;
             this.gdvVendasNFSaida.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gdvVendasNFSaida.Location = new System.Drawing.Point(13, 315);
+            this.gdvVendasNFSaida.MultiSelect = false;
             this.gdvVendasNFSaida.Name = "gdvVendasNFSaida";
+            this.gdvVendasNFSaida.ReadOnly = true;
             this.gdvVendasNFSaida.RowHeadersVisible = false;
             this.gdvVendasNFSaida.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gdvVendasNFSaida.Size = new System.Drawing.Size(1131, 215);
@@ -361,13 +366,13 @@
             this.gdvVendasNFSaida.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.gdvVendasNFSaida.ThemeStyle.BackColor = System.Drawing.Color.White;
             this.gdvVendasNFSaida.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gdvVendasNFSaida.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gdvVendasNFSaida.ThemeStyle.HeaderStyle.BackColor = System.Drawing.SystemColors.Highlight;
             this.gdvVendasNFSaida.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.gdvVendasNFSaida.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.gdvVendasNFSaida.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.gdvVendasNFSaida.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.gdvVendasNFSaida.ThemeStyle.HeaderStyle.Height = 30;
-            this.gdvVendasNFSaida.ThemeStyle.ReadOnly = false;
+            this.gdvVendasNFSaida.ThemeStyle.ReadOnly = true;
             this.gdvVendasNFSaida.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.gdvVendasNFSaida.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gdvVendasNFSaida.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);

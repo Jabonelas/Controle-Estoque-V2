@@ -143,6 +143,26 @@ namespace Inventory_Control.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap key_50px {
+            get {
+                object obj = ResourceManager.GetObject("key_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap key_50px1 {
+            get {
+                object obj = ResourceManager.GetObject("key_50px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lista {
             get {
                 object obj = ResourceManager.GetObject("lista", resourceCulture);
@@ -183,6 +203,16 @@ namespace Inventory_Control.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap team_50px {
+            get {
+                object obj = ResourceManager.GetObject("team_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap upload_link_document_50px {
             get {
                 object obj = ResourceManager.GetObject("upload_link_document_50px", resourceCulture);
@@ -196,6 +226,16 @@ namespace Inventory_Control.Properties {
         internal static System.Drawing.Bitmap upload_link_document_50px1 {
             get {
                 object obj = ResourceManager.GetObject("upload_link_document_50px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_engagement_male_50px {
+            get {
+                object obj = ResourceManager.GetObject("user_engagement_male_50px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

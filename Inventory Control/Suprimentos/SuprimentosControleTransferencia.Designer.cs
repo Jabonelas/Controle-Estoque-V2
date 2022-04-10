@@ -191,6 +191,9 @@
             // 
             // gvdMovimentacaoEstoque
             // 
+            this.gvdMovimentacaoEstoque.AllowUserToAddRows = false;
+            this.gvdMovimentacaoEstoque.AllowUserToDeleteRows = false;
+            this.gvdMovimentacaoEstoque.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.gvdMovimentacaoEstoque.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gvdMovimentacaoEstoque.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -199,7 +202,7 @@
             this.gvdMovimentacaoEstoque.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gvdMovimentacaoEstoque.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -218,7 +221,9 @@
             this.gvdMovimentacaoEstoque.EnableHeadersVisualStyles = false;
             this.gvdMovimentacaoEstoque.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gvdMovimentacaoEstoque.Location = new System.Drawing.Point(12, 394);
+            this.gvdMovimentacaoEstoque.MultiSelect = false;
             this.gvdMovimentacaoEstoque.Name = "gvdMovimentacaoEstoque";
+            this.gvdMovimentacaoEstoque.ReadOnly = true;
             this.gvdMovimentacaoEstoque.RowHeadersVisible = false;
             this.gvdMovimentacaoEstoque.RowHeadersWidth = 30;
             this.gvdMovimentacaoEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -232,13 +237,13 @@
             this.gvdMovimentacaoEstoque.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.gvdMovimentacaoEstoque.ThemeStyle.BackColor = System.Drawing.Color.White;
             this.gvdMovimentacaoEstoque.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gvdMovimentacaoEstoque.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gvdMovimentacaoEstoque.ThemeStyle.HeaderStyle.BackColor = System.Drawing.SystemColors.Highlight;
             this.gvdMovimentacaoEstoque.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.gvdMovimentacaoEstoque.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.gvdMovimentacaoEstoque.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.gvdMovimentacaoEstoque.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.gvdMovimentacaoEstoque.ThemeStyle.HeaderStyle.Height = 30;
-            this.gvdMovimentacaoEstoque.ThemeStyle.ReadOnly = false;
+            this.gvdMovimentacaoEstoque.ThemeStyle.ReadOnly = true;
             this.gvdMovimentacaoEstoque.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.gvdMovimentacaoEstoque.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gvdMovimentacaoEstoque.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);

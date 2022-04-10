@@ -211,6 +211,9 @@
             // 
             // gdvNotaFiscal_Suprimento
             // 
+            this.gdvNotaFiscal_Suprimento.AllowUserToAddRows = false;
+            this.gdvNotaFiscal_Suprimento.AllowUserToDeleteRows = false;
+            this.gdvNotaFiscal_Suprimento.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.gdvNotaFiscal_Suprimento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gdvNotaFiscal_Suprimento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -238,7 +241,9 @@
             this.gdvNotaFiscal_Suprimento.EnableHeadersVisualStyles = false;
             this.gdvNotaFiscal_Suprimento.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gdvNotaFiscal_Suprimento.Location = new System.Drawing.Point(13, 151);
+            this.gdvNotaFiscal_Suprimento.MultiSelect = false;
             this.gdvNotaFiscal_Suprimento.Name = "gdvNotaFiscal_Suprimento";
+            this.gdvNotaFiscal_Suprimento.ReadOnly = true;
             this.gdvNotaFiscal_Suprimento.RowHeadersVisible = false;
             this.gdvNotaFiscal_Suprimento.RowHeadersWidth = 45;
             this.gdvNotaFiscal_Suprimento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -258,7 +263,7 @@
             this.gdvNotaFiscal_Suprimento.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.gdvNotaFiscal_Suprimento.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.gdvNotaFiscal_Suprimento.ThemeStyle.HeaderStyle.Height = 30;
-            this.gdvNotaFiscal_Suprimento.ThemeStyle.ReadOnly = false;
+            this.gdvNotaFiscal_Suprimento.ThemeStyle.ReadOnly = true;
             this.gdvNotaFiscal_Suprimento.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.gdvNotaFiscal_Suprimento.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gdvNotaFiscal_Suprimento.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
