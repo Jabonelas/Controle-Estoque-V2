@@ -537,6 +537,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VendasNotaFiscalSaida";
             this.Text = "VendasNotaFiscalSaida";
+            this.Load += new System.EventHandler(this.VendasNotaFiscalSaida_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gdvVendasNFSaida)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -563,12 +564,12 @@
         private System.Windows.Forms.TextBox txtDataDeEmissao_VendasNFSaida;
         private Guna.UI.WinForms.GunaLabel gunaLabel10;
         private Guna.UI.WinForms.GunaTextBox txtCodProduto_VendasNFSaida;
-        private Guna.UI.WinForms.GunaTextBox txtNFSaida_VendasNFSaida;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private Guna.UI.WinForms.GunaLabel gunaLabel6;
         private Guna.UI.WinForms.GunaTextBox txtCNPJCliente_VendasNFSaida;
         private System.Windows.Forms.Label label4;
+        public Guna.UI.WinForms.GunaTextBox txtNFSaida_VendasNFSaida;
     }
 }

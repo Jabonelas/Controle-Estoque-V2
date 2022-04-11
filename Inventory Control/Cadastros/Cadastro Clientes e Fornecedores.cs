@@ -34,6 +34,7 @@ namespace Inventory_Control
 
         private VerificacaoTextBox VT = new VerificacaoTextBox();
         private VerificacaoDeExistencia VC = new VerificacaoDeExistencia();
+
         private VerificacaoDeExistencia VF = new VerificacaoDeExistencia();
 
         //Preencher os codigo do produto
@@ -41,10 +42,41 @@ namespace Inventory_Control
         private Count CC = new Count();
         private Count CF = new Count();
 
+        //Cancelar Nota Fiscal de Saida
+
+        private DeletarNotaFiscalSaida CNFS = new DeletarNotaFiscalSaida();
+
         public Cadastro_Clientes_e_Fornecedores()
         {
             InitializeComponent();
         }
+
+        #region Mudanca de Tela Verificacao NF Saida
+
+        private void Cadastro_Clientes_e_Fornecedores_Load(object sender, EventArgs e)
+        {
+            if (ConfimarcaoNFSaida.PassouTela == true)
+            {
+                DialogResult OpcaoDoUsuario = new DialogResult();
+                OpcaoDoUsuario = MessageBox.Show("Nota Fiscal de Saida Não Foi Confirmada, Deseja Salva-la?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (OpcaoDoUsuario == DialogResult.No)
+                {
+                    CNFS.CancelarNFSaida(ConfimarcaoNFSaida.NFsaida);
+
+                    MessageBox.Show("Nota Fiscal de Saida Cancelada!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ConfimarcaoNFSaida.PassouTela = false;
+                }
+                if (OpcaoDoUsuario == DialogResult.Yes)
+                {
+                    MessageBox.Show("Nota Fiscal de Saida Confirmada com Sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ConfimarcaoNFSaida.PassouTela = false;
+                }
+            }
+        }
+
+        #endregion Mudanca de Tela Verificacao NF Saida
 
         #region Botão Incluir Cadastro
 

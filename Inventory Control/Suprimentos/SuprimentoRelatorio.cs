@@ -14,10 +14,43 @@ namespace Inventory_Control
     {
         private BuscarDadosRelatorioEntrada BRNFE = new BuscarDadosRelatorioEntrada();
 
+        //Cancelar Nota Fiscal de Saida
+
+        private DeletarNotaFiscalSaida CNFS = new DeletarNotaFiscalSaida();
+
         public SuprimentoRelatorio()
         {
             InitializeComponent();
         }
+
+        #region Mudanca de Tela Verificacao NF Saida
+
+        private void SuprimentoRelatorio_Load(object sender, EventArgs e)
+        {
+            if (ConfimarcaoNFSaida.PassouTela == true)
+            {
+                DialogResult OpcaoDoUsuario = new DialogResult();
+                OpcaoDoUsuario = MessageBox.Show("Nota Fiscal de Saida Não Foi Confirmada, Deseja Salva-la?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (OpcaoDoUsuario == DialogResult.No)
+                {
+                    CNFS.CancelarNFSaida(ConfimarcaoNFSaida.NFsaida);
+
+                    MessageBox.Show("Nota Fiscal de Saida Cancelada!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ConfimarcaoNFSaida.PassouTela = false;
+                }
+                if (OpcaoDoUsuario == DialogResult.Yes)
+                {
+                    MessageBox.Show("Nota Fiscal de Saida Confirmada com Sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ConfimarcaoNFSaida.PassouTela = false;
+                }
+            }
+        }
+
+        #endregion Mudanca de Tela Verificacao NF Saida
+
+        #region Botao Pesquisar
 
         private void btnPesquisa_CadastroCliente_Click(object sender, EventArgs e)
         {
@@ -49,6 +82,10 @@ namespace Inventory_Control
             }
         }
 
+        #endregion Botao Pesquisar
+
+        #region Data Inicial
+
         private void txtDataInicioSuprimentosRelarorio_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
@@ -77,6 +114,10 @@ namespace Inventory_Control
             }
         }
 
+        #endregion Data Inicial
+
+        #region TexBox Data Final
+
         private void txtDataFinalSuprimentosRelarorio_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
@@ -101,5 +142,7 @@ namespace Inventory_Control
                     break;
             }
         }
+
+        #endregion TexBox Data Final
     }
 }

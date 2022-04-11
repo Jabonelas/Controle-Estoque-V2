@@ -738,6 +738,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Cadastro_Clientes_e_Fornecedores";
             this.Text = "C";
+            this.Load += new System.EventHandler(this.Cadastro_Clientes_e_Fornecedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvdCadastroClienteFornecedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

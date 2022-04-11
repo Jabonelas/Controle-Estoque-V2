@@ -223,6 +223,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VendasRelatorio";
             this.Text = "VendasRelatorio";
+            this.Load += new System.EventHandler(this.VendasRelatorio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gdvRelatorioNFSaida_Vendas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

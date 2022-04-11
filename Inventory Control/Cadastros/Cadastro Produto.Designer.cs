@@ -526,6 +526,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Vendas_Nota_Fiscal_Saida";
             this.Text = "Cadastro_Produto";
+            this.Load += new System.EventHandler(this.Vendas_Nota_Fiscal_Saida_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gdvCadastroProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

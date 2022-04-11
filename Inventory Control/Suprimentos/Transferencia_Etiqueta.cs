@@ -35,10 +35,41 @@ namespace Inventory_Control
 
         private BuscarDadosEstoque BEC = new BuscarDadosEstoque(); // Buscar Estoque Codigo do produto por codigo de barras
 
+        //Cancelar Nota Fiscal de Saida
+
+        private DeletarNotaFiscalSaida CNFS = new DeletarNotaFiscalSaida();
+
         public Transferencia_Etiqueta()
         {
             InitializeComponent();
         }
+
+        #region Mudanca de Tela Verificacao NF Saida
+
+        private void Transferencia_Etiqueta_Load(object sender, EventArgs e)
+        {
+            if (ConfimarcaoNFSaida.PassouTela == true)
+            {
+                DialogResult OpcaoDoUsuario = new DialogResult();
+                OpcaoDoUsuario = MessageBox.Show("Nota Fiscal de Saida Não Foi Confirmada, Deseja Salva-la?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (OpcaoDoUsuario == DialogResult.No)
+                {
+                    CNFS.CancelarNFSaida(ConfimarcaoNFSaida.NFsaida);
+
+                    MessageBox.Show("Nota Fiscal de Saida Cancelada!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ConfimarcaoNFSaida.PassouTela = false;
+                }
+                if (OpcaoDoUsuario == DialogResult.Yes)
+                {
+                    MessageBox.Show("Nota Fiscal de Saida Confirmada com Sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ConfimarcaoNFSaida.PassouTela = false;
+                }
+            }
+        }
+
+        #endregion Mudanca de Tela Verificacao NF Saida
 
         #region Etiqueta Origem
 

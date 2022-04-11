@@ -45,10 +45,41 @@ namespace Inventory_Control
 
         private BuscarNotaFiscalEntrada BENFE = new BuscarNotaFiscalEntrada(); // Buscar o Estatus da Nota Fiscal de Entrada
 
+        //Cancelar Nota Fiscal de Saida
+
+        private DeletarNotaFiscalSaida CNFS = new DeletarNotaFiscalSaida();
+
         public SuprimentoNotaDeEntrada()
         {
             InitializeComponent();
         }
+
+        #region Mudanca de Tela Verificacao NF Saida
+
+        private void SuprimentoNotaDeEntrada_Load(object sender, EventArgs e)
+        {
+            if (ConfimarcaoNFSaida.PassouTela == true)
+            {
+                DialogResult OpcaoDoUsuario = new DialogResult();
+                OpcaoDoUsuario = MessageBox.Show("Nota Fiscal de Saida Não Foi Confirmada, Deseja Salva-la?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (OpcaoDoUsuario == DialogResult.No)
+                {
+                    CNFS.CancelarNFSaida(ConfimarcaoNFSaida.NFsaida);
+
+                    MessageBox.Show("Nota Fiscal de Saida Cancelada!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ConfimarcaoNFSaida.PassouTela = false;
+                }
+                if (OpcaoDoUsuario == DialogResult.Yes)
+                {
+                    MessageBox.Show("Nota Fiscal de Saida Confirmada com Sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ConfimarcaoNFSaida.PassouTela = false;
+                }
+            }
+        }
+
+        #endregion Mudanca de Tela Verificacao NF Saida
 
         #region Botão Buscar Nota Fiscal
 

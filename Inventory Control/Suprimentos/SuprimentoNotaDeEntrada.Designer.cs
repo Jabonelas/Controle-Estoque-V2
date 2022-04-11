@@ -289,6 +289,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SuprimentoNotaDeEntrada";
             this.Text = "SuprimentoNotaDeEntrada";
+            this.Load += new System.EventHandler(this.SuprimentoNotaDeEntrada_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gdvNotaFiscal_Suprimento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -27,8 +27,8 @@ namespace Inventory_Control
             {
                 timer1.Enabled = false;
                 this.Visible = false;
-                Forms casa = new Forms();
-                casa.ShowDialog();
+                Login logar = new Login();
+                logar.ShowDialog();
             }
         }
     }

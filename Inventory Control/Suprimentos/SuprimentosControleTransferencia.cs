@@ -33,10 +33,41 @@ namespace Inventory_Control
 
         private BuscarDadosEstoque BCBDV = new BuscarDadosEstoque(); // Buscar o Codigo de Barras da Vez, para poder seguir o FIFO
 
+        //Cancelar Nota Fiscal de Saida
+
+        private DeletarNotaFiscalSaida CNFS = new DeletarNotaFiscalSaida();
+
         public SuprimentosControleTransferencia()
         {
             InitializeComponent();
         }
+
+        #region Mudanca de Tela Verificacao NF Saida
+
+        private void SuprimentosControleTransferencia_Load(object sender, EventArgs e)
+        {
+            if (ConfimarcaoNFSaida.PassouTela == true)
+            {
+                DialogResult OpcaoDoUsuario = new DialogResult();
+                OpcaoDoUsuario = MessageBox.Show("Nota Fiscal de Saida Não Foi Confirmada, Deseja Salva-la?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (OpcaoDoUsuario == DialogResult.No)
+                {
+                    CNFS.CancelarNFSaida(ConfimarcaoNFSaida.NFsaida);
+
+                    MessageBox.Show("Nota Fiscal de Saida Cancelada!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ConfimarcaoNFSaida.PassouTela = false;
+                }
+                if (OpcaoDoUsuario == DialogResult.Yes)
+                {
+                    MessageBox.Show("Nota Fiscal de Saida Confirmada com Sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ConfimarcaoNFSaida.PassouTela = false;
+                }
+            }
+        }
+
+        #endregion Mudanca de Tela Verificacao NF Saida
 
         #region Botão Modificar
 

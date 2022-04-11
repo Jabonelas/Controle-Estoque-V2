@@ -15,6 +15,8 @@ namespace Inventory_Control
         private VerificacaoDeExistencia VNFS = new VerificacaoDeExistencia();
         private VerificacaoDeExistencia BNF = new VerificacaoDeExistencia();
 
+        #region Deletar Nota Fiscal de Saida Já Confirmada
+
         public void DeletarNFSaida(int _nota_Fiscal, Guna2DataGridView _tabela)
         {
             try
@@ -53,5 +55,30 @@ namespace Inventory_Control
                 MessageBox.Show(x.ToString());
             }
         }
+
+        #endregion Deletar Nota Fiscal de Saida Já Confirmada
+
+        #region Cancelar Nota Fiscal de Saida que ainda não foram confirmadas
+
+        public void CancelarNFSaida(int _nota_Fiscal)
+        {
+            try
+            {
+                using (SqlConnection conexaoSQL = AbrirConexao())
+                {
+                    string query = "delete NF_Saida where NF_Saida = @nfsaida";
+                    SqlCommand cmd = new SqlCommand(query, conexaoSQL);
+                    cmd.Parameters.Add("@nfsaida", SqlDbType.VarChar).Value = _nota_Fiscal;
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+        }
+
+        #endregion Cancelar Nota Fiscal de Saida que ainda não foram confirmadas
     }
 }

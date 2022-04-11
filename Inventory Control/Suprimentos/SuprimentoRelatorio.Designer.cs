@@ -223,6 +223,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SuprimentoRelatorio";
             this.Text = "SuprimentoRelatorioGeral";
+            this.Load += new System.EventHandler(this.SuprimentoRelatorio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gdvRelatorioNFEntrada_Suprimento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

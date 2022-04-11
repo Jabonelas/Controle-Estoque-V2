@@ -220,6 +220,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SuprimentoControleBusca";
             this.Text = "SuprimentoControleBusca";
+            this.Load += new System.EventHandler(this.SuprimentoControleBusca_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gdvBuscarEstoque_Suprimentos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

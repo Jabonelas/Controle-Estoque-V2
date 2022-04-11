@@ -121,6 +121,9 @@
   <data name="Cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="enter_512px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enter_512px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="upload_link_document_50px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upload_link_document_50px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -171,5 +174,8 @@
   </data>
   <data name="user_engagement_male_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user_engagement_male_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hide_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hide_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

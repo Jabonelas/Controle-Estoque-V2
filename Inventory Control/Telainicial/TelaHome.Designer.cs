@@ -36,14 +36,15 @@
             // 
             this.guna2DragControl1.TargetControl = this;
             // 
-            // Form2
+            // TelaHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form2";
+            this.Name = "TelaHome";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.TelaHome_Load);
             this.ResumeLayout(false);
 
         }

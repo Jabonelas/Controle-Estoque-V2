@@ -24,3 +24,4 @@ C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Invent
 C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Inventory_Control.Vendas_Nota_Fiscal_Saida.resources
 C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Inventory_Control.Transferencia_Etiqueta.resources
 C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Inventory_Control.ListaEstoque.resources
+C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Inventory_Control.Login.resources

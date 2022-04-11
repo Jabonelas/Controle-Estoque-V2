@@ -74,11 +74,13 @@ namespace Inventory_Control
             if (formPrincipal == "Origem")
             {
                 formTransferencia.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text = gvdListaEstoque.SelectedCells[1].Value.ToString();
+
                 this.Close();
             }
             else if (formPrincipal == "Destino")
             {
                 formTransferencia.txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text = gvdListaEstoque.SelectedCells[1].Value.ToString();
+
                 this.Close();
             }
         }

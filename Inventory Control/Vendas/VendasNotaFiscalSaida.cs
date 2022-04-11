@@ -16,7 +16,7 @@ namespace Inventory_Control
     {
         private InserirNotaFiscalSaida INFS = new InserirNotaFiscalSaida(); // Inserir Nota Fiscal de Saida
 
-        private Count CNFS = new Count(); // Contar Nota Fiscal Saida - gerando o valor da NF saida
+        private Count CONFS = new Count(); // Contar Nota Fiscal Saida - gerando o valor da NF saida
 
         private BuscarNotaFiscalSaida BNFS = new BuscarNotaFiscalSaida(); // Buscar Nota Fiscal Saida
 
@@ -42,10 +42,41 @@ namespace Inventory_Control
 
         private VerificacaoDeExistencia VEC = new VerificacaoDeExistencia(); // Verificar Existencia de Cleinte
 
+        //Cancelar Nota Fiscal de Saida
+
+        private DeletarNotaFiscalSaida CNFS = new DeletarNotaFiscalSaida();
+
         public VendasNotaFiscalSaida()
         {
             InitializeComponent();
         }
+
+        #region Mudanca de Tela Verificacao NF Saida
+
+        private void VendasNotaFiscalSaida_Load(object sender, EventArgs e)
+        {
+            if (ConfimarcaoNFSaida.PassouTela == true)
+            {
+                DialogResult OpcaoDoUsuario = new DialogResult();
+                OpcaoDoUsuario = MessageBox.Show("Nota Fiscal de Saida Não Foi Confirmada, Deseja Salva-la?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (OpcaoDoUsuario == DialogResult.No)
+                {
+                    CNFS.CancelarNFSaida(ConfimarcaoNFSaida.NFsaida);
+
+                    MessageBox.Show("Nota Fiscal de Saida Cancelada!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ConfimarcaoNFSaida.PassouTela = false;
+                }
+                if (OpcaoDoUsuario == DialogResult.Yes)
+                {
+                    MessageBox.Show("Nota Fiscal de Saida Confirmada com Sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ConfimarcaoNFSaida.PassouTela = false;
+                }
+            }
+        }
+
+        #endregion Mudanca de Tela Verificacao NF Saida
 
         #region Bontão Incluir
 
@@ -73,12 +104,16 @@ namespace Inventory_Control
                             {
                                 if (txtNFSaida_VendasNFSaida.Text == "") //gerar o numero da NF de Saida
                                 {
-                                    txtNFSaida_VendasNFSaida.Text = Convert.ToString(CNFS.ContarNFSaidaGerando());
+                                    txtNFSaida_VendasNFSaida.Text = Convert.ToString(CONFS.ContarNFSaidaGerando());
                                 }
                                 else //manter  o numero da NF de Saida que já foi gerado
                                 {
-                                    txtNFSaida_VendasNFSaida.Text = Convert.ToString(CNFS.ContarNFSaidaContinuacao());
+                                    txtNFSaida_VendasNFSaida.Text = Convert.ToString(CONFS.ContarNFSaidaContinuacao());
                                 }
+
+                                ConfimarcaoNFSaida.PassouTela = true;
+
+                                ConfimarcaoNFSaida.NFsaida = Convert.ToInt32(txtNFSaida_VendasNFSaida.Text);
 
                                 AQES.AlterarQuantidadeEstoqueSubtracaoSaida(Convert.ToInt32(txtCodProduto_VendasNFSaida.Text), Convert.ToInt32(txtQuantidade_VendasNFSaida.Text));
 
@@ -195,6 +230,8 @@ namespace Inventory_Control
                     txtCodProduto_VendasNFSaida.Text = "";
                     txtDescricao_VendasNFSaida.Text = "";
                     txtQuantidade_VendasNFSaida.Text = "";
+
+                    ConfimarcaoNFSaida.PassouTela = false;
 
                     object Nothing = null;
                     gdvVendasNFSaida.DataSource = Nothing;

@@ -755,6 +755,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Transferencia_Etiqueta";
             this.Text = "Transferencia_Etiqueta";
+            this.Load += new System.EventHandler(this.Transferencia_Etiqueta_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

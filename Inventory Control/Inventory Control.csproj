@@ -54,6 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuscarUsuario.cs" />
+    <Compile Include="ConfimarcaoNFSaida.cs" />
     <Compile Include="Dados\AlterarDadosEstoque .cs" />
     <Compile Include="Dados\BuscarDadosEstoque .cs" />
     <Compile Include="Dados\BuscarDadosRelatorioSaida.cs" />
@@ -288,6 +290,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user_engagement_male_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enter_512px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hide_24px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
