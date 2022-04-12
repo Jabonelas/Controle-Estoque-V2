@@ -206,6 +206,7 @@
             this.txtNotaFiscal_Suprimento.Name = "txtNotaFiscal_Suprimento";
             this.txtNotaFiscal_Suprimento.PasswordChar = '\0';
             this.txtNotaFiscal_Suprimento.SelectedText = "";
+            this.txtNotaFiscal_Suprimento.ShortcutsEnabled = false;
             this.txtNotaFiscal_Suprimento.Size = new System.Drawing.Size(162, 26);
             this.txtNotaFiscal_Suprimento.TabIndex = 136;
             // 

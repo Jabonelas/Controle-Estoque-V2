@@ -257,6 +257,7 @@
             this.txtCNPJ_CadastroProduto.Name = "txtCNPJ_CadastroProduto";
             this.txtCNPJ_CadastroProduto.PasswordChar = '\0';
             this.txtCNPJ_CadastroProduto.SelectedText = "";
+            this.txtCNPJ_CadastroProduto.ShortcutsEnabled = false;
             this.txtCNPJ_CadastroProduto.Size = new System.Drawing.Size(162, 26);
             this.txtCNPJ_CadastroProduto.TabIndex = 119;
             this.txtCNPJ_CadastroProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCNPJ_CadastroProduto_KeyPress);
@@ -340,6 +341,7 @@
             this.txtDescricao_CadastroProduto.Name = "txtDescricao_CadastroProduto";
             this.txtDescricao_CadastroProduto.PasswordChar = '\0';
             this.txtDescricao_CadastroProduto.SelectedText = "";
+            this.txtDescricao_CadastroProduto.ShortcutsEnabled = false;
             this.txtDescricao_CadastroProduto.Size = new System.Drawing.Size(480, 26);
             this.txtDescricao_CadastroProduto.TabIndex = 143;
             // 
@@ -368,6 +370,7 @@
             this.txtPreco_CadastroProduto.Name = "txtPreco_CadastroProduto";
             this.txtPreco_CadastroProduto.PasswordChar = '\0';
             this.txtPreco_CadastroProduto.SelectedText = "";
+            this.txtPreco_CadastroProduto.ShortcutsEnabled = false;
             this.txtPreco_CadastroProduto.Size = new System.Drawing.Size(162, 26);
             this.txtPreco_CadastroProduto.TabIndex = 147;
             this.txtPreco_CadastroProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPreco_CadastroProduto_KeyPress);
@@ -400,6 +403,7 @@
             this.txtFornecedor_CadastroProduto.Name = "txtFornecedor_CadastroProduto";
             this.txtFornecedor_CadastroProduto.PasswordChar = '\0';
             this.txtFornecedor_CadastroProduto.SelectedText = "";
+            this.txtFornecedor_CadastroProduto.ShortcutsEnabled = false;
             this.txtFornecedor_CadastroProduto.Size = new System.Drawing.Size(162, 26);
             this.txtFornecedor_CadastroProduto.TabIndex = 149;
             // 

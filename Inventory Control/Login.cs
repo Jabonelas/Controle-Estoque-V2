@@ -35,9 +35,10 @@ namespace Inventory_Control
                 if (BUS.Login(txtLogin_Login.Text, txtSenha_Login.Text) == true)
                 {
                     Forms Abrirprograma = new Forms();
-                    Abrirprograma.ShowDialog();
+                    this.Hide();
+                    Abrirprograma.Show();
 
-                    this.Close();
+                    //this.Close();
                 }
                 else
                 {
@@ -73,11 +74,18 @@ namespace Inventory_Control
 
         private void btnMostraSenha_Login_Click(object sender, EventArgs e)
         {
-            txtSenha_Login.UseSystemPasswordChar = false;
-            btnMostraSenha_Login.BackgroundImage =
-            Image.FromFile("C: \\Users\\israe\\source\\repos\\Inventory Control\\Inventory Control\\Resources\\Buscar.png");
+            if (txtSenha_Login.UseSystemPasswordChar == true)
+            {
+                txtSenha_Login.UseSystemPasswordChar = false;
 
-            //btnMostraSenha_Login.Image = Image.FromFile("C: \\Users\\israe\\source\\repos\\Inventory Control\\Inventory Control\\Resources\\Buscar.png");
+                btnMostraSenha_Login.BackgroundImage = Image.FromFile(@"C:\Users\israe\source\repos\Inventory Control\Inventory Control\Resources\eye_30px.png");
+            }
+            else
+            {
+                txtSenha_Login.UseSystemPasswordChar = true;
+
+                btnMostraSenha_Login.BackgroundImage = Image.FromFile(@"C:\Users\israe\source\repos\Inventory Control\Inventory Control\Resources\hide_24px.png");
+            }
         }
 
         #endregion Botao Mostrar Senha

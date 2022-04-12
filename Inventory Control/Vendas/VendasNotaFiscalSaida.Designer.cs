@@ -268,6 +268,7 @@
             this.txtDescricao_VendasNFSaida.PasswordChar = '\0';
             this.txtDescricao_VendasNFSaida.ReadOnly = true;
             this.txtDescricao_VendasNFSaida.SelectedText = "";
+            this.txtDescricao_VendasNFSaida.ShortcutsEnabled = false;
             this.txtDescricao_VendasNFSaida.Size = new System.Drawing.Size(479, 26);
             this.txtDescricao_VendasNFSaida.TabIndex = 120;
             // 
@@ -285,6 +286,7 @@
             this.txtQuantidade_VendasNFSaida.Name = "txtQuantidade_VendasNFSaida";
             this.txtQuantidade_VendasNFSaida.PasswordChar = '\0';
             this.txtQuantidade_VendasNFSaida.SelectedText = "";
+            this.txtQuantidade_VendasNFSaida.ShortcutsEnabled = false;
             this.txtQuantidade_VendasNFSaida.Size = new System.Drawing.Size(90, 26);
             this.txtQuantidade_VendasNFSaida.TabIndex = 122;
             this.txtQuantidade_VendasNFSaida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantidade_VendasNFSaida_KeyPress);
@@ -414,6 +416,7 @@
             this.txtCodProduto_VendasNFSaida.Name = "txtCodProduto_VendasNFSaida";
             this.txtCodProduto_VendasNFSaida.PasswordChar = '\0';
             this.txtCodProduto_VendasNFSaida.SelectedText = "";
+            this.txtCodProduto_VendasNFSaida.ShortcutsEnabled = false;
             this.txtCodProduto_VendasNFSaida.Size = new System.Drawing.Size(162, 26);
             this.txtCodProduto_VendasNFSaida.TabIndex = 161;
             this.txtCodProduto_VendasNFSaida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodProduto_VendasNFSaida_KeyPress);
@@ -432,6 +435,7 @@
             this.txtNFSaida_VendasNFSaida.Name = "txtNFSaida_VendasNFSaida";
             this.txtNFSaida_VendasNFSaida.PasswordChar = '\0';
             this.txtNFSaida_VendasNFSaida.SelectedText = "";
+            this.txtNFSaida_VendasNFSaida.ShortcutsEnabled = false;
             this.txtNFSaida_VendasNFSaida.Size = new System.Drawing.Size(162, 26);
             this.txtNFSaida_VendasNFSaida.TabIndex = 162;
             this.txtNFSaida_VendasNFSaida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNFSaida_VendasNFSaida_KeyPress);
@@ -490,6 +494,7 @@
             this.txtCNPJCliente_VendasNFSaida.Name = "txtCNPJCliente_VendasNFSaida";
             this.txtCNPJCliente_VendasNFSaida.PasswordChar = '\0';
             this.txtCNPJCliente_VendasNFSaida.SelectedText = "";
+            this.txtCNPJCliente_VendasNFSaida.ShortcutsEnabled = false;
             this.txtCNPJCliente_VendasNFSaida.Size = new System.Drawing.Size(162, 26);
             this.txtCNPJCliente_VendasNFSaida.TabIndex = 167;
             this.txtCNPJCliente_VendasNFSaida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCNPJCliente_VendasNFSaida_KeyPress);

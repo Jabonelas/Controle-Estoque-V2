@@ -172,7 +172,7 @@
             this.btnTransferenciaDeEstoque,
             this.btnTransferenciaEntreEtiqueta});
             this.movimentaçãoToolStripMenuItem.Name = "movimentaçãoToolStripMenuItem";
-            this.movimentaçãoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.movimentaçãoToolStripMenuItem.Size = new System.Drawing.Size(165, 24);
             this.movimentaçãoToolStripMenuItem.Text = "Movimentação";
             // 
             // btnTransferenciaDeEstoque
@@ -192,7 +192,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(180, 24);
+            this.btnBuscar.Size = new System.Drawing.Size(165, 24);
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -224,14 +224,14 @@
             // btnNotaFiscalSaida
             // 
             this.btnNotaFiscalSaida.Name = "btnNotaFiscalSaida";
-            this.btnNotaFiscalSaida.Size = new System.Drawing.Size(180, 24);
+            this.btnNotaFiscalSaida.Size = new System.Drawing.Size(169, 24);
             this.btnNotaFiscalSaida.Text = "Nota Fiscal ";
             this.btnNotaFiscalSaida.Click += new System.EventHandler(this.btnNotaFiscalSaida_Click);
             // 
             // btnVendasRelatorio
             // 
             this.btnVendasRelatorio.Name = "btnVendasRelatorio";
-            this.btnVendasRelatorio.Size = new System.Drawing.Size(180, 24);
+            this.btnVendasRelatorio.Size = new System.Drawing.Size(169, 24);
             this.btnVendasRelatorio.Text = "Relatório Saída";
             this.btnVendasRelatorio.Click += new System.EventHandler(this.btnVendasRelatorio_Click);
             // 
@@ -267,6 +267,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Forms";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Forms_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -186,6 +186,7 @@
             this.txtCNPJCadastro.Name = "txtCNPJCadastro";
             this.txtCNPJCadastro.PasswordChar = '\0';
             this.txtCNPJCadastro.SelectedText = "";
+            this.txtCNPJCadastro.ShortcutsEnabled = false;
             this.txtCNPJCadastro.Size = new System.Drawing.Size(162, 26);
             this.txtCNPJCadastro.TabIndex = 116;
             this.txtCNPJCadastro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCNPJCadastro_KeyPress);
@@ -214,6 +215,7 @@
             this.txtNomeFantasiaCadastro.Name = "txtNomeFantasiaCadastro";
             this.txtNomeFantasiaCadastro.PasswordChar = '\0';
             this.txtNomeFantasiaCadastro.SelectedText = "";
+            this.txtNomeFantasiaCadastro.ShortcutsEnabled = false;
             this.txtNomeFantasiaCadastro.Size = new System.Drawing.Size(409, 26);
             this.txtNomeFantasiaCadastro.TabIndex = 119;
             // 
@@ -241,6 +243,7 @@
             this.txtCEPCadastro.Name = "txtCEPCadastro";
             this.txtCEPCadastro.PasswordChar = '\0';
             this.txtCEPCadastro.SelectedText = "";
+            this.txtCEPCadastro.ShortcutsEnabled = false;
             this.txtCEPCadastro.Size = new System.Drawing.Size(162, 26);
             this.txtCEPCadastro.TabIndex = 122;
             this.txtCEPCadastro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCEPCadastro_KeyPress);
@@ -259,6 +262,7 @@
             this.txtCidadeCadastro.Name = "txtCidadeCadastro";
             this.txtCidadeCadastro.PasswordChar = '\0';
             this.txtCidadeCadastro.SelectedText = "";
+            this.txtCidadeCadastro.ShortcutsEnabled = false;
             this.txtCidadeCadastro.Size = new System.Drawing.Size(199, 26);
             this.txtCidadeCadastro.TabIndex = 123;
             // 
@@ -276,6 +280,7 @@
             this.txtEnderecoCadastro.Name = "txtEnderecoCadastro";
             this.txtEnderecoCadastro.PasswordChar = '\0';
             this.txtEnderecoCadastro.SelectedText = "";
+            this.txtEnderecoCadastro.ShortcutsEnabled = false;
             this.txtEnderecoCadastro.Size = new System.Drawing.Size(485, 26);
             this.txtEnderecoCadastro.TabIndex = 124;
             // 
@@ -293,6 +298,7 @@
             this.txtComplementoCadastro.Name = "txtComplementoCadastro";
             this.txtComplementoCadastro.PasswordChar = '\0';
             this.txtComplementoCadastro.SelectedText = "";
+            this.txtComplementoCadastro.ShortcutsEnabled = false;
             this.txtComplementoCadastro.Size = new System.Drawing.Size(485, 26);
             this.txtComplementoCadastro.TabIndex = 125;
             // 
@@ -330,6 +336,7 @@
             this.txtNumeroCadastro.Name = "txtNumeroCadastro";
             this.txtNumeroCadastro.PasswordChar = '\0';
             this.txtNumeroCadastro.SelectedText = "";
+            this.txtNumeroCadastro.ShortcutsEnabled = false;
             this.txtNumeroCadastro.Size = new System.Drawing.Size(93, 26);
             this.txtNumeroCadastro.TabIndex = 130;
             this.txtNumeroCadastro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroCadastro_KeyPress);
@@ -358,6 +365,7 @@
             this.txtBairroCadastro.Name = "txtBairroCadastro";
             this.txtBairroCadastro.PasswordChar = '\0';
             this.txtBairroCadastro.SelectedText = "";
+            this.txtBairroCadastro.ShortcutsEnabled = false;
             this.txtBairroCadastro.Size = new System.Drawing.Size(160, 26);
             this.txtBairroCadastro.TabIndex = 132;
             // 
@@ -578,6 +586,7 @@
             this.txtRazaoSocialCadastro.Name = "txtRazaoSocialCadastro";
             this.txtRazaoSocialCadastro.PasswordChar = '\0';
             this.txtRazaoSocialCadastro.SelectedText = "";
+            this.txtRazaoSocialCadastro.ShortcutsEnabled = false;
             this.txtRazaoSocialCadastro.Size = new System.Drawing.Size(409, 26);
             this.txtRazaoSocialCadastro.TabIndex = 137;
             // 

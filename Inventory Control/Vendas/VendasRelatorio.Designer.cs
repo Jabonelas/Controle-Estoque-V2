@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VendasRelatorio));
             this.gdvRelatorioNFSaida_Vendas = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.txtDataFinal_VendasRelatorio = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.txtDataInicio_VendasRelatorio = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.btnPesquisa_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.dtpDataInicio_Relatorio = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpDataFinal_Relatorio = new Guna.UI2.WinForms.Guna2DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.gdvRelatorioNFSaida_Vendas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,30 +47,30 @@
             this.gdvRelatorioNFSaida_Vendas.AllowUserToAddRows = false;
             this.gdvRelatorioNFSaida_Vendas.AllowUserToDeleteRows = false;
             this.gdvRelatorioNFSaida_Vendas.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.gdvRelatorioNFSaida_Vendas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.White;
+            this.gdvRelatorioNFSaida_Vendas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
             this.gdvRelatorioNFSaida_Vendas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gdvRelatorioNFSaida_Vendas.BackgroundColor = System.Drawing.Color.White;
             this.gdvRelatorioNFSaida_Vendas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gdvRelatorioNFSaida_Vendas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gdvRelatorioNFSaida_Vendas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gdvRelatorioNFSaida_Vendas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gdvRelatorioNFSaida_Vendas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
             this.gdvRelatorioNFSaida_Vendas.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gdvRelatorioNFSaida_Vendas.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gdvRelatorioNFSaida_Vendas.DefaultCellStyle = dataGridViewCellStyle30;
             this.gdvRelatorioNFSaida_Vendas.EnableHeadersVisualStyles = false;
             this.gdvRelatorioNFSaida_Vendas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gdvRelatorioNFSaida_Vendas.Location = new System.Drawing.Point(13, 199);
@@ -99,57 +99,21 @@
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.gdvRelatorioNFSaida_Vendas.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.gdvRelatorioNFSaida_Vendas.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.RowsStyle.Height = 22;
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // txtDataFinal_VendasRelatorio
-            // 
-            this.txtDataFinal_VendasRelatorio.BaseColor = System.Drawing.Color.White;
-            this.txtDataFinal_VendasRelatorio.BorderColor = System.Drawing.Color.Silver;
-            this.txtDataFinal_VendasRelatorio.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDataFinal_VendasRelatorio.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtDataFinal_VendasRelatorio.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
-            this.txtDataFinal_VendasRelatorio.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtDataFinal_VendasRelatorio.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtDataFinal_VendasRelatorio.Location = new System.Drawing.Point(103, 146);
-            this.txtDataFinal_VendasRelatorio.MaxLength = 10;
-            this.txtDataFinal_VendasRelatorio.Name = "txtDataFinal_VendasRelatorio";
-            this.txtDataFinal_VendasRelatorio.PasswordChar = '\0';
-            this.txtDataFinal_VendasRelatorio.SelectedText = "";
-            this.txtDataFinal_VendasRelatorio.Size = new System.Drawing.Size(162, 26);
-            this.txtDataFinal_VendasRelatorio.TabIndex = 153;
-            this.txtDataFinal_VendasRelatorio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDataFinal_VendasRelatorio_KeyPress);
             // 
             // gunaLabel1
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel1.Location = new System.Drawing.Point(10, 157);
+            this.gunaLabel1.Location = new System.Drawing.Point(10, 162);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(62, 15);
             this.gunaLabel1.TabIndex = 152;
             this.gunaLabel1.Tag = "103; 109";
             this.gunaLabel1.Text = "Data Final:";
-            // 
-            // txtDataInicio_VendasRelatorio
-            // 
-            this.txtDataInicio_VendasRelatorio.BaseColor = System.Drawing.Color.White;
-            this.txtDataInicio_VendasRelatorio.BorderColor = System.Drawing.Color.Silver;
-            this.txtDataInicio_VendasRelatorio.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDataInicio_VendasRelatorio.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtDataInicio_VendasRelatorio.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
-            this.txtDataInicio_VendasRelatorio.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtDataInicio_VendasRelatorio.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtDataInicio_VendasRelatorio.Location = new System.Drawing.Point(103, 109);
-            this.txtDataInicio_VendasRelatorio.MaxLength = 10;
-            this.txtDataInicio_VendasRelatorio.Name = "txtDataInicio_VendasRelatorio";
-            this.txtDataInicio_VendasRelatorio.PasswordChar = '\0';
-            this.txtDataInicio_VendasRelatorio.SelectedText = "";
-            this.txtDataInicio_VendasRelatorio.Size = new System.Drawing.Size(162, 26);
-            this.txtDataInicio_VendasRelatorio.TabIndex = 151;
-            this.txtDataInicio_VendasRelatorio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDataInicio_VendasRelatorio_KeyPress);
             // 
             // gunaLabel5
             // 
@@ -208,15 +172,52 @@
             this.btnPesquisa_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnPesquisa_CadastroCliente.Click += new System.EventHandler(this.btnPesquisa_CadastroCliente_Click);
             // 
+            // dtpDataInicio_Relatorio
+            // 
+            this.dtpDataInicio_Relatorio.BackColor = System.Drawing.SystemColors.Control;
+            this.dtpDataInicio_Relatorio.CheckedState.Parent = this.dtpDataInicio_Relatorio;
+            this.dtpDataInicio_Relatorio.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dtpDataInicio_Relatorio.ForeColor = System.Drawing.Color.White;
+            this.dtpDataInicio_Relatorio.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpDataInicio_Relatorio.HoverState.FillColor = System.Drawing.SystemColors.Highlight;
+            this.dtpDataInicio_Relatorio.HoverState.ForeColor = System.Drawing.Color.White;
+            this.dtpDataInicio_Relatorio.HoverState.Parent = this.dtpDataInicio_Relatorio;
+            this.dtpDataInicio_Relatorio.Location = new System.Drawing.Point(91, 96);
+            this.dtpDataInicio_Relatorio.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpDataInicio_Relatorio.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpDataInicio_Relatorio.Name = "dtpDataInicio_Relatorio";
+            this.dtpDataInicio_Relatorio.ShadowDecoration.Parent = this.dtpDataInicio_Relatorio;
+            this.dtpDataInicio_Relatorio.Size = new System.Drawing.Size(229, 36);
+            this.dtpDataInicio_Relatorio.TabIndex = 155;
+            this.dtpDataInicio_Relatorio.Value = new System.DateTime(2022, 4, 11, 22, 17, 20, 615);
+            // 
+            // dtpDataFinal_Relatorio
+            // 
+            this.dtpDataFinal_Relatorio.CheckedState.Parent = this.dtpDataFinal_Relatorio;
+            this.dtpDataFinal_Relatorio.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dtpDataFinal_Relatorio.ForeColor = System.Drawing.Color.White;
+            this.dtpDataFinal_Relatorio.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpDataFinal_Relatorio.HoverState.FillColor = System.Drawing.SystemColors.Highlight;
+            this.dtpDataFinal_Relatorio.HoverState.ForeColor = System.Drawing.Color.White;
+            this.dtpDataFinal_Relatorio.HoverState.Parent = this.dtpDataFinal_Relatorio;
+            this.dtpDataFinal_Relatorio.Location = new System.Drawing.Point(91, 141);
+            this.dtpDataFinal_Relatorio.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpDataFinal_Relatorio.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpDataFinal_Relatorio.Name = "dtpDataFinal_Relatorio";
+            this.dtpDataFinal_Relatorio.ShadowDecoration.Parent = this.dtpDataFinal_Relatorio;
+            this.dtpDataFinal_Relatorio.Size = new System.Drawing.Size(229, 36);
+            this.dtpDataFinal_Relatorio.TabIndex = 156;
+            this.dtpDataFinal_Relatorio.Value = new System.DateTime(2022, 4, 11, 22, 17, 20, 615);
+            // 
             // VendasRelatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1044, 542);
+            this.Controls.Add(this.dtpDataFinal_Relatorio);
+            this.Controls.Add(this.dtpDataInicio_Relatorio);
             this.Controls.Add(this.gdvRelatorioNFSaida_Vendas);
-            this.Controls.Add(this.txtDataFinal_VendasRelatorio);
             this.Controls.Add(this.gunaLabel1);
-            this.Controls.Add(this.txtDataInicio_VendasRelatorio);
             this.Controls.Add(this.gunaLabel5);
             this.Controls.Add(this.gunaLabel4);
             this.Controls.Add(this.btnPesquisa_CadastroCliente);
@@ -233,11 +234,11 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2DataGridView gdvRelatorioNFSaida_Vendas;
-        private Guna.UI.WinForms.GunaTextBox txtDataFinal_VendasRelatorio;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private Guna.UI.WinForms.GunaTextBox txtDataInicio_VendasRelatorio;
         private Guna.UI.WinForms.GunaLabel gunaLabel5;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private Guna.UI.WinForms.GunaAdvenceButton btnPesquisa_CadastroCliente;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpDataInicio_Relatorio;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpDataFinal_Relatorio;
     }
 }

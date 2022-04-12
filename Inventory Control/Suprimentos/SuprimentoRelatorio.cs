@@ -54,95 +54,17 @@ namespace Inventory_Control
 
         private void btnPesquisa_CadastroCliente_Click(object sender, EventArgs e)
         {
-            if (txtDataInicioSuprimentosRelarorio.Text == "" || txtDataFinalSuprimentosRelarorio.Text == "")
+            try
             {
-                MessageBox.Show("Todos os Campos São Obrigatorio!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                BRNFE.BuscarDadosRelatorioNFEntrada(Convert.ToDateTime(dtpDataInicio_Relatorio.Text),
+                Convert.ToDateTime(dtpDataFinal_Relatorio.Text), gdvRelatorioNFEntrada_Suprimento);
             }
-            else
+            catch (Exception x)
             {
-                if (txtDataFinalSuprimentosRelarorio.Text == "")
-                {
-                    txtDataFinalSuprimentosRelarorio.Text = Convert.ToString(DateTime.Today);
-                }
-
-                try
-                {
-                    BRNFE.BuscarDadosRelatorioNFEntrada(Convert.ToDateTime(txtDataInicioSuprimentosRelarorio.Text),
-                    Convert.ToDateTime(txtDataFinalSuprimentosRelarorio.Text), gdvRelatorioNFEntrada_Suprimento);
-
-                    //Zerar os campos
-                    txtDataInicioSuprimentosRelarorio.Text = "";
-                    txtDataFinalSuprimentosRelarorio.Text = "";
-                }
-                catch (Exception)
-                {
-                    //MessageBox.Show(x.ToString());
-                    MessageBox.Show("Formato de Data incorreto!");
-                }
+                MessageBox.Show(x.ToString());
             }
         }
 
         #endregion Botao Pesquisar
-
-        #region Data Inicial
-
-        private void txtDataInicioSuprimentosRelarorio_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
-            {
-                e.Handled = true;
-            }
-
-            if (char.IsNumber(e.KeyChar) == true)
-            {
-                switch (txtDataInicioSuprimentosRelarorio.TextLength)
-                {
-                    case 0:
-                        txtDataInicioSuprimentosRelarorio.Text = "";
-                        break;
-
-                    case 2:
-                        txtDataInicioSuprimentosRelarorio.Text = txtDataInicioSuprimentosRelarorio.Text + "/";
-                        txtDataInicioSuprimentosRelarorio.SelectionStart = 3;
-                        break;
-
-                    case 5:
-                        txtDataInicioSuprimentosRelarorio.Text = txtDataInicioSuprimentosRelarorio.Text + "/";
-                        txtDataInicioSuprimentosRelarorio.SelectionStart = 6;
-                        break;
-                }
-            }
-        }
-
-        #endregion Data Inicial
-
-        #region TexBox Data Final
-
-        private void txtDataFinalSuprimentosRelarorio_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
-            {
-                e.Handled = true;
-            }
-
-            switch (txtDataFinalSuprimentosRelarorio.TextLength)
-            {
-                case 0:
-                    txtDataFinalSuprimentosRelarorio.Text = "";
-                    break;
-
-                case 2:
-                    txtDataFinalSuprimentosRelarorio.Text = txtDataFinalSuprimentosRelarorio.Text + "/";
-                    txtDataFinalSuprimentosRelarorio.SelectionStart = 3;
-                    break;
-
-                case 5:
-                    txtDataFinalSuprimentosRelarorio.Text = txtDataFinalSuprimentosRelarorio.Text + "/";
-                    txtDataFinalSuprimentosRelarorio.SelectionStart = 6;
-                    break;
-            }
-        }
-
-        #endregion TexBox Data Final
     }
 }

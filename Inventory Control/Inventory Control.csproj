@@ -297,5 +297,11 @@
   <ItemGroup>
     <None Include="Resources\hide_24px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hide_24px1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

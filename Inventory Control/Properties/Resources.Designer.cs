@@ -123,6 +123,16 @@ namespace Inventory_Control.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eye_30px {
+            get {
+                object obj = ResourceManager.GetObject("eye_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FundoMenu {
             get {
                 object obj = ResourceManager.GetObject("FundoMenu", resourceCulture);
@@ -136,6 +146,16 @@ namespace Inventory_Control.Properties {
         internal static System.Drawing.Bitmap hide_24px {
             get {
                 object obj = ResourceManager.GetObject("hide_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hide_24px1 {
+            get {
+                object obj = ResourceManager.GetObject("hide_24px1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

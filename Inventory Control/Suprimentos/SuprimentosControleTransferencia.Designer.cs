@@ -71,6 +71,7 @@
             this.txtCodDeBarras_MovimentacaoEstoque.Name = "txtCodDeBarras_MovimentacaoEstoque";
             this.txtCodDeBarras_MovimentacaoEstoque.PasswordChar = '\0';
             this.txtCodDeBarras_MovimentacaoEstoque.SelectedText = "";
+            this.txtCodDeBarras_MovimentacaoEstoque.ShortcutsEnabled = false;
             this.txtCodDeBarras_MovimentacaoEstoque.Size = new System.Drawing.Size(162, 26);
             this.txtCodDeBarras_MovimentacaoEstoque.TabIndex = 119;
             this.txtCodDeBarras_MovimentacaoEstoque.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodDeBarras_MovimentacaoEstoque_KeyPress);

@@ -188,9 +188,11 @@
             this.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Location = new System.Drawing.Point(111, 15);
+            this.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.MaxLength = 10;
             this.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Name = "txtCodDeBarrasOrigem_MovimentacaoEtiqueta";
             this.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.PasswordChar = '\0';
             this.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.SelectedText = "";
+            this.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.ShortcutsEnabled = false;
             this.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Size = new System.Drawing.Size(161, 26);
             this.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.TabIndex = 163;
             this.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodDeBarrasOrigem_MovimentacaoEtiqueta_KeyPress);
@@ -286,6 +288,7 @@
             this.txtTransferirOrigem_MovimentocaoEtiqueta.Name = "txtTransferirOrigem_MovimentocaoEtiqueta";
             this.txtTransferirOrigem_MovimentocaoEtiqueta.PasswordChar = '\0';
             this.txtTransferirOrigem_MovimentocaoEtiqueta.SelectedText = "";
+            this.txtTransferirOrigem_MovimentocaoEtiqueta.ShortcutsEnabled = false;
             this.txtTransferirOrigem_MovimentocaoEtiqueta.Size = new System.Drawing.Size(98, 26);
             this.txtTransferirOrigem_MovimentocaoEtiqueta.TabIndex = 196;
             this.txtTransferirOrigem_MovimentocaoEtiqueta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTransferirOrigem_MovimentocaoEtiqueta_KeyPress);
@@ -538,9 +541,11 @@
             this.txtCodDeBarrasDestino_MovimentacaoEtiqueta.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtCodDeBarrasDestino_MovimentacaoEtiqueta.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCodDeBarrasDestino_MovimentacaoEtiqueta.Location = new System.Drawing.Point(111, 15);
+            this.txtCodDeBarrasDestino_MovimentacaoEtiqueta.MaxLength = 10;
             this.txtCodDeBarrasDestino_MovimentacaoEtiqueta.Name = "txtCodDeBarrasDestino_MovimentacaoEtiqueta";
             this.txtCodDeBarrasDestino_MovimentacaoEtiqueta.PasswordChar = '\0';
             this.txtCodDeBarrasDestino_MovimentacaoEtiqueta.SelectedText = "";
+            this.txtCodDeBarrasDestino_MovimentacaoEtiqueta.ShortcutsEnabled = false;
             this.txtCodDeBarrasDestino_MovimentacaoEtiqueta.Size = new System.Drawing.Size(161, 26);
             this.txtCodDeBarrasDestino_MovimentacaoEtiqueta.TabIndex = 163;
             this.txtCodDeBarrasDestino_MovimentacaoEtiqueta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodDeBarrasDestino_MovimentacaoEtiqueta_KeyPress);

@@ -146,6 +146,7 @@
             this.txtCodProduto_MovimentacaoEtiqueta.Name = "txtCodProduto_MovimentacaoEtiqueta";
             this.txtCodProduto_MovimentacaoEtiqueta.PasswordChar = '\0';
             this.txtCodProduto_MovimentacaoEtiqueta.SelectedText = "";
+            this.txtCodProduto_MovimentacaoEtiqueta.ShortcutsEnabled = false;
             this.txtCodProduto_MovimentacaoEtiqueta.Size = new System.Drawing.Size(161, 26);
             this.txtCodProduto_MovimentacaoEtiqueta.TabIndex = 194;
             this.txtCodProduto_MovimentacaoEtiqueta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodProduto_MovimentacaoEtiqueta_KeyPress);

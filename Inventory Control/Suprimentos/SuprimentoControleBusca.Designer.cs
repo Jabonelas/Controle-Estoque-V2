@@ -39,6 +39,15 @@
             this.txtCodBarras_Buscar = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.gdvBuscarEstoque_Suprimentos = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.NF_Entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo_de_Produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descição = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Local = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor_Unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo_de_Barras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gdvBuscarEstoque_Suprimentos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,11 +106,12 @@
             this.txtCodProduto_Buscar.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
             this.txtCodProduto_Buscar.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtCodProduto_Buscar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCodProduto_Buscar.Location = new System.Drawing.Point(103, 146);
+            this.txtCodProduto_Buscar.Location = new System.Drawing.Point(120, 146);
             this.txtCodProduto_Buscar.MaxLength = 10;
             this.txtCodProduto_Buscar.Name = "txtCodProduto_Buscar";
             this.txtCodProduto_Buscar.PasswordChar = '\0';
             this.txtCodProduto_Buscar.SelectedText = "";
+            this.txtCodProduto_Buscar.ShortcutsEnabled = false;
             this.txtCodProduto_Buscar.Size = new System.Drawing.Size(162, 26);
             this.txtCodProduto_Buscar.TabIndex = 151;
             // 
@@ -124,11 +134,12 @@
             this.txtCodBarras_Buscar.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
             this.txtCodBarras_Buscar.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtCodBarras_Buscar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCodBarras_Buscar.Location = new System.Drawing.Point(103, 109);
+            this.txtCodBarras_Buscar.Location = new System.Drawing.Point(120, 106);
             this.txtCodBarras_Buscar.MaxLength = 10;
             this.txtCodBarras_Buscar.Name = "txtCodBarras_Buscar";
             this.txtCodBarras_Buscar.PasswordChar = '\0';
             this.txtCodBarras_Buscar.SelectedText = "";
+            this.txtCodBarras_Buscar.ShortcutsEnabled = false;
             this.txtCodBarras_Buscar.Size = new System.Drawing.Size(162, 26);
             this.txtCodBarras_Buscar.TabIndex = 149;
             // 
@@ -163,6 +174,16 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gdvBuscarEstoque_Suprimentos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gdvBuscarEstoque_Suprimentos.ColumnHeadersHeight = 30;
+            this.gdvBuscarEstoque_Suprimentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NF_Entrada,
+            this.Codigo_de_Produto,
+            this.Lote,
+            this.Descição,
+            this.Quantidade,
+            this.Local,
+            this.Valor_Unitario,
+            this.Valor_Total,
+            this.Codigo_de_Barras});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -173,7 +194,7 @@
             this.gdvBuscarEstoque_Suprimentos.DefaultCellStyle = dataGridViewCellStyle3;
             this.gdvBuscarEstoque_Suprimentos.EnableHeadersVisualStyles = false;
             this.gdvBuscarEstoque_Suprimentos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gdvBuscarEstoque_Suprimentos.Location = new System.Drawing.Point(13, 194);
+            this.gdvBuscarEstoque_Suprimentos.Location = new System.Drawing.Point(34, 194);
             this.gdvBuscarEstoque_Suprimentos.MultiSelect = false;
             this.gdvBuscarEstoque_Suprimentos.Name = "gdvBuscarEstoque_Suprimentos";
             this.gdvBuscarEstoque_Suprimentos.ReadOnly = true;
@@ -204,6 +225,69 @@
             this.gdvBuscarEstoque_Suprimentos.ThemeStyle.RowsStyle.Height = 22;
             this.gdvBuscarEstoque_Suprimentos.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gdvBuscarEstoque_Suprimentos.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // NF_Entrada
+            // 
+            this.NF_Entrada.DataPropertyName = "NF_Entrada";
+            this.NF_Entrada.HeaderText = "NF Entrada";
+            this.NF_Entrada.Name = "NF_Entrada";
+            this.NF_Entrada.ReadOnly = true;
+            // 
+            // Codigo_de_Produto
+            // 
+            this.Codigo_de_Produto.DataPropertyName = "Cod_Produto";
+            this.Codigo_de_Produto.HeaderText = "Codigo de Produto";
+            this.Codigo_de_Produto.Name = "Codigo_de_Produto";
+            this.Codigo_de_Produto.ReadOnly = true;
+            // 
+            // Lote
+            // 
+            this.Lote.DataPropertyName = "Lote";
+            this.Lote.HeaderText = "Lote";
+            this.Lote.Name = "Lote";
+            this.Lote.ReadOnly = true;
+            // 
+            // Descição
+            // 
+            this.Descição.DataPropertyName = "Descricao";
+            this.Descição.HeaderText = "Descrição ";
+            this.Descição.Name = "Descição";
+            this.Descição.ReadOnly = true;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.DataPropertyName = "Quantidade";
+            this.Quantidade.HeaderText = "Quantidade";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
+            // 
+            // Local
+            // 
+            this.Local.DataPropertyName = "Local";
+            this.Local.HeaderText = "Local";
+            this.Local.Name = "Local";
+            this.Local.ReadOnly = true;
+            // 
+            // Valor_Unitario
+            // 
+            this.Valor_Unitario.DataPropertyName = "Valor_Unitario";
+            this.Valor_Unitario.HeaderText = "Valor Unitario";
+            this.Valor_Unitario.Name = "Valor_Unitario";
+            this.Valor_Unitario.ReadOnly = true;
+            // 
+            // Valor_Total
+            // 
+            this.Valor_Total.DataPropertyName = "Valor_Total";
+            this.Valor_Total.HeaderText = "Valor Total";
+            this.Valor_Total.Name = "Valor_Total";
+            this.Valor_Total.ReadOnly = true;
+            // 
+            // Codigo_de_Barras
+            // 
+            this.Codigo_de_Barras.DataPropertyName = "Cod_de_Barras";
+            this.Codigo_de_Barras.HeaderText = "Codigo de Barras";
+            this.Codigo_de_Barras.Name = "Codigo_de_Barras";
+            this.Codigo_de_Barras.ReadOnly = true;
             // 
             // SuprimentoControleBusca
             // 
@@ -236,5 +320,14 @@
         private Guna.UI.WinForms.GunaTextBox txtCodBarras_Buscar;
         private Guna.UI.WinForms.GunaLabel gunaLabel5;
         private Guna.UI2.WinForms.Guna2DataGridView gdvBuscarEstoque_Suprimentos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NF_Entrada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo_de_Produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lote;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descição;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Local;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor_Unitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor_Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo_de_Barras;
     }
 }

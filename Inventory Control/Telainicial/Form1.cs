@@ -84,5 +84,10 @@ namespace Inventory_Control
         {
             loadform(new VendasRelatorio());
         }
+
+        private void Forms_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

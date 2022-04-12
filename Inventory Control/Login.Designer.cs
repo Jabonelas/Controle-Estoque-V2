@@ -60,6 +60,7 @@
             this.txtLogin_Login.Name = "txtLogin_Login";
             this.txtLogin_Login.PasswordChar = '\0';
             this.txtLogin_Login.SelectedText = "";
+            this.txtLogin_Login.ShortcutsEnabled = false;
             this.txtLogin_Login.Size = new System.Drawing.Size(200, 26);
             this.txtLogin_Login.TabIndex = 195;
             this.txtLogin_Login.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLogin_Login_KeyPress);
@@ -78,6 +79,7 @@
             this.txtSenha_Login.Name = "txtSenha_Login";
             this.txtSenha_Login.PasswordChar = '\0';
             this.txtSenha_Login.SelectedText = "";
+            this.txtSenha_Login.ShortcutsEnabled = false;
             this.txtSenha_Login.Size = new System.Drawing.Size(200, 26);
             this.txtSenha_Login.TabIndex = 196;
             this.txtSenha_Login.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha_Login_KeyPress);
@@ -158,7 +160,7 @@
             this.btnMostraSenha_Login.AnimationHoverSpeed = 0.4F;
             this.btnMostraSenha_Login.AnimationSpeed = 0.03F;
             this.btnMostraSenha_Login.BackColor = System.Drawing.Color.Transparent;
-            this.btnMostraSenha_Login.BackgroundImage = global::Inventory_Control.Properties.Resources.hide_24px;
+            this.btnMostraSenha_Login.BackgroundImage = global::Inventory_Control.Properties.Resources.hide_24px1;
             this.btnMostraSenha_Login.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMostraSenha_Login.BaseColor = System.Drawing.Color.Transparent;
             this.btnMostraSenha_Login.BorderColor = System.Drawing.Color.Black;
