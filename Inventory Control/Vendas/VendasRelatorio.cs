@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bunifu.DataViz.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,9 +15,11 @@ namespace Inventory_Control
     {
         private BuscarDadosRelatorioSaida BRNFS = new BuscarDadosRelatorioSaida(); // Buscar Relatorio de Nota Fiscal de Saida
 
-        //Cancelar Nota Fiscal de Saida
+        private BuscarDadosRelatorioSaida BRSG = new BuscarDadosRelatorioSaida(); // Buscar Relatorio de Saida para preencher o Grafico
 
-        private DeletarNotaFiscalSaida CNFS = new DeletarNotaFiscalSaida();
+        private DeletarNotaFiscalSaida CNFS = new DeletarNotaFiscalSaida(); // Cancelar Nota Fiscal de Saida
+
+        private DataPoint dataPoint;
 
         public VendasRelatorio()
         {
@@ -56,8 +59,33 @@ namespace Inventory_Control
         {
             try
             {
-                BRNFS.BuscarDadosRelatorioNFEntrada(Convert.ToDateTime(dtpDataInicio_Relatorio.Text),
+                BRNFS.BuscarDadosRelatorioNFSaida(Convert.ToDateTime(dtpDataInicio_Relatorio.Text),
                 Convert.ToDateTime(dtpDataFinal_Relatorio.Text), gdvRelatorioNFSaida_Vendas);
+
+                dataPoint = new DataPoint(BunifuDataViz._type.Bunifu_spline);
+
+                Canvas canvas = new Canvas();
+
+                foreach (var Cod_Produto in BRSG.BuscarDadosRelatorioNFSaidaGraficoCod_Produto(Convert.ToDateTime(dtpDataInicio_Relatorio.Text),
+                Convert.ToDateTime(dtpDataFinal_Relatorio.Text)))
+                {
+                    foreach (var QUANT in BRSG.BuscarDadosRelatorioNFSaidaGraficoQuant(Convert.ToDateTime(dtpDataInicio_Relatorio.Text),
+                    Convert.ToDateTime(dtpDataFinal_Relatorio.Text), Cod_Produto))
+                    {
+                        dataPoint.addLabely(Cod_Produto.ToString(), QUANT);
+
+                        GraficoSaida.colorSet.Add(Color.Aqua);
+
+                        canvas.addData(dataPoint);
+
+                        //Grafico.Title = "Top 10 Produtos Com Maior Entrada";
+
+                        break;
+                    }
+
+                    //break;
+                }
+                GraficoSaida.Render(canvas);
             }
             catch (Exception x)
             {

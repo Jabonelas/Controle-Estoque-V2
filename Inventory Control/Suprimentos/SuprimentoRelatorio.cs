@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bunifu.DataViz.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,13 @@ namespace Inventory_Control
 {
     public partial class SuprimentoRelatorio : Form
     {
-        private BuscarDadosRelatorioEntrada BRNFE = new BuscarDadosRelatorioEntrada();
+        private BuscarDadosRelatorioEntrada BRNFE = new BuscarDadosRelatorioEntrada(); // Buscar Relatorio Nota Fiscal Entrada
 
-        //Cancelar Nota Fiscal de Saida
+        private BuscarDadosRelatorioEntrada BREG = new BuscarDadosRelatorioEntrada(); // Buscar Relatorio de Entrada para preencher o Grafico
 
-        private DeletarNotaFiscalSaida CNFS = new DeletarNotaFiscalSaida();
+        private DeletarNotaFiscalSaida CNFS = new DeletarNotaFiscalSaida(); // Cancelar Nota Fiscal de Saida
+
+        private DataPoint dataPoint;
 
         public SuprimentoRelatorio()
         {
@@ -58,6 +61,31 @@ namespace Inventory_Control
             {
                 BRNFE.BuscarDadosRelatorioNFEntrada(Convert.ToDateTime(dtpDataInicio_Relatorio.Text),
                 Convert.ToDateTime(dtpDataFinal_Relatorio.Text), gdvRelatorioNFEntrada_Suprimento);
+
+                dataPoint = new DataPoint(BunifuDataViz._type.Bunifu_spline);
+
+                Canvas canvas = new Canvas();
+
+                foreach (var Cod_Produto in BREG.BuscarDadosRelatorioNFEntradaGraficoCod_Produto(Convert.ToDateTime(dtpDataInicio_Relatorio.Text),
+                Convert.ToDateTime(dtpDataFinal_Relatorio.Text)))
+                {
+                    foreach (var QUANT in BREG.BuscarDadosRelatorioNFEntradaGraficoQuant(Convert.ToDateTime(dtpDataInicio_Relatorio.Text),
+                    Convert.ToDateTime(dtpDataFinal_Relatorio.Text), Cod_Produto))
+                    {
+                        dataPoint.addLabely(Cod_Produto.ToString(), QUANT);
+
+                        GraficoEntrada.colorSet.Add(Color.Aqua);
+
+                        canvas.addData(dataPoint);
+
+                        //Grafico.Title = "Top 10 Produtos Com Maior Entrada";
+
+                        break;
+                    }
+
+                    //break;
+                }
+                GraficoEntrada.Render(canvas);
             }
             catch (Exception x)
             {

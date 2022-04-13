@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VendasRelatorio));
             this.gdvRelatorioNFSaida_Vendas = new Guna.UI2.WinForms.Guna2DataGridView();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
@@ -39,6 +39,10 @@
             this.btnPesquisa_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
             this.dtpDataInicio_Relatorio = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpDataFinal_Relatorio = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.GraficoSaida = new Bunifu.DataViz.WinForms.BunifuDataViz();
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gdvRelatorioNFSaida_Vendas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,39 +51,39 @@
             this.gdvRelatorioNFSaida_Vendas.AllowUserToAddRows = false;
             this.gdvRelatorioNFSaida_Vendas.AllowUserToDeleteRows = false;
             this.gdvRelatorioNFSaida_Vendas.AllowUserToResizeRows = false;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.White;
-            this.gdvRelatorioNFSaida_Vendas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.gdvRelatorioNFSaida_Vendas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gdvRelatorioNFSaida_Vendas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gdvRelatorioNFSaida_Vendas.BackgroundColor = System.Drawing.Color.White;
             this.gdvRelatorioNFSaida_Vendas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gdvRelatorioNFSaida_Vendas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gdvRelatorioNFSaida_Vendas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gdvRelatorioNFSaida_Vendas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gdvRelatorioNFSaida_Vendas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gdvRelatorioNFSaida_Vendas.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gdvRelatorioNFSaida_Vendas.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gdvRelatorioNFSaida_Vendas.DefaultCellStyle = dataGridViewCellStyle3;
             this.gdvRelatorioNFSaida_Vendas.EnableHeadersVisualStyles = false;
             this.gdvRelatorioNFSaida_Vendas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gdvRelatorioNFSaida_Vendas.Location = new System.Drawing.Point(13, 199);
+            this.gdvRelatorioNFSaida_Vendas.Location = new System.Drawing.Point(13, 339);
             this.gdvRelatorioNFSaida_Vendas.MultiSelect = false;
             this.gdvRelatorioNFSaida_Vendas.Name = "gdvRelatorioNFSaida_Vendas";
             this.gdvRelatorioNFSaida_Vendas.ReadOnly = true;
             this.gdvRelatorioNFSaida_Vendas.RowHeadersVisible = false;
             this.gdvRelatorioNFSaida_Vendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gdvRelatorioNFSaida_Vendas.Size = new System.Drawing.Size(1131, 331);
+            this.gdvRelatorioNFSaida_Vendas.Size = new System.Drawing.Size(1019, 191);
             this.gdvRelatorioNFSaida_Vendas.TabIndex = 154;
             this.gdvRelatorioNFSaida_Vendas.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -209,11 +213,76 @@
             this.dtpDataFinal_Relatorio.TabIndex = 156;
             this.dtpDataFinal_Relatorio.Value = new System.DateTime(2022, 4, 11, 22, 17, 20, 615);
             // 
+            // GraficoSaida
+            // 
+            this.GraficoSaida.animationEnabled = false;
+            this.GraficoSaida.AxisLineColor = System.Drawing.Color.Silver;
+            this.GraficoSaida.AxisXFontColor = System.Drawing.Color.White;
+            this.GraficoSaida.AxisXGridColor = System.Drawing.Color.White;
+            this.GraficoSaida.AxisXGridThickness = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.GraficoSaida.AxisYFontColor = System.Drawing.Color.White;
+            this.GraficoSaida.AxisYGridColor = System.Drawing.Color.White;
+            this.GraficoSaida.AxisYGridThickness = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.GraficoSaida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.GraficoSaida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GraficoSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GraficoSaida.ForeColor = System.Drawing.Color.Red;
+            this.GraficoSaida.Location = new System.Drawing.Point(423, 28);
+            this.GraficoSaida.Name = "GraficoSaida";
+            this.GraficoSaida.Size = new System.Drawing.Size(609, 265);
+            this.GraficoSaida.TabIndex = 157;
+            this.GraficoSaida.Theme = Bunifu.DataViz.WinForms.BunifuDataViz._theme.theme1;
+            this.GraficoSaida.Title = "";
+            // 
+            // gunaLabel2
+            // 
+            this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel2.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel2.Location = new System.Drawing.Point(599, 28);
+            this.gunaLabel2.Name = "gunaLabel2";
+            this.gunaLabel2.Size = new System.Drawing.Size(288, 25);
+            this.gunaLabel2.TabIndex = 158;
+            this.gunaLabel2.Text = "Top 5 Produtos Com Maior Saida";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(420, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 16);
+            this.label1.TabIndex = 159;
+            this.label1.Text = "Quantidade";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(691, 296);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 16);
+            this.label2.TabIndex = 160;
+            this.label2.Text = "Codigo do Produto";
+            // 
             // VendasRelatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1044, 542);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.gunaLabel2);
+            this.Controls.Add(this.GraficoSaida);
             this.Controls.Add(this.dtpDataFinal_Relatorio);
             this.Controls.Add(this.dtpDataInicio_Relatorio);
             this.Controls.Add(this.gdvRelatorioNFSaida_Vendas);
@@ -240,5 +309,9 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnPesquisa_CadastroCliente;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpDataInicio_Relatorio;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpDataFinal_Relatorio;
+        private Bunifu.DataViz.WinForms.BunifuDataViz GraficoSaida;
+        private Guna.UI.WinForms.GunaLabel gunaLabel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

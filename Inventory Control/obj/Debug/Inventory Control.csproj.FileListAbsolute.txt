@@ -25,3 +25,10 @@ C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Invent
 C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Inventory_Control.Transferencia_Etiqueta.resources
 C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Inventory_Control.ListaEstoque.resources
 C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Inventory_Control.Login.resources
+C:\Users\israe\source\repos\Inventory Control\Inventory Control\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll
+C:\Users\israe\source\repos\Inventory Control\Inventory Control\bin\Debug\Bunifu.Licensing.dll
+C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Inventory Control.exe.config
+C:\Users\israe\source\repos\Inventory Control\Inventory Control\obj\Debug\Inventory Control.exe.licenses
+C:\Users\israe\source\repos\Inventory Control\Inventory Control\bin\Debug\BunifuDataViz.dll
+C:\Users\israe\source\repos\Inventory Control\Inventory Control\bin\Debug\Bunifu.Core.dll
+C:\Users\israe\source\repos\Inventory Control\Inventory Control\bin\Debug\BunifuDataViz.xml
