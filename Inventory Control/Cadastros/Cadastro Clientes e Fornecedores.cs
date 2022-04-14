@@ -477,5 +477,77 @@ namespace Inventory_Control
         }
 
         #endregion TextBox Numero
+
+        #region TextBox Endereco
+
+        private void txtEnderecoCadastro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
+        }
+
+        #endregion TextBox Endereco
+
+        #region TextBox Complemento
+
+        private void txtComplementoCadastro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
+        }
+
+        #endregion TextBox Complemento
+
+        #region TextBox Nome Fantasia
+
+        private void txtNomeFantasiaCadastro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
+        }
+
+        #endregion TextBox Nome Fantasia
+
+        #region TextBox RAzao Social
+
+        private void txtRazaoSocialCadastro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
+        }
+
+        #endregion TextBox RAzao Social
+
+        #region TextBox Cidade
+
+        private void txtCidadeCadastro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
+        }
+
+        #endregion TextBox Cidade
+
+        #region TextBox Bairro
+
+        private void txtBairroCadastro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
+        }
+
+        #endregion TextBox Bairro
     }
 }

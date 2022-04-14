@@ -47,6 +47,14 @@
             this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
             this.gdvVendasNFSaida = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.NF_Saida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cod_Produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Emissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtDataDeEmissao_VendasNFSaida = new System.Windows.Forms.TextBox();
             this.gunaLabel10 = new Guna.UI.WinForms.GunaLabel();
             this.txtCodProduto_VendasNFSaida = new Guna.UI.WinForms.GunaTextBox();
@@ -142,7 +150,7 @@
             this.btnPesquisa_CadastroCliente.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnPesquisa_CadastroCliente.OnPressedColor = System.Drawing.Color.Black;
             this.btnPesquisa_CadastroCliente.Size = new System.Drawing.Size(44, 47);
-            this.btnPesquisa_CadastroCliente.TabIndex = 112;
+            this.btnPesquisa_CadastroCliente.TabIndex = 8;
             this.btnPesquisa_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnPesquisa_CadastroCliente.Click += new System.EventHandler(this.btnPesquisa_CadastroCliente_Click);
             // 
@@ -178,7 +186,7 @@
             this.btnExcluir_CadastroCliente.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnExcluir_CadastroCliente.OnPressedColor = System.Drawing.Color.Black;
             this.btnExcluir_CadastroCliente.Size = new System.Drawing.Size(44, 47);
-            this.btnExcluir_CadastroCliente.TabIndex = 111;
+            this.btnExcluir_CadastroCliente.TabIndex = 7;
             this.btnExcluir_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExcluir_CadastroCliente.Click += new System.EventHandler(this.btnExcluir_CadastroCliente_Click);
             // 
@@ -214,7 +222,7 @@
             this.btnModificar_CadastroCliente.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnModificar_CadastroCliente.OnPressedColor = System.Drawing.Color.Black;
             this.btnModificar_CadastroCliente.Size = new System.Drawing.Size(44, 47);
-            this.btnModificar_CadastroCliente.TabIndex = 110;
+            this.btnModificar_CadastroCliente.TabIndex = 6;
             this.btnModificar_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnModificar_CadastroCliente.Click += new System.EventHandler(this.btnModificar_CadastroCliente_Click);
             // 
@@ -250,7 +258,7 @@
             this.btnIncluir_CadastroCliente.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnIncluir_CadastroCliente.OnPressedColor = System.Drawing.Color.Black;
             this.btnIncluir_CadastroCliente.Size = new System.Drawing.Size(44, 47);
-            this.btnIncluir_CadastroCliente.TabIndex = 109;
+            this.btnIncluir_CadastroCliente.TabIndex = 5;
             this.btnIncluir_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnIncluir_CadastroCliente.Click += new System.EventHandler(this.btnIncluir_CadastroCliente_Click);
             // 
@@ -270,7 +278,8 @@
             this.txtDescricao_VendasNFSaida.SelectedText = "";
             this.txtDescricao_VendasNFSaida.ShortcutsEnabled = false;
             this.txtDescricao_VendasNFSaida.Size = new System.Drawing.Size(479, 26);
-            this.txtDescricao_VendasNFSaida.TabIndex = 120;
+            this.txtDescricao_VendasNFSaida.TabIndex = 3;
+            this.txtDescricao_VendasNFSaida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescricao_VendasNFSaida_KeyPress);
             // 
             // txtQuantidade_VendasNFSaida
             // 
@@ -288,7 +297,7 @@
             this.txtQuantidade_VendasNFSaida.SelectedText = "";
             this.txtQuantidade_VendasNFSaida.ShortcutsEnabled = false;
             this.txtQuantidade_VendasNFSaida.Size = new System.Drawing.Size(90, 26);
-            this.txtQuantidade_VendasNFSaida.TabIndex = 122;
+            this.txtQuantidade_VendasNFSaida.TabIndex = 4;
             this.txtQuantidade_VendasNFSaida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantidade_VendasNFSaida_KeyPress);
             // 
             // gunaLabel7
@@ -342,6 +351,15 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gdvVendasNFSaida.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gdvVendasNFSaida.ColumnHeadersHeight = 30;
+            this.gdvVendasNFSaida.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NF_Saida,
+            this.Cod_Produto,
+            this.Lote,
+            this.Descricao,
+            this.Valor,
+            this.Quantidade,
+            this.Emissao,
+            this.Estatus});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -358,7 +376,7 @@
             this.gdvVendasNFSaida.ReadOnly = true;
             this.gdvVendasNFSaida.RowHeadersVisible = false;
             this.gdvVendasNFSaida.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gdvVendasNFSaida.Size = new System.Drawing.Size(1131, 215);
+            this.gdvVendasNFSaida.Size = new System.Drawing.Size(975, 215);
             this.gdvVendasNFSaida.TabIndex = 128;
             this.gdvVendasNFSaida.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.gdvVendasNFSaida.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -382,6 +400,62 @@
             this.gdvVendasNFSaida.ThemeStyle.RowsStyle.Height = 22;
             this.gdvVendasNFSaida.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gdvVendasNFSaida.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // NF_Saida
+            // 
+            this.NF_Saida.DataPropertyName = "NF_Saida";
+            this.NF_Saida.HeaderText = "Nota Fiscal";
+            this.NF_Saida.Name = "NF_Saida";
+            this.NF_Saida.ReadOnly = true;
+            // 
+            // Cod_Produto
+            // 
+            this.Cod_Produto.DataPropertyName = "Cod_Produto";
+            this.Cod_Produto.HeaderText = "Codigo Produto";
+            this.Cod_Produto.Name = "Cod_Produto";
+            this.Cod_Produto.ReadOnly = true;
+            // 
+            // Lote
+            // 
+            this.Lote.DataPropertyName = "Lote";
+            this.Lote.HeaderText = "Lote";
+            this.Lote.Name = "Lote";
+            this.Lote.ReadOnly = true;
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "Descricao";
+            this.Descricao.HeaderText = "Descricao";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            // 
+            // Valor
+            // 
+            this.Valor.DataPropertyName = "Valor";
+            this.Valor.HeaderText = "Valor";
+            this.Valor.Name = "Valor";
+            this.Valor.ReadOnly = true;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.DataPropertyName = "Quantidade";
+            this.Quantidade.HeaderText = "Quantidade";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
+            // 
+            // Emissao
+            // 
+            this.Emissao.DataPropertyName = "Emissao";
+            this.Emissao.HeaderText = "Emissao";
+            this.Emissao.Name = "Emissao";
+            this.Emissao.ReadOnly = true;
+            // 
+            // Estatus
+            // 
+            this.Estatus.DataPropertyName = "Estatus";
+            this.Estatus.HeaderText = "Estatus";
+            this.Estatus.Name = "Estatus";
+            this.Estatus.ReadOnly = true;
             // 
             // txtDataDeEmissao_VendasNFSaida
             // 
@@ -418,7 +492,7 @@
             this.txtCodProduto_VendasNFSaida.SelectedText = "";
             this.txtCodProduto_VendasNFSaida.ShortcutsEnabled = false;
             this.txtCodProduto_VendasNFSaida.Size = new System.Drawing.Size(162, 26);
-            this.txtCodProduto_VendasNFSaida.TabIndex = 161;
+            this.txtCodProduto_VendasNFSaida.TabIndex = 2;
             this.txtCodProduto_VendasNFSaida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodProduto_VendasNFSaida_KeyPress);
             // 
             // txtNFSaida_VendasNFSaida
@@ -437,7 +511,7 @@
             this.txtNFSaida_VendasNFSaida.SelectedText = "";
             this.txtNFSaida_VendasNFSaida.ShortcutsEnabled = false;
             this.txtNFSaida_VendasNFSaida.Size = new System.Drawing.Size(162, 26);
-            this.txtNFSaida_VendasNFSaida.TabIndex = 162;
+            this.txtNFSaida_VendasNFSaida.TabIndex = 1;
             this.txtNFSaida_VendasNFSaida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNFSaida_VendasNFSaida_KeyPress);
             // 
             // label1
@@ -496,7 +570,7 @@
             this.txtCNPJCliente_VendasNFSaida.SelectedText = "";
             this.txtCNPJCliente_VendasNFSaida.ShortcutsEnabled = false;
             this.txtCNPJCliente_VendasNFSaida.Size = new System.Drawing.Size(162, 26);
-            this.txtCNPJCliente_VendasNFSaida.TabIndex = 167;
+            this.txtCNPJCliente_VendasNFSaida.TabIndex = 0;
             this.txtCNPJCliente_VendasNFSaida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCNPJCliente_VendasNFSaida_KeyPress);
             // 
             // label4
@@ -513,7 +587,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 542);
+            this.ClientSize = new System.Drawing.Size(1000, 542);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCNPJCliente_VendasNFSaida);
             this.Controls.Add(this.gunaLabel6);
@@ -576,5 +650,13 @@
         private Guna.UI.WinForms.GunaTextBox txtCNPJCliente_VendasNFSaida;
         private System.Windows.Forms.Label label4;
         public Guna.UI.WinForms.GunaTextBox txtNFSaida_VendasNFSaida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NF_Saida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cod_Produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lote;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Emissao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estatus;
     }
 }

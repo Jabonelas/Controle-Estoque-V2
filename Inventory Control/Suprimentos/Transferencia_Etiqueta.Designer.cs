@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Transferencia_Etiqueta));
             this.txtCodDaProdutoOrigem_MovimentacaoEtiqueta = new System.Windows.Forms.TextBox();
             this.txtLocalOrigem_MovimentacaoEtiqueta = new System.Windows.Forms.TextBox();
@@ -73,6 +73,15 @@
             this.txtLocalDestino_MovimentacaoEtiqueta = new System.Windows.Forms.TextBox();
             this.txtCodDaProdutoDestino_MovimentacaoEtiqueta = new System.Windows.Forms.TextBox();
             this.gvdMovimentacaoEtiqueta = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.NF_Entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cod_Produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Local = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor_Unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cod_de_Barras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.btnModificar_CadastroCliente = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -194,7 +203,7 @@
             this.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.SelectedText = "";
             this.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.ShortcutsEnabled = false;
             this.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Size = new System.Drawing.Size(161, 26);
-            this.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.TabIndex = 163;
+            this.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.TabIndex = 0;
             this.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodDeBarrasOrigem_MovimentacaoEtiqueta_KeyPress);
             // 
             // gunaLabel5
@@ -252,7 +261,7 @@
             this.panel1.Location = new System.Drawing.Point(102, 112);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(344, 295);
-            this.panel1.TabIndex = 189;
+            this.panel1.TabIndex = 0;
             // 
             // label3
             // 
@@ -272,7 +281,7 @@
             this.label1.Location = new System.Drawing.Point(271, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 24);
-            this.label1.TabIndex = 194;
+            this.label1.TabIndex = 13;
             // 
             // txtTransferirOrigem_MovimentocaoEtiqueta
             // 
@@ -290,7 +299,7 @@
             this.txtTransferirOrigem_MovimentocaoEtiqueta.SelectedText = "";
             this.txtTransferirOrigem_MovimentocaoEtiqueta.ShortcutsEnabled = false;
             this.txtTransferirOrigem_MovimentocaoEtiqueta.Size = new System.Drawing.Size(98, 26);
-            this.txtTransferirOrigem_MovimentocaoEtiqueta.TabIndex = 196;
+            this.txtTransferirOrigem_MovimentocaoEtiqueta.TabIndex = 4;
             this.txtTransferirOrigem_MovimentocaoEtiqueta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTransferirOrigem_MovimentocaoEtiqueta_KeyPress);
             // 
             // btnBuscarListaOrigem
@@ -325,7 +334,7 @@
             this.btnBuscarListaOrigem.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnBuscarListaOrigem.OnPressedColor = System.Drawing.Color.Black;
             this.btnBuscarListaOrigem.Size = new System.Drawing.Size(21, 26);
-            this.btnBuscarListaOrigem.TabIndex = 195;
+            this.btnBuscarListaOrigem.TabIndex = 2;
             this.btnBuscarListaOrigem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnBuscarListaOrigem.Click += new System.EventHandler(this.btnBuscarListaOrigem_Click);
             // 
@@ -336,7 +345,7 @@
             this.gunaLabel4.Location = new System.Drawing.Point(18, 178);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.Size = new System.Drawing.Size(38, 15);
-            this.gunaLabel4.TabIndex = 197;
+            this.gunaLabel4.TabIndex = 12;
             this.gunaLabel4.Text = "Local:";
             // 
             // btnBuscarEtiquetaOrigem
@@ -371,7 +380,7 @@
             this.btnBuscarEtiquetaOrigem.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnBuscarEtiquetaOrigem.OnPressedColor = System.Drawing.Color.Black;
             this.btnBuscarEtiquetaOrigem.Size = new System.Drawing.Size(21, 26);
-            this.btnBuscarEtiquetaOrigem.TabIndex = 194;
+            this.btnBuscarEtiquetaOrigem.TabIndex = 14;
             this.btnBuscarEtiquetaOrigem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnBuscarEtiquetaOrigem.Click += new System.EventHandler(this.btnBuscarEtiquetaOrigem_Click);
             // 
@@ -399,7 +408,7 @@
             this.panel2.Location = new System.Drawing.Point(596, 112);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(344, 295);
-            this.panel2.TabIndex = 190;
+            this.panel2.TabIndex = 1;
             // 
             // txtRecebidoDestino_MovimentocaoEtiqueta
             // 
@@ -471,7 +480,7 @@
             this.btnBuscarEtiquetaDestino.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnBuscarEtiquetaDestino.OnPressedColor = System.Drawing.Color.Black;
             this.btnBuscarEtiquetaDestino.Size = new System.Drawing.Size(21, 26);
-            this.btnBuscarEtiquetaDestino.TabIndex = 196;
+            this.btnBuscarEtiquetaDestino.TabIndex = 1;
             this.btnBuscarEtiquetaDestino.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnBuscarEtiquetaDestino.Click += new System.EventHandler(this.btnBuscarEtiquetaDestino_Click);
             // 
@@ -507,7 +516,7 @@
             this.btnBuscarListaDestino.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnBuscarListaDestino.OnPressedColor = System.Drawing.Color.Black;
             this.btnBuscarListaDestino.Size = new System.Drawing.Size(21, 26);
-            this.btnBuscarListaDestino.TabIndex = 196;
+            this.btnBuscarListaDestino.TabIndex = 2;
             this.btnBuscarListaDestino.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnBuscarListaDestino.Click += new System.EventHandler(this.btnBuscarListaDestino_Click);
             // 
@@ -547,7 +556,7 @@
             this.txtCodDeBarrasDestino_MovimentacaoEtiqueta.SelectedText = "";
             this.txtCodDeBarrasDestino_MovimentacaoEtiqueta.ShortcutsEnabled = false;
             this.txtCodDeBarrasDestino_MovimentacaoEtiqueta.Size = new System.Drawing.Size(161, 26);
-            this.txtCodDeBarrasDestino_MovimentacaoEtiqueta.TabIndex = 163;
+            this.txtCodDeBarrasDestino_MovimentacaoEtiqueta.TabIndex = 0;
             this.txtCodDeBarrasDestino_MovimentacaoEtiqueta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodDeBarrasDestino_MovimentacaoEtiqueta_KeyPress);
             // 
             // gunaLabel17
@@ -631,30 +640,40 @@
             this.gvdMovimentacaoEtiqueta.AllowUserToAddRows = false;
             this.gvdMovimentacaoEtiqueta.AllowUserToDeleteRows = false;
             this.gvdMovimentacaoEtiqueta.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.gvdMovimentacaoEtiqueta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gvdMovimentacaoEtiqueta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.gvdMovimentacaoEtiqueta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.gvdMovimentacaoEtiqueta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gvdMovimentacaoEtiqueta.BackgroundColor = System.Drawing.Color.White;
             this.gvdMovimentacaoEtiqueta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvdMovimentacaoEtiqueta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gvdMovimentacaoEtiqueta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvdMovimentacaoEtiqueta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvdMovimentacaoEtiqueta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gvdMovimentacaoEtiqueta.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvdMovimentacaoEtiqueta.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gvdMovimentacaoEtiqueta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NF_Entrada,
+            this.Cod_Produto,
+            this.Lote,
+            this.Descricao,
+            this.Quantidade,
+            this.Local,
+            this.Valor_Unitario,
+            this.Valor_Total,
+            this.Cod_de_Barras});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvdMovimentacaoEtiqueta.DefaultCellStyle = dataGridViewCellStyle6;
             this.gvdMovimentacaoEtiqueta.EnableHeadersVisualStyles = false;
             this.gvdMovimentacaoEtiqueta.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gvdMovimentacaoEtiqueta.Location = new System.Drawing.Point(12, 423);
@@ -664,7 +683,7 @@
             this.gvdMovimentacaoEtiqueta.RowHeadersVisible = false;
             this.gvdMovimentacaoEtiqueta.RowHeadersWidth = 30;
             this.gvdMovimentacaoEtiqueta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvdMovimentacaoEtiqueta.Size = new System.Drawing.Size(1019, 107);
+            this.gvdMovimentacaoEtiqueta.Size = new System.Drawing.Size(975, 107);
             this.gvdMovimentacaoEtiqueta.TabIndex = 187;
             this.gvdMovimentacaoEtiqueta.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.gvdMovimentacaoEtiqueta.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -688,6 +707,78 @@
             this.gvdMovimentacaoEtiqueta.ThemeStyle.RowsStyle.Height = 22;
             this.gvdMovimentacaoEtiqueta.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gvdMovimentacaoEtiqueta.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // NF_Entrada
+            // 
+            this.NF_Entrada.DataPropertyName = "NF_Entrada";
+            this.NF_Entrada.HeaderText = "Nota Fiscal";
+            this.NF_Entrada.Name = "NF_Entrada";
+            this.NF_Entrada.ReadOnly = true;
+            this.NF_Entrada.Width = 98;
+            // 
+            // Cod_Produto
+            // 
+            this.Cod_Produto.DataPropertyName = "Cod_Produto";
+            this.Cod_Produto.HeaderText = "Codigo Produto";
+            this.Cod_Produto.Name = "Cod_Produto";
+            this.Cod_Produto.ReadOnly = true;
+            this.Cod_Produto.Width = 130;
+            // 
+            // Lote
+            // 
+            this.Lote.DataPropertyName = "Lote";
+            this.Lote.HeaderText = "Lote";
+            this.Lote.Name = "Lote";
+            this.Lote.ReadOnly = true;
+            this.Lote.Width = 59;
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "Descricao";
+            this.Descricao.HeaderText = "Descricao";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Width = 90;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.DataPropertyName = "Quantidade";
+            this.Quantidade.HeaderText = "Quantidade";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
+            this.Quantidade.Width = 104;
+            // 
+            // Local
+            // 
+            this.Local.DataPropertyName = "Local";
+            this.Local.HeaderText = "Local";
+            this.Local.Name = "Local";
+            this.Local.ReadOnly = true;
+            this.Local.Width = 63;
+            // 
+            // Valor_Unitario
+            // 
+            this.Valor_Unitario.DataPropertyName = "Valor_Unitario";
+            this.Valor_Unitario.HeaderText = "Valor Unitario";
+            this.Valor_Unitario.Name = "Valor_Unitario";
+            this.Valor_Unitario.ReadOnly = true;
+            this.Valor_Unitario.Width = 116;
+            // 
+            // Valor_Total
+            // 
+            this.Valor_Total.DataPropertyName = "Valor_Total";
+            this.Valor_Total.HeaderText = "Valor Total";
+            this.Valor_Total.Name = "Valor_Total";
+            this.Valor_Total.ReadOnly = true;
+            this.Valor_Total.Width = 96;
+            // 
+            // Cod_de_Barras
+            // 
+            this.Cod_de_Barras.DataPropertyName = "Cod_de_Barras";
+            this.Cod_de_Barras.HeaderText = "Codiga de Barras";
+            this.Cod_de_Barras.Name = "Cod_de_Barras";
+            this.Cod_de_Barras.ReadOnly = true;
+            this.Cod_de_Barras.Width = 136;
             // 
             // gunaLabel2
             // 
@@ -731,7 +822,7 @@
             this.btnModificar_CadastroCliente.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnModificar_CadastroCliente.OnPressedColor = System.Drawing.Color.Black;
             this.btnModificar_CadastroCliente.Size = new System.Drawing.Size(44, 47);
-            this.btnModificar_CadastroCliente.TabIndex = 192;
+            this.btnModificar_CadastroCliente.TabIndex = 2;
             this.btnModificar_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnModificar_CadastroCliente.Click += new System.EventHandler(this.btnModificar_CadastroCliente_Click);
             // 
@@ -748,7 +839,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 542);
+            this.ClientSize = new System.Drawing.Size(1000, 542);
             this.Controls.Add(this.gunaLabel2);
             this.Controls.Add(this.btnModificar_CadastroCliente);
             this.Controls.Add(this.pictureBox1);
@@ -759,6 +850,8 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Transferencia_Etiqueta";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Tag = "";
             this.Text = "Transferencia_Etiqueta";
             this.Load += new System.EventHandler(this.Transferencia_Etiqueta_Load);
             this.panel1.ResumeLayout(false);
@@ -818,5 +911,14 @@
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         public Guna.UI.WinForms.GunaTextBox txtCodDeBarrasOrigem_MovimentacaoEtiqueta;
         public Guna.UI.WinForms.GunaTextBox txtCodDeBarrasDestino_MovimentacaoEtiqueta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NF_Entrada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cod_Produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lote;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Local;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor_Unitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor_Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cod_de_Barras;
     }
 }

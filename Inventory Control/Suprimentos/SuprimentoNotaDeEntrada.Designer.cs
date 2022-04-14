@@ -41,6 +41,19 @@
             this.gunaLabel16 = new Guna.UI.WinForms.GunaLabel();
             this.txtNotaFiscal_Suprimento = new Guna.UI.WinForms.GunaTextBox();
             this.gdvNotaFiscal_Suprimento = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.NF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome_Razao_Social = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cod_Produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao_Produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QUANT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UNIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor_Unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data_Emissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data_Lancamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cod_Barras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gdvNotaFiscal_Suprimento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,7 +119,7 @@
             this.btnPesquisa_CadastroCliente.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnPesquisa_CadastroCliente.OnPressedColor = System.Drawing.Color.Black;
             this.btnPesquisa_CadastroCliente.Size = new System.Drawing.Size(44, 47);
-            this.btnPesquisa_CadastroCliente.TabIndex = 111;
+            this.btnPesquisa_CadastroCliente.TabIndex = 3;
             this.btnPesquisa_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnPesquisa_CadastroCliente.Click += new System.EventHandler(this.btnPesquisa_CadastroCliente_Click_1);
             // 
@@ -142,7 +155,7 @@
             this.btnExcluir_CadastroCliente.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnExcluir_CadastroCliente.OnPressedColor = System.Drawing.Color.Black;
             this.btnExcluir_CadastroCliente.Size = new System.Drawing.Size(44, 47);
-            this.btnExcluir_CadastroCliente.TabIndex = 110;
+            this.btnExcluir_CadastroCliente.TabIndex = 2;
             this.btnExcluir_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExcluir_CadastroCliente.Click += new System.EventHandler(this.btnExcluir_CadastroCliente_Click);
             // 
@@ -178,7 +191,7 @@
             this.btnIncluirNFEntrada_Suprimento.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnIncluirNFEntrada_Suprimento.OnPressedColor = System.Drawing.Color.Black;
             this.btnIncluirNFEntrada_Suprimento.Size = new System.Drawing.Size(44, 47);
-            this.btnIncluirNFEntrada_Suprimento.TabIndex = 109;
+            this.btnIncluirNFEntrada_Suprimento.TabIndex = 1;
             this.btnIncluirNFEntrada_Suprimento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnIncluirNFEntrada_Suprimento.Click += new System.EventHandler(this.btnIncluir_CadastroCliente_Click);
             // 
@@ -208,7 +221,7 @@
             this.txtNotaFiscal_Suprimento.SelectedText = "";
             this.txtNotaFiscal_Suprimento.ShortcutsEnabled = false;
             this.txtNotaFiscal_Suprimento.Size = new System.Drawing.Size(162, 26);
-            this.txtNotaFiscal_Suprimento.TabIndex = 136;
+            this.txtNotaFiscal_Suprimento.TabIndex = 0;
             // 
             // gdvNotaFiscal_Suprimento
             // 
@@ -217,7 +230,7 @@
             this.gdvNotaFiscal_Suprimento.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.gdvNotaFiscal_Suprimento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gdvNotaFiscal_Suprimento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gdvNotaFiscal_Suprimento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gdvNotaFiscal_Suprimento.BackgroundColor = System.Drawing.Color.White;
             this.gdvNotaFiscal_Suprimento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gdvNotaFiscal_Suprimento.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -231,6 +244,20 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gdvNotaFiscal_Suprimento.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gdvNotaFiscal_Suprimento.ColumnHeadersHeight = 30;
+            this.gdvNotaFiscal_Suprimento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NF,
+            this.CNPJ,
+            this.Nome_Razao_Social,
+            this.Cod_Produto,
+            this.Descricao_Produto,
+            this.QUANT,
+            this.UNIDADE,
+            this.Valor_Unitario,
+            this.Valor_Total,
+            this.Data_Emissao,
+            this.Data_Lancamento,
+            this.Estatus,
+            this.Cod_Barras});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -248,7 +275,7 @@
             this.gdvNotaFiscal_Suprimento.RowHeadersVisible = false;
             this.gdvNotaFiscal_Suprimento.RowHeadersWidth = 45;
             this.gdvNotaFiscal_Suprimento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gdvNotaFiscal_Suprimento.Size = new System.Drawing.Size(1131, 379);
+            this.gdvNotaFiscal_Suprimento.Size = new System.Drawing.Size(975, 379);
             this.gdvNotaFiscal_Suprimento.TabIndex = 137;
             this.gdvNotaFiscal_Suprimento.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.gdvNotaFiscal_Suprimento.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -273,11 +300,115 @@
             this.gdvNotaFiscal_Suprimento.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gdvNotaFiscal_Suprimento.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // NF
+            // 
+            this.NF.DataPropertyName = "NF";
+            this.NF.HeaderText = "Nota Fiscal";
+            this.NF.Name = "NF";
+            this.NF.ReadOnly = true;
+            this.NF.Width = 98;
+            // 
+            // CNPJ
+            // 
+            this.CNPJ.DataPropertyName = "CNPJ";
+            this.CNPJ.HeaderText = "CNPJ";
+            this.CNPJ.Name = "CNPJ";
+            this.CNPJ.ReadOnly = true;
+            this.CNPJ.Width = 63;
+            // 
+            // Nome_Razao_Social
+            // 
+            this.Nome_Razao_Social.DataPropertyName = "Nome_Razao_Social";
+            this.Nome_Razao_Social.HeaderText = "Nome Razao Social";
+            this.Nome_Razao_Social.Name = "Nome_Razao_Social";
+            this.Nome_Razao_Social.ReadOnly = true;
+            this.Nome_Razao_Social.Width = 147;
+            // 
+            // Cod_Produto
+            // 
+            this.Cod_Produto.DataPropertyName = "Cod_Produto";
+            this.Cod_Produto.HeaderText = "Codigo Produto";
+            this.Cod_Produto.Name = "Cod_Produto";
+            this.Cod_Produto.ReadOnly = true;
+            this.Cod_Produto.Width = 130;
+            // 
+            // Descricao_Produto
+            // 
+            this.Descricao_Produto.DataPropertyName = "Descricao_Produto";
+            this.Descricao_Produto.HeaderText = "Descrica Produto";
+            this.Descricao_Produto.Name = "Descricao_Produto";
+            this.Descricao_Produto.ReadOnly = true;
+            this.Descricao_Produto.Width = 136;
+            // 
+            // QUANT
+            // 
+            this.QUANT.DataPropertyName = "QUANT";
+            this.QUANT.HeaderText = "Quantidade";
+            this.QUANT.Name = "QUANT";
+            this.QUANT.ReadOnly = true;
+            this.QUANT.Width = 104;
+            // 
+            // UNIDADE
+            // 
+            this.UNIDADE.DataPropertyName = "UNIDADE";
+            this.UNIDADE.HeaderText = "Medida";
+            this.UNIDADE.Name = "UNIDADE";
+            this.UNIDADE.ReadOnly = true;
+            this.UNIDADE.Width = 78;
+            // 
+            // Valor_Unitario
+            // 
+            this.Valor_Unitario.DataPropertyName = "Valor_Unitario";
+            this.Valor_Unitario.HeaderText = "Valor Unitario";
+            this.Valor_Unitario.Name = "Valor_Unitario";
+            this.Valor_Unitario.ReadOnly = true;
+            this.Valor_Unitario.Width = 116;
+            // 
+            // Valor_Total
+            // 
+            this.Valor_Total.DataPropertyName = "Valor_Total";
+            this.Valor_Total.HeaderText = "Valor Total";
+            this.Valor_Total.Name = "Valor_Total";
+            this.Valor_Total.ReadOnly = true;
+            this.Valor_Total.Width = 96;
+            // 
+            // Data_Emissao
+            // 
+            this.Data_Emissao.DataPropertyName = "Data_Emissao";
+            this.Data_Emissao.HeaderText = "Data Emissao";
+            this.Data_Emissao.Name = "Data_Emissao";
+            this.Data_Emissao.ReadOnly = true;
+            this.Data_Emissao.Width = 114;
+            // 
+            // Data_Lancamento
+            // 
+            this.Data_Lancamento.DataPropertyName = "Data_Lancamento";
+            this.Data_Lancamento.HeaderText = "Data Lancamento";
+            this.Data_Lancamento.Name = "Data_Lancamento";
+            this.Data_Lancamento.ReadOnly = true;
+            this.Data_Lancamento.Width = 140;
+            // 
+            // Estatus
+            // 
+            this.Estatus.DataPropertyName = "Estatus";
+            this.Estatus.HeaderText = "Estatus";
+            this.Estatus.Name = "Estatus";
+            this.Estatus.ReadOnly = true;
+            this.Estatus.Width = 76;
+            // 
+            // Cod_Barras
+            // 
+            this.Cod_Barras.DataPropertyName = "Cod_Barras";
+            this.Cod_Barras.HeaderText = "Codigo de Barras";
+            this.Cod_Barras.Name = "Cod_Barras";
+            this.Cod_Barras.ReadOnly = true;
+            this.Cod_Barras.Width = 137;
+            // 
             // SuprimentoNotaDeEntrada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 542);
+            this.ClientSize = new System.Drawing.Size(1000, 542);
             this.Controls.Add(this.gdvNotaFiscal_Suprimento);
             this.Controls.Add(this.txtNotaFiscal_Suprimento);
             this.Controls.Add(this.gunaLabel16);
@@ -308,5 +439,18 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel16;
         private Guna.UI.WinForms.GunaTextBox txtNotaFiscal_Suprimento;
         private Guna.UI2.WinForms.Guna2DataGridView gdvNotaFiscal_Suprimento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CNPJ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome_Razao_Social;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cod_Produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao_Produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QUANT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UNIDADE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor_Unitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor_Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Emissao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Lancamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cod_Barras;
     }
 }

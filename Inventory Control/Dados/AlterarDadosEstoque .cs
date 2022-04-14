@@ -217,7 +217,8 @@ namespace Inventory_Control.Dados
             {
                 using (SqlConnection conexaoSQL = AbrirConexao())
                 {
-                    string query = "update Estoque set Quantidade = (Quantidade + @quantidade) where Cod_De_Barras = @codDeBarras";
+                    string query = "update Estoque set Quantidade = (Quantidade + @quantidade), Local = 'EXPEDICAO'" +
+                        " where Cod_De_Barras = @codDeBarras";
                     SqlCommand cmd = new SqlCommand(query, conexaoSQL);
                     cmd.Parameters.Add("@codDeBarras", SqlDbType.VarChar).Value = _cod_De_Barras;
                     cmd.Parameters.Add("@quantidade", SqlDbType.VarChar).Value = _quantidade;

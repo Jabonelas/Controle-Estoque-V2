@@ -275,5 +275,29 @@ namespace Inventory_Control
         }
 
         #endregion TextBox Preço Unico
+
+        #region TextBox Fornecedor
+
+        private void txtFornecedor_CadastroProduto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
+        }
+
+        #endregion TextBox Fornecedor
+
+        #region TextBox Descricao
+
+        private void txtDescricao_CadastroProduto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
+        }
+
+        #endregion TextBox Descricao
     }
 }

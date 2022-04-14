@@ -33,6 +33,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VendasRelatorio));
             this.gdvRelatorioNFSaida_Vendas = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.CNPJ_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NF_Saida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cod_Produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Emissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cod_de_Barras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
@@ -53,7 +63,7 @@
             this.gdvRelatorioNFSaida_Vendas.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.gdvRelatorioNFSaida_Vendas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gdvRelatorioNFSaida_Vendas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gdvRelatorioNFSaida_Vendas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gdvRelatorioNFSaida_Vendas.BackgroundColor = System.Drawing.Color.White;
             this.gdvRelatorioNFSaida_Vendas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gdvRelatorioNFSaida_Vendas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -67,6 +77,17 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gdvRelatorioNFSaida_Vendas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gdvRelatorioNFSaida_Vendas.ColumnHeadersHeight = 30;
+            this.gdvRelatorioNFSaida_Vendas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CNPJ_Cliente,
+            this.NF_Saida,
+            this.Cod_Produto,
+            this.Lote,
+            this.Descricao,
+            this.Valor,
+            this.Quantidade,
+            this.Emissao,
+            this.Estatus,
+            this.Cod_de_Barras});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -83,7 +104,7 @@
             this.gdvRelatorioNFSaida_Vendas.ReadOnly = true;
             this.gdvRelatorioNFSaida_Vendas.RowHeadersVisible = false;
             this.gdvRelatorioNFSaida_Vendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gdvRelatorioNFSaida_Vendas.Size = new System.Drawing.Size(1019, 191);
+            this.gdvRelatorioNFSaida_Vendas.Size = new System.Drawing.Size(975, 191);
             this.gdvRelatorioNFSaida_Vendas.TabIndex = 154;
             this.gdvRelatorioNFSaida_Vendas.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -107,6 +128,86 @@
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.RowsStyle.Height = 22;
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gdvRelatorioNFSaida_Vendas.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // CNPJ_Cliente
+            // 
+            this.CNPJ_Cliente.DataPropertyName = "CNPJ_Cliente";
+            this.CNPJ_Cliente.HeaderText = "Cliente/CNPJ";
+            this.CNPJ_Cliente.Name = "CNPJ_Cliente";
+            this.CNPJ_Cliente.ReadOnly = true;
+            this.CNPJ_Cliente.Width = 110;
+            // 
+            // NF_Saida
+            // 
+            this.NF_Saida.DataPropertyName = "NF_Saida";
+            this.NF_Saida.HeaderText = "Nota Fiscal";
+            this.NF_Saida.Name = "NF_Saida";
+            this.NF_Saida.ReadOnly = true;
+            this.NF_Saida.Width = 98;
+            // 
+            // Cod_Produto
+            // 
+            this.Cod_Produto.DataPropertyName = "Cod_Produto";
+            this.Cod_Produto.HeaderText = "Codigo Produto";
+            this.Cod_Produto.Name = "Cod_Produto";
+            this.Cod_Produto.ReadOnly = true;
+            this.Cod_Produto.Width = 130;
+            // 
+            // Lote
+            // 
+            this.Lote.DataPropertyName = "Lote";
+            this.Lote.HeaderText = "Lote";
+            this.Lote.Name = "Lote";
+            this.Lote.ReadOnly = true;
+            this.Lote.Width = 59;
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "Descricao";
+            this.Descricao.HeaderText = "Descricao";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Width = 90;
+            // 
+            // Valor
+            // 
+            this.Valor.DataPropertyName = "Valor";
+            this.Valor.HeaderText = "Valor";
+            this.Valor.Name = "Valor";
+            this.Valor.ReadOnly = true;
+            this.Valor.Width = 63;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.DataPropertyName = "Quantidade";
+            this.Quantidade.HeaderText = "Quantidade";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
+            this.Quantidade.Width = 104;
+            // 
+            // Emissao
+            // 
+            this.Emissao.DataPropertyName = "Emissao";
+            this.Emissao.HeaderText = "Emissao";
+            this.Emissao.Name = "Emissao";
+            this.Emissao.ReadOnly = true;
+            this.Emissao.Width = 81;
+            // 
+            // Estatus
+            // 
+            this.Estatus.DataPropertyName = "Estatus";
+            this.Estatus.HeaderText = "Estatus";
+            this.Estatus.Name = "Estatus";
+            this.Estatus.ReadOnly = true;
+            this.Estatus.Width = 76;
+            // 
+            // Cod_de_Barras
+            // 
+            this.Cod_de_Barras.DataPropertyName = "Cod_de_Barras";
+            this.Cod_de_Barras.HeaderText = "Codigo de Barras";
+            this.Cod_de_Barras.Name = "Cod_de_Barras";
+            this.Cod_de_Barras.ReadOnly = true;
+            this.Cod_de_Barras.Width = 137;
             // 
             // gunaLabel1
             // 
@@ -172,7 +273,7 @@
             this.btnPesquisa_CadastroCliente.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnPesquisa_CadastroCliente.OnPressedColor = System.Drawing.Color.Black;
             this.btnPesquisa_CadastroCliente.Size = new System.Drawing.Size(44, 47);
-            this.btnPesquisa_CadastroCliente.TabIndex = 148;
+            this.btnPesquisa_CadastroCliente.TabIndex = 2;
             this.btnPesquisa_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnPesquisa_CadastroCliente.Click += new System.EventHandler(this.btnPesquisa_CadastroCliente_Click);
             // 
@@ -192,7 +293,7 @@
             this.dtpDataInicio_Relatorio.Name = "dtpDataInicio_Relatorio";
             this.dtpDataInicio_Relatorio.ShadowDecoration.Parent = this.dtpDataInicio_Relatorio;
             this.dtpDataInicio_Relatorio.Size = new System.Drawing.Size(229, 36);
-            this.dtpDataInicio_Relatorio.TabIndex = 155;
+            this.dtpDataInicio_Relatorio.TabIndex = 0;
             this.dtpDataInicio_Relatorio.Value = new System.DateTime(2022, 4, 11, 22, 17, 20, 615);
             // 
             // dtpDataFinal_Relatorio
@@ -210,7 +311,7 @@
             this.dtpDataFinal_Relatorio.Name = "dtpDataFinal_Relatorio";
             this.dtpDataFinal_Relatorio.ShadowDecoration.Parent = this.dtpDataFinal_Relatorio;
             this.dtpDataFinal_Relatorio.Size = new System.Drawing.Size(229, 36);
-            this.dtpDataFinal_Relatorio.TabIndex = 156;
+            this.dtpDataFinal_Relatorio.TabIndex = 1;
             this.dtpDataFinal_Relatorio.Value = new System.DateTime(2022, 4, 11, 22, 17, 20, 615);
             // 
             // GraficoSaida
@@ -235,7 +336,8 @@
             this.GraficoSaida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.GraficoSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GraficoSaida.ForeColor = System.Drawing.Color.Red;
-            this.GraficoSaida.Location = new System.Drawing.Point(423, 28);
+            this.GraficoSaida.Location = new System.Drawing.Point(377, 28);
+            this.GraficoSaida.Margin = new System.Windows.Forms.Padding(14, 13, 14, 13);
             this.GraficoSaida.Name = "GraficoSaida";
             this.GraficoSaida.Size = new System.Drawing.Size(609, 265);
             this.GraficoSaida.TabIndex = 157;
@@ -248,7 +350,7 @@
             this.gunaLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel2.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel2.Location = new System.Drawing.Point(599, 28);
+            this.gunaLabel2.Location = new System.Drawing.Point(553, 28);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(288, 25);
             this.gunaLabel2.TabIndex = 158;
@@ -258,7 +360,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(420, 9);
+            this.label1.Location = new System.Drawing.Point(374, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 16);
             this.label1.TabIndex = 159;
@@ -268,7 +370,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(691, 296);
+            this.label2.Location = new System.Drawing.Point(645, 296);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 16);
             this.label2.TabIndex = 160;
@@ -278,7 +380,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 542);
+            this.ClientSize = new System.Drawing.Size(1000, 542);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gunaLabel2);
@@ -313,5 +415,15 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CNPJ_Cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NF_Saida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cod_Produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lote;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Emissao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cod_de_Barras;
     }
 }

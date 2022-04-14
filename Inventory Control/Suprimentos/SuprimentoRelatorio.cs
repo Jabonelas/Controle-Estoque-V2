@@ -24,6 +24,10 @@ namespace Inventory_Control
         public SuprimentoRelatorio()
         {
             InitializeComponent();
+
+            dtpDataInicio_Relatorio.Text = DateTime.Today.ToString();
+
+            dtpDataFinal_Relatorio.Text = DateTime.Today.ToString();
         }
 
         #region Mudanca de Tela Verificacao NF Saida
@@ -66,10 +70,10 @@ namespace Inventory_Control
 
                 Canvas canvas = new Canvas();
 
-                foreach (var Cod_Produto in BREG.BuscarDadosRelatorioNFEntradaGraficoCod_Produto(Convert.ToDateTime(dtpDataInicio_Relatorio.Text),
+                foreach (int Cod_Produto in BREG.BuscarDadosRelatorioNFEntradaGraficoCod_Produto(Convert.ToDateTime(dtpDataInicio_Relatorio.Text),
                 Convert.ToDateTime(dtpDataFinal_Relatorio.Text)))
                 {
-                    foreach (var QUANT in BREG.BuscarDadosRelatorioNFEntradaGraficoQuant(Convert.ToDateTime(dtpDataInicio_Relatorio.Text),
+                    foreach (int QUANT in BREG.BuscarDadosRelatorioNFEntradaGraficoQuant(Convert.ToDateTime(dtpDataInicio_Relatorio.Text),
                     Convert.ToDateTime(dtpDataFinal_Relatorio.Text), Cod_Produto))
                     {
                         dataPoint.addLabely(Cod_Produto.ToString(), QUANT);

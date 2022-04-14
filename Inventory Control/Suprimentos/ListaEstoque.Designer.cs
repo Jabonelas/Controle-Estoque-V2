@@ -29,10 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gvdListaEstoque = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Cod_Produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cod_de_Barras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Local = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtCodProduto_MovimentacaoEtiqueta = new Guna.UI.WinForms.GunaTextBox();
@@ -50,30 +56,37 @@
             this.gvdListaEstoque.AllowUserToAddRows = false;
             this.gvdListaEstoque.AllowUserToDeleteRows = false;
             this.gvdListaEstoque.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.gvdListaEstoque.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gvdListaEstoque.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.gvdListaEstoque.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.gvdListaEstoque.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gvdListaEstoque.BackgroundColor = System.Drawing.Color.White;
             this.gvdListaEstoque.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvdListaEstoque.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gvdListaEstoque.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvdListaEstoque.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvdListaEstoque.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gvdListaEstoque.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvdListaEstoque.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gvdListaEstoque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Cod_Produto,
+            this.Cod_de_Barras,
+            this.Lote,
+            this.Descricao,
+            this.Quantidade,
+            this.Local});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvdListaEstoque.DefaultCellStyle = dataGridViewCellStyle6;
             this.gvdListaEstoque.EnableHeadersVisualStyles = false;
             this.gvdListaEstoque.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gvdListaEstoque.Location = new System.Drawing.Point(10, 79);
@@ -83,7 +96,7 @@
             this.gvdListaEstoque.RowHeadersVisible = false;
             this.gvdListaEstoque.RowHeadersWidth = 30;
             this.gvdListaEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvdListaEstoque.Size = new System.Drawing.Size(627, 245);
+            this.gvdListaEstoque.Size = new System.Drawing.Size(585, 245);
             this.gvdListaEstoque.TabIndex = 188;
             this.gvdListaEstoque.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.gvdListaEstoque.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -109,6 +122,54 @@
             this.gvdListaEstoque.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.gvdListaEstoque.DoubleClick += new System.EventHandler(this.gvdListaEstoque_DoubleClick);
             // 
+            // Cod_Produto
+            // 
+            this.Cod_Produto.DataPropertyName = "Cod_Produto";
+            this.Cod_Produto.HeaderText = "Codigo Produto";
+            this.Cod_Produto.Name = "Cod_Produto";
+            this.Cod_Produto.ReadOnly = true;
+            this.Cod_Produto.Width = 130;
+            // 
+            // Cod_de_Barras
+            // 
+            this.Cod_de_Barras.DataPropertyName = "Cod_de_Barras";
+            this.Cod_de_Barras.HeaderText = "Codigo de Barras";
+            this.Cod_de_Barras.Name = "Cod_de_Barras";
+            this.Cod_de_Barras.ReadOnly = true;
+            this.Cod_de_Barras.Width = 137;
+            // 
+            // Lote
+            // 
+            this.Lote.DataPropertyName = "Lote";
+            this.Lote.HeaderText = "Lote";
+            this.Lote.Name = "Lote";
+            this.Lote.ReadOnly = true;
+            this.Lote.Width = 59;
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "Descricao";
+            this.Descricao.HeaderText = "Descricao";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Width = 90;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.DataPropertyName = "Quantidade";
+            this.Quantidade.HeaderText = "Quantidade";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
+            this.Quantidade.Width = 104;
+            // 
+            // Local
+            // 
+            this.Local.DataPropertyName = "Local";
+            this.Local.HeaderText = "Local";
+            this.Local.Name = "Local";
+            this.Local.ReadOnly = true;
+            this.Local.Width = 63;
+            // 
             // gunaControlBox1
             // 
             this.gunaControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -117,13 +178,13 @@
             this.gunaControlBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.gunaControlBox1.IconColor = System.Drawing.Color.White;
             this.gunaControlBox1.IconSize = 15F;
-            this.gunaControlBox1.Location = new System.Drawing.Point(627, 1);
+            this.gunaControlBox1.Location = new System.Drawing.Point(586, 1);
             this.gunaControlBox1.Name = "gunaControlBox1";
             this.gunaControlBox1.OnHoverBackColor = System.Drawing.SystemColors.Highlight;
             this.gunaControlBox1.OnHoverIconColor = System.Drawing.Color.White;
             this.gunaControlBox1.OnPressedColor = System.Drawing.Color.Black;
             this.gunaControlBox1.Size = new System.Drawing.Size(45, 29);
-            this.gunaControlBox1.TabIndex = 191;
+            this.gunaControlBox1.TabIndex = 0;
             // 
             // panel1
             // 
@@ -148,7 +209,7 @@
             this.txtCodProduto_MovimentacaoEtiqueta.SelectedText = "";
             this.txtCodProduto_MovimentacaoEtiqueta.ShortcutsEnabled = false;
             this.txtCodProduto_MovimentacaoEtiqueta.Size = new System.Drawing.Size(161, 26);
-            this.txtCodProduto_MovimentacaoEtiqueta.TabIndex = 194;
+            this.txtCodProduto_MovimentacaoEtiqueta.TabIndex = 0;
             this.txtCodProduto_MovimentacaoEtiqueta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodProduto_MovimentacaoEtiqueta_KeyPress);
             // 
             // gunaLabel8
@@ -171,7 +232,7 @@
             this.panel2.Controls.Add(this.gvdListaEstoque);
             this.panel2.Location = new System.Drawing.Point(12, 54);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(647, 339);
+            this.panel2.Size = new System.Drawing.Size(604, 339);
             this.panel2.TabIndex = 196;
             // 
             // label1
@@ -216,7 +277,7 @@
             this.btnBuscarEtiqueta.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnBuscarEtiqueta.OnPressedColor = System.Drawing.Color.Black;
             this.btnBuscarEtiqueta.Size = new System.Drawing.Size(21, 26);
-            this.btnBuscarEtiqueta.TabIndex = 196;
+            this.btnBuscarEtiqueta.TabIndex = 1;
             this.btnBuscarEtiqueta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnBuscarEtiqueta.Click += new System.EventHandler(this.btnBuscarEtiqueta_Click);
             // 
@@ -229,7 +290,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(672, 408);
+            this.ClientSize = new System.Drawing.Size(631, 408);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gunaControlBox1);
             this.Controls.Add(this.panel2);
@@ -253,5 +314,11 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnBuscarEtiqueta;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cod_Produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cod_de_Barras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lote;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Local;
     }
 }

@@ -379,5 +379,16 @@ namespace Inventory_Control
         }
 
         #endregion TextBox CNPJ Cliente
+
+        #region TextBox Descricao
+
+        private void txtDescricao_VendasNFSaida_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
     }
 }

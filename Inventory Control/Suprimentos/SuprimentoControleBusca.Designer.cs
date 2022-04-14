@@ -93,7 +93,7 @@
             this.btnPesquisa_CadastroCliente.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnPesquisa_CadastroCliente.OnPressedColor = System.Drawing.Color.Black;
             this.btnPesquisa_CadastroCliente.Size = new System.Drawing.Size(44, 47);
-            this.btnPesquisa_CadastroCliente.TabIndex = 141;
+            this.btnPesquisa_CadastroCliente.TabIndex = 2;
             this.btnPesquisa_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnPesquisa_CadastroCliente.Click += new System.EventHandler(this.btnPesquisa_CadastroCliente_Click);
             // 
@@ -113,7 +113,7 @@
             this.txtCodProduto_Buscar.SelectedText = "";
             this.txtCodProduto_Buscar.ShortcutsEnabled = false;
             this.txtCodProduto_Buscar.Size = new System.Drawing.Size(162, 26);
-            this.txtCodProduto_Buscar.TabIndex = 151;
+            this.txtCodProduto_Buscar.TabIndex = 1;
             // 
             // gunaLabel8
             // 
@@ -141,7 +141,7 @@
             this.txtCodBarras_Buscar.SelectedText = "";
             this.txtCodBarras_Buscar.ShortcutsEnabled = false;
             this.txtCodBarras_Buscar.Size = new System.Drawing.Size(162, 26);
-            this.txtCodBarras_Buscar.TabIndex = 149;
+            this.txtCodBarras_Buscar.TabIndex = 0;
             // 
             // gunaLabel5
             // 
@@ -160,7 +160,7 @@
             this.gdvBuscarEstoque_Suprimentos.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.gdvBuscarEstoque_Suprimentos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gdvBuscarEstoque_Suprimentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gdvBuscarEstoque_Suprimentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gdvBuscarEstoque_Suprimentos.BackgroundColor = System.Drawing.Color.White;
             this.gdvBuscarEstoque_Suprimentos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gdvBuscarEstoque_Suprimentos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -194,14 +194,14 @@
             this.gdvBuscarEstoque_Suprimentos.DefaultCellStyle = dataGridViewCellStyle3;
             this.gdvBuscarEstoque_Suprimentos.EnableHeadersVisualStyles = false;
             this.gdvBuscarEstoque_Suprimentos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gdvBuscarEstoque_Suprimentos.Location = new System.Drawing.Point(34, 194);
+            this.gdvBuscarEstoque_Suprimentos.Location = new System.Drawing.Point(13, 202);
             this.gdvBuscarEstoque_Suprimentos.MultiSelect = false;
             this.gdvBuscarEstoque_Suprimentos.Name = "gdvBuscarEstoque_Suprimentos";
             this.gdvBuscarEstoque_Suprimentos.ReadOnly = true;
             this.gdvBuscarEstoque_Suprimentos.RowHeadersVisible = false;
             this.gdvBuscarEstoque_Suprimentos.RowHeadersWidth = 30;
             this.gdvBuscarEstoque_Suprimentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gdvBuscarEstoque_Suprimentos.Size = new System.Drawing.Size(1019, 336);
+            this.gdvBuscarEstoque_Suprimentos.Size = new System.Drawing.Size(975, 319);
             this.gdvBuscarEstoque_Suprimentos.TabIndex = 152;
             this.gdvBuscarEstoque_Suprimentos.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.gdvBuscarEstoque_Suprimentos.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -229,71 +229,89 @@
             // NF_Entrada
             // 
             this.NF_Entrada.DataPropertyName = "NF_Entrada";
-            this.NF_Entrada.HeaderText = "NF Entrada";
+            this.NF_Entrada.FillWeight = 92.30769F;
+            this.NF_Entrada.HeaderText = "Nota Fiscal";
             this.NF_Entrada.Name = "NF_Entrada";
             this.NF_Entrada.ReadOnly = true;
+            this.NF_Entrada.Width = 98;
             // 
             // Codigo_de_Produto
             // 
             this.Codigo_de_Produto.DataPropertyName = "Cod_Produto";
+            this.Codigo_de_Produto.FillWeight = 139.9589F;
             this.Codigo_de_Produto.HeaderText = "Codigo de Produto";
             this.Codigo_de_Produto.Name = "Codigo_de_Produto";
             this.Codigo_de_Produto.ReadOnly = true;
+            this.Codigo_de_Produto.Width = 149;
             // 
             // Lote
             // 
             this.Lote.DataPropertyName = "Lote";
+            this.Lote.FillWeight = 53.49486F;
             this.Lote.HeaderText = "Lote";
             this.Lote.Name = "Lote";
             this.Lote.ReadOnly = true;
+            this.Lote.Width = 59;
             // 
             // Descição
             // 
             this.Descição.DataPropertyName = "Descricao";
+            this.Descição.FillWeight = 90.49802F;
             this.Descição.HeaderText = "Descrição ";
             this.Descição.Name = "Descição";
             this.Descição.ReadOnly = true;
+            this.Descição.Width = 94;
             // 
             // Quantidade
             // 
             this.Quantidade.DataPropertyName = "Quantidade";
+            this.Quantidade.FillWeight = 102.0079F;
             this.Quantidade.HeaderText = "Quantidade";
             this.Quantidade.Name = "Quantidade";
             this.Quantidade.ReadOnly = true;
+            this.Quantidade.Width = 104;
             // 
             // Local
             // 
             this.Local.DataPropertyName = "Local";
+            this.Local.FillWeight = 62.18985F;
             this.Local.HeaderText = "Local";
             this.Local.Name = "Local";
             this.Local.ReadOnly = true;
+            this.Local.Width = 63;
             // 
             // Valor_Unitario
             // 
             this.Valor_Unitario.DataPropertyName = "Valor_Unitario";
+            this.Valor_Unitario.FillWeight = 119.9759F;
             this.Valor_Unitario.HeaderText = "Valor Unitario";
             this.Valor_Unitario.Name = "Valor_Unitario";
             this.Valor_Unitario.ReadOnly = true;
+            this.Valor_Unitario.Width = 116;
             // 
             // Valor_Total
             // 
             this.Valor_Total.DataPropertyName = "Valor_Total";
+            this.Valor_Total.FillWeight = 98.12562F;
             this.Valor_Total.HeaderText = "Valor Total";
             this.Valor_Total.Name = "Valor_Total";
             this.Valor_Total.ReadOnly = true;
+            this.Valor_Total.Width = 96;
             // 
             // Codigo_de_Barras
             // 
             this.Codigo_de_Barras.DataPropertyName = "Cod_de_Barras";
+            this.Codigo_de_Barras.FillWeight = 141.4413F;
             this.Codigo_de_Barras.HeaderText = "Codigo de Barras";
             this.Codigo_de_Barras.Name = "Codigo_de_Barras";
             this.Codigo_de_Barras.ReadOnly = true;
+            this.Codigo_de_Barras.Width = 137;
             // 
             // SuprimentoControleBusca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 542);
+            this.ClientSize = new System.Drawing.Size(1000, 542);
             this.Controls.Add(this.gdvBuscarEstoque_Suprimentos);
             this.Controls.Add(this.txtCodProduto_Buscar);
             this.Controls.Add(this.gunaLabel8);

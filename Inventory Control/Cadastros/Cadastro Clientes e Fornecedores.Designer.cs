@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cadastro_Clientes_e_Fornecedores));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
@@ -65,6 +65,18 @@
             this.txtRazaoSocialCadastro = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel17 = new Guna.UI.WinForms.GunaLabel();
             this.gvdCadastroClienteFornecedor = new Guna.UI.WinForms.GunaDataGridView();
+            this.Codigo_do_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome_Fantasia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data_Cadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Razao_Social = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CEP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AvisoDePreenchimentoCNPJ = new System.Windows.Forms.Label();
             this.AvisoDePreenchimentoTipo = new System.Windows.Forms.Label();
             this.txtCadastroCadastro = new System.Windows.Forms.TextBox();
@@ -186,16 +198,15 @@
             this.txtCNPJCadastro.Name = "txtCNPJCadastro";
             this.txtCNPJCadastro.PasswordChar = '\0';
             this.txtCNPJCadastro.SelectedText = "";
-            this.txtCNPJCadastro.ShortcutsEnabled = false;
             this.txtCNPJCadastro.Size = new System.Drawing.Size(162, 26);
-            this.txtCNPJCadastro.TabIndex = 116;
+            this.txtCNPJCadastro.TabIndex = 2;
             this.txtCNPJCadastro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCNPJCadastro_KeyPress);
             // 
             // gunaLabel11
             // 
             this.gunaLabel11.AutoSize = true;
             this.gunaLabel11.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel11.Location = new System.Drawing.Point(299, 157);
+            this.gunaLabel11.Location = new System.Drawing.Point(294, 157);
             this.gunaLabel11.Name = "gunaLabel11";
             this.gunaLabel11.Size = new System.Drawing.Size(89, 15);
             this.gunaLabel11.TabIndex = 118;
@@ -210,20 +221,21 @@
             this.txtNomeFantasiaCadastro.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
             this.txtNomeFantasiaCadastro.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtNomeFantasiaCadastro.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtNomeFantasiaCadastro.Location = new System.Drawing.Point(389, 146);
+            this.txtNomeFantasiaCadastro.Location = new System.Drawing.Point(384, 146);
             this.txtNomeFantasiaCadastro.MaxLength = 200;
             this.txtNomeFantasiaCadastro.Name = "txtNomeFantasiaCadastro";
             this.txtNomeFantasiaCadastro.PasswordChar = '\0';
             this.txtNomeFantasiaCadastro.SelectedText = "";
             this.txtNomeFantasiaCadastro.ShortcutsEnabled = false;
-            this.txtNomeFantasiaCadastro.Size = new System.Drawing.Size(409, 26);
-            this.txtNomeFantasiaCadastro.TabIndex = 119;
+            this.txtNomeFantasiaCadastro.Size = new System.Drawing.Size(381, 26);
+            this.txtNomeFantasiaCadastro.TabIndex = 1;
+            this.txtNomeFantasiaCadastro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomeFantasiaCadastro_KeyPress);
             // 
             // gunaLabel12
             // 
             this.gunaLabel12.AutoSize = true;
             this.gunaLabel12.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel12.Location = new System.Drawing.Point(850, 157);
+            this.gunaLabel12.Location = new System.Drawing.Point(791, 157);
             this.gunaLabel12.Name = "gunaLabel12";
             this.gunaLabel12.Size = new System.Drawing.Size(84, 15);
             this.gunaLabel12.TabIndex = 120;
@@ -245,7 +257,7 @@
             this.txtCEPCadastro.SelectedText = "";
             this.txtCEPCadastro.ShortcutsEnabled = false;
             this.txtCEPCadastro.Size = new System.Drawing.Size(162, 26);
-            this.txtCEPCadastro.TabIndex = 122;
+            this.txtCEPCadastro.TabIndex = 4;
             this.txtCEPCadastro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCEPCadastro_KeyPress);
             // 
             // txtCidadeCadastro
@@ -257,14 +269,15 @@
             this.txtCidadeCadastro.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
             this.txtCidadeCadastro.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtCidadeCadastro.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCidadeCadastro.Location = new System.Drawing.Point(389, 266);
+            this.txtCidadeCadastro.Location = new System.Drawing.Point(384, 266);
             this.txtCidadeCadastro.MaxLength = 100;
             this.txtCidadeCadastro.Name = "txtCidadeCadastro";
             this.txtCidadeCadastro.PasswordChar = '\0';
             this.txtCidadeCadastro.SelectedText = "";
             this.txtCidadeCadastro.ShortcutsEnabled = false;
-            this.txtCidadeCadastro.Size = new System.Drawing.Size(199, 26);
-            this.txtCidadeCadastro.TabIndex = 123;
+            this.txtCidadeCadastro.Size = new System.Drawing.Size(204, 26);
+            this.txtCidadeCadastro.TabIndex = 6;
+            this.txtCidadeCadastro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCidadeCadastro_KeyPress);
             // 
             // txtEnderecoCadastro
             // 
@@ -282,7 +295,8 @@
             this.txtEnderecoCadastro.SelectedText = "";
             this.txtEnderecoCadastro.ShortcutsEnabled = false;
             this.txtEnderecoCadastro.Size = new System.Drawing.Size(485, 26);
-            this.txtEnderecoCadastro.TabIndex = 124;
+            this.txtEnderecoCadastro.TabIndex = 7;
+            this.txtEnderecoCadastro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEnderecoCadastro_KeyPress);
             // 
             // txtComplementoCadastro
             // 
@@ -300,13 +314,14 @@
             this.txtComplementoCadastro.SelectedText = "";
             this.txtComplementoCadastro.ShortcutsEnabled = false;
             this.txtComplementoCadastro.Size = new System.Drawing.Size(485, 26);
-            this.txtComplementoCadastro.TabIndex = 125;
+            this.txtComplementoCadastro.TabIndex = 9;
+            this.txtComplementoCadastro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtComplementoCadastro_KeyPress);
             // 
             // gunaLabel13
             // 
             this.gunaLabel13.AutoSize = true;
             this.gunaLabel13.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel13.Location = new System.Drawing.Point(299, 277);
+            this.gunaLabel13.Location = new System.Drawing.Point(294, 277);
             this.gunaLabel13.Name = "gunaLabel13";
             this.gunaLabel13.Size = new System.Drawing.Size(47, 15);
             this.gunaLabel13.TabIndex = 128;
@@ -316,7 +331,7 @@
             // 
             this.gunaLabel14.AutoSize = true;
             this.gunaLabel14.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel14.Location = new System.Drawing.Point(615, 317);
+            this.gunaLabel14.Location = new System.Drawing.Point(614, 317);
             this.gunaLabel14.Name = "gunaLabel14";
             this.gunaLabel14.Size = new System.Drawing.Size(54, 15);
             this.gunaLabel14.TabIndex = 129;
@@ -331,21 +346,21 @@
             this.txtNumeroCadastro.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
             this.txtNumeroCadastro.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtNumeroCadastro.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtNumeroCadastro.Location = new System.Drawing.Point(686, 306);
+            this.txtNumeroCadastro.Location = new System.Drawing.Point(672, 306);
             this.txtNumeroCadastro.MaxLength = 4;
             this.txtNumeroCadastro.Name = "txtNumeroCadastro";
             this.txtNumeroCadastro.PasswordChar = '\0';
             this.txtNumeroCadastro.SelectedText = "";
             this.txtNumeroCadastro.ShortcutsEnabled = false;
             this.txtNumeroCadastro.Size = new System.Drawing.Size(93, 26);
-            this.txtNumeroCadastro.TabIndex = 130;
+            this.txtNumeroCadastro.TabIndex = 8;
             this.txtNumeroCadastro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroCadastro_KeyPress);
             // 
             // gunaLabel15
             // 
             this.gunaLabel15.AutoSize = true;
             this.gunaLabel15.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel15.Location = new System.Drawing.Point(615, 357);
+            this.gunaLabel15.Location = new System.Drawing.Point(614, 357);
             this.gunaLabel15.Name = "gunaLabel15";
             this.gunaLabel15.Size = new System.Drawing.Size(41, 15);
             this.gunaLabel15.TabIndex = 131;
@@ -360,14 +375,15 @@
             this.txtBairroCadastro.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
             this.txtBairroCadastro.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtBairroCadastro.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtBairroCadastro.Location = new System.Drawing.Point(686, 346);
+            this.txtBairroCadastro.Location = new System.Drawing.Point(672, 346);
             this.txtBairroCadastro.MaxLength = 100;
             this.txtBairroCadastro.Name = "txtBairroCadastro";
             this.txtBairroCadastro.PasswordChar = '\0';
             this.txtBairroCadastro.SelectedText = "";
             this.txtBairroCadastro.ShortcutsEnabled = false;
             this.txtBairroCadastro.Size = new System.Drawing.Size(160, 26);
-            this.txtBairroCadastro.TabIndex = 132;
+            this.txtBairroCadastro.TabIndex = 10;
+            this.txtBairroCadastro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBairroCadastro_KeyPress);
             // 
             // gunaLabel16
             // 
@@ -389,7 +405,7 @@
             this.txtTipoCadastro.Location = new System.Drawing.Point(103, 109);
             this.txtTipoCadastro.Name = "txtTipoCadastro";
             this.txtTipoCadastro.Size = new System.Drawing.Size(162, 23);
-            this.txtTipoCadastro.TabIndex = 135;
+            this.txtTipoCadastro.TabIndex = 0;
             // 
             // txtUFCadastro
             // 
@@ -426,7 +442,7 @@
             this.txtUFCadastro.Location = new System.Drawing.Point(103, 269);
             this.txtUFCadastro.Name = "txtUFCadastro";
             this.txtUFCadastro.Size = new System.Drawing.Size(60, 23);
-            this.txtUFCadastro.TabIndex = 136;
+            this.txtUFCadastro.TabIndex = 5;
             // 
             // btnPesquisa_CadastroCliente
             // 
@@ -460,7 +476,7 @@
             this.btnPesquisa_CadastroCliente.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnPesquisa_CadastroCliente.OnPressedColor = System.Drawing.Color.Black;
             this.btnPesquisa_CadastroCliente.Size = new System.Drawing.Size(44, 47);
-            this.btnPesquisa_CadastroCliente.TabIndex = 104;
+            this.btnPesquisa_CadastroCliente.TabIndex = 14;
             this.btnPesquisa_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnPesquisa_CadastroCliente.Click += new System.EventHandler(this.btnPesquisa_CadastroCliente_Click);
             // 
@@ -496,7 +512,7 @@
             this.btnExcluir_CadastroCliente.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnExcluir_CadastroCliente.OnPressedColor = System.Drawing.Color.Black;
             this.btnExcluir_CadastroCliente.Size = new System.Drawing.Size(44, 47);
-            this.btnExcluir_CadastroCliente.TabIndex = 103;
+            this.btnExcluir_CadastroCliente.TabIndex = 13;
             this.btnExcluir_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExcluir_CadastroCliente.Click += new System.EventHandler(this.btnExcluir_CadastroCliente_Click);
             // 
@@ -532,7 +548,7 @@
             this.btnModificar_CadastroCliente.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnModificar_CadastroCliente.OnPressedColor = System.Drawing.Color.Black;
             this.btnModificar_CadastroCliente.Size = new System.Drawing.Size(44, 47);
-            this.btnModificar_CadastroCliente.TabIndex = 102;
+            this.btnModificar_CadastroCliente.TabIndex = 12;
             this.btnModificar_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnModificar_CadastroCliente.Click += new System.EventHandler(this.btnModificar_CadastroCliente_Click);
             // 
@@ -568,7 +584,7 @@
             this.btnIncluir_CadastroCliente.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnIncluir_CadastroCliente.OnPressedColor = System.Drawing.Color.Black;
             this.btnIncluir_CadastroCliente.Size = new System.Drawing.Size(44, 47);
-            this.btnIncluir_CadastroCliente.TabIndex = 101;
+            this.btnIncluir_CadastroCliente.TabIndex = 11;
             this.btnIncluir_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnIncluir_CadastroCliente.Click += new System.EventHandler(this.btnIncluir_CadastroCliente_Click);
             // 
@@ -581,20 +597,21 @@
             this.txtRazaoSocialCadastro.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
             this.txtRazaoSocialCadastro.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtRazaoSocialCadastro.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtRazaoSocialCadastro.Location = new System.Drawing.Point(389, 186);
+            this.txtRazaoSocialCadastro.Location = new System.Drawing.Point(384, 186);
             this.txtRazaoSocialCadastro.MaxLength = 200;
             this.txtRazaoSocialCadastro.Name = "txtRazaoSocialCadastro";
             this.txtRazaoSocialCadastro.PasswordChar = '\0';
             this.txtRazaoSocialCadastro.SelectedText = "";
             this.txtRazaoSocialCadastro.ShortcutsEnabled = false;
-            this.txtRazaoSocialCadastro.Size = new System.Drawing.Size(409, 26);
-            this.txtRazaoSocialCadastro.TabIndex = 137;
+            this.txtRazaoSocialCadastro.Size = new System.Drawing.Size(381, 26);
+            this.txtRazaoSocialCadastro.TabIndex = 3;
+            this.txtRazaoSocialCadastro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRazaoSocialCadastro_KeyPress);
             // 
             // gunaLabel17
             // 
             this.gunaLabel17.AutoSize = true;
             this.gunaLabel17.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel17.Location = new System.Drawing.Point(299, 197);
+            this.gunaLabel17.Location = new System.Drawing.Point(294, 197);
             this.gunaLabel17.Name = "gunaLabel17";
             this.gunaLabel17.Size = new System.Drawing.Size(75, 15);
             this.gunaLabel17.TabIndex = 138;
@@ -605,30 +622,43 @@
             this.gvdCadastroClienteFornecedor.AllowUserToAddRows = false;
             this.gvdCadastroClienteFornecedor.AllowUserToDeleteRows = false;
             this.gvdCadastroClienteFornecedor.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.gvdCadastroClienteFornecedor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gvdCadastroClienteFornecedor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.gvdCadastroClienteFornecedor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.gvdCadastroClienteFornecedor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.gvdCadastroClienteFornecedor.BackgroundColor = System.Drawing.Color.White;
             this.gvdCadastroClienteFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvdCadastroClienteFornecedor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.gvdCadastroClienteFornecedor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvdCadastroClienteFornecedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvdCadastroClienteFornecedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gvdCadastroClienteFornecedor.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvdCadastroClienteFornecedor.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gvdCadastroClienteFornecedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo_do_Cliente,
+            this.Nome_Fantasia,
+            this.Data_Cadastro,
+            this.CNPJ,
+            this.Razao_Social,
+            this.CEP,
+            this.UF,
+            this.Cidade,
+            this.Endereco,
+            this.Numero,
+            this.Complemento,
+            this.Bairro});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvdCadastroClienteFornecedor.DefaultCellStyle = dataGridViewCellStyle6;
             this.gvdCadastroClienteFornecedor.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gvdCadastroClienteFornecedor.EnableHeadersVisualStyles = false;
             this.gvdCadastroClienteFornecedor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -639,7 +669,7 @@
             this.gvdCadastroClienteFornecedor.RowHeadersVisible = false;
             this.gvdCadastroClienteFornecedor.RowHeadersWidth = 45;
             this.gvdCadastroClienteFornecedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvdCadastroClienteFornecedor.Size = new System.Drawing.Size(1131, 118);
+            this.gvdCadastroClienteFornecedor.Size = new System.Drawing.Size(975, 118);
             this.gvdCadastroClienteFornecedor.TabIndex = 141;
             this.gvdCadastroClienteFornecedor.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.gvdCadastroClienteFornecedor.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -664,6 +694,102 @@
             this.gvdCadastroClienteFornecedor.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gvdCadastroClienteFornecedor.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
+            // Codigo_do_Cliente
+            // 
+            this.Codigo_do_Cliente.DataPropertyName = "ID_Cliente";
+            this.Codigo_do_Cliente.HeaderText = "Codigo do Cliente";
+            this.Codigo_do_Cliente.Name = "Codigo_do_Cliente";
+            this.Codigo_do_Cliente.ReadOnly = true;
+            this.Codigo_do_Cliente.Width = 142;
+            // 
+            // Nome_Fantasia
+            // 
+            this.Nome_Fantasia.DataPropertyName = "Nome_Fantasia";
+            this.Nome_Fantasia.HeaderText = "Nome Fantasia";
+            this.Nome_Fantasia.Name = "Nome_Fantasia";
+            this.Nome_Fantasia.ReadOnly = true;
+            this.Nome_Fantasia.Width = 123;
+            // 
+            // Data_Cadastro
+            // 
+            this.Data_Cadastro.DataPropertyName = "Data_Cadastro";
+            this.Data_Cadastro.HeaderText = "Data Cadastro";
+            this.Data_Cadastro.Name = "Data_Cadastro";
+            this.Data_Cadastro.ReadOnly = true;
+            this.Data_Cadastro.Width = 120;
+            // 
+            // CNPJ
+            // 
+            this.CNPJ.DataPropertyName = "CNPJ";
+            this.CNPJ.HeaderText = "CNPJ";
+            this.CNPJ.Name = "CNPJ";
+            this.CNPJ.ReadOnly = true;
+            this.CNPJ.Width = 63;
+            // 
+            // Razao_Social
+            // 
+            this.Razao_Social.DataPropertyName = "Razao_Social";
+            this.Razao_Social.HeaderText = "Razao Social";
+            this.Razao_Social.Name = "Razao_Social";
+            this.Razao_Social.ReadOnly = true;
+            this.Razao_Social.Width = 106;
+            // 
+            // CEP
+            // 
+            this.CEP.DataPropertyName = "CEP";
+            this.CEP.HeaderText = "CEP";
+            this.CEP.Name = "CEP";
+            this.CEP.ReadOnly = true;
+            this.CEP.Width = 56;
+            // 
+            // UF
+            // 
+            this.UF.DataPropertyName = "UF";
+            this.UF.HeaderText = "UF";
+            this.UF.Name = "UF";
+            this.UF.ReadOnly = true;
+            this.UF.Width = 49;
+            // 
+            // Cidade
+            // 
+            this.Cidade.DataPropertyName = "Cidade";
+            this.Cidade.HeaderText = "Cidade";
+            this.Cidade.Name = "Cidade";
+            this.Cidade.ReadOnly = true;
+            this.Cidade.Width = 74;
+            // 
+            // Endereco
+            // 
+            this.Endereco.DataPropertyName = "Endereco";
+            this.Endereco.HeaderText = "Endereco";
+            this.Endereco.Name = "Endereco";
+            this.Endereco.ReadOnly = true;
+            this.Endereco.Width = 88;
+            // 
+            // Numero
+            // 
+            this.Numero.DataPropertyName = "Numero";
+            this.Numero.HeaderText = "Numero";
+            this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
+            this.Numero.Width = 82;
+            // 
+            // Complemento
+            // 
+            this.Complemento.DataPropertyName = "Complemento";
+            this.Complemento.HeaderText = "Complemento";
+            this.Complemento.Name = "Complemento";
+            this.Complemento.ReadOnly = true;
+            this.Complemento.Width = 119;
+            // 
+            // Bairro
+            // 
+            this.Bairro.DataPropertyName = "Bairro";
+            this.Bairro.HeaderText = "Bairro";
+            this.Bairro.Name = "Bairro";
+            this.Bairro.ReadOnly = true;
+            this.Bairro.Width = 68;
+            // 
             // AvisoDePreenchimentoCNPJ
             // 
             this.AvisoDePreenchimentoCNPJ.AutoSize = true;
@@ -687,10 +813,10 @@
             // txtCadastroCadastro
             // 
             this.txtCadastroCadastro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCadastroCadastro.Location = new System.Drawing.Point(950, 147);
+            this.txtCadastroCadastro.Location = new System.Drawing.Point(876, 146);
             this.txtCadastroCadastro.Name = "txtCadastroCadastro";
             this.txtCadastroCadastro.ReadOnly = true;
-            this.txtCadastroCadastro.Size = new System.Drawing.Size(135, 25);
+            this.txtCadastroCadastro.Size = new System.Drawing.Size(112, 25);
             this.txtCadastroCadastro.TabIndex = 156;
             // 
             // txtCodProdutoCadastro
@@ -706,7 +832,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 542);
+            this.ClientSize = new System.Drawing.Size(1000, 542);
             this.Controls.Add(this.txtCodProdutoCadastro);
             this.Controls.Add(this.txtCadastroCadastro);
             this.Controls.Add(this.AvisoDePreenchimentoTipo);
@@ -793,5 +919,17 @@
         private System.Windows.Forms.Label AvisoDePreenchimentoTipo;
         private System.Windows.Forms.TextBox txtCadastroCadastro;
         private System.Windows.Forms.TextBox txtCodProdutoCadastro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo_do_Cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome_Fantasia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Cadastro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CNPJ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Razao_Social;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CEP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Endereco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Complemento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Bairro;
     }
 }

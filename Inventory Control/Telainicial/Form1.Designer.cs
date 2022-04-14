@@ -62,7 +62,7 @@
             this.gunaControlBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.gunaControlBox1.IconColor = System.Drawing.Color.White;
             this.gunaControlBox1.IconSize = 15F;
-            this.gunaControlBox1.Location = new System.Drawing.Point(1003, -1);
+            this.gunaControlBox1.Location = new System.Drawing.Point(984, -1);
             this.gunaControlBox1.Name = "gunaControlBox1";
             this.gunaControlBox1.OnHoverBackColor = System.Drawing.SystemColors.Highlight;
             this.gunaControlBox1.OnHoverIconColor = System.Drawing.Color.White;
@@ -79,7 +79,7 @@
             this.gunaControlBox2.ControlBoxType = Guna.UI.WinForms.FormControlBoxType.MinimizeBox;
             this.gunaControlBox2.IconColor = System.Drawing.Color.White;
             this.gunaControlBox2.IconSize = 15F;
-            this.gunaControlBox2.Location = new System.Drawing.Point(957, -1);
+            this.gunaControlBox2.Location = new System.Drawing.Point(938, -1);
             this.gunaControlBox2.Name = "gunaControlBox2";
             this.gunaControlBox2.OnHoverBackColor = System.Drawing.SystemColors.Highlight;
             this.gunaControlBox2.OnHoverIconColor = System.Drawing.Color.White;
@@ -106,7 +106,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(1044, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1025, 28);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -241,7 +241,7 @@
             this.TelaInicial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.TelaInicial.Location = new System.Drawing.Point(12, 34);
             this.TelaInicial.Name = "TelaInicial";
-            this.TelaInicial.Size = new System.Drawing.Size(1156, 542);
+            this.TelaInicial.Size = new System.Drawing.Size(1000, 542);
             this.TelaInicial.TabIndex = 3;
             // 
             // panel1
@@ -257,7 +257,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1044, 589);
+            this.ClientSize = new System.Drawing.Size(1025, 589);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gunaControlBox1);
             this.Controls.Add(this.TelaInicial);

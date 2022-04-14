@@ -44,6 +44,15 @@
             this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
             this.gvdMovimentacaoEstoque = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.NF_Entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cod_Produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lote = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Local = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor_Unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cod_de_Barras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtLote_MovimentocaoEstoque = new System.Windows.Forms.TextBox();
@@ -73,7 +82,7 @@
             this.txtCodDeBarras_MovimentacaoEstoque.SelectedText = "";
             this.txtCodDeBarras_MovimentacaoEstoque.ShortcutsEnabled = false;
             this.txtCodDeBarras_MovimentacaoEstoque.Size = new System.Drawing.Size(162, 26);
-            this.txtCodDeBarras_MovimentacaoEstoque.TabIndex = 119;
+            this.txtCodDeBarras_MovimentacaoEstoque.TabIndex = 0;
             this.txtCodDeBarras_MovimentacaoEstoque.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodDeBarras_MovimentacaoEstoque_KeyPress);
             // 
             // gunaLabel5
@@ -108,7 +117,7 @@
             this.cmbDestino_MovimentacaoEstoque.Location = new System.Drawing.Point(103, 349);
             this.cmbDestino_MovimentacaoEstoque.Name = "cmbDestino_MovimentacaoEstoque";
             this.cmbDestino_MovimentacaoEstoque.Size = new System.Drawing.Size(162, 23);
-            this.cmbDestino_MovimentacaoEstoque.TabIndex = 136;
+            this.cmbDestino_MovimentacaoEstoque.TabIndex = 1;
             // 
             // gunaLabel4
             // 
@@ -197,7 +206,7 @@
             this.gvdMovimentacaoEstoque.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.gvdMovimentacaoEstoque.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gvdMovimentacaoEstoque.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvdMovimentacaoEstoque.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gvdMovimentacaoEstoque.BackgroundColor = System.Drawing.Color.White;
             this.gvdMovimentacaoEstoque.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvdMovimentacaoEstoque.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -211,6 +220,16 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gvdMovimentacaoEstoque.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gvdMovimentacaoEstoque.ColumnHeadersHeight = 30;
+            this.gvdMovimentacaoEstoque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NF_Entrada,
+            this.Cod_Produto,
+            this.Lote,
+            this.Descricao,
+            this.Quantidade,
+            this.Local,
+            this.Valor_Unitario,
+            this.Valor_Total,
+            this.Cod_de_Barras});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -228,7 +247,7 @@
             this.gvdMovimentacaoEstoque.RowHeadersVisible = false;
             this.gvdMovimentacaoEstoque.RowHeadersWidth = 30;
             this.gvdMovimentacaoEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvdMovimentacaoEstoque.Size = new System.Drawing.Size(1019, 136);
+            this.gvdMovimentacaoEstoque.Size = new System.Drawing.Size(975, 136);
             this.gvdMovimentacaoEstoque.TabIndex = 153;
             this.gvdMovimentacaoEstoque.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.gvdMovimentacaoEstoque.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -252,6 +271,78 @@
             this.gvdMovimentacaoEstoque.ThemeStyle.RowsStyle.Height = 22;
             this.gvdMovimentacaoEstoque.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gvdMovimentacaoEstoque.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // NF_Entrada
+            // 
+            this.NF_Entrada.DataPropertyName = "NF_Entrada";
+            this.NF_Entrada.HeaderText = "Nota Fiscal";
+            this.NF_Entrada.Name = "NF_Entrada";
+            this.NF_Entrada.ReadOnly = true;
+            this.NF_Entrada.Width = 98;
+            // 
+            // Cod_Produto
+            // 
+            this.Cod_Produto.DataPropertyName = "Cod_Produto";
+            this.Cod_Produto.HeaderText = "Codigo Produto";
+            this.Cod_Produto.Name = "Cod_Produto";
+            this.Cod_Produto.ReadOnly = true;
+            this.Cod_Produto.Width = 130;
+            // 
+            // Lote
+            // 
+            this.Lote.DataPropertyName = "Lote";
+            this.Lote.HeaderText = "Lote";
+            this.Lote.Name = "Lote";
+            this.Lote.ReadOnly = true;
+            this.Lote.Width = 59;
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "Descricao";
+            this.Descricao.HeaderText = "Descricao";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Width = 90;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.DataPropertyName = "Quantidade";
+            this.Quantidade.HeaderText = "Quantidade";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
+            this.Quantidade.Width = 104;
+            // 
+            // Local
+            // 
+            this.Local.DataPropertyName = "Local";
+            this.Local.HeaderText = "Local";
+            this.Local.Name = "Local";
+            this.Local.ReadOnly = true;
+            this.Local.Width = 63;
+            // 
+            // Valor_Unitario
+            // 
+            this.Valor_Unitario.DataPropertyName = "Valor_Unitario";
+            this.Valor_Unitario.HeaderText = "Valor Unitario";
+            this.Valor_Unitario.Name = "Valor_Unitario";
+            this.Valor_Unitario.ReadOnly = true;
+            this.Valor_Unitario.Width = 116;
+            // 
+            // Valor_Total
+            // 
+            this.Valor_Total.DataPropertyName = "Valor_Total";
+            this.Valor_Total.HeaderText = "Valor Total";
+            this.Valor_Total.Name = "Valor_Total";
+            this.Valor_Total.ReadOnly = true;
+            this.Valor_Total.Width = 96;
+            // 
+            // Cod_de_Barras
+            // 
+            this.Cod_de_Barras.DataPropertyName = "Cod_de_Barras";
+            this.Cod_de_Barras.HeaderText = "Codigo de Barras";
+            this.Cod_de_Barras.Name = "Cod_de_Barras";
+            this.Cod_de_Barras.ReadOnly = true;
+            this.Cod_de_Barras.Width = 137;
             // 
             // label1
             // 
@@ -350,7 +441,7 @@
             this.btnEstornar_CadastroCliente.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnEstornar_CadastroCliente.OnPressedColor = System.Drawing.Color.Black;
             this.btnEstornar_CadastroCliente.Size = new System.Drawing.Size(44, 47);
-            this.btnEstornar_CadastroCliente.TabIndex = 162;
+            this.btnEstornar_CadastroCliente.TabIndex = 4;
             this.btnEstornar_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnEstornar_CadastroCliente.Click += new System.EventHandler(this.btnEstornar_CadastroCliente_Click);
             // 
@@ -386,7 +477,7 @@
             this.btnPesquisa_CadastroCliente.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnPesquisa_CadastroCliente.OnPressedColor = System.Drawing.Color.Black;
             this.btnPesquisa_CadastroCliente.Size = new System.Drawing.Size(44, 47);
-            this.btnPesquisa_CadastroCliente.TabIndex = 138;
+            this.btnPesquisa_CadastroCliente.TabIndex = 3;
             this.btnPesquisa_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnPesquisa_CadastroCliente.Click += new System.EventHandler(this.btnPesquisa_CadastroCliente_Click);
             // 
@@ -422,7 +513,7 @@
             this.btnModificar_CadastroCliente.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnModificar_CadastroCliente.OnPressedColor = System.Drawing.Color.Black;
             this.btnModificar_CadastroCliente.Size = new System.Drawing.Size(44, 47);
-            this.btnModificar_CadastroCliente.TabIndex = 137;
+            this.btnModificar_CadastroCliente.TabIndex = 2;
             this.btnModificar_CadastroCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnModificar_CadastroCliente.Click += new System.EventHandler(this.btnModificar_CadastroCliente_Click);
             // 
@@ -440,7 +531,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 542);
+            this.ClientSize = new System.Drawing.Size(1000, 542);
             this.Controls.Add(this.gunaLabel10);
             this.Controls.Add(this.btnEstornar_CadastroCliente);
             this.Controls.Add(this.txtCodDaProduto_MovimentacaoEstoque);
@@ -498,5 +589,14 @@
         private System.Windows.Forms.TextBox txtCodDaProduto_MovimentacaoEstoque;
         private Guna.UI.WinForms.GunaAdvenceButton btnEstornar_CadastroCliente;
         private Guna.UI.WinForms.GunaLabel gunaLabel10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NF_Entrada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cod_Produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lote;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Local;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor_Unitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor_Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cod_de_Barras;
     }
 }

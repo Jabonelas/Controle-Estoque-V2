@@ -65,6 +65,10 @@ namespace Inventory_Control
 
         private void txtLogin_Login_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
             txtLogin_Login.CharacterCasing = CharacterCasing.Upper;
         }
 
