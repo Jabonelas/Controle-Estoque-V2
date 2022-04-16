@@ -64,7 +64,7 @@ Software para controle, gerenciamento e faturamento de estoque para uma empresa 
 ![enter image description here](https://i.imgur.com/LJsR80J.gif)
 
   - [X] Incluir Nota Fiscal no sistema. (Verificação de existência de cadrastro Fornecedor e Produtos).
-  - [X] Excluir Nota fiscal do sistema.(Impedindo que seja excluído Nota fiscal que já tenha saldo consumido ou local modificado).
+  - [X] Excluir Nota fiscal do sistema.(Impedindo que seja excluído Nota Fiscal que já tenha saldo consumido ou local modificado).
   - [X] Buscar Nota Fiscal.
 
 
@@ -89,4 +89,4 @@ Software para controle, gerenciamento e faturamento de estoque para uma empresa 
 
 ![enter image description here](https://i.imgur.com/qjN47Ue.gif)
 
-  - [X] Buscar Nota Fiscal que foram faturadas no sistema. (Emitir relatório de Nota Fiscais que foram faturadas com busca por data e impressão no gráfico mostrando os tops 5 dos produtos com maior faturamento).
+  - [X] Buscar Nota Fiscal que foram faturadas no sistema. (Emitir relatório de Notas Fiscais que foram faturadas, com busca por data e impressão no gráfico mostrando os tops 5 dos produtos com maior faturamento).
