@@ -40,7 +40,7 @@ Software para controle, gerenciamento e faturamento de estoque para uma empresa 
 
 ![enter image description here](https://i.imgur.com/szrGirE.gif)
 
-  - [X]  Modificar local de estoque do produto.(Obedecendo o FIFO para garantir o giro de estoque)
+  - [X]  Modificar local de estoque do produto. (Obedecendo o FIFO para garantir o giro de estoque)
  - [X]  Buscar dados da etiqueta do produto.
  - [X] Estornar etiqueta para local de origem.
 
@@ -63,8 +63,8 @@ Software para controle, gerenciamento e faturamento de estoque para uma empresa 
 
 ![enter image description here](https://i.imgur.com/LJsR80J.gif)
 
-  - [X] Incluir Nota Fiscal no sistema.
-  - [X] Excluir Nota fiscal do sistema.(Impedindo que seja excluído Nota fiscal que já tenha saldo consumido ou local modificado).
+  - [X] Incluir Nota Fiscal no sistema. (Verificação de existência cadrastro de Fornecedor e Produtos).
+  - [X] Excluir Nota fiscal do sistema. (Impedindo que seja excluído Nota fiscal que já tenha saldo consumido ou local modificado).
   - [X] Buscar Nota Fiscal.
 
 
@@ -80,7 +80,7 @@ Software para controle, gerenciamento e faturamento de estoque para uma empresa 
 
 ![enter image description here](https://i.imgur.com/VSJNgTP.gif)
 
-  - [X] Incluir Produto na Nota Fiscal faturada.
+  - [X] Incluir Produto na Nota Fiscal faturada. (Verificação de existência cadrastro de Cliente).
   - [X] Confirmar Nota Fiscal.
   - [X] Excluir Nota Fiscal que foi faturada.
   - [X] Buscar Nota Fiscal que foi faturada.
