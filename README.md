@@ -40,7 +40,7 @@ Software para controle, gerenciamento e faturamento de estoque para uma empresa 
 
 ![enter image description here](https://i.imgur.com/szrGirE.gif)
 
-  - [X]  Modificar local de estoque do produto.(Obedecendo o FIFO para garantir o giro de estoque)
+  - [X]  Modificar local de estoque do produto. (Obedecendo o FIFO para garantir o giro de estoque)
  - [X]  Buscar dados da etiqueta do produto.
  - [X] Estornar etiqueta para local de origem.
 
