@@ -61,7 +61,8 @@ Software para controle, gerenciamento e faturamento de estoque para uma empresa 
 
 ## **Tela de Entada de Nota Fiscal**
 
-![enter image description here](https://i.imgur.com/LJsR80J.gif)
+![enter image description here](https://i.imgur.com/qjN47Ue.gif)
+
 
   - [X] Incluir Nota Fiscal no sistema. (Verificação de existência de cadrastro Fornecedor e Produtos).
   - [X] Excluir Nota fiscal do sistema.(Impedindo que seja excluído Nota Fiscal que já tenha saldo consumido ou local modificado).
