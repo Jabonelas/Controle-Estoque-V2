@@ -61,19 +61,18 @@ Software para controle, gerenciamento e faturamento de estoque para uma empresa 
 
 ## **Tela de Entada de Nota Fiscal**
 
-![enter image description here](https://i.imgur.com/flsasr6.gif)
-
+![enter image description here](https://i.imgur.com/LJsR80J.gif)
 
   - [X] Incluir Nota Fiscal no sistema. (Verificação de existência de cadrastro Fornecedor e Produtos).
   - [X] Excluir Nota fiscal do sistema.(Impedindo que seja excluído Nota Fiscal que já tenha saldo consumido ou local modificado).
-  - [X] Buscar Nota Fiscal.
+  - [X] Buscar Nota Fiscal. (Busca informando status da Nota Fiscal).
 
 
 ## **Tela Relatorio de Nota Fiscal de Entrada**
 
-![enter image description here](https://i.imgur.com/CRoM1MR.gif)
+![enter image description here](https://i.imgur.com/flsasr6.gif)
 
-  - [X] Buscar Notas Fiscais que deram entrada no sistema. (Emitir relatório de Nota Fiscais que deram entrada com busca por data e impressão no gráfico mostrando o top 5 dos produtos com maior entrada).
+  - [X] Buscar Notas Fiscais que deram entrada no sistema. (Emitir relatório de Notas Fiscais que deram entrada com busca por data e impressão no gráfico mostrando o top 5 dos produtos com maior entrada).
 
 
 
@@ -90,4 +89,4 @@ Software para controle, gerenciamento e faturamento de estoque para uma empresa 
 
 ![enter image description here](https://i.imgur.com/qjN47Ue.gif)
 
-  - [X] Buscar Nota Fiscal que foram faturadas no sistema. (Emitir relatório de Notas Fiscais que foram faturadas, com busca por data e impressão no gráfico mostrando os tops 5 dos produtos com maior faturamento).
+  - [X] Buscar Nota Fiscal que foram faturadas no sistema. (Emitir relatório de Notas Fiscais que foram faturadas com busca por data e impressão no gráfico mostrando os tops 5 dos produtos com maior faturamento).
