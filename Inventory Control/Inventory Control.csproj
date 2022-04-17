@@ -311,5 +311,8 @@
   <ItemGroup>
     <None Include="Resources\hide_24px1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagem Inicial V2.0 copiar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

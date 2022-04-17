@@ -173,6 +173,16 @@ namespace Inventory_Control.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Imagem_Inicial_V2_0_copiar {
+            get {
+                object obj = ResourceManager.GetObject("Imagem Inicial V2.0 copiar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Incluir {
             get {
                 object obj = ResourceManager.GetObject("Incluir", resourceCulture);

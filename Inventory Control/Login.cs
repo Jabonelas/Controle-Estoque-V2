@@ -107,5 +107,10 @@ namespace Inventory_Control
                 Image.FromFile(@"C: \Users\israe\source\repos\Inventory Control\Inventory Control\Resources\Buscar.png");
             }
         }
+
+        private void gunaControlBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

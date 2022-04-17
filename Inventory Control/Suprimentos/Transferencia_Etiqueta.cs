@@ -120,6 +120,18 @@ namespace Inventory_Control
             }
         }
 
+        // Setar Cor ao Passar o Mouse
+        private void btnBuscarEtiquetaOrigem_MouseEnter(object sender, EventArgs e)
+        {
+            btnBuscarEtiquetaOrigem.BackColor = Color.LightBlue;
+        }
+
+        //Setar Cor ao Passar o Mouse
+        private void btnBuscarEtiquetaOrigem_MouseLeave(object sender, EventArgs e)
+        {
+            btnBuscarEtiquetaOrigem.BackColor = Color.Transparent;
+        }
+
         #endregion Etiqueta Origem
 
         #region Etiqueta Destino
@@ -167,6 +179,20 @@ namespace Inventory_Control
             {
                 MessageBox.Show(x.ToString());
             }
+        }
+
+        // Setar Cor ao Passar o Mouse
+
+        private void btnBuscarEtiquetaDestino_MouseEnter(object sender, EventArgs e)
+        {
+            btnBuscarEtiquetaDestino.BackColor = Color.LightBlue;
+        }
+
+        // Setar Cor ao Passar o Mouse
+
+        private void btnBuscarEtiquetaDestino_MouseLeave(object sender, EventArgs e)
+        {
+            btnBuscarEtiquetaDestino.BackColor = Color.Transparent;
         }
 
         #endregion Etiqueta Destino
@@ -265,19 +291,51 @@ namespace Inventory_Control
 
         #region Botao Buscar Lista
 
-        // Origem
+        #region Origem
+
         private void btnBuscarListaOrigem_Click(object sender, EventArgs e)
         {
             ListaEstoque ListarProdutos = new ListaEstoque(this, "Origem");
             ListarProdutos.ShowDialog();
         }
 
-        // Destino
+        // Setar Cor ao Passar o Mouse
+        private void btnBuscarListaOrigem_MouseEnter(object sender, EventArgs e)
+        {
+            btnBuscarListaOrigem.BackColor = Color.LightBlue;
+        }
+
+        // Setar Cor ao Passar o Mouse
+        private void btnBuscarListaOrigem_MouseLeave(object sender, EventArgs e)
+        {
+            btnBuscarListaOrigem.BackColor = Color.Transparent;
+        }
+
+        #endregion Origem
+
+        #region Destino
+
         private void btnBuscarListaDestino_Click(object sender, EventArgs e)
         {
             ListaEstoque ListarProdutos = new ListaEstoque(this, "Destino");
             ListarProdutos.ShowDialog();
         }
+
+        // Setar Cor ao Passar o Mouse
+
+        private void btnBuscarListaDestino_MouseEnter(object sender, EventArgs e)
+        {
+            btnBuscarListaDestino.BackColor = Color.LightBlue;
+        }
+
+        // Setar Cor ao Passar o Mouse
+
+        private void btnBuscarListaDestino_MouseLeave(object sender, EventArgs e)
+        {
+            btnBuscarListaDestino.BackColor = Color.Transparent;
+        }
+
+        #endregion Destino
 
         #endregion Botao Buscar Lista
 

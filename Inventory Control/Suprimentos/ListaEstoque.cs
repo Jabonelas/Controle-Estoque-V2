@@ -17,6 +17,16 @@ namespace Inventory_Control
 
         private Transferencia_Etiqueta formTransferencia;
 
+        private BuscarDadosEstoque BP = new BuscarDadosEstoque(); // Buscar Produto na tabela Estoque
+
+        private BuscarDadosEstoque BLote = new BuscarDadosEstoque(); // Buscar Lote na tabela Estoque
+
+        private BuscarDadosEstoque BD = new BuscarDadosEstoque(); // Buscar Descricao na tabela Estoque
+
+        private BuscarDadosEstoque BQ = new BuscarDadosEstoque(); // Buscar Quantidade na tabela Estoque
+
+        private BuscarDadosEstoque BLocal = new BuscarDadosEstoque(); // Buscar Local na tabela Estoque
+
         private string formPrincipal = "";
 
         public ListaEstoque(Transferencia_Etiqueta _transferencia_Etiqueta, string _form)
@@ -53,6 +63,18 @@ namespace Inventory_Control
             }
         }
 
+        // Setar Cor ao Passa Mouse
+        private void btnBuscarEtiqueta_MouseEnter(object sender, EventArgs e)
+        {
+            btnBuscarEtiqueta.BackColor = Color.LightBlue;
+        }
+
+        // Setar Cor ao Passa Mouse
+        private void btnBuscarEtiqueta_MouseLeave(object sender, EventArgs e)
+        {
+            btnBuscarEtiqueta.BackColor = Color.Transparent;
+        }
+
         #endregion Botao Buscar
 
         #region TextBox Codigo Produto
@@ -75,11 +97,31 @@ namespace Inventory_Control
             {
                 formTransferencia.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text = gvdListaEstoque.SelectedCells[1].Value.ToString();
 
+                formTransferencia.txtCodDaProdutoOrigem_MovimentacaoEtiqueta.Text = BP.BuscarCodProdutoTextBox(Convert.ToInt32(formTransferencia.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text));
+
+                formTransferencia.txtLoteOrigem_MovimentocaoEtiqueta.Text = BLote.BuscarLote(Convert.ToInt32(formTransferencia.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text));
+
+                formTransferencia.txtDescricaoOrigem_MovimentocaoEtiqueta.Text = BD.BuscarDescricao(Convert.ToInt32(formTransferencia.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text));
+
+                formTransferencia.txtQuantidadeOrigem_MovimentocaoEtiqueta.Text = BQ.BuscarQuantidade(Convert.ToInt32(formTransferencia.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text)).ToString();
+
+                formTransferencia.txtLocalOrigem_MovimentacaoEtiqueta.Text = BLocal.BuscarLocal(Convert.ToInt32(formTransferencia.txtCodDeBarrasOrigem_MovimentacaoEtiqueta.Text));
+
                 this.Close();
             }
             else if (formPrincipal == "Destino")
             {
                 formTransferencia.txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text = gvdListaEstoque.SelectedCells[1].Value.ToString();
+
+                formTransferencia.txtCodDaProdutoDestino_MovimentacaoEtiqueta.Text = BP.BuscarCodProdutoTextBox(Convert.ToInt32(formTransferencia.txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text));
+
+                formTransferencia.txtLoteDestino_MovimentocaoEtiqueta.Text = BLote.BuscarLote(Convert.ToInt32(formTransferencia.txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text));
+
+                formTransferencia.txtDescricaoDestino_MovimentocaoEtiqueta.Text = BD.BuscarDescricao(Convert.ToInt32(formTransferencia.txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text));
+
+                formTransferencia.txtQuantidadeDestino_MovimentocaoEtiqueta.Text = BQ.BuscarQuantidade(Convert.ToInt32(formTransferencia.txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text)).ToString();
+
+                formTransferencia.txtLocalDestino_MovimentacaoEtiqueta.Text = BLocal.BuscarLocal(Convert.ToInt32(formTransferencia.txtCodDeBarrasDestino_MovimentacaoEtiqueta.Text));
 
                 this.Close();
             }

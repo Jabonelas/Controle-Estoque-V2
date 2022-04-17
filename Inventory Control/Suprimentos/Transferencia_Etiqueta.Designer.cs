@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Transferencia_Etiqueta));
             this.txtCodDaProdutoOrigem_MovimentacaoEtiqueta = new System.Windows.Forms.TextBox();
             this.txtLocalOrigem_MovimentacaoEtiqueta = new System.Windows.Forms.TextBox();
@@ -337,6 +337,8 @@
             this.btnBuscarListaOrigem.TabIndex = 2;
             this.btnBuscarListaOrigem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnBuscarListaOrigem.Click += new System.EventHandler(this.btnBuscarListaOrigem_Click);
+            this.btnBuscarListaOrigem.MouseEnter += new System.EventHandler(this.btnBuscarListaOrigem_MouseEnter);
+            this.btnBuscarListaOrigem.MouseLeave += new System.EventHandler(this.btnBuscarListaOrigem_MouseLeave);
             // 
             // gunaLabel4
             // 
@@ -383,6 +385,8 @@
             this.btnBuscarEtiquetaOrigem.TabIndex = 14;
             this.btnBuscarEtiquetaOrigem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnBuscarEtiquetaOrigem.Click += new System.EventHandler(this.btnBuscarEtiquetaOrigem_Click);
+            this.btnBuscarEtiquetaOrigem.MouseEnter += new System.EventHandler(this.btnBuscarEtiquetaOrigem_MouseEnter);
+            this.btnBuscarEtiquetaOrigem.MouseLeave += new System.EventHandler(this.btnBuscarEtiquetaOrigem_MouseLeave);
             // 
             // panel2
             // 
@@ -483,6 +487,8 @@
             this.btnBuscarEtiquetaDestino.TabIndex = 1;
             this.btnBuscarEtiquetaDestino.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnBuscarEtiquetaDestino.Click += new System.EventHandler(this.btnBuscarEtiquetaDestino_Click);
+            this.btnBuscarEtiquetaDestino.MouseEnter += new System.EventHandler(this.btnBuscarEtiquetaDestino_MouseEnter);
+            this.btnBuscarEtiquetaDestino.MouseLeave += new System.EventHandler(this.btnBuscarEtiquetaDestino_MouseLeave);
             // 
             // btnBuscarListaDestino
             // 
@@ -519,6 +525,8 @@
             this.btnBuscarListaDestino.TabIndex = 2;
             this.btnBuscarListaDestino.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnBuscarListaDestino.Click += new System.EventHandler(this.btnBuscarListaDestino_Click);
+            this.btnBuscarListaDestino.MouseEnter += new System.EventHandler(this.btnBuscarListaDestino_MouseEnter);
+            this.btnBuscarListaDestino.MouseLeave += new System.EventHandler(this.btnBuscarListaDestino_MouseLeave);
             // 
             // gunaLabel15
             // 
@@ -640,21 +648,21 @@
             this.gvdMovimentacaoEtiqueta.AllowUserToAddRows = false;
             this.gvdMovimentacaoEtiqueta.AllowUserToDeleteRows = false;
             this.gvdMovimentacaoEtiqueta.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.gvdMovimentacaoEtiqueta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.gvdMovimentacaoEtiqueta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gvdMovimentacaoEtiqueta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gvdMovimentacaoEtiqueta.BackgroundColor = System.Drawing.Color.White;
             this.gvdMovimentacaoEtiqueta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvdMovimentacaoEtiqueta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gvdMovimentacaoEtiqueta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvdMovimentacaoEtiqueta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvdMovimentacaoEtiqueta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gvdMovimentacaoEtiqueta.ColumnHeadersHeight = 30;
             this.gvdMovimentacaoEtiqueta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NF_Entrada,
@@ -666,14 +674,14 @@
             this.Valor_Unitario,
             this.Valor_Total,
             this.Cod_de_Barras});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvdMovimentacaoEtiqueta.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvdMovimentacaoEtiqueta.DefaultCellStyle = dataGridViewCellStyle3;
             this.gvdMovimentacaoEtiqueta.EnableHeadersVisualStyles = false;
             this.gvdMovimentacaoEtiqueta.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gvdMovimentacaoEtiqueta.Location = new System.Drawing.Point(12, 423);
@@ -866,12 +874,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtCodDaProdutoOrigem_MovimentacaoEtiqueta;
-        private System.Windows.Forms.TextBox txtLocalOrigem_MovimentacaoEtiqueta;
-        private System.Windows.Forms.TextBox txtQuantidadeOrigem_MovimentocaoEtiqueta;
-        private System.Windows.Forms.TextBox txtDescricaoOrigem_MovimentocaoEtiqueta;
-        private System.Windows.Forms.TextBox txtLoteOrigem_MovimentocaoEtiqueta;
         private Guna.UI.WinForms.GunaLabel gunaLabel8;
         private Guna.UI.WinForms.GunaLabel gunaLabel7;
         private Guna.UI.WinForms.GunaLabel gunaLabel6;
@@ -888,10 +890,6 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel18;
         private Guna.UI.WinForms.GunaLabel gunaLabel19;
         private Guna.UI.WinForms.GunaLabel gunaLabel20;
-        private System.Windows.Forms.TextBox txtLoteDestino_MovimentocaoEtiqueta;
-        private System.Windows.Forms.TextBox txtDescricaoDestino_MovimentocaoEtiqueta;
-        private System.Windows.Forms.TextBox txtLocalDestino_MovimentacaoEtiqueta;
-        private System.Windows.Forms.TextBox txtCodDaProdutoDestino_MovimentacaoEtiqueta;
         private Guna.UI2.WinForms.Guna2DataGridView gvdMovimentacaoEtiqueta;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
@@ -900,7 +898,6 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnBuscarListaOrigem;
         private Guna.UI.WinForms.GunaAdvenceButton btnBuscarEtiquetaDestino;
         private Guna.UI.WinForms.GunaAdvenceButton btnBuscarListaDestino;
-        private System.Windows.Forms.TextBox txtQuantidadeDestino_MovimentocaoEtiqueta;
         private Guna.UI.WinForms.GunaTextBox txtTransferirOrigem_MovimentocaoEtiqueta;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private Guna.UI.WinForms.GunaLabel gunaLabel9;
@@ -920,5 +917,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor_Unitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor_Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cod_de_Barras;
+        public System.Windows.Forms.TextBox txtCodDaProdutoOrigem_MovimentacaoEtiqueta;
+        public System.Windows.Forms.TextBox txtLocalOrigem_MovimentacaoEtiqueta;
+        public System.Windows.Forms.TextBox txtQuantidadeOrigem_MovimentocaoEtiqueta;
+        public System.Windows.Forms.TextBox txtDescricaoOrigem_MovimentocaoEtiqueta;
+        public System.Windows.Forms.TextBox txtLoteOrigem_MovimentocaoEtiqueta;
+        public System.Windows.Forms.TextBox txtLoteDestino_MovimentocaoEtiqueta;
+        public System.Windows.Forms.TextBox txtDescricaoDestino_MovimentocaoEtiqueta;
+        public System.Windows.Forms.TextBox txtLocalDestino_MovimentacaoEtiqueta;
+        public System.Windows.Forms.TextBox txtCodDaProdutoDestino_MovimentacaoEtiqueta;
+        public System.Windows.Forms.TextBox txtQuantidadeDestino_MovimentocaoEtiqueta;
     }
 }

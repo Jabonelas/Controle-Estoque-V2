@@ -49,8 +49,8 @@
             this.fasdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNotaFiscalSaida = new System.Windows.Forms.ToolStripMenuItem();
             this.btnVendasRelatorio = new System.Windows.Forms.ToolStripMenuItem();
-            this.TelaInicial = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TelaInicial = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -235,15 +235,6 @@
             this.btnVendasRelatorio.Text = "Relatório Saída";
             this.btnVendasRelatorio.Click += new System.EventHandler(this.btnVendasRelatorio_Click);
             // 
-            // TelaInicial
-            // 
-            this.TelaInicial.BackColor = System.Drawing.Color.White;
-            this.TelaInicial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TelaInicial.Location = new System.Drawing.Point(12, 34);
-            this.TelaInicial.Name = "TelaInicial";
-            this.TelaInicial.Size = new System.Drawing.Size(1000, 542);
-            this.TelaInicial.TabIndex = 3;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
@@ -251,6 +242,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1180, 10);
             this.panel1.TabIndex = 0;
+            // 
+            // TelaInicial
+            // 
+            this.TelaInicial.BackColor = System.Drawing.Color.White;
+            this.TelaInicial.BackgroundImage = global::Inventory_Control.Properties.Resources.Imagem_Inicial_V2_0_copiar;
+            this.TelaInicial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TelaInicial.Location = new System.Drawing.Point(12, 34);
+            this.TelaInicial.Name = "TelaInicial";
+            this.TelaInicial.Size = new System.Drawing.Size(1000, 542);
+            this.TelaInicial.TabIndex = 3;
             // 
             // Forms
             // 
@@ -266,6 +267,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Forms";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Forms_FormClosing);
             this.menuStrip1.ResumeLayout(false);

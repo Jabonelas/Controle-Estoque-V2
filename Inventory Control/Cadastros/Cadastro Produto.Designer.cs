@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Vendas_Nota_Fiscal_Saida));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
@@ -62,7 +62,7 @@
             this.Preco_Unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtDataCadastro_CadastroProduto = new System.Windows.Forms.TextBox();
             this.AvisoPreenchimentoCodProduto = new System.Windows.Forms.Label();
-            this.txtCodProduto_CadastroProduto = new System.Windows.Forms.TextBox();
+            this.txtCodProduto_CadastroProduto = new Guna.UI.WinForms.GunaTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gdvCadastroProduto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -421,21 +421,21 @@
             this.gdvCadastroProduto.AllowUserToAddRows = false;
             this.gdvCadastroProduto.AllowUserToDeleteRows = false;
             this.gdvCadastroProduto.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.gdvCadastroProduto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.gdvCadastroProduto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gdvCadastroProduto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gdvCadastroProduto.BackgroundColor = System.Drawing.Color.White;
             this.gdvCadastroProduto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gdvCadastroProduto.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.gdvCadastroProduto.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gdvCadastroProduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gdvCadastroProduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gdvCadastroProduto.ColumnHeadersHeight = 30;
             this.gdvCadastroProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Fornecedor,
@@ -445,14 +445,14 @@
             this.Descricao,
             this.Medida,
             this.Preco_Unitario});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gdvCadastroProduto.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gdvCadastroProduto.DefaultCellStyle = dataGridViewCellStyle3;
             this.gdvCadastroProduto.EnableHeadersVisualStyles = false;
             this.gdvCadastroProduto.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gdvCadastroProduto.Location = new System.Drawing.Point(13, 378);
@@ -557,12 +557,21 @@
             // 
             // txtCodProduto_CadastroProduto
             // 
-            this.txtCodProduto_CadastroProduto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodProduto_CadastroProduto.Location = new System.Drawing.Point(103, 187);
+            this.txtCodProduto_CadastroProduto.BaseColor = System.Drawing.Color.White;
+            this.txtCodProduto_CadastroProduto.BorderColor = System.Drawing.Color.Silver;
+            this.txtCodProduto_CadastroProduto.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCodProduto_CadastroProduto.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtCodProduto_CadastroProduto.FocusedBorderColor = System.Drawing.SystemColors.Highlight;
+            this.txtCodProduto_CadastroProduto.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtCodProduto_CadastroProduto.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCodProduto_CadastroProduto.Location = new System.Drawing.Point(103, 186);
+            this.txtCodProduto_CadastroProduto.MaxLength = 18;
             this.txtCodProduto_CadastroProduto.Name = "txtCodProduto_CadastroProduto";
-            this.txtCodProduto_CadastroProduto.ReadOnly = true;
-            this.txtCodProduto_CadastroProduto.Size = new System.Drawing.Size(162, 25);
-            this.txtCodProduto_CadastroProduto.TabIndex = 156;
+            this.txtCodProduto_CadastroProduto.PasswordChar = '\0';
+            this.txtCodProduto_CadastroProduto.SelectedText = "";
+            this.txtCodProduto_CadastroProduto.ShortcutsEnabled = false;
+            this.txtCodProduto_CadastroProduto.Size = new System.Drawing.Size(162, 26);
+            this.txtCodProduto_CadastroProduto.TabIndex = 157;
             // 
             // Vendas_Nota_Fiscal_Saida
             // 
@@ -628,7 +637,6 @@
         private Guna.UI.WinForms.GunaDataGridView gdvCadastroProduto;
         private System.Windows.Forms.TextBox txtDataCadastro_CadastroProduto;
         private System.Windows.Forms.Label AvisoPreenchimentoCodProduto;
-        private System.Windows.Forms.TextBox txtCodProduto_CadastroProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fornecedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data_Cadastro;
         private System.Windows.Forms.DataGridViewTextBoxColumn CNPJ;
@@ -636,5 +644,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Medida;
         private System.Windows.Forms.DataGridViewTextBoxColumn Preco_Unitario;
+        private Guna.UI.WinForms.GunaTextBox txtCodProduto_CadastroProduto;
     }
 }
