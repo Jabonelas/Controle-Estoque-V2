@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>stock.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
       <HintPath>..\..\..\..\Downloads\Bunifu_Framework__Bunifu_DataViz\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
@@ -61,7 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuscarUsuario.cs" />
+    <Compile Include="Dados\BuscarUsuario.cs" />
     <Compile Include="ConfimarcaoNFSaida.cs" />
     <Compile Include="Dados\AlterarDadosEstoque .cs" />
     <Compile Include="Dados\BuscarDadosEstoque .cs" />
@@ -100,10 +103,10 @@
     <Compile Include="Dados\InserirNotaFiscalEntrada .cs" />
     <Compile Include="Dados\InserirDadosProduto.cs" />
     <Compile Include="Dados\DeletarNotaFiscalEntrada.cs" />
-    <Compile Include="Login.cs">
+    <Compile Include="Telainicial\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Telainicial\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Suprimentos\ListaEstoque.cs">
@@ -185,7 +188,7 @@
       <DependentUpon>Cadastro Produto.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Telainicial\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -313,6 +316,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Imagem Inicial V2.0 copiar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="stock.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

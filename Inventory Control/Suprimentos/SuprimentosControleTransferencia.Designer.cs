@@ -118,6 +118,7 @@
             this.cmbDestino_MovimentacaoEstoque.Name = "cmbDestino_MovimentacaoEstoque";
             this.cmbDestino_MovimentacaoEstoque.Size = new System.Drawing.Size(162, 23);
             this.cmbDestino_MovimentacaoEstoque.TabIndex = 1;
+            this.cmbDestino_MovimentacaoEstoque.Text = "[Selecione]";
             // 
             // gunaLabel4
             // 

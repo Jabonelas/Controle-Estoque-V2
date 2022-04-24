@@ -12,6 +12,14 @@ namespace Inventory_Control
 {
     public partial class Forms : Form
     {
+        private Login login;
+
+        public Forms(Login _login)
+        {
+            InitializeComponent();
+            login = _login;
+        }
+
         public Forms()
         {
             InitializeComponent();
@@ -88,6 +96,37 @@ namespace Inventory_Control
         private void Forms_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Forms_Load(object sender, EventArgs e)
+        {
+            //var contextMenu = new ContextMenu();
+            //contextMenu.MenuItems.Add(new MenuItem("Israel"));
+            //notifyIcon.ContextMenu = contextMenu;
+        }
+
+        private void notifyIcon_MouseClick(object sender, MouseEventArgs e)
+        {
+            var contextMenu = new ContextMenu();
+            contextMenu.MenuItems.Add(new MenuItem("Trocar Usuário", btnTrocarUsuario_Click));
+            contextMenu.MenuItems.Add(new MenuItem("Finalizar", btnFinalizar_Click));
+            notifyIcon.ContextMenu = contextMenu;
+        }
+
+        private void btnTrocarUsuario_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            login.Show();
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            DialogResult OpcaoDoUsuario = new DialogResult();
+            OpcaoDoUsuario = MessageBox.Show("Deseja Finalizar o Processo?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (OpcaoDoUsuario == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

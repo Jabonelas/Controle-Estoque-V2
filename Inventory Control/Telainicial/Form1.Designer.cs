@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Forms));
             this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
             this.gunaControlBox2 = new Guna.UI.WinForms.GunaControlBox();
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
@@ -49,8 +50,12 @@
             this.fasdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNotaFiscalSaida = new System.Windows.Forms.ToolStripMenuItem();
             this.btnVendasRelatorio = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnTrocarUsuario = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnFinalizar = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TelaInicial = new System.Windows.Forms.Panel();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,7 +107,8 @@
             this.btnHome,
             this.tesToolStripMenuItem,
             this.esfasToolStripMenuItem,
-            this.fasdfToolStripMenuItem});
+            this.fasdfToolStripMenuItem,
+            this.logoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -224,16 +230,42 @@
             // btnNotaFiscalSaida
             // 
             this.btnNotaFiscalSaida.Name = "btnNotaFiscalSaida";
-            this.btnNotaFiscalSaida.Size = new System.Drawing.Size(169, 24);
+            this.btnNotaFiscalSaida.Size = new System.Drawing.Size(180, 24);
             this.btnNotaFiscalSaida.Text = "Nota Fiscal ";
             this.btnNotaFiscalSaida.Click += new System.EventHandler(this.btnNotaFiscalSaida_Click);
             // 
             // btnVendasRelatorio
             // 
             this.btnVendasRelatorio.Name = "btnVendasRelatorio";
-            this.btnVendasRelatorio.Size = new System.Drawing.Size(169, 24);
+            this.btnVendasRelatorio.Size = new System.Drawing.Size(180, 24);
             this.btnVendasRelatorio.Text = "Relatório Saída";
             this.btnVendasRelatorio.Click += new System.EventHandler(this.btnVendasRelatorio_Click);
+            // 
+            // logoToolStripMenuItem
+            // 
+            this.logoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnTrocarUsuario,
+            this.btnFinalizar});
+            this.logoToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.logoToolStripMenuItem.Name = "logoToolStripMenuItem";
+            this.logoToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
+            this.logoToolStripMenuItem.Text = "Sair";
+            // 
+            // btnTrocarUsuario
+            // 
+            this.btnTrocarUsuario.ForeColor = System.Drawing.Color.Black;
+            this.btnTrocarUsuario.Name = "btnTrocarUsuario";
+            this.btnTrocarUsuario.Size = new System.Drawing.Size(180, 24);
+            this.btnTrocarUsuario.Text = "Trocar Usuário";
+            this.btnTrocarUsuario.Click += new System.EventHandler(this.btnTrocarUsuario_Click);
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(180, 24);
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // panel1
             // 
@@ -253,6 +285,13 @@
             this.TelaInicial.Size = new System.Drawing.Size(1000, 542);
             this.TelaInicial.TabIndex = 3;
             // 
+            // notifyIcon
+            // 
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "Inventory Control V2.0";
+            this.notifyIcon.Visible = true;
+            this.notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseClick);
+            // 
             // Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,11 +304,13 @@
             this.Controls.Add(this.gunaControlBox2);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Forms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Forms_FormClosing);
+            this.Load += new System.EventHandler(this.Forms_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -301,6 +342,10 @@
         private System.Windows.Forms.ToolStripMenuItem fasdfToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnNotaFiscalSaida;
         private System.Windows.Forms.ToolStripMenuItem btnVendasRelatorio;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.Windows.Forms.ToolStripMenuItem logoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnTrocarUsuario;
+        private System.Windows.Forms.ToolStripMenuItem btnFinalizar;
     }
 }
 

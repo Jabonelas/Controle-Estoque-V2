@@ -396,6 +396,7 @@
             this.txtMedida_CadastroProduto.Name = "txtMedida_CadastroProduto";
             this.txtMedida_CadastroProduto.Size = new System.Drawing.Size(162, 23);
             this.txtMedida_CadastroProduto.TabIndex = 3;
+            this.txtMedida_CadastroProduto.Text = "[Selecione]";
             // 
             // txtFornecedor_CadastroProduto
             // 

@@ -16,7 +16,7 @@ namespace Inventory_Control
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TelaDeCarregamento());
+            Application.Run(new Login());
         }
     }
 }
