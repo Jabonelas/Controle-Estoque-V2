@@ -18,7 +18,7 @@ Software para controle, gerenciamento e faturamento de estoque para uma empresa 
 
 ## **Tela Cadastro Cliente/Fornecedor**
 
-![enter image description here](https://i.imgur.com/59sAWhl.gif)
+![enter image description here](https://i.imgur.com/bDHUSgD.gif)
 
  - [X] Incluir dados para cadastro Cliente/Fornecedor. 
  - [X]  Modificar dados de cadastro Cliente/Fornecedor.
@@ -27,7 +27,7 @@ Software para controle, gerenciamento e faturamento de estoque para uma empresa 
 
 ## **Tela Cadastro Produto**
 
-![enter image description here](https://i.imgur.com/bdEmu4O.gif)
+![enter image description here](https://i.imgur.com/sTPv3CR.gif)
 
 - [X] Incluir dados para cadastro Produto.
  - [X]  Modificar dados de cadastro Produto.
@@ -38,7 +38,7 @@ Software para controle, gerenciamento e faturamento de estoque para uma empresa 
 
 ## **Tela de Transferencia de Local**
 
-![enter image description here](https://i.imgur.com/szrGirE.gif)
+![enter image description here](https://i.imgur.com/eOs4oJr.gif)
 
   - [X]  Modificar local de estoque do produto. (Obedecendo o FIFO para garantir o giro de estoque)
  - [X]  Buscar dados da etiqueta do produto.
@@ -61,7 +61,7 @@ Software para controle, gerenciamento e faturamento de estoque para uma empresa 
 
 ## **Tela de Entada de Nota Fiscal**
 
-![enter image description here](https://i.imgur.com/LJsR80J.gif)
+![enter image description here](https://i.imgur.com/WrxY5zE.gif)
 
   - [X] Incluir Nota Fiscal no sistema. (Verificação de existência de cadrastro Fornecedor e Produtos).
   - [X] Excluir Nota Fiscal do sistema.(Impedindo que seja excluído Nota fiscal que já tenha saldo consumido ou local modificado).
@@ -78,7 +78,7 @@ Software para controle, gerenciamento e faturamento de estoque para uma empresa 
 
 ## **Tela Faturamento**
 
-![enter image description here](https://i.imgur.com/VSJNgTP.gif)
+![enter image description here](https://i.imgur.com/cTobHbm.gif)
 
   - [X] Incluir Produto na Nota Fiscal faturada. (Verificação de existência cadrastro de Cliente).
   - [X] Confirmar Nota Fiscal.
@@ -90,3 +90,10 @@ Software para controle, gerenciamento e faturamento de estoque para uma empresa 
 ![enter image description here](https://i.imgur.com/qjN47Ue.gif)
 
   - [X] Buscar Nota Fiscal que foram faturadas no sistema. (Emitir relatório de Notas Fiscais que foram faturadas, com busca por data e impressão no gráfico mostrando os tops 5 dos produtos com maior faturamento).
+  
+## **Trocar Usuário/Finalizar**
+
+![enter image description here](https://i.imgur.com/1u19b1b.gif)
+
+  - [X] Trocar Usuário.
+  - [X] Finalizar.
